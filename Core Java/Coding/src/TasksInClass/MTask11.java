@@ -9,6 +9,7 @@ public class MTask11 {
 		MTask11 obj=new MTask11(10);
 		System.out.println("Tuesday");
 		String s=obj.display("Challenge Accepted!!");
+		System.out.println(s);
 	}
 	public MTask11(int temp)	//MTask11() temp=10
 	{
