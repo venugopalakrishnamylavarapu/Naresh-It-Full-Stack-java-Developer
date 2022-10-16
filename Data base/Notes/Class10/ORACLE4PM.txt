@@ -1,0 +1,702 @@
+OPERATORS:
+===========
+	- operator are used to perform some operation on the given operand 
+values.oracle supports the following operators are:
+
+	i) Assignment operator	=> 	=
+	ii) Arithmetic operators	=>	+ , - ,* , /
+	iii) Relational operators	=>	< , > , <= , >= ,!=(or)<>
+	iv) Logical operators	=>	AND,OR,NOT
+	v) Set operators		=>	UNION,UNION ALL,
+					INTERSECT,MINUS
+
+	vi) Special operators	=>   (+ve) operators	      (-ve) operator
+				       =============	      ============
+				      IN 		      NOT IN
+				      BETWEEN                 NOT BETWEEN
+				      IS NULL	      IS NOT NULL
+				      LIKE 		      NOT LIKE
+
+i) Assignment operator:
+====================
+	- to assign a values to varibale / attribute.
+
+syntax:
+======
+	<variable name / attribute name> <assignment operator> <value>
+
+Ex:
+SELECT * FROM EMP WHERE EMPNO=7788;
+UPDATE EMP SET SAL=50000 WHERE DEPTNO=10;
+DELETE FORM EMP WHERE JOB='CLERK';
+
+ii) Arithmetic operators:
+=====================
+	- to perform some mathematical operations like addition,
+subtraction,multiple and division.
+
+syntax:
+======
+	<column name> <arithmetic operator> <value>
+
+Ex:
+waq to display SQL> SELECT SAL OLD_SALARY,SAL+1000 NEW_SALARY
+  2  FROM EMP;
+
+OLD_SALARY 	NEW_SALARY
+-------------------- 	----------------------
+       800       	1800
+
+Ex:
+waq to display empno,ename,salary and annual salary of employees
+who are working under deptno=10;
+SQL> SELECT EMPNO,ENAME,SAL BASIC_SALARY,
+  2  SAL*12 ANNUAL_SALARY FROM EMP
+  3  WHERE DEPTNO=10;
+
+Ex:
+waq to display employees salaries after increment of 10%?
+SQL> SELECT ENAME,SAL BEFORE_INCREMENT,
+  2  SAL+SAL*10/100 AFTER_INCREMENT FROM EMP;
+
+Ex:
+waq to update employees salaries with the increment of 5% who are
+working as a "manager"?
+SQL> UPDATE EMP SET SAL=SAL+SAL*0.05 WHERE JOB='MANAGER';
+
+iii) Relational operators:
+====================
+	- to comparing a specific column values with user defined condition
+in the query.
+
+syntax:
+======
+	where <column name> <relational operator> <value>;
+
+Ex:
+waq to display employees who are joined  before 1981?
+SQL> SELECT * FROM EMP WHERE HIREDATE<'01-JAN-81';
+	
+Ex:
+waq to display employees who are joined  after 1981?
+SQL> SELECT * FROM EMP WHERE HIREDATE>'31-DEC-81';
+
+iv) Logical operators:
+==================
+	- to check more than one condition in the query.
+	- these operators are AND,OR,NOT.
+
+AND:
+=====
+	- it return a value if both conditions are true in the query.	
+
+cond1	cond2
+=====	=====
+T	T	----> T
+T	F	----> F
+F	T	----> F
+F	F	----> F
+
+syntax:
+======
+	where <condition1> AND <condition2>
+
+Ex:
+waq to display employees whose name is "SMITH" and working as a "CLERK"?
+SQL> SELECT * FROM EMP WHERE ENAME='SMITH' AND JOB='CLERK';
+
+OR:
+===
+	- it returns a value if any one condition is true from the given 
+group of conditions in the query.
+
+cond1	cond2
+=====	=====
+T	T	----> T
+T	F	----> T
+F	T	----> T
+F	F	----> F
+
+syntax:
+=======
+	where <condition1> or <condition2>
+
+Ex:
+waq to display empoyees who are working as a "analyst" or whose salary is 
+more than 2000?
+SQL> SELECT * FROM EMP WHERE JOB='ANALYST' OR SAL>2000;
+
+Ex:
+waq to display employees whose empno is 7369,7566,7788,7900?
+SQL> SELECT * FROM EMP WHERE
+  2  EMPNO=7369 OR EMPNO=7566
+  3  OR EMPNO=7788 OR EMPNO=7900;
+
+NOT:
+====
+	-  it return all values from a table except the given conditional 
+values in the query.
+
+syntax:
+======
+	where not <column name>=<value> and not <column name>=<value>
+
+Ex:
+waq to display employees who are not working as a "clerk" and as a "salesman"?
+SQL> SELECT * FROM EMP WHERE
+  2  NOT JOB='CLERK' AND NOT JOB='SALESMAN';
+
+v) Set operators		
+==============	
+	- ARE USED TO COMBINED THE RESULTS OF TWO SELECT STATEMENTS AS A SINGLE 
+SET OF VALUES.
+
+SYNTAX:
+========
+	<SELECT QUERY1> <SET OPERATOR> <SELECT QUERY2>;
+
+EX:
+	A={10,20,30}	B={30,40,50}
+
+UNION:
+======
+	- TO COMBINED BOTH SETS VALUES WITHOUT DUPLICATES.
+
+A U B = {10,20,30,40,50}
+
+UNION ALL:
+==========
+	- TO COMBINED BOTH SETS VALUES WITH DUPLICATES.
+
+A UL B = {10,20,30,30,40,50}	
+
+INTERSECT:
+===========
+	- TO RETURN COMMON VALUES FROM BOTH SETS.
+
+A I B = {30}
+
+MINUS:
+======
+	- IT RETURNS UNCOMMON VALUES FROM THE LEFT  SET ONLY.
+
+A - B  = { 10,20}
+B - A =  {40,50}
+
+
+			NARESHIT
+			        |
+		EMP_HYD		 EMP_CHENNAI
+
+
+SQL> SELECT * FROM EMP_HYD;
+
+       EID ENAME             SAL
+---------- ---------- ----------
+      1021 SMITH           85000
+      1022 ALLEN           68000
+      1023 WARD            47000
+
+SQL> SELECT * FROM EMP_CHENNAI;
+
+       EID ENAME             SAL
+---------- ---------- ----------
+      1021 SMITH           85000
+      1024 MILLER          55000
+      1025 JONES           27000
+
+EX:
+WAQ TO DISPLAY EMPLOYEES WHO ARE WORKING IN BOTH BRANCHES?
+SQL> SELECT * FROM EMP_HYD INTERSECT SELECT * FROM EMP_CHENNAI;
+
+EX:
+WAQ TO DISPLAY EMPLOYEES WHO ARE WORKING IN HYD BUT NOT IN CHENNAI BRANCH?
+SQL> SELECT ENAME FROM EMP_HYD
+  2  MINUS
+  3  SELECT ENAME FROM EMP_CHENNAI;
+
+ENAME
+----------
+ALLEN
+WARD
+
+EX:
+WAQ TO DISPLAY ALL EMPLOYEES WHO ARE WORKING UNDER "NARESHIT" ORGANIZATION?
+SQL> SELECT * FROM EMP_HYD
+  2  UNION ALL
+  3  SELECT * FROM EMP_CHENNAI; ----> INCLUDING DUPLICATES
+	(OR)
+SQL> SELECT * FROM EMP_HYD
+  2  UNION 
+  3  SELECT * FROM EMP_CHENNAI;-----> TO ELIMINATE DUPLICATE
+
+vi) Special operators	=>   	   (+ve) operators	      (-ve) operator
+				    =============	      ============
+				      IN 		      NOT IN
+				      BETWEEN                 NOT BETWEEN
+				      IS NULL	      IS NOT NULL
+				      LIKE 		      NOT LIKE
+
+
+IN :
+===
+	- COMPARING THE LIST OF VALUES IN A SINGLE CONDITION.
+SYNTAX:
+========
+	WHERE <COLUMN NAME> IN(VALUE1,VALUE2,.......);
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE EMPNO IS 7369,7566,7788,7900?
+SQL> SELECT * FROM EMP WHERE EMPNO IN(7369,7566,7788,7900);
+
+EX:
+WAQ TO DISPLAY EMPLOYEES WHO ARE NOT WORKING AS A "CLERK","SALESMAN",
+"MANAGER"?
+SQL> SELECT * FROM EMP WHERE JOB NOT IN('CLERK','SALESMAN','MANAGER');
+
+BETWEEN:
+=========
+	- WORKING ON A PARTICULAR RANGE VALUE.
+	- IT RETURNS INCLUDING SOURCE AND DESTINATION VALUES.
+	- IT ALWAYS WORK ON LOW VALUE TO HIGH VALUE.
+
+SYNTAX:
+========
+	BETWEEN <LOW VALUE> AND <HIGH VALUE>;
+
+EX:
+WAQ TO DISPLAY EMPLOYEES WHOSE SALARY IS BETWEEN 1600 AND 3000?
+SQL> SELECT * FROM EMP WHERE SAL BETWEEN 1600 AND 3000;
+
+EX:
+TO DISPLAY EMPLOYEES WHO ARE JOINED IN 1981?
+SQL> SELECT * FROM EMP WHERE HIREDATE BETWEEN '01-JAN-81' AND '31-DEC-81';
+
+EX:
+TO DISPLAY EMPLOYEES WHO ARE NOT JOINED IN 1981?
+SQL> SELECT * FROM EMP WHERE HIREDATE NOT BETWEEN 
+          '01-JAN-81' AND '31-DEC-81';
+
+IS NULL:
+========
+	- COMPARING NULLS IN A TABLE.
+
+SYNTAX:
+========
+	WHERE <COLUMN NAME> IS NULL;
+
+EX:
+WAQ TO DISPLAY EMPLOYEES WHOSE COMMISSION IS NULL / EMPTY ?
+SQL> SELECT * FROM EMP WHERE COMM IS NULL;
+
+EX:
+WAQ TO DISPLAY EMPLOYEES WHOSE COMMISSION IS NOT NULL / IS NOT EMPTY ?
+SQL> SELECT * FROM EMP WHERE COMM IS NOT NULL;
+
+WHAT IS NULL?
+==============
+	- UNKNOWN / UNDEFINED VALUE / EMPTY .
+	- NULL != 0  & NULL != SPACE.
+
+EX:
+WAQ TO DISPLAY EMPNO,ENAME,SALARY,COMMISSION AND ALSO 
+SALARY+COMMISSION FROM EMP TABLE WHOSE ENAME IS "SMITH'?
+
+SQL> SELECT EMPNO,ENAME,SAL,COMM,SAL+COMM FROM EMP
+         WHERE ENAME='SMITH';
+
+     EMPNO 	ENAME      SAL       COMM   SAL+COMM
+---------------- 	---------- 	 ----------    ----------   ------------------
+      7369 		SMITH       800
+
+NOTE:
+======
+	- IF ANY ARITHMETIC OPERATOR IS PERFORM SOME OPERATION WITH NULL
+THEN IT AGAIN RETURN "NULL" ONLY.
+
+	Ex:
+		I) IF X =1000;
+		=> X+NULL ==> 1000+NULL ===> NULL
+		=> X-NULL ==> 1000-NULL ====> NULL
+		=> X*NULL ==> 1000*NULL ====> NULL
+		=> X/NULL ==> 1000/NULL =====> NULL
+
+	- TO OVERCOME THE ABOVE PROBLEM WE USE A PRE-DEFINED FUNCTION
+IN ORACLE DB IS "NVL()".
+
+NVL(EXP1,EXP2):
+===============
+	- IT IS A PRE-DEFINED FUNCTION WHICH IS USED TO REPLACE A USER 
+DEFINED VALUE IN PLACE OF NULL IN THE GIVEN EXPRESSION.
+	- IT IS HAVING TWO  ARGUMENTS ARE EXPRESSION1 AND EXPRESSION2.
+		IF EXP1 IS NULL ----------> RETURN EXP2 VALUE(UD VALUE)
+		IF EXP1 IS NOT NULL ---> RETURN EXP1 VALUE ONLY.
+
+EX:
+SQL> SELECT NVL(NULL,0) FROM DUAL;
+
+NVL(NULL,0)
+-----------
+          0
+
+SQL> SELECT NVL(NULL,100) FROM DUAL;
+
+NVL(NULL,100)
+-------------
+          100
+
+SQL> SELECT NVL(0,100) FROM DUAL;
+
+NVL(0,100)
+----------
+         0
+
+SQL> SELECT NVL(200,100) FROM DUAL;
+
+NVL(200,100)
+------------
+         200
+
+SOLUTION:
+==========
+SQL> SELECT EMPNO,ENAME,SAL,COMM,SAL+NVL(COMM,0) FROM EMP
+         WHERE ENAME='SMITH';
+
+  EMPNO 		ENAME      SAL       COMM   SAL+NVL(COMM,0)
+---------------- 	---------- 	 ----------    ----------   -----------------------------
+      7369 		SMITH       800		800
+
+NVL2(EXP1,EXP2,EXP3):
+=====================
+	- IT IS AN EXTENSION OF NVL().HAVING 3 ARGUMENTS ARE 
+EXPRESSION1,EXPRESSION2 AND EXPRESSION3.
+
+	=> IF EXP1 IS NULL ------> RETURN EXP3 VALUE(UD VALUE)
+	=> IF EXP1 IS NOT NULL ---> RETURN EXP2 VALUE(UD VALUE)
+
+EX:
+SQL> SELECT NVL2(NULL,100,200) FROM DUAL;
+
+NVL2(NULL,100,200)
+------------------
+               200
+
+SQL> SELECT NVL2(0,100,200) FROM DUAL;
+
+NVL2(0,100,200)
+-------------------------
+	100
+
+EX:
+WAQ TO UPDATE ALL EMPLOYEES COMMISSIONS IN A TABLE BASED ON THE FOLLOWING CONDITIONS ARE,
+	I) IF COMM IS NULL THEN UPDATE THOSE EMPLOYEES COMMISSIONS
+		WITH 800.
+	II) IF COMM IS NOT NULL THEN UPDATE THOSE EMPLOYEES COMMISSIONS
+		WITH COMM+800.
+
+SOLUTION:
+SQL> UPDATE EMP SET COMM=NVL2(COMM,COMM+800,800);
+
+LIKE:
+=====
+	- TO COMPARING A SPECIFIC STRING CHARACTER PATTERN.
+	- WHEN WE USE "LIKE" OPERATOR WE SHOULD USE THE FOLLOWING 
+	WILDCARD OPERATORS ARE
+
+		i) % 	- THE REMAINING GROUP OF CHAR'S AFTER SELECTED
+			   CHARACTER.
+		ii) _ 	- COUNTING A SINGLE CHARACTER IN THE EXPRESSION.
+
+SYNTAX:
+========
+WHERE <COLUMN NAME> LIKE '<WILDCARD OPERATOR> <CHAR.PATTERN> <WILDCARD OPERATOR> ';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME STARTS WITH 'S' CHARACTER?
+SQL> SELECT * FROM EMP WHERE ENAME LIKE 'S%';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME ENDS WITH 'N' CHARACTER?
+SQL> SELECT * FROM EMP WHERE ENAME LIKE '%N';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME IS HAVING "I" CHARACTER?
+SQL> SELECT * FROM EMP WHERE ENAME LIKE '%I%';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME IS HAVING 4 CHARACTERS?
+SQL> SELECT * FROM EMP WHERE ENAME LIKE '____';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME IS HAVING 2ND CHARACTER IS "O" ?
+SQL> SELECT * FROM EMP WHERE ENAME LIKE '_O%';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE EMPNO IS STARTS WITH 7 AND ENDS WITH 8?
+SQL> SELECT * FROM EMP WHERE ENAME LIKE '7%8';
+
+EX:
+TO DISPLAY EMPLOYEES WHO ARE JOINED IN 1981?
+SQL> SELECT * FROM EMP WHERE HIREDATE LIKE '%81';
+
+EX:
+TO DISPLAY EMPLOYEES WHO ARE JOINED IN THE MONTH OF "DECEMBER"?
+SQL> SELECT * FROM EMP WHERE HIREDATE LIKE '%DEC%';
+
+EX:
+TO DISPLAY EMPLOYEES WHO ARE JOINED IN THE MONTH OF "MAY","DECEMBER"?
+SQL> SELECT * FROM EMP WHERE HIREDATE LIKE '%MAY%'
+         OR HIREDATE LIKE '%DEC%';
+
+LIKE OPERATOR WITH SPECIAL CHARACTERS:
+========================================
+ENAME             	SAL
+---------- 		----------
+%SMITH           	1200
+WAR_NER          	1500
+JAME@S           	3200
+MILL#ER          	2500
+_JONES          	1100
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME IS HAVING "@" SYMBOL?
+SQL> SELECT * FROM TEST WHERE ENAME LIKE '%@%';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME IS HAVING "#" SYMBOL?
+SQL> SELECT * FROM TEST WHERE ENAME LIKE '%#%';
+
+EX:
+TO DISPLAY EMPLOYEES WHOSE NAME IS HAVING "_" SYMBOL?
+SQL> SELECT * FROM TEST WHERE ENAME LIKE '%_%';
+
+NOTE:
+======
+	- WHEN WE PERFORM LIKE OPERATOR ON "_ , %" THEN ORACLE SERVER WILL TREAT AS
+"WILDCARD OPERATORS" BUT NOT TREAT AS "SPECIAL CHARACTERS" SO TO OVERCOME 
+THIS PROBLEM WE SHOULD USE A SPECIAL KEYWORD IS CALLED AS " ESCAPE'\' ".
+
+SOLUTION:
+SQL> SELECT * FROM TEST WHERE ENAME LIKE '%\_%'ESCAPE'\';
+SQL> SELECT * FROM TEST WHERE ENAME LIKE '%\%%'ESCAPE'\';
+
+EX:
+WAQ TO DISPLAY EMPLOYEES WHOSE NAME NOT STARTS WITH "S" CHARACTER?
+SQL> SELECT * FROM EMP WHERE ENAME NOT LIKE 'S%';
+
+
+
+
+
+
+
+
+
+
+		
+		SMITH
+		
+		SUMAN
+		SCOTT
+		SURESH
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
+
+
+121
+25.36
+250000.00
+'SAI'
+'87HJ87KJ98'
+25-JAN-2022
+10:20:35.44
+0101010101111000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+

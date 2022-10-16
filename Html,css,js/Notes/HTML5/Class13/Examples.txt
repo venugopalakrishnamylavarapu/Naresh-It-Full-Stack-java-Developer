@@ -1,0 +1,127 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <audio src="song.mp3" controls="controls">
+        <p>OOPs Your Browser unable to Support HTML5 features..!!</p>
+    </audio>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <audio src="song.mp3" controls="controls" loop="loop" muted="muted" autoplay="true">
+        <p>OOPs Your Browser unable to Support HTML5 features..!!</p>
+    </audio>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM with JS Controls...!!</title>
+</head>
+<body>
+    <audio src="song.mp3"  controls="controls" id="audi"></audio>
+    <div>
+        <button onclick="document.getElementById('audi').play()">PlayAudio</button>
+        <button onclick="document.getElementById('audi').pause()">PauseAudio</button>
+        <button onclick="document.getElementById('audi').volume+=0.1">iVolume</button>
+        <button onclick="document.getElementById('audi').volume-=0.1">dVolume</button>
+    </div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM with JS Controls...!!</title>
+</head>
+<body>
+    <video src="TATA_DOC.mp4" width='200px' heght="200px" controls="controls">
+        <p>OOPs................!!</p>
+    </video>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM with JS Controls...!!</title>
+</head>
+<body>
+    <video src="TATA_DOC.mp4" width='200px' heght="200px" controls="controls" muted="muted" autoplay="true" loop="5">
+        <p>OOPs................!!</p>
+    </video>
+</body>
+</html>
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM with JS Controls...!!</title>
+</head>
+<body>
+    <video src="TATA_DOC.mp4" width='200px' heght="200px" controls="controls" id="vid"></video>
+    <div>
+        <button onclick="document.getElementById('vid').play()">PlayVideo</button>
+        <button onclick="document.getElementById('vid').pause()">PauseVideo</button>
+        <button onclick="document.getElementById('vid').volume+=0.1">iVolume</button>
+        <button onclick="document.getElementById('vid').volume-=0.1">dVolume</button>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM with JS Controls...!!</title>
+    <style>
+        body
+        {
+            background-image: url(img_flwr.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100% ;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,242 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        @font-face
+        {
+            font-family:nit;
+            src:url('Lobster.ttf')
+        }
+        div
+        {
+            font-family:nit;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Welcome to Java Script programming 
+        Welcome to Java Script programming
+        Welcome to Java Script programming
+        Welcome to Java Script programming
+    </div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            width:100px;height:100px;
+            background:blue;
+            transition:width 5s;
+            border-radius:10px;
+        }
+        div:hover
+        {
+            width:400px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p>Just Hover Check the Transition....!!</p>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            width:100px;height:100px;
+            background:lightgreen;
+            transition:width;
+            border-radius:10px;
+            transition-duration:5s;
+            transition-delay:3s;
+        }
+        div:hover
+        {
+            width:400px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p>Just Hover Check the Transition....!!</p>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            width:100px;height:100px;
+            background:green;
+            border-radius:10px;
+            position:relative;
+            animation:move 2s 5;
+        }
+        @keyframes move
+        {
+            from{top:0px;}
+            to{top:230px;}
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            width:100px;height:100px;
+            background:green;
+            border-radius:10px;
+            position:relative;
+            animation:move 5s 10;
+            
+        }
+        @keyframes move
+        {
+            from{left:0px;}
+            to{left:500px;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            width:100px;height:100px;
+            background:green;
+            border-radius:10px;
+            position:relative;
+            animation:move 1s 10;
+        }
+        @keyframes move
+        {
+            from{top:0px;}
+            to{top:300px;}
+        }
+    </style>
+</head>
+<body>
+    <div><div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            width:100px;height:100px;
+            background:green;
+            border-radius:10px;
+            position:relative;
+            animation:move;
+            animation-duration:5s;
+            animation-iteration-count:4;
+        }
+        @keyframes move
+        {
+            from{top:0px;}
+            to{top:300px;}
+        }
+    </style>
+</head>
+<body>
+    <div><div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            width:200px;height:150px;
+            background:red;
+            position:relative;
+            animation:move;
+            animation-duration:6s;
+            animation-iteration-count:infinite;
+            animation-direction:alternate;
+        }
+        @keyframes move
+        {
+            0%{background:red;left:0px;top:0px;}
+            25%{background:green;left:300px;top:0px;}
+            50%{background:blue;left:300px;top:300px;}
+            75%{background:yellow;left:0px;top:300px;}
+            100%{background:red;left:0px;top:0px;}
+        }
+</style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

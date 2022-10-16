@@ -1,0 +1,215 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label>Select Valid Date...!!</label><br>
+        <input type="date" name="dt">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid Date&Time-Local<b style="color:red">*</b>..!!</label> <br/>
+        <input type="datetime-local" name="dt">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid Month&Year<b style="color:red">*</b>..!!</label> <br/>
+        <input type="month" name="dt">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid Time<b style="color:red">*</b>..!!</label> <br/>
+        <input type="time" name="dt">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Valid WeekNo.<b style="color:red">*</b>..!!</label> <br/>
+        <input type="week" name="dt">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Fav. Color<b style="color:red">*</b>..!!</label> <br/>
+        <input type="color" name="clr">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Enter Valid Emial-ID:<b style="color:red">*</b>..!!</label> <br/>
+        <input type="email" name="el">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Number:<b style="color:red">*</b>..!!</label> <br/>
+        <input type="number" name="num" value="0" min="2" max="50" step="3">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Select Range:<b style="color:red">*</b>..!!</label> <br/>
+        <input type="range" name="num" value="0" min="1" max="100" step="5">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Enter Any Search Word:<b style="color:red">*</b>..!!</label> <br/>
+        <input type="search" name="sr">
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Enter Valid Mobile Number:<b style="color:red">*</b>..!!</label> <br/>
+        <input type="tel" name="tno" required="required" pattern="[0-9]{10}" title="In-ValidMobileNumber" /> <br/>
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5Form Controls...!!</title>
+</head>
+<body>
+    <form action="smiley.png    ">
+        <label style='color:blue;font-family:Arial Rounded MT;font-size:15px'>Enter Valid URL:<b style="color:red">*</b>..!!</label> <br/>
+        <input type="url" name="ul" required="required"/> <br/>
+        <input type="submit" value="NextPage">
+    </form>
+</body>
+</html>

@@ -1,0 +1,341 @@
+FUNCTIONS:
+===========
+	- TO PERFORM SOME TASK AND MUST RETURN A VALUE.
+	- ORACLE SUPPORTING THE FOLLOWING TWO TYPES OF FUNCTIONS.
+		1. PRE-DEFINED FUNCTIONS
+			> USE IN SQL & PL/SQL.
+		2. USER-DEFINED FUNCTIONS
+			> USE IN PL/SQL ONLY
+
+1. PRE-DEFINED FUNCTIONS:
+========================
+	- THESE FUNCTIONS ARE ALSO CALLED AS "BUILT IN FUNCTIONS" IN ORACLE
+	i) SINGLE ROW FUNCTIONS (SCALAR FUNCTIONS)
+	ii) MULTIPLE ROW FUNCTIONS( GROUPING / AGGREGATIVE FUNCTIONS)
+
+i) SINGLE ROW FUNCTIONS:
+========================
+	- THESE FUNCTIONS ARE ALSO RETURNS A SINGLE VALUE.
+		1) NUMERIC FUNCTIONS
+		2) STRING FUNCTIONS
+		3) DATE FUNCTIONS
+		4) CONVERSION FUNCTIONS
+		5) ANALYTICAL FUNCTIONS(SEE IN SUBQUERY)
+
+HOW TO CALL A FUNCTION:
+========================
+SYNTAX:
+========
+SELECT <FNAME>(VALUE/(S)) FROM DUAL;
+
+WHAT IS DUAL?
+==============
+	- PRE-DEFINED TABLE IN ORACLE.
+	- IS USED TO TEST FUNCTION FUNCTIONALITIES(WORKING STYLE).
+	- IS HAVING A SINGLE ROW & A SINGLE COLUMN.
+	- IS ALSO CALLED AS "DUMMY TABLE" IN ORACLE.
+
+TO VIEW THE STRUCTURE OF DUAL TABLE:
+=====================================
+SYNTAX:
+========
+DESC DUAL;
+
+ Name                                                                                      Null?    Type
+ -----------------------------------------------------------------------------------------       --------    ------------
+ DUMMY                                                                                              VARCHAR2(1)
+
+TO VIEW DATA OF DUAL TABLE:
+===========================
+SYNTAX:
+========
+SELECT * FROM DUAL;
+
+D
+-
+X
+
+1) NUMERIC FUNCTIONS
+======================
+ABS():
+=====
+	- TO CONVERT (-ve) SIGN VALUES INTO (+ve) SIGN VALUES.
+
+SYNTAX:
+=======
+	ABS(n)
+
+EX:
+SQL> SELECT ABS(-12) FROM DUAL;---------12
+SQL> SELECT EMPNO,ENAME,SAL,COMM,ABS(COMM-SAL) FROM EMP;
+
+CEIL():
+======
+	- IT RETURNS UPPER BOUND VALUE.
+
+SYNTAX:
+========
+	CEIL(n)
+
+EX:
+SQL> SELECT CEIL(9.3) FROM DUAL;
+
+ CEIL(9.3)
+----------
+        10
+
+SQL> SELECT CEIL(9.8) FROM DUAL;
+
+ CEIL(9.8)
+----------
+        10
+
+FLOOR():
+=======
+	- IT RETURNS LOWER BOUND VALUE.
+SYNTAX:
+========
+	FLOOR(n)
+
+EX:
+SQL> SELECT FLOOR(9.8) FROM DUAL;
+
+FLOOR(9.8)
+----------
+         9
+
+SQL> SELECT FLOOR(9.3) FROM DUAL;
+
+FLOOR(9.3)
+----------
+         9
+MOD():
+======
+	- IT RETURNS REMAINDER VALUE.
+SYNTAX:
+=======
+	MOD(m,n)
+
+EX:
+SQL> SELECT MOD(10,2) FROM DUAL;
+
+ MOD(10,2)
+----------
+         0
+
+ROUND():
+========
+	- IT RETURNS THE NEAREST  VALUE OF GIVEN EXPRESSION.
+	- WILL CONSIDER 0.5 VALUE.
+	         IF EXPRESSION IS  >= 0.5 THEN WE ADD "1" TO THE EXPRESSION.
+	         IF EXPRESSION IS <0.5 THEN WE ADD "0" TO THE EXPRESSION.
+
+SYNTAX:
+=======
+	ROUND(EXPRESSION,[DECIMAL PALCES])
+
+EX:
+SQL> SELECT ROUND(36.45) FROM DUAL;
+
+ROUND(36.45)
+------------
+          36
+
+SQL> SELECT ROUND(36.50) FROM DUAL;
+
+ROUND(36.50)
+------------
+          37
+
+SQL> SELECT ROUND(36.82) FROM DUAL;
+
+ROUND(36.82)
+------------
+          37
+
+SQL> SELECT ROUND(36.824,2) FROM DUAL;
+
+ROUND(36.824,2)
+---------------
+          36.82
+
+SQL> SELECT ROUND(36.825,2) FROM DUAL;
+
+ROUND(36.825,2)
+---------------
+          36.83
+
+SQL> SELECT ROUND(36.827,2) FROM DUAL;
+
+ROUND(36.827,2)
+---------------
+          36.83
+
+TRUNC():
+========
+	- IT RETURN AN EXACT VALUE FROM GIVEN EXPRESSION.
+	- IT IS NOT CONSIDER 0.5 VALUE IN THE EXPRESSION.
+
+SYNTAX:
+========
+	TRUNC(EXPRESSION,[DECIMAL PALCE])
+
+EX:
+SQL> SELECT TRUNC(36.45) FROM DUAL;
+
+TRUNC(36.45)
+------------
+          36
+
+SQL> SELECT TRUNC(36.855,2) FROM DUAL;
+
+TRUNC(36.855,2)
+---------------
+          36.85
+
+STRING FUNCTIONS:
+==================
+LENGTH():
+=========
+	- IT RETURNS THE NO.OF CHARACTERS IN THE GIVEN EXPRESSION.
+
+SYNTAX:
+========
+	LENGTH(STRING)
+
+EX:
+SQL> SELECT LENGTH('HELLO') FROM DUAL;
+
+LENGTH('HELLO')
+---------------
+              5
+
+SQL> SELECT LENGTH('HEL LO') FROM DUAL;
+
+LENGTH('HELLO')
+---------------
+              6
+SQL> SELECT ENAME,LENGTH(ENAME) FROM EMP;
+SQL> SELECT * FROM EMP WHERE LENGTH(ENAME)=6;
+
+LOWER():
+========
+	- TO CONVERT UPPER CASE CHAR's INTO LOWER CASE CHAR's.
+
+SYNTAX:
+========
+	LOWER(STRING)
+
+EX:
+SQL> SELECT LOWER('HELLO') FROM DUAL;
+SQL> SELECT ENAME,LOWER(ENAME) FROM EMP;
+SQL> UPDATE EMP SET ENAME=LOWER(ENAME) WHERE JOB='MANAGER';
+SQL> UPDATE EMP SET ENAME=LOWER(ENAME);
+
+UPPER():
+=======
+	- TO CONVERT LOWER CASE CHAR's INTO UPPER CASE CHAR's.
+
+SYNTAX:
+=======
+	UPPER(STRING)
+EX:
+SQL> UPDATE EMP SET ENAME=UPPER(ENAME);
+
+INITCAP():
+=========
+	- THE FIRST CHARACTER IS CAPITAL IN THE GIVEN STRING.
+
+SYNTAX:
+========
+	INITCAP(STRING)
+
+EX:
+SQL> SELECT INITCAP('HELLO') FROM DUAL;
+
+INITC
+-----
+Hello
+
+SQL> SELECT INITCAP('hello') FROM DUAL;
+
+INITC
+-----
+Hello
+
+SQL> SELECT ENAME,INITCAP(ENAME) FROM EMP;
+SQL> UPDATE EMP SET ENAME=INITCAP(ENAME);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

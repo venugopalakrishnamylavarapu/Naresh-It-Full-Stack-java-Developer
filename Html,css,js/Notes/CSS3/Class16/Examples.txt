@@ -1,0 +1,270 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            text-align:justify;
+            column-count:4;
+            column-gap:30px;
+        }
+</style>
+</head>
+<body>
+    <div>
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops. Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+    </div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            text-align:justify;
+            column-count:4;
+            column-gap:30px;
+            column-rule-color:#FF0000;
+            column-rule-width: 8px;
+            column-rule-style: double;
+        }
+        
+</style>
+</head>
+<body>
+    <div>
+        About RIAs
+Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            text-align:justify;
+            column-count:3;
+           
+        }
+        h1{ column-span:1;}
+        
+</style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to CSS3 Advanced Properties..!! </h1>
+        About RIAs
+Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and desktops.
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            text-align: justify;
+           columns:100px 3;
+        }
+</style>
+</head>
+<body>
+<div>        
+About RIAs Rich Internet applications (RIAs) offer a rich, engaging experience that improves user satisfaction and  increases productivity. Using the broad reach of the Internet, RIAs can be deployed across browsers and  desktops. Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the next generation of media experiences and Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+</div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        div
+        {
+            border:2px solid;
+            padding:10px 30px;
+            width:300px;
+            resize:both;
+            overflow: auto;
+        }
+</style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        [class^='second']
+        {
+            color:red;font-family:candara;font-size:50px
+        }
+    </style>
+</head>
+<body>
+    <div class="i_second">Hello Welcome to Division</div>
+    <p class="second">Hello Welcome to Division</p>
+    <h1 class="Second">Hello Welcome to Division</h1>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        [class^='second']
+        {
+            color:red;font-family:candara;font-size:50px
+        }
+    </style>
+</head>
+<body>
+    <div class="second">Hello Welcome to Division</div>
+    <p class="second">Hello Welcome to Division</p>
+    <h1 class="second">Hello Welcome to Division</h1>
+</body>
+</html>
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+p~ul
+{
+background:#00ffff;
+}
+</style>
+</head>
+<body>
+<div>A div element.</div>
+<ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>DOJO</li>
+</ul>
+
+</ul>
+<h2>Another list</h2>
+<ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>DOJO</li>
+</ul>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        [class$='test']
+        {
+            color:red;font-family:candara;font-size:50px
+        }
+    </style>
+</head>
+<body>
+    <div class="second">Hello Welcome to Division</div>
+    <p class="second_test">Hello Welcome to Division</p>
+    <h1 class="second">Hello Welcome to Division</h1>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        [class$='test']
+        {
+            color:red;font-family:candara;font-size:50px
+        }
+    </style>
+</head>
+<body>
+    <div class="second_test">Hello Welcome to Division</div>
+    <p class="second_test">Hello Welcome to Division</p>
+    <h1 class="test_second">Hello Welcome to Division</h1>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Background Properties..!!</title>
+    <style>
+        [class*='test']
+        {
+            color:red;font-family:candara;font-size:50px
+        }
+    </style>
+</head>
+<body>
+    <div class="second_test">Hello Welcome to Division</div>
+    <p class="second_test">Hello Welcome to Division</p>
+    <h1 class="test_second">Hello Welcome to Division</h1>
+</body>
+</html>

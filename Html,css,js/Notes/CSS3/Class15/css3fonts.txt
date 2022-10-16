@@ -1,0 +1,401 @@
+CSS3 Web Fonts:
+@font-face
+The CSS3 @font-face Rule:Your "own" fonts are defined in the CSS3 @font-face rule. Before CSS3, web designers had to use fonts that were already installed on the user's computer. With CSS3, web designers can use whatever font they likes.  
+
+Note: 
+Firefox, Chrome, Safari, and Opera support fonts of type .ttf (True Type Fonts) and .otf (OpenType Fonts).
+
+Note: 
+Internet Explorer 9+ supports the new @font-face rule, but it only supports fonts of type .eot (Embedded OpenType).
+
+Syntax:
+@font-face
+{
+font-properties
+}
+
+Different Font Formats
+TrueType Fonts (TTF)
+TrueType is a font standard developed in the late 1980s, by Apple and Microsoft.
+
+OpenType Fonts (OTF)
+OpenType is a format for scalable computer fonts. It was built on TrueType, and is a registered trademark of Microsoft. 
+
+The Web Open Font Format (WOFF)
+WOFF is a font format for use in web pages. It was developed in 2009, and is now a W3C Recommendation. All Browsers Compatable
+
+SVG Fonts/Shapes
+SVG fonts allow SVG to be used as glyphs when displaying text. 
+
+Embedded OpenType Fonts (EOT)
+EOT fonts are a compact form of OpenType fonts designed by Microsoft for use as embedded fonts on web pages.
+
+CSS3 Font Descriptors
+The following table lists all the font descriptors that can be defined inside the @font-face rule:
+
+Example:
+<!DOCTYPE HTML>
+<head>
+<style type="text/css"> 
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Light.ttf')    
+}
+div
+{
+font-family:myFirstFont;
+}
+</style>
+</head>
+<body>
+<div>
+With CSS3, We can declare user defined fonts as per the requirements.
+</div>
+</body>
+
+Example:
+<!DOCTYPE HTML>
+<head>
+<style type="text/css"> 
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Light.ttf')   
+}
+@font-face
+{
+font-family: myFirstFont;
+src: url('Sansation_Bold.ttf')    
+font-weight:bold;
+}
+div
+{
+font-family:myFirstFont;
+}
+</style>
+</head>
+<body>
+<div>
+With CSS3, websites can <b>finally</b> use fonts other than the pre-selected "web-safe" fonts.
+</div>
+</body>
+
+CSS3 transition Property:
+The transition property is a shorthand property for the four transition properties: transition-property, transition-duration, transition-timing-function, and transition-delay.
+
+Syntax
+transition: property duration timing-function delay;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:blue;
+transition:width 2s;
+}
+div:hover
+{
+width:300px;
+}
+</style>
+</head>
+<body>
+<div></div>
+<p>Hover over the div element above, to see the transition effect.</p>
+</body>
+</html>
+
+CSS3 transition-duration Property
+It specifies how many seconds (s) or milliseconds (ms) a transition effect takes to complete.
+
+Syntax
+transition-duration: time;
+
+Value	Description
+time	Specifies how many seconds or milliseconds a transition effect takes to 		complete. 
+	
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:blue;
+transition:width 2s;
+transition-duration:5s;
+}
+div:hover
+{
+width:300px;
+}
+</style>
+</head>
+<body>
+<div></div>
+<p>Hover over the div element above, to see the transition effect.</p>
+</body>
+</html>
+
+CSS3 transition-delay Property
+It specifies when the transition effect will start. The transition-delay value is defined in seconds (s) or milliseconds (ms).
+
+Syntax
+transition-delay: time;
+
+Value	Description
+time	Specifies the number of seconds or milliseconds to wait before the transition 		effect will start.
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:blue;
+transition:width 2s;
+transition-duration:5s;
+transition-delay:2s;
+}
+div:hover
+{
+width:300px;
+}
+</style>
+</head>
+<body>
+<div></div>
+<p>Hover over the div element above, to see the transition effect.</p>
+<p><b>Note:</b> The transition effect will wait 2 seconds before starting.</p>
+</body>
+</html>
+
+CSS3 Animations
+With CSS3, we can create animations, which can replace animated images, Flash animations, and JavaScripts in many web pages. With this feature of CSS3 You can change the object into one style to another style in animated way.
+
+@keyframes rule.
+The @keyframes rule is where the animation is created. Specify a CSS style inside the @keyframes rule and the animation will gradually change from the current style to the new style.
+
+What are Animations in CSS3?
+An animation is an effect that lets an element gradually change from one style to another.You can change as many styles you want, as many times you want. Specify when the change will happen in percent, or the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete. 
+
+CSS3 Animation Properties
+animation
+animation-name
+animation-duration	
+animation-direction 
+animation-delay 
+animation-iteration-count
+
+CSS3 @keyframes Rule
+With the @keyframes rule, you can create animations. The animation is created by gradually changing from one set of CSS styles to another. During the animation, you can change the set of CSS styles many times.
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s infinite;
+}
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+@-moz-keyframes mymove /* Firefox */
+{
+from {top:0px;}
+to {top:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 animation Property:
+The animation property is a shorthand property for six of the animation properties: animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, and animation-direction.
+
+Syntax
+animation: name duration timing-function delay iteration-count direction;
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s infinite;
+}
+@keyframes mymove
+{
+from {left:0px;}
+to {left:200px;}
+}
+@-moz-keyframes mymove /*Firefox*/
+{
+from {left:0px;}
+to {left:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 animation-duration Property:
+It defines how many seconds or milliseconds an animation takes to complete one cycle.
+
+Syntax
+animation-duration: time;
+
+Value		Description	
+time		Specifies the length an animation takes to finish. Default value is 0, meaning there will be no 		animation
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove infinite;
+animation-duration:1s;
+}
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+@-moz-keyframes mymove /* Firefox */
+{
+from {top:0px;}
+to {top:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 animation-iteration-count Property
+It defines how many times an animation should be played.
+
+Syntax
+animation-iteration-count: value;
+
+Value		Description
+n		A number that defines how many times an animation should be played
+infinite		Specifies that the animation should be played infinite times (for ever)
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s;
+animation-iteration-count:3;
+}
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+
+CSS3 animation-direction Property
+The animation-direction property defines whether or not the animation should play in reverse on alternate cycles. If the animation-direction value is "alternate", the animation will be played as normal every odd time (1,3,5,etc..) and backwards every even time (2,4,6,etc...).
+
+Syntax
+animation-direction: value;
+
+Value	Description	
+normal	Default value.The animation should be played as normal	
+alternate	The animation should play in reverse on alternate cycles	
+
+Example:
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset=utf-8>
+<title>CSS3 Examples</title>
+<style type='text/css'> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:myfirst 5s infinite;
+animation-direction:alternate;
+}
+@keyframes myfirst
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+</body>
+</html>

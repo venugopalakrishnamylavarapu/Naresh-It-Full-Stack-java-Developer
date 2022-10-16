@@ -1,0 +1,286 @@
+HTML5-MULTIMEDIA 
+It is a new standard for media content. Playing video and audio is easier than ever
+
+HTML5 <audio> Tag
+It is used to specify audio on an HTML document. It is a paired tag.
+
+Note:
+Any text inside between <audio> and </audio> will be displayed in browsers that do not support audio.
+
+Syntax: 
+<audio>....................</audio>
+
+Attributes
+Attribute 	Value 		Description
+autoplay  autoplay 		Specifies that the audio will start playing 
+controls  	controls 		Specifies that audio controls 	should be displayed
+loop  	loop 		Specifies that the audio will start over again
+src 	Path 		Specifies the URL of the audio file
+muted	muted		Specified the audio should be muted
+
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<audio controls="controls">
+  <source src="song.ogg"  type="audio/ogg" />
+   Your browser does not support the audio element.
+</audio>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+  <body>
+    <audio src="song.ogg" controls="controls" autoplay="autoplay" loop="loop">
+      <p>Your browser does not support the audio playback. Please upgrade to a modern 	browser.</p>
+    </audio>
+  </body>
+</html>
+
+Example: (from Web)
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+  <body>
+    <audio src="http://sound26.mp3pk.com/indian/raone/raone01(www.songs.pk).mp3"       controls="controls" autoplay="autoplay" loop="loop">
+      <p>Your browser does not support the audio playback. Please upgrade to a modern    browser.</p>
+    </audio>
+  </body>
+</html>
+
+Example:(wav)
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+  <body>
+    <audio src="Windows XP Shutdown.wav"  controls="controls" autoplay="autoplay" loop="loop">
+      <p>Your browser does not support the audio playback. Please upgrade to a modern browser.</p>
+    </audio>
+  </body>
+</html>
+
+Audio With JS
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<audio id="demo" src="good_enough.mp3" controls='controls'></audio>
+<div>
+  <button onclick="document.getElementById('demo').play()">Play the Audio</button>
+  <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
+  <button onclick="document.getElementById('demo').volume+=0.1">Increase Volume</button>
+  <button onclick="document.getElementById('demo').volume-=0.1">Decrease Volume</button>
+</div> 
+</body>
+</html>
+
+<video>
+It is used to specify video on an HTML document. It is a paired tag.
+
+Syntax: 
+<video>..........................</video>
+
+Note: 
+Any text between the <video> and </video> tags will be displayed in browsers that do not support video.
+
+Attributes:
+Attribute 	Value 	Description
+autoplay	autoplay 	Specifies that the video will start playing
+controls 	controls 	Specifies that video controls should be displayed
+src	 URL 	Specifies the URL of the video file
+width	 pixels 	Sets the width of the video player
+height	 pixels 	Sets the height of the video player
+loop	 loop 	Specifies that the video will start over again
+muted 	 muted 	Specifies that the audio output of the video should be muted
+poster 	 URL 	Spe. an image to be shown while the video is downloading, or until the user hits the 		play button
+
+
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<video width="300" height="250" controls="controls" autoplay="autoplay">
+  <source src="movie.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<video width="300" height="250" controls="controls" poster="http://t1.gstatic.com/images?q=tbn:ANd9GcQUc6Vt3q5h6tcyn3229tN6u7fcG9Z0WXl0fFYKUvnmj1GBNvpi">
+  <source src="movie.mp4"  />
+    Your browser does not support the video tag.
+</video>
+</body>
+</html>
+
+Video with JS
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+<video id="demo" src="movie.mp4" controls='controls'></video>
+<div>
+  <button onclick="document.getElementById('demo').play()">Play the Video</button>
+  <button onclick="document.getElementById('demo').pause()">Pause the Video</button>
+  <button onclick="document.getElementById('demo').volume+=0.1">Increase Volume</button>
+  <button onclick="document.getElementById('demo').volume-=0.1">Decrease Volume</button>
+</div>
+</body>
+</html>
+
+
+HTML 5 <canvas> Tag
+The HTML <canvas> tag is used for creating graphics on the fly. It can be used for rendering graphs, game graphics, or other visual images. You must use a script to actually draw the graphics.
+
+<canvas> tag use to draw graphics using javascript getElementById("XXX").The <canvas> element is only a container for graphics. Canvas has several methods for drawing paths, boxes, circles, characters, and adding images.
+
+Syntax: <canvas>........................</canvas>
+
+Note: Any text inside the <canvas> element will be displayed in browsers that does not support <canvas>.
+
+Attributes
+Attribute 		Value 	Description
+height 		pixels 	Specifies the height of the canvas
+width 		pixels 	Specifies the width of the canvas
+
+Global Attributes/Dynamic Attributes
+Attributes	Value		Description
+id		ID_Name		Declared unique id for the element.
+class		Predefined_Class	Used in Cascading Style Sheet 
+style		style_Attributes	CSS code specify inline the HTML tag is presented
+title		Title_Description	Display on the "tooltip" for your elements.
+
+<canvas> Tag Contains the folloings features:
+Create a Canvas
+Draw Onto The Canvas With JavaScript
+Canvas Coordinates
+Canvas - Paths (lines, circles)
+Canvas - Text
+Canvas - Gradients
+Canvas - Images
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+Canvas Element
+</title>
+</head>
+<body>	
+<canvas id="myCanvas" width="250" height="150" style="border:2px solid #0000FF;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+Canvas Element
+</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:2px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script type="text/javascript">
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="#FFFF00";
+ctx.fillRect(0,0,150,75);
+</script>
+</body>
+</html>
+
+Example explained:
+1. find the <canvas> element: var c=document.getElementById("myCanvas");
+2. Call its getContext() method (you must pass the string "2d" to the getContext() method):
+var ctx=c.getContext("2d"); 
+3. The getContext("2d") object is a built-in HTML5 object, with many properties and methods for drawing paths, boxes, circles, text, images, and more.
+4. The next two lines draws a red rectangle:
+ctx.fillStyle="#FF0000"; ctx.fillRect(0,0,150,75);
+5. The fillStyle property can be a CSS color, a gradient, or a pattern. The default fillStyle is #000000 (black).
+6. The fillRect(x,y,width,height) method draws a rectangle filled with the current fill style.
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+Canvas Element
+</title>
+</head>
+<body>
+<canvas id="myCanvas">Your browser does not support the HTML5 canvas tag.</canvas>
+<script type="text/javascript">
+var c=document.getElementById('myCanvas');
+var ctx=c.getContext('2d');
+ctx.fillStyle='#FF0000';
+ctx.fillRect(0,0,80,100);
+</script>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+<meta charset='utf-8'>
+<title>
+Canvas Element
+</title>
+</head>
+<body>
+<canvas id="CanvasEx"> </canvas>
+<script type="text/javascript">
+var canvas=document.getElementById('CanvasEx');
+var ctx=canvas.getContext('2d');
+ctx.fillStyle='#FFcc00';
+ctx.fillRect(0,5,80,110);
+ctx.fillStyle='#FF9900';
+ctx.fillRect(25,0,120,50);
+ctx.fillStyle='#FF00cc';
+ctx.fillRect(100,35,120,60);
+</script>
+</body>
+</html>
+
+Canvas Coordinates
+1. The canvas is a two-dimensional grid.
+2. The upper-left corner of the canvas has coordinate (0,0)
+3. The fillRect() method above had the parameters (0,0,150,75).
+4. This means: Start at the upper-left corner (0,0) and draw a 150x75 pixels rectangle.
