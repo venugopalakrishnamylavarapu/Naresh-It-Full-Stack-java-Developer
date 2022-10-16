@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script language="javascript">
+    function signup() {
+        var usr = "venugopal";
+        var pwd = "venugopal55!";
+        var s1, s2;
+        s1 = document.homepage.email.plaeholder;
+        s2 = document.homepage.password.placeholder;
+        if ((s1 == usr) && (s2 == pwd)) {
+            window.alert("info is correct");
+            document.writeln("phone kottu porini pattu")
+        } else if ((s1 == pwd) && !(s2 == usr)) {
+            window.alert("username is incorrect");
+        } else if ((s1 == usr) && !(s2 == pwd)) {
+            window.alert("password is incorrect");
+        } else if (!(s1 == usr) && !(s2 == pwd)) {
+            window.alert("username and password is wrng");
+        }
+    }
+</script>
+
+<body>
+    <form name="homepage" method="get" onsubmit="signup()">
+        <h4>Email:</h4>&nbsp;<input type="text" name="email">
+        <h4>Password:</h4>&nbsp;<input type="password" name="password">
+        <br><br> <input type="submit" name="submit">&nbsp;
+    </form>
+
+</body>
+
+</html>
