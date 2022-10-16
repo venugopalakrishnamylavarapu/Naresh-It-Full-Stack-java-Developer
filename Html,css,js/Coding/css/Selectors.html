@@ -1,0 +1,158 @@
+<!--
+    Selectors:
+    ==========
+Styles Reusability 
+
+Types of Selectors:
+1. Tag/Type Selectors
+2. ID Selectors
+3. Class Selectors
+4. Grouping Selectors
+5. Customized Selectors etc...............
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /*Type/Tag selectors
+        ==================
+A type selector matches the name of a document language element type. A type selector matches every instance of the element type in the document tree.
+
+Syntax:
+div
+{
+Styles
+Styles
+Styles
+}*/
+        
+        p {
+            color: red;
+            font-size: 5mm;
+            font-family: 'Candara';
+            background-color: black;
+        }
+        /*
+        The id and class Selectors
+        ==========================
+In addition to setting a style for a HTML element, CSS allows you to specify your own selectors called "id" and "class".
+
+The id Selector
+It is used to specify a style for a single, unique element. The id selector uses the id attribute of the HTML element, and is defined with a "#". # is the notation or Symbol.
+
+Syntax1:
+#div
+{
+styles
+styles
+styles
+}
+
+its to define a specific attribute in the tag u'll see in the example
+
+Syntax:
+div#div
+{
+styles
+styles
+styles
+}*/
+        
+        p#bold {
+            font-weight: bold;
+            color: pink;
+            font-size: 5mm;
+            background-color: whitesmoke;
+            direction: rtl;
+        }
+        /*
+        The class Selector
+        ==================
+It is used to specify a style for a group of elements .The class selector uses the HTML class attribute, and is defined with a "."
+
+Syntax:
+.div
+{
+styles
+styles
+styles
+}
+
+Syntax:
+div.div
+{
+styles
+styles
+styles
+}*/
+        
+        .font2 {
+            color: skyblue;
+            font-family: 'Times New Roman';
+            font-size: 5mm;
+            background-color: green;
+        }
+        /*Selector Grouping
+====================
+We can group selectors using a comma (,) separator.
+
+Example1:
+
+h1 { font-family: sans-serif }
+h2 { font-family: sans-serif }
+h3 { font-family: sans-serif }
+
+is equivalent to:
+h1, h2, h3 { font-family: sans-serif }
+long story short is we decalred a group of selectors together then its called group selectors.
+*/
+        
+        u,
+        #div,
+        .blockquote {
+            font-family: tahoma;
+            font-size: 8mm;
+            direction: rtl;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Here we didnt used any attributes to call the css it automatically selected the css tag in head-->
+    <p>This used a type/tag Selector</p>
+
+
+
+
+    <!--in id selector we need to declare an attribute to call the specific css tag like
+    ex:-id="(the id name which u declared)" here below we decalred a specific one at that so we decalred the bold
+    we can write also write like this for own tags <vasu id="bold">,<kingu id="bold">like that
+         see that main tag doesn't play any importance but the id does.
+         u can use these selectors often when dealing with pre defined tags like
+         <u id="bold">hello!!!</u> underline tag same like this 
+        
+-->
+    <p id="bold">This used an id selector that to a specific One</p>
+
+    <!--
+        the same as id but we declare it as class like <venu class="font">
+    -->
+    <font class="font2">This here used a class selector</font>
+
+    <!--here we decalre this as a group so individuallt it does the same thing-->
+    <br><u>this here used group selectors </u><br>
+    <br>
+    <venu id="div">this here used group selector</venu><br>
+    <br>
+    <god class="blockquote">this here used group selector</god><br>
+</body>
+
+</html>

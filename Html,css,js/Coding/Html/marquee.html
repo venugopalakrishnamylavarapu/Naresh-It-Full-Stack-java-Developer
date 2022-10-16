@@ -1,0 +1,47 @@
+<!--
+    Marquee tag:
+Using this  tag we can create a scrolling text or scrolling image from left to right, right to left, top to bottom, bottom to top. It is a Paired tag. 
+
+Syntax:	
+<marquee>-------------</marquee>
+
+Marquee Tag Attributes:
+Attributes Values	Description
+behavior	"slide"	Start and stop as soon as text touches the 		Margin.
+	"scroll"	Start completely and off one side (Default)
+	"alternate" Text bounce as soon as  touch both sidemargin
+bgcolor	ColorCode Specifies the color as background
+direction	"left"	  Left to Right
+	"right"    	  Right to Left
+	"up"	  Bottom to Top		
+	"down"	  Top to Botoom
+width	"size_px"	Specifies width in marquee.
+height	"size_px" Specifies height in marquee
+loop	"number"  Loop Continues in limited times.
+scrollamount "number" Specifies Speed to scroll on the text.
+
+Note:
+1.The default behavior of marquee tag is scroll
+2.Its behavior differ from browser to browser
+
+NOTE:
+The <marquee> tag deprecated in HTML5. Do not use this element, instead you can use JavaScript and CSS to create such effects.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <marquee behavior="scroll" scrollamount="18" loop="3"><img src="icons8-java-50.png"></marquee>
+    <marquee behavior="alternate" direction="up" scrollamount="18" height="200px" bgcolor="yellow"><img src="icons8-java-50.png"></marquee>
+    <marquee behavior="slide" scrollamount="18"><img src="icons8-java-50.png"></marquee>
+    <marquee behavior="scroll" scrollamount="18"><img src="icons8-java-50.png"></marquee>
+</body>
+
+</html>

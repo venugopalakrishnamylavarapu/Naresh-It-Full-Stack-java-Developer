@@ -1,0 +1,91 @@
+<!--Setting Backgrounds using CSS:
+    =============================
+1. background-color
+2. background-image
+3. background-repeat
+4. background-attachment
+5. background-position
+
+1. The background-color property is used to set the background color of an element.
+2. The background-image property is used to set the background image of an element.
+3. The background-repeat property is used to control the repetition of an image in the background.
+4. The background-position property is used to control the position of an image in the background.
+5. The background-attachment property is used to control the scrolling of an image in the background.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type='text/css'>
+        /*1 background-color Porperty:
+The background-color property is used to set the background color of an element.
+Syntax:
+background-color:colorName/ColorCode/HexaCode;
+or
+background:colorName/ColorCode/HexaCode;*/
+        
+        div {
+            background-color: #FFFF00;
+            font-size: 5em;
+        }
+        /*2. The background-image property is used to set the background image of an element.
+
+Syntax:
+background-image:url('ImgPath');
+or
+background:url('ImgPath');
+*/
+        /*this here used to apply an image to the whole web page*/
+        /*3. The background-repeat property is used to control the repetition of an image in the background.
+
+Syntax:
+background-repeat:no-repeat;
+or
+background:no-repeat;
+
+Property Values
+Value		Description	
+repeat		The background image repeated both vertically and horizontally. 	
+repeat-x		The background image repeated only horizontally	
+repeat-y		The background image repeated only vertically	
+no-repeat	The background-image not repeated*/
+        /*4. The background-attachment property is used to control the scrolling of an image in the background.
+
+Syntax:
+background-attachment:fixed;
+or
+background:fixed;
+
+Example:
+<body background="html5.png" style="background-repeat:no-repeat;background-attachment:fixed;text-align:justify">
+Some Text...
+Some Text...
+</body>
+
+        5. The background-position property is used to control the position of an image in the background.
+
+Syntax:
+background-position:left/center/right;
+or
+background:center;
+
+*/
+        
+        body {
+            background-image: url("giphy.gif");
+            background-repeat: repeat;
+            background-position: initial;
+        }
+    </style>
+</head>
+
+<body>
+    <div>This used background color property</div>
+
+</body>
+
+</html>

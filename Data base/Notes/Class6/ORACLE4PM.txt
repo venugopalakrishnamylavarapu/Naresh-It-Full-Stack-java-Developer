@@ -1,0 +1,612 @@
+			Topic-3 : SQL
+			===========
+	- SQL is a db language which was introduced by IBM.
+	- The initial name was "SEQUEL" later renamed as "SQL".
+	- It is used to communicate with database.
+	- SQL queries are not a case sensitive i.e we can write in upper / lower 
+	case characters.
+		Ex:
+			SELECT  * FROM EMP;----executed
+			select * from emp; -----executed
+			SeleCT * From Emp;----executed
+	- Every sql query should ends with a ";" .
+	- SQL is having the following five sub languages are:
+
+1. Data Definition Language(DDL):
+=============================
+	> create
+	> alter
+		> alter - modify
+		> alter - add
+		> alter - rename
+		> alter - drop
+	> rename
+	> truncate
+	> drop
+
+New Features:
+==============
+	> recyclebin
+	> flashback
+	> purge
+
+2. Data Manipulation Language(DML):
+================================
+	> insert
+	> update
+	> delete
+
+New Features:
+============	
+	> insert all
+	> merge
+
+3. Data Retrieval / Query Language (DRL / DQL):
+=======================================
+	> select
+
+4. Transaction Control Language(TCL):
+=================================
+	> commit
+	> rollback
+	> savepoint
+
+5. Data Control Language(DCL):
+===========================
+	> grant
+	> revoke
+==================================================================
+create:
+======
+	- is used to create a new database object in oracle.
+		Ex: table,view,synonym,sequence,.......etc
+
+How to create a new table in oracle:
+===============================
+syntax:
+======
+create table <table name>
+(
+<column name1> <datatype>[size],
+<column name2> <datatype>[size],
+.....................................................
+);
+
+Ex:
+create table student
+(
+STID INT,
+SNAME CHAR(10),
+SFEE NUMBER(6,2)
+);
+
+TO VIEW THE LIST OF TABLES IN ORACLE DB:
+========================================
+SYNTAX:
+========
+SELECT * FROM TAB; (tab is system defined table)
+
+TO VIEW THE STRUCTURE OF A TABLE:
+==================================
+SYNTAX:
+========
+DESC <TABLE NAME>; (DESC - describe)
+
+EX:
+DESC STUDENT;
+
+II) ALTER:
+=========
+	- to change the structure of a table.
+	- sub commands of alter command.
+
+i) alter - modify:
+=============
+	- to modify the datatype of a column and also change the size of
+a datatype.
+syntax:
+=======
+alter table <tn> modify <column name> <new datatype>[new size];
+
+Ex:
+SQL> ALTER TABLE STUDENT MODIFY SNAME VARCHAR2(5);
+
+ii) alter - add:
+============
+	- to add a new column to a table.
+
+syntax:
+======
+alter table <tn> add <new column name> <datatype>[size];
+
+Ex:
+SQL> ALTER TABLE STUDENT ADD SADDRESS VARCHAR2(20);
+
+iii) alter - rename:
+===============
+	- to change a column name in a table.
+
+syntax:
+======
+alter table <tn> rename <column> <old column name> to <new column name>;
+
+Ex:
+SQL> ALTER TABLE STUDENT RENAME COLUMN SNAME TO STUDENT_NAME;
+
+iv) alter - drop:
+=============
+		- to drop / delete a column from a table.
+
+syntax:
+======
+alter table <tn> drop <column> <column name>;
+
+Ex:
+SQL> ALTER TABLE STUDENT DROP COLUMN SFEE;
+
+3) rename:
+=========
+	- to change a table name.
+
+syntax:
+=======
+rename <old table name> to <new table name>;
+
+Ex:
+SQL> RENAME STUDENT TO SDETAILS;
+SQL> RENAME SDETAILS TO STUDENT;
+
+4) TRUNCATE:
+=============
+	- to delete all rows but not columns from a table.
+	- deleting rows permanently.(i.e we cannot restored)
+	- cannot delete a specific row data from a table because 
+	it doesnot supports "where clause".
+
+syntax:
+=======
+truncate table <table name>;
+
+Ex:
+SQL> TRUNCATE TABLE STUDENT;
+
+5) DROP:
+=======
+	- to delete a table (i.e rows & columns) from database.
+syntax:
+======
+drop table <table name>;
+
+EX:
+SQL> DROP TABLE STUDENT;
+
+NOTE:
+=====
+	- before oracle10g enterprise edition once we drop a table from
+oracle db then it's permanently deleted whereas from oracle10g 
+enterprise edition once we drop a table from oracle db then it's
+temporarly deleted.
+
+Oracle10g enterprise edition new features:
+=====================================
+		i) recyclebin
+		ii) flashback
+		iii) purge
+
+NOTE: these features are working under "user account" not in 
+"system(admin) account".
+
+i) Recyclebin:
+============
+	- it is a system defined table in oracle.
+	- it can store the information about deleted tables.
+	- it is similar to "windows recyclebin" in computer.
+
+How to view the structure of recyclebin table:
+=======================================
+syntax:
+=======
+desc recyclebin;
+
+EX:
+=======
+desc recyclebin;
+
+How to view the information about deleted tables in recyclebin:
+=====================================================
+syntax:
+======
+SQL> SELECT OBJECT_NAME,ORIGINAL_NAME FROM RECYCLEBIN;
+
+OBJECT_NAME											ORIGINAL_NAME
+---------------------------------------------------------------				-----------------------------------------------------------------
+BIN$KB/3u/nRQC2zjhL7ZDH5pQ==$0					STUDENT
+
+ii) flashback:
+===========
+	- this command is used to restore a table from recyclebin to 
+database.
+
+syntax:
+======
+flashback table <table name> to before drop;
+
+Ex:
+SQL> FLASHBACK TABLE STUDENT TO BEFORE DROP;
+
+iii) purge:
+========
+	- this command is used to delete a table from recyclebin permanently.
+							(or)
+	- this command is used to delete a table from database permanently.
+
+To delete a specific table from recyclebin:
+===================================
+syntax:
+======
+purge table <table name>;
+
+Ex:
+SQL> PURGE TABLE TEST2;
+
+To delete all tables from recyclebin:
+===============================
+syntax:
+======
+purge recyclebin;
+
+EX:
+SQL> PURGE RECYCLEBIN;
+
+To delete a table from database permanently:
+=======================================
+syntax:
+======
+drop table <table name> purge;
+
+EX:
+SQL> DROP TABLE TEST3 PURGE;
+
+2. Data Manipulation Language(DML):
+================================
+INSERT:
+=======
+	- to insert a new row data into a table.
+
+method-1:
+=========
+insert into <table name> values(value1,value2,.........);
+
+Ex:
+SQL> CONN system/tiger
+SQL> CREATE USER MYDB4PM IDENTIFIED BY MYDB4PM;
+SQL> GRANT CONNECT,CREATE TABLE,UNLIMITED TABLESPACE TO MYDB4PM;
+
+SQL> CONN MYDB4PM/MYDB4PM
+SQL> CREATE TABLE STUDENT(STID INT,SNAME VARCHAR2(10),SFEE NUMBER(6,2));
+SQL> INSERT INTO STUDENT VALUES(1,'SMITH',2500);
+
+method-2:
+========
+insert into <table name>(required column names)values(value1,value2,.....);
+
+EX:
+SQL> INSERT INTO STUDENT(STID,SNAME,SFEE)VALUES(2,'WARD',4200);
+SQL> INSERT INTO STUDENT(STID,SNAME)VALUES(3,'JONES');
+SQL> INSERT INTO STUDENT(STID)VALUES(4);
+SQL> INSERT INTO STUDENT(SFEE,STID,SNAME) VALUES(3500,5,'ADAMS');
+
+HOW TO INSERT MULTIPLE ROWS INTO A TABLE:
+===========================================
+	& : insert values into columns by dynamically.
+
+method-1:
+=========
+insert into <tn> values(&<col1>,&<col2>,.....);
+
+EX:
+SQL> INSERT INTO STUDENT VALUES(&STID,'&SNAME',&SFEE);
+Enter value for stid: 7
+Enter value for sname: MILLER
+Enter value for sfee: 3300
+
+SQL> / ( RE-EXECUTE THE LAST EXECUTED SQL QUERY IN SQLPLUS)
+........................................
+.......................................
+.......................................
+
+method-2:
+=========
+insert into <tn>(<COL1>,<COL2>,....) values(&<col1>,&<col2>,.....);
+
+EX:
+SQL> INSERT INTO STUDENT(STID)VALUES(&STID);
+Enter value for stid: 10
+
+SQL> /
+...................................
+
+HOW TO INSERT "NULLS" INTO A TABLE:
+===================================
+METHOD-1:
+==========
+SQL> INSERT INTO STUDENT VALUES(NULL,NULL,NULL);
+
+METHOD-2:
+=========
+SQL> INSERT INTO STUDENT(STID,SNAME,SFEE)VALUES(NULL,NULL,NULL);
+
+UPDATE:
+========
+	- to update all rows data in a table.
+				(or)
+	- to update a specific row data in a table by using "where" condition.
+
+syntax:
+======
+update <tn> set <column name1>=<value1>,<column name2>=<value2>,......
+........... [ where <condition> ];
+
+Ex:
+SQL> UPDATE STUDENT SET
+  2  STID=1021,
+  3  SNAME='SCOTT',
+  4  SFEE=8000
+  5  WHERE STID=1;
+
+Ex:
+SQL> UPDATE STUDENT SET
+  2  SNAME='SMITH',
+  3  SFEE= 5000
+  4  WHERE STID=7;
+
+Ex:
+SQL> UPDATE STUDENT SET
+  2  SFEE=6200
+  3  WHERE STID=11;
+
+Ex:
+SQL> UPDATE STUDENT SET
+  2  STID=8
+  3  SNAME='MILLER',
+  4  SFEE=2200
+  5  WHERE STID IS NULL;
+
+EX:
+SQL> UPDATE STUDENT SET
+  2  SNAME='WARNER'
+  3  WHERE SNAME IS NULL;
+
+EX:
+SQL> UPDATE STUDENT SET
+  2  STID=NULL,
+  3  SNAME=NULL,
+  4  SFEE=NULL
+  5  WHERE STID=6;
+
+EX:
+SQL> UPDATE STUDENT SET
+  2  SNAME=NULL
+  3  WHERE SNAME='SMITH';
+
+EX:
+SQL> UPDATE STUDENT SET SFEE=5000;
+
+DELETE:
+=======
+	- to delete all  rows from a table at a time.
+		(or)
+	- to delete a specific row from a table by using "where" condition.
+
+syntax:
+=======
+delete from <table name> [where <condition>];
+
+EX:
+SQL> DELETE FROM STUDENT WHERE SNAME='WARNER';
+SQL> DELETE FROM STUDENT WHERE SNAME IS NULL;
+SQL> DELETE FROM STUDENT;
+SQL> DELETE FROM STUDENT WHERE STID IS NULL;
+
+DELETE vs TRUNCATE:
+====================
+
+	DELETE			TRUNCATE
+	========			=========
+1. can delete a specific row.		1. no. 
+
+2. supporting "where" condition.	2. not supports.
+
+3. temporary data deletion.		3. permanent data deletion.
+
+4. can restore deleted data		4. not possible.
+by  using "rollback".
+
+5. execution speed is slow.		5. execution speed is fast.
+(deleting rows in one by one)		(deleting all rows as a page)
+
+3. Data Retrieval / Query Language (DRL / DQL):
+========================================
+SELECT:
+=======
+	- to retrieval all rows from a table.
+		(or)
+	- to retrieval a specific row from a table by using "where" condition.
+
+syntax:
+======
+SELECT  * / <LIST OF COLUMNS> FROM <TABLE NAME> [WHERE <CONDITION>];
+
+	Here, " * " ----------- all columns in a table.
+
+EX:
+SQL> SELECT * FROM EMP;
+SQL> SELECT EMPNO,ENAME,SAL FROM EMP;
+SQL> SELECT EMPNO,ENAME,SAL FROM EMP WHERE DEPTNO=20;
+SQL> SELECT * FROM EMP WHERE JOB='MANAGER';
+SQL> SELECT * FROM EMP WHERE EMPNO=7788;
+SQL> SELECT * FROM EMP WHERE COMM IS NOT NULL;
+SQL> SELECT * FROM EMP WHERE COMM IS NULL;
+
+CONCATENATION OPERATOR(||):
+============================
+	- to add / join two or more than two string expressions.
+
+syntax:
+======
+	<string1> || <string2> || <string3> || ...........................
+
+EX:
+SQL> SELECT 'Mr.'||ENAME||' '||'WORKING AS A'||' '||JOB FROM EMP;
+
+OUTPUT:
+---------------
+Mr.SMITH WORKING AS A CLERK
+
+ALIAS NAMES:
+=============
+	- it is a temporary name / alternate name.
+	- created at two levels those are
+
+i) column level alias names:
+=======================
+	- when we created alias name for columns then we called as
+column level alias name.
+
+ii) table level alias names:
+======================
+	- when we created alias name for table then we called as 
+a table level alias name.
+
+syntax:
+======
+select <column name1> <column alias name1>,<column name2> <column alias name2>,.........from <tn> <table alias name>;
+
+Ex:
+SQL> SELECT DEPTNO X,DNAME Y,LOC Z FROM DEPT D;
+
+DISTINCT KEYWORD:
+==================
+	- to eliminate duplicate values from a column.
+syntax:
+======
+	distinct <column name>
+
+Ex:
+SQL> SELECT DISTINCT JOB FROM EMP;
+SQL> SELECT DISTINCT DEPTNO FROM EMP;
+SQL> SELECT DISTINCT DEPTNO FROM EMP ORDER BY DEPTNO;
+
+PAGESIZE n:
+==========
+	- to display no.of rows per a single page.
+	- by default a page can display 14 rows only.
+	- "n" ---- no.of rows.
+	- maximum rows upto 50000.
+syntax:
+=======
+set pagesize n;
+
+Ex:
+set pagesize 100;
+
+Lines n:
+=======
+	- to assign no.of bytes to each line in sqlplus environment.
+	- by default each line is having 80 bytes.
+	- here "n" ----- no.of bytes.
+	- maximum size for a line is upto 32767 bytes.
+syntax:
+======
+set lines n;
+
+Ex:
+set lines 160;
+
+HOW TO CREATE A NEW TABLE FROM AN EXISTING TABLE(OLD TABLE):
+=============================================================
+SYNTAX FOR CREATED TABLE WITH COPY OF ALL ROWS & COLUMNS:
+===========================================================
+SYNTAX:
+========
+CREATE TABLE <NEW TN> AS SELECT * FROM <OLD TN>;
+
+EX:
+SQL> CREATE TABLE NEWDEPT AS SELECT * FROM DEPT;
+		(OR)
+SQL> CREATE TABLE NEWDEPT1 AS SELECT * FROM DEPT WHERE 1=1;
+
+SYNTAX FOR CREATED TABLE WITH COPY OF COLUMNS BUT NOT ROWS:
+==============================================================
+SYNTAX:
+========
+CREATE TABLE <NEW TN> AS SELECT * FROM <OLD TN> 
+WHERE <FALSE CONDITION>;
+
+EX:
+SQL> CREATE TABLE NEWDEPT2 AS SELECT * FROM DEPT WHERE 1=2;
+
+CREATED TABLE WITH SPECIFIC ROWS:
+==================================
+SYNTAX:
+========
+CREATE TABLE <NEW TN> AS SELECT * FROM <OLD TN> 
+WHERE <ROW CONDITION>;
+
+EX:
+CREATE TABLE NEWEMP AS SELECT  * FROM EMP WHERE DEPTNO=20;
+
+CREATED TABLE WITH SPECIFIC COLUMNS:
+=====================================
+SYNTAX:
+========
+CREATE TABLE <NEW TN> AS SELECT <LIST OF COLUMNS> FROM <OLD TN> ;
+
+EX:
+CREATE TABLE NEWEMP1 AS SELECT  EMPNO,ENAME,SAL FROM EMP; 
+
+HOW COPY DATA FROM ONE TABLE TO ANOTHER TABLE:
+================================================
+SYNTAX:
+========
+INSERT INTO <DESTINATION TN> SELECT * FROM <SOURCE TN>;
+
+EX:
+SQL> SELECT * FROM DEPT;
+SQL> CREATE TABLE DUMMYDEPT AS SELECT * FROM DEPT WHERE 1=0;
+
+SQL> SELECT * FROM DEPT;--------------------SOURCE TABLE
+SQL> SELECT * FROM DUMMYDEPT;-------DESTINATION TABLE
+
+SQL> INSERT INTO DUMMYDEPT SELECT * FROM DEPT;
+
+INSERT ALL:
+===========
+	- TO INSERT ROWS INTO MULTIPLE TABLES BUT ROWS(DATA)
+MUST BE AN EXISTING TABLE ONLY.
+
+SYNTAX:
+========
+INSERT ALL INTO <TN1> VALUES(<COL1>,<COL2>,......)
+INTO <TN2> VALUES(<COL1>,<COL2>,...........................)
+............................................................................................
+............................................................................................
+INTO <TN n> VALUES(<COL1>,<COL2>,..........................)
+SELECT * FROM <OLD TABLE NAME>;
+
+EX:
+CREATE THREE EMPTY TABLES:
+============================
+SQL> CREATE TABLE TEST1 AS SELECT * FROM DEPT WHERE 1=0;
+SQL> CREATE TABLE TEST2 AS SELECT * FROM DEPT WHERE 1=0;
+SQL> CREATE TABLE TEST3 AS SELECT * FROM DEPT WHERE 1=0;
+
+SQL> INSERT ALL INTO TEST1 VALUES(DEPTNO,DNAME,LOC)
+  2  INTO TEST2 VALUES(DEPTNO,DNAME,LOC)
+  3  INTO TEST3 VALUES(DEPTNO,DNAME,LOC)
+  4  SELECT * FROM DEPT;
+
+SQL> SELECT * FROM TEST1;
+SQL> SELECT * FROM TEST2;
+SQL> SELECT * FROM TEST3;
+

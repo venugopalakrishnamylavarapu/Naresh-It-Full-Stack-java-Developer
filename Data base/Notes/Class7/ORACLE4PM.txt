@@ -1,0 +1,218 @@
+OPERATORS:
+===========
+	- operator are used to perform some operation on the given operand 
+values.oracle supports the following operators are:
+
+	i) Assignment operator	=> 	=
+	ii) Arithmetic operators	=>	+ , - ,* , /
+	iii) Relational operators	=>	< , > , <= , >= ,!=(or)<>
+	iv) Logical operators	=>	AND,OR,NOT
+	v) Set operators		=>	UNION,UNION ALL,
+					INTERSECT,MINUS
+
+	vi) Special operators	=>   (+ve) operators	      (-ve) operator
+				       =============	      ============
+				      IN 		      NOT IN
+				      BETWEEN                 NOT BETWEEN
+				      IS NULL	      IS NOT NULL
+				      LIKE 		      NOT LIKE
+
+i) Assignment operator:
+====================
+	- to assign a values to varibale / attribute.
+
+syntax:
+======
+	<variable name / attribute name> <assignment operator> <value>
+
+Ex:
+SELECT * FROM EMP WHERE EMPNO=7788;
+UPDATE EMP SET SAL=50000 WHERE DEPTNO=10;
+DELETE FORM EMP WHERE JOB='CLERK';
+
+ii) Arithmetic operators:
+=====================
+	- to perform some mathematical operations like addition,
+subtraction,multiple and division.
+
+syntax:
+======
+	<column name> <arithmetic operator> <value>
+
+Ex:
+waq to display SQL> SELECT SAL OLD_SALARY,SAL+1000 NEW_SALARY
+  2  FROM EMP;
+
+OLD_SALARY 	NEW_SALARY
+-------------------- 	----------------------
+       800       	1800
+
+Ex:
+waq to display empno,ename,salary and annual salary of employees
+who are working under deptno=10;
+SQL> SELECT EMPNO,ENAME,SAL BASIC_SALARY,
+  2  SAL*12 ANNUAL_SALARY FROM EMP
+  3  WHERE DEPTNO=10;
+
+Ex:
+waq to display employees salaries after increment of 10%?
+SQL> SELECT ENAME,SAL BEFORE_INCREMENT,
+  2  SAL+SAL*10/100 AFTER_INCREMENT FROM EMP;
+
+Ex:
+waq to update employees salaries with the increment of 5% who are
+working as a "manager"?
+SQL> UPDATE EMP SET SAL=SAL+SAL*0.05 WHERE JOB='MANAGER';
+
+iii) Relational operators:
+====================
+	- to comparing a specific column values with user defined condition
+in the query.
+
+syntax:
+======
+	where <column name> <relational operator> <value>;
+
+Ex:
+waq to display employees who are joined  before 1981?
+SQL> SELECT * FROM EMP WHERE HIREDATE<'01-JAN-81';
+	
+Ex:
+waq to display employees who are joined  after 1981?
+SQL> SELECT * FROM EMP WHERE HIREDATE>'31-DEC-81';
+
+iv) Logical operators:
+==================
+	- to check more than one condition in the query.
+	- these operators are AND,OR,NOT.
+
+AND:
+=====
+	- it return a value if both conditions are true in the query.	
+
+cond1	cond2
+=====	=====
+T	T	----> T
+T	F	----> F
+F	T	----> F
+F	F	----> F
+
+syntax:
+======
+	where <condition1> AND <condition2>
+
+Ex:
+waq to display employees whose name is "SMITH" and working as a "CLERK"?
+SQL> SELECT * FROM EMP WHERE ENAME='SMITH' AND JOB='CLERK';
+
+OR:
+===
+	- it returns a value if any one condition is true from the given 
+group of conditions in the query.
+
+cond1	cond2
+=====	=====
+T	T	----> T
+T	F	----> T
+F	T	----> T
+F	F	----> F
+
+syntax:
+=======
+	where <condition1> or <condition2>
+
+Ex:
+waq to display empoyees who are working as a "analyst" or whose salary is 
+more than 2000?
+SQL> SELECT * FROM EMP WHERE JOB='ANALYST' OR SAL>2000;
+
+Ex:
+waq to display employees whose empno is 7369,7566,7788,7900?
+SQL> SELECT * FROM EMP WHERE
+  2  EMPNO=7369 OR EMPNO=7566
+  3  OR EMPNO=7788 OR EMPNO=7900;
+
+NOT:
+====
+	-  it return all values from a table except the given conditional 
+values in the query.
+
+syntax:
+======
+	where not <column name>=<value> and not <column name>=<value>
+
+Ex:
+waq to display employees who are not working as a "clerk" and as a "salesman"?
+SQL> SELECT * FROM EMP WHERE
+  2  NOT JOB='CLERK' AND NOT JOB='SALESMAN';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+

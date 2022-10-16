@@ -1,0 +1,369 @@
+						Topic-3 : SQL
+						===========
+	- SQL is a db language which was introduced by IBM.
+	- The initial name was "SEQUEL" later renamed as "SQL".
+	- It is used to communicate with database.
+	- SQL queries are not a case sensitive i.e we can write in upper / lower 
+	case characters.
+		Ex:
+			SELECT  * FROM EMP;----executed
+			select * from emp; -----executed
+			SeleCT * From Emp;----executed
+	- Every sql query should ends with a ";" .
+	- SQL is having the following five sub languages are:
+
+1. Data Definition Language(DDL):
+=============================
+	> create
+	> alter
+		> alter - modify
+		> alter - add
+		> alter - rename
+		> alter - drop
+	> rename
+	> truncate
+	> drop
+
+New Features:
+==============
+	> recyclebin
+	> flashback
+	> purge
+
+2. Data Manipulation Language(DML):
+================================
+	> insert
+	> update
+	> delete
+
+New Features:
+============	
+	> insert all
+	> merge
+
+3. Data Retrieval / Query Language (DRL / DQL):
+=======================================
+	> select
+
+4. Transaction Control Language(TCL):
+=================================
+	> commit
+	> rollback
+	> savepoint
+
+5. Data Control Language(DCL):
+===========================
+	> grant
+	> revoke
+==================================================================
+create:
+======
+	- is used to create a new database object in oracle.
+		Ex: table,view,synonym,sequence,.......etc
+
+How to create a new table in oracle:
+===============================
+syntax:
+======
+create table <table name>
+(
+<column name1> <datatype>[size],
+<column name2> <datatype>[size],
+.....................................................
+);
+
+Ex:
+create table student
+(
+STID INT,
+SNAME CHAR(10),
+SFEE NUMBER(6,2)
+);
+
+TO VIEW THE LIST OF TABLES IN ORACLE DB:
+========================================
+SYNTAX:
+========
+SELECT * FROM TAB; (tab is system defined table)
+
+TO VIEW THE STRUCTURE OF A TABLE:
+==================================
+SYNTAX:
+========
+DESC <TABLE NAME>; (DESC - describe)
+
+EX:
+DESC STUDENT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+
+
+
+
+
+
+
+				
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ONLINE STUDENTS ADMIN:
+=======================
+Mr.Shubham
+Mbno: 7337313415
+
+Recording videos:
+ORACLE @ 4:00 PM (IST) by Mr. Sudhakar L
+Day-1 https://youtu.be/A5WCSaxcNOs
+Day-2 https://youtu.be/9qhnEjJt0UI
+Day-3 https://youtu.be/6uD4i8aF1h0
+Day-4 https://youtu.be/sHhKlLDsuZs
+Day-5 https://youtu.be/yqqUbaHJUuc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+

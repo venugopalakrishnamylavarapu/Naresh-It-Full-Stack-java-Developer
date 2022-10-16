@@ -1,0 +1,51 @@
+<!--
+    HR tag: (Horizontal Rule)
+hr tag is used to draw a line across the web page. It is non-paired tag.
+Syntax: <hr> or <hr/>
+Attributes      Parameters
+color           ColorName/HexaColorCode
+size            pix
+width            % or pix
+align           left, right, center
+noshade         noshade
+Note:
+1. The default width of the horizontal rule is 100%
+2. The default alignment of the hr is center.
+3. noshade attribute will be applied only when we are not specifying the color of the horizontal
+rule.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Without hr tag</h1>
+    <p> not divided by horizontal lines in a paragraph, we didnt used the hr element.</p>
+    <p> not divided by horizontal lines in a paragraph, we didnt used the hr element.</p>
+    <p> not divided by horizontal lines in a paragraph, we didnt used the hr element.</p>
+
+    <h1 align="center">With hr tag</h1>
+    <p> divided by horizontal lines in a paragraph, we use the hr element.</p>
+    <hr />
+    <p> divided by horizontal lines in a paragraph, we use the hr with color element.</p>
+    <hr color="red" />
+    <p> divided by horizontal lines in a paragraph, we use the hr with size element.</p>
+    <hr color="blue" size="20px" />
+    <p> divided by horizontal lines in a paragraph, we use the hr with width element.</p>
+    <hr color="green" width="10%" />
+    <p> divided by horizontal lines in a paragraph, we use the hr with noshade element.</p>
+    <hr color="green" width="50%" noshade="noshade" />
+    <p> divided by horizontal lines in a paragraph, we use the hr with align element.</p>
+    <hr color="green" width="100%" noshade="noshade" align="left" />
+
+
+
+</body>
+
+</html>

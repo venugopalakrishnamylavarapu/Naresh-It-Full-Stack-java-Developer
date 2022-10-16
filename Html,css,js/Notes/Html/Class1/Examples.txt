@@ -1,0 +1,118 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NareshIT-HYDERABAD..!!</title>
+</head>
+<body>
+    <form>
+        <label>User Name</label><br>
+        <input type="text"><br>
+        <label>Password</label><br>
+        <input type="password"><br>
+        <input type="submit" value="Login">
+        <input type="reset" value="Cancel">
+    </form>    
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NareshIT-HYDERABAD..!!</title>
+</head>
+<body>
+    <form>
+        <label>User Name</label><br>
+        <input type="text" name="uname" placeholder="Enter Valid User Name "><br>
+        <label>Password</label><br>
+        <input type="password" name="pwd" placeholder="Enter Valid Password"><br>
+        <input type="submit" value="Login" name="sn">
+        <input type="reset" value="Cancel" name="can">
+    </form>
+</body>
+</html>
+
+NOTE: name attribute is not visible, it is only for JavaScript validation...............!!
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NareshIT-HYDERABAD..!!</title>
+</head>
+<body>
+    <form action="smiley.png">
+        <label>User Name</label><br>
+        <input type="text" name="uname" placeholder="Enter Valid User Name " required="required"><br>
+        <label>Password</label><br>
+        <input type="password" name="pwd" placeholder="Enter Valid Password" required="required"><br>
+        <input type="submit" value="Login" name="sn">
+        <input type="reset" value="Cancel" name="can">
+    </form>
+</body>
+</html>
+
+NOTE: action attribute contains serverside page, like .aspx, .jsp, .py or .php..................!!
+Client Side ==> HTML.CSS.JS.jQyery.AngularJS.Angular.EmberJS.BackboneJS.LimeJS.ReactJS.ExpressJS...!!
+ServerSide ==> NodeJS. PYTHON. PHP. RUBY. JAVA(JSP). .NET (ASP)....................!!
+NodeJS ==> SSJS ==> Server Side JavaScript ...........!!
+The best technology forever i.e PYTHON coding.................!!! (World-No:1)
+10 lines JAVA Code 1/2 line in PYTHON....................!!
+Django is PYTHON's Web Framework................!!
+Framework is a platform...........!!
+placeholder is watermarks in HTML....!!
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NareshIT-HYDERABAD..!!</title>
+</head>
+<body>
+    <form action="HTML5.png">
+        <label>User Name</label><br>
+        <input type="text" size='40px' maxlength='6' name="uname" placeholder="Enter Valid User Name " required="required" readonly="true"><br>
+        <label>Password</label><br>
+        <input type="password" name="pwd" placeholder="Enter Valid Password" required="required"><br>
+        <input type="submit" value="Login" name="sn">
+        <input type="reset" value="Cancel" name="can" disabled="disabled">
+    </form>
+</body>
+</html>
+
+Example:
+NOTE: Textarea supports 2 rows and 20 columns by default
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NareshIT-HYDERABAD..!!</title>
+</head>
+<body>
+    <form action="HTML5.png">
+        <textarea rows="5" cols="30">
+The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript
+The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript
+        </textarea>
+    </form>
+</body>
+</html>
+
+Example:

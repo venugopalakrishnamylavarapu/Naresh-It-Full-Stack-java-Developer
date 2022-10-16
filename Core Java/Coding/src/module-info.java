@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author VSV
+ *
+ */
+module CoreJava {
+}

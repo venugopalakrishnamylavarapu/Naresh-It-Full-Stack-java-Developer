@@ -1,0 +1,352 @@
+<!--
+            Here we discuss tags of the forms and some basic form tags
+
+    What is a Web Form?
+It is an HTML form on a web page that lets visitors enter their information. It has the following alias names:
+1. Webforms
+2. htmlforms
+3. Input forms
+4. Select forms
+etc..............!!
+
+Uses of Web Forms
+Forms can resemble paper or database forms because web users fill out the forms using checkboxes, radio buttons, or text fields. 
+
+The <form> Element
+It defines a form that is used to collect user input. It represents a document section that contains interactive controls to submit information to a web server.
+It is a paired tag.
+
+Syntax:
+<form> .................................</form>
+
+Form Attributes:
+Attributes		Parameters
+name			any name
+method			To specify the type of method what we are using to submit form  values. The possible methods are get and post.
+action			we can specify the page name to which page you want to submit control values
+target 			Specify the target window or frame where the result of the script will be displayed. It takes values like _blank, _self, _parent etc.
+enctype			You can use the enctype attribute to specify how the browser encodes the data before it sends it to the server. 
+
+Possible values are:
+application/x-www-form-urlencoded - This is the standard method most forms use in simple scenarios.
+mutlipart/form-data - This is used when you want to upload binary data in the form of files like image, word file etc.
+
+HTML Form Tags
+Tag 		Description
+<form> 		Defines an HTML form for user input
+<input> 		Defines an input control
+<textarea> 	Defines a multiline input control(text area)
+<button> 		Defines a clickable button
+<select> 		Defines a drop-down list
+<optgroup> 	Defines a group of related options in a drop-down list
+<option> 		Defines an option in a drop-down list
+<label> 		Defines a label for an <input> element
+<fieldset> 	    Groups related elements in a form
+<legend> 		Defines a caption for a <fieldset> element
+
+==================================================
+Fieldname	Keyword		Syntax
+==================================================
+text box		text		<input type="text">
+password box	password		<input type="password">
+checkbox		checkbox		<input type="checkbox">
+radio button	radio		<input type="radio">
+submit button	submit		<input type="submit">
+reset button	reset		<input type="reset">
+text area		textarea		<textarea></textarea>
+==================================================
+
+Input Fields Attributes and  Parameters
+Attributes	      Parameters
+name		      any name
+value		      any value
+placeholder	      Any Value (HTML5)
+size		      pixels
+maxlength	      number
+readonly	      true, false
+disabled	      disabled
+rows		      number
+cols		      number
+checked		      checked
+multiple	      true, false
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms page</title>
+</head>
+
+<body>
+    <!--
+        form tag
+        ========
+        one of the attributes in forms tag is action.this defines what action is done after form is done.
+        Introduction HTTP:
+        =================
+It is designed to enable communications between clients and servers.HTTP works as a request-response protocol between a client and server. A web browser may be the client, and an application on a computer that hosts a web site may be the server.
+
+Block Diagram of HTTP:
+
+HTTP Request Methods:
+====================
+Two commonly used methods for a request-response between a client and server are: 
+1 GET 
+2 POST
+    
+Action Attribute:
+=================
+This attribute is used to specify the URL of the server page to which we want to send our form data.
+
+Syntax:
+<form name="myform" action="user.aspx">
+
+    1. get:-
+    =======
+In this method, we dont have security for our data and only limited data can be sent to the server page. This is the default method of the form. It can carry raw data from client to server
+(rawdata ==> the data which is understandable to user)
+
+Syntax:
+<form  action="page.py" method="get">
+
+When to use GET?
+Information sent from a form with the GET method is visible to everyone (all variable names and values are displayed in the URL). GET also has limits on the amount of information to send. The limitation is about 2048 characters. However, because the variables are displayed in the URL, it is possible to bookmark the page. This can be useful in some cases. GET may be used for sending non-sensitive data.
+
+Note: GET should NEVER be used for sending passwords or other sensitive information!
+Some other notes on GET requests:
+1 GET requests can be cached
+2 GET requests remain in the browser history
+3 GET requests can be bookmarked
+4 GET requests should never be used when dealing with sensitive data
+5 GET requests have length restrictions
+
+2.post:-
+===============
+In this method, we have security for our data and we can send bulk of data to the server. It can carry encrypted data from client to server page. (Encrypted means machine understandable format).
+
+Syntax:
+<form  method="post">
+
+When to use POST?
+Information sent from a form with the POST method is invisible to others (all names/values are embedded within the body of the HTTP request) 
+and has no limits on the amount of information to send. Moreover POST supports advanced functionality such as support for multi-part binary input while uploading files to server.
+1 POST requests are never cached
+2 POST requests do not remain in the browser history
+3 POST requests cannot be bookmarked
+4 POST requests have no restrictions on data length
+
+
+Difference between GETand POST:
+GET					                POST
+Data is visible on URL address		Not visible post information
+Unsecured		   		            highly secured
+Excellent Peformance	   		    Good Performance
+Transfer limited amount of data    	TransferHugeAmountOfData
+Unable to Upload file	    		We can Upload files
+Can be cached				        Not cached
+
+
+try using method as post or get and check the url u'll find sensitive data when u use get
+and will not find any sensitive data when post is used.
+    -->
+    <form action="Fortnite vibin.jpg" method="post">
+        <!--here are the attributes used in the forms so check it out in the code!!
+        here name attribute is used as reference to java script so we'll see it in the java script
+    currently no use of it but its good practice to use it too in the forms-->
+
+        <!--Here in the value attribute when we enter a value it automatically fill the area with that  value(even in password area)
+    we need to remove that to enter our details.we can also highlight the value in the area.
+    we'll see that in this code page only so stay toon and keep practice
+why dont i tell it we use place holder-->
+        First Name:<input type="text" name="First Name" value="Enter the name" /> <br>
+        <!--
+           1) see the difference by using palce holder in place of value we can make the data look transparent
+            in the area and we dont need to delete that data to enter our own data
+        -->
+        <br> Last Name:<input type="text" name="Last Name" placeholder="Enter the last name" /><br>
+        <!--
+            1)in the below line we need to enter the user name and password.browser takes it as not mandatory step
+              but if we add the attribute "required" to it it makes it compulsory  to fill the data
+            2)we can also use maxlength attribute to limit the data entry in the area
+            3)we can also use readonly attribute and set it to readonly to make the user to restrict access the data its only readonly now
+
+        -->
+        <br> User Name:<input type="text" name="User Name" placeholder="Enter a valid user name" required="required"><br>
+        <br> Password:<input type="password" name="Password" maxlength="10" placeholder="Enter a valid Password" required="required"><br>
+        <!--
+            here we added a login button to make it look like a real thing u know!!
+            and to make it work u also need to have a action attribute in the forms tag
+        -->
+        <input type="submit" value="Login" name="login">&nbsp;
+        <input type="reset" value="cancel" name="cancel" disabled="disabled">
+        <br>
+
+
+        <br> CheckBox:-check the skill u have in the below checkboxes.<br>
+        <input type="checkbox" name="Checkbox1" value="oracle">oracle&nbsp;
+        <input type="checkbox" name="Checkbox2" value="java">java&nbsp;
+        <input type="checkbox" name="Checkbox3" value="devops">devops&nbsp;<br>
+        <!--
+    here if we kept the name same the selection of only one option activates if not it deactivates.
+-->
+
+        <br>RadioButtons:- Select the gender<br>
+        <input type="radio" name="RadioButton1">Male&nbsp;
+        <input type="radio" name="RadioButton1">Female&nbsp;<br>
+
+
+        <br>Click the below button to reset every thing!!<br>
+        <!--here we use diable attibute to diasable the button-->
+        <input type="reset" name="Reset" value="Reset"><br>
+        <!--
+            here textarea tag is a paired tag.it contains attributes.they are rows & cols.
+            to describe how  many columns and rows of data that text area can hold.
+        -->
+        <br>Text Area(like Text Box):-
+        <br> <textarea rows="20" cols="50">
+            Enter the text
+        </textarea><br>
+        <!--from below drop downlist u can play around with the attributes ok try them on your own-->
+
+        <!--HTML <select> Tag
+It is used to create a drop-down list. The <option> tags inside the <select> element define the available options in the list.  It is a paired tag.
+
+Syntax:
+<select>.......................</select>
+Attributes
+Attribute 	Value 	Description
+disabled 	disabled 	Specifies that a drop-down list should be disabled
+multiple 	multiple 	Specifies that multiple options can be selected at once
+name 	    name 	Defines a name for the drop-down list
+size	    number 	Defines the number of visible options in a drop-down list-->
+
+        <br>
+        <font color="Green"> Select the branch of ur graduation </font><br>
+        <br> <select name="Branches of Btech">
+<!--
+    HTML <optgroup> Tag
+It is used to group related options in a drop-down list. If you have a long list of options, groups of related options are easier to handle for a user. It is a paired tag.
+
+Syntax:
+<optgroup>.................................</optgroup> 
+
+Attributes
+Attribute 	Value 		Description
+disabled 	disabled 	Specifies that an option-group should be disabled
+label 		text 		Specifies a label for an option-group
+-->
+         <optgroup label="CSE Group">
+            <!--
+                HTML <option> Tag
+It defines an option in a select list.  It is a paired tag.
+
+Syntax
+<option>....................................</option> 
+
+Attributes
+Attribute 	Value 		Description
+disabled 	disabled 	Specifies that an option should be disabled
+label 		text 		Specifies a shorter label for an option
+selected 	selected 	Specifies that an option should be pre-selected when the page loads
+value 		text 		Specifies the value to be sent to a server
+            -->
+            <option>Wetechnologies</option>
+            <option>DBMS</option>
+            <option>JAVA</option>
+            <option>SERVELET</option>
+        </optgroup>
+        <optgroup label="ECE group">
+            <option>mefa</option>
+            <option>core java</option>
+            <option>fluid mechanics</option>
+            <option>no more</option>
+            <option>its cancer</option>
+        </optgroup>
+    </select><br>
+
+
+        <!--
+        
+Button Controls
+There are various ways in HTML to create clickable buttons.
+Type	Description
+submit	This creates a button that automatically submits a form.
+reset	This creates a button that automatically resets form controls to their initial values.
+button	This creates a button that is used to trigger a client-side script when the user clicks that 	button.
+
+    -->
+        <br> <button onclick="alert('Hello!!!')">Clickme</button><br>
+
+        <br>Submit button:-
+        <input type="submit" name="submit" value="Submit"><br>
+
+        <br>
+        <!--
+            Image attribute in inputtype
+        -->
+        <input type="image" src="Fortnite vibin.jpg" width="1080px" height="720px">
+
+        <!--
+            <fieldset>
+It defines a group of form elements as being logically related. The browser draws a box around the set of fields to indicate that they are related. It is a paired tag.
+
+Syntax: 
+<fieldset>...................</fieldset>
+
+<legend> 
+It is used with <fieldset> to give a title to each set of fields. It is a paired tag.
+
+    Syntax: 
+<legend>.............</legend>
+        -->
+        <FIELDSET>
+            <LEGEND>Personal Stuff</LEGEND>
+            <P>
+                name:
+                <INPUT NAME="realname">
+                <BR> email:
+                <INPUT NAME="email">
+        </FIELDSET>
+        <FIELDSET>
+            <LEGEND align="center">2nd set</LEGEND>
+            <P>
+                name:
+                <INPUT NAME="realname">
+                <BR> email:
+                <INPUT NAME="email">
+        </FIELDSET>
+
+        <!--Tables we are familiar with this concept so lets do this!!-->
+        <br>
+        <table border="dotted" bgcolor="Yellow" height="50px" width="50px">
+            <tr>
+                <th>1stcolumn</th>
+                <th>2ndcolumn</th>
+                <th>3rdcolumn</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+        </table>
+    </form>
+    <h1 align="center">
+        <font color="green">So,Here we completed the forms tags meet u in the next concept guys bye!!</font>
+    </h1>
+</body>
+
+</html>

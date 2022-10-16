@@ -1,0 +1,1071 @@
+							ORACLE19c
+							==========
+What is Oracle?
+		- it is backend tool / DB software.
+		- we can design & develop backend applications.
+
+What is Backend application?
+		- is an application where we can store data / information
+of a particular business.
+		- endusers cannot interact with DB directly.if they want to interact
+they need a db software is called as "DBMS".(database management system)
+
+Where we want to use Oracle?
+	- we can use databases in following applications are
+
+		> banking applications
+		> hospital management applications
+		> educational application(university)
+		> transport application
+		> sales & production applications
+		> HR management applications
+
+Who want to learn Oracle?
+		- any platform person
+
+Ex: java,python,.net,php,DS,PowerBI,MSBI,Hadoop,AWS,Deveops,testing.....etc
+
+What are the prerequisites for Oracle?
+		- no 
+===============================================================
+session-1:					Topic-1 : DBMS
+========					=============
+
+What is Data?
+============
+	- it is a rawfact (i.e characters & numbers & symbol......etc)
+	- data can not be predict.(no meaning)
+
+	Ex:
+			SMITH				1021
+			WARNER			1022
+			MILLER			1023
+
+What is Information?
+=================
+	- processing data is called as "information".
+	- is always provide meaningfull.
+	
+	Ex:
+		  customer_name		customer_id
+		  =============		==========
+			SMITH				1021
+			WARNER			1022
+			MILLER			1023
+
+What is Database?
+================
+	- it is memory. which is used to store the collection of inter-related 
+data / information of a particular organization.
+
+What is Inter-related data/ information:
+=================================
+	Ex:  SBI Oraganization
+
+		DB name:  SBI_DB
+						> Branches details
+							> Dept details
+								> Emp details
+									> Customers details
+										> ........etc
+	Ex:
+			no employees = no dept
+			no dept = no employees
+
+			no products = no customers
+			no customers = no products
+
+Types of Databases?
+==================
+	- there are two types of databases in real world.
+			1. OLTP(Online Transaction Processing)
+			2. OLAP(Online Analytical Processing)
+
+1. OLTP:
+=======
+	- these databases are used for storing "day-to-day" transactional 
+data/information.
+	- for running business organizations.
+	- OLTP databases are supporting "live operations"(insert,update,delete)
+	- retrieving small data by using "select".
+Ex: oracle,sqlserver,mysql,db2,..................etc
+
+session-2:
+========
+2. OLAP:
+=======
+	- these databases are used to stored "historical data"(big data).
+	- it can supporting "select" operation.
+	Ex: Datawarehouse
+
+What are Datastorage?
+===================
+	- datastorage is a place where we can store data/ information.
+	- there are 3 types of datastorages:
+				1) Papers & Books(Before computers)
+				2) Flatfiles ( From computers) (ex: textfiles)
+				3) DBMS (s/w)
+
+Flatfiles:
+========
+	- data can be stored in files(with help Operating System).
+	
+Drawbacks:
+==========
+	i) Data redundancy
+	ii) Data inconsistency
+	iii) Data retrieval
+	iv) Data integrity
+	v) Data security
+	vi) Data indexing
+
+i) Data redundancy:
+=================
+	- data can be stored in multiple files.
+
+ii) Data inconsistency:
+===================
+	- confusion data.
+	- it occure when we have duplicate data.
+			i.e no duplicates = no inconsistency
+
+iii) Data retrieval:
+===============
+	- if we want retrieval the required data from a faltfile then we 
+need to develop an application by using high level languages are
+C,C++,JAVA,.NET.........etc
+
+iv) Data integrity:
+===============
+	- data validations.
+
+v) Data security:
+==============
+	- there no security in file data.
+
+vi) Data indexing:
+===============
+	- files are not supporting data indexing mechanism.
+what is index?
+============
+	- to retrieving the required data from datastorage as soon as possible
+(fastly).
+
+3) DBMS:
+========
+	- DBMS stands for "Database Management System".
+	- it is a software which is used to manage and maintain data/information
+in database memory.
+	- by using DBMS we can perform the following operations are
+				> creating database memory
+				> creating tables
+				> inserting data
+				> updating data
+				> selecting data
+				> deleting data
+
+	User <--------------->  DBMS s/w  <---------------------> Database memory
+
+Models of DBMS:
+==============
+		1) Hierarchical Database Management System(HDBMS)
+				Ex: IMS s/w (information management system)
+		2) Network Database Management System(NDBMS)
+				Ex: IDBMS s/w (integrated database management system)
+Note:
+=====
+	- HDBMS,NDBMS are outdated models in real time.
+
+		3) Relational Database Management System(RDBMS)
+				i) Object RDBMS(ORDBMS):
+					> data can be stored in table format
+						- a table is nothing "rows and columns".
+							- row / record / tuple
+							- column / attribute / field
+						- a row is nothing but group of columns.
+					> completly depends on "SQL".
+				Ex: oracle,sqlserver,mysql,db2,sybase,........etc
+			
+				ii) Object Oriented DBMS(OODBMS):
+					> data can be stored in "objects".
+					> completly depends on "OOPS" concept.
+					> not depends on "SQL" so that we called as "NO SQL"
+					databases.
+				Ex: mongoDB,cassandra,.....etc
+
+Advantages of DBMS:
+==================
+	- to avoid data redundancy
+	- to avoid data inconsistency
+	- easy to access data 
+	- easy to manipulate data 
+	- supporting data integrity mechanism
+	- supporting data indexing mechanism
+	- supporting data security
+	- supporting "ACID" properties for transactions.
+	- easy to retrieval the required data 
+===============================================================
+session-1(19-09-2022)			ORACLE19c
+==================		==========
+	- Oracle is a RDBMS(ORDBMS) product which was introduced by 
+"oracle corporation" in 1979.
+	- Oracle is used to store data / information of particular organization
+permanently(i.e HD) along with security(Authorized).
+	- The first version of oracle is "Oracle1.0" in 1979.
+			Latest verson : Oracle19c
+			Very latest version : Oracle21c
+	- Oracle can deployee(install) in any platform such as "windows,linux,
+unix,mac,solaries operating system etc".
+	- Oracle is a platform (operating system) independent.
+
+Types of Oracle19c software editions:
+================================
+	- there are two types of editions:
+
+1. Oracle Express Edition:
+	> is supprting partial features.
+Ex: recyclebin,flashback,purge,partition tables....etc not supporting.
+
+2. Oracle Enterprise Edition:
+	> is supporting all features.
+Ex: recyclebin,flashback,purge,partition tables....etc supporting.
+
+20-09-2022:
+==========
+HOW TO DOWNLOAD ORACLE19c ENTERPRISE EDITION SOFTWARE?
+==========================================================
+https://www.oracle.com/in/database/technologies/
+oracle19c-windows-downloads.html
+
+		STEP1: DOWNLOAD
+		STEP2: ZIP FOLDER
+		STEP3: UNZIP / EXTRACT
+		STEP4: FOLLOW THE FOLLOWING VIDEO
+
+HOW TO INSTALLING ORACLE19c ENTERPRISE EDITION SOFTWARE?
+=========================================================
+Software & Hardware requirements for installation:
+....................................................................................
+	> Windows10 / 11
+	> HD 1tb / SSD 260gb/520gb
+	> Ram 2gb/4gb
+	> Any microprocessor
+	> oracle19c enterprise s/w
+
+WORKING WITH ORACLE DB SERVER:
+================================
+	- once we installed oracle s/w internally there are two components are
+installed in our system.
+				1. Oracle client 
+				2. Oracle server
+
+1. Oracle client :
+==============
+	- by using oracle client tool we can perform the following 3 operations.
+			step1: Connect to Oracle database server.
+			step2: Send request to Oracle database server.
+			step3: Getting response from oracle database server.
+
+Ex: SQLplus(CUI),SQLdeveloper(GUI),Toad,PL/SQL developer.....etc
+
+2. Oracle server:
+==============
+	- Oracle server is having two more subcomponents are;
+				i) Instance
+				ii) Database
+
+i) Instance:
+=========
+	- it is a temporary memory.
+	- this memory is allocating from RAM.
+	- data can store temporarly.
+
+ii) Database:
+==========
+	- it is a permanent memory.
+	- this memory is allocating from HD.
+	- data can store permanently.
+
+Client - Server architecture:
+=======================
+
+NOTE:
+=====
+	- when a user want to work on oracle db server there are two steps 
+procedures:
+				step1 : Connect
+				step2 : Communicate
+
+step1 : Connect:
+==============
+	- when a user want to connect to oracle server then we need a db tool
+is called as "SQLplus/SQLdeveloper/Toad".
+
+step2 : Communicate:
+==================
+	- When a user want to communicate with oracle DB then we need a 
+db language is called as " SQL".
+
+SQLPLUS vs SQL:
+===============
+
+		SQLPLUS								SQL
+		========								====
+1. it is db tool which was						1. it is a db language which
+introduced by "Oracle corporation".			was introduced by IBM.
+
+2. it is used to connect to oracle server.	2. is used to communicate 
+												with database.
+
+3. it will work as an "editor" for 				3. will provide sub languages
+writting & executing SQL queries.			are DDL,DML,DQL/DRL,TCL,
+												DCL for performing some
+												operations over database.
+
+HOW TO CONNECT TO ORACLE SERVER:
+==================================
+> go to all programs
+	> go to oracle_ora19home1
+			> click on sqlplus icon
+				Enter username	: system (default user)
+				Enter password    : tiger (created at installation time)
+				Connected.
+Note:
+=====
+> username is not a case sensitive but password is case sensitive.
+
+Connectivity problems:
+===================
+Problem-1:
+=========
+Enter user-name: system
+Enter password : tiger
+ERROR:
+ORA-12560: TNS:protocol adapter error
+
+Solution:
+========
+> go to services
+	> go to oracleserviceORCL and click on it 
+			> select startup type : Automatic
+					> click on start button
+							> click ok
+
+Enter user-name: system/tiger
+connected.
+
+Problem-2:
+=========
+Enter user-name: system/tiger
+ERROR:
+ORA-28000: The account is locked.
+
+Solution:
+Enter user-name: \sys as sysdba (default username)
+Enter password: sys (default password)
+connected
+
+How to lock / unlock a user in oracle:
+===============================
+syntax:
+======
+ALTER USER <USERNAME> ACCOUNT LOCK / UNLOCK;
+
+EX:
+ALTER USER SYSTEM ACCOUNT UNLOCK;
+
+Problem-3:
+=========
+Enter user-name: \sys as sysdba (default username)
+Enter password: sys (default password)
+Error:
+
+solution:
+========
+	Reinstallation s/w.
+
+HOW TO CREATE A NEW USER ACCOUNT IN ORACLE SERVER:
+====================================================
+SYNTAX:
+=======
+CREATE USER <USERNAME> IDENTIFIED BY <PASSWORD>;
+
+EX:
+SQL> CREATE USER MYDB4PM IDENTIFIED BY 123;
+User created.
+
+NOTE:
+=====
+	- Every new user is called as a "schema" in oracle db server.whereas
+schema is nothing but it collection of db objects such as "tables,views,
+synonyms,procedures,functions,triggers,........etc".
+	- Every new user is called as "dummy user"(i.e no permissions).so that
+we need permissions from DBA(system) to connect to oracle server.
+
+SQL> conn
+Enter user-name: MYDB4PM/123
+ERROR:
+ORA-01045: user MYDB4PM lacks CREATE SESSION privilege; 
+logon denied
+
+HOW TO GRANTING CONNECT PERMISSION TO USER BY DBA:
+====================================================
+syntax:
+======
+GRANT <PRIVILEGE NAME>  TO <USERNAME>;
+
+EX:
+Enter user-name: system/tiger
+SQL> GRANT CONNECT TO MYDB4PM;
+Grant succeeded.
+
+C
+
+HOW TO CHANGE A USER PASSWORD:
+=================================
+SYNTAX:
+========
+ALTER USER <USERNAME> IDENTIFIED BY <PASSWORD>;
+
+EX:
+SQL> PASSWORD
+Changing password for MYDB4PM
+Old password: 123
+New password: ABC
+Retype new password: ABC
+Password changed
+
+SQL> CONN
+Enter user-name: MYDB4PM/ABC
+Connected.
+
+HOW TO RE-CREATE A NEW PASSWORD IF WE FORGOT IT:
+==================================================
+SYNTAX:
+========
+ALTER USER <USERNAME> IDENTIFIED BY <NEW PASSWORD>;
+
+EX:
+Enter user-name: system/tiger
+Connected.
+
+SQL> ALTER USER MYDB4PM IDENTIFIED BY MYDB4PM;
+User altered.
+
+SQL> CONN
+Enter user-name: MYDB4PM/MYDB4PM
+Connected.
+
+HOW TO VIEW USERNAMES IN ORACLE DB:
+=====================================
+SYNTAX:
+========
+SELECT USERNAME FROM ALL_USERS;
+
+EX:
+===
+SELECT USERNAME FROM ALL_USERS;
+
+HOW TO DROP A USER FROM ORACLE DB SERVER:
+===========================================
+SYNTAX:
+========
+DROP USER <USERNAME> CASCADE;
+
+EX:
+Enter user-name: system/tiger
+Connected.
+
+EX:
+SQL> DROP USER MYDB4PM CASCADE;
+=================================================================
+22-09-2022:				Topic-3 : SQL
+=========					===========
+	- SQL is a db language which was introduced by IBM.
+	- The initial name was "SEQUEL" later renamed as "SQL".
+	- It is used to communicate with database.
+	- SQL queries are not a case sensitive i.e we can write in upper / lower 
+	case characters.
+		Ex:
+			SELECT  * FROM EMP;----executed
+			select * from emp; -----executed
+			SeleCT * From Emp;----executed
+	- Every sql query should ends with a ";" .
+	- SQL is having the following five sub languages are:
+
+1. Data Definition Language(DDL):
+=============================
+	> create
+	> alter
+		> alter - modify
+		> alter - add
+		> alter - rename
+		> alter - drop
+	> rename
+	> truncate
+	> drop
+
+New Features:
+==============
+	> recyclebin
+	> flashback
+	> purge
+
+2. Data Manipulation Language(DML):
+================================
+	> insert
+	> update
+	> delete
+
+New Features:
+============	
+	> insert all
+	> merge
+
+3. Data Retrieval / Query Language (DRL / DQL):
+=======================================
+	> select
+
+4. Transaction Control Language(TCL):
+=================================
+	> commit
+	> rollback
+	> savepoint
+
+5. Data Control Language(DCL):
+===========================
+	> grant
+	> revoke
+==================================================================
+create:
+======
+	- is used to create a new database object in oracle.
+		Ex: table,view,synonym,sequence,.......etc
+
+How to create a new table in oracle:
+===============================
+syntax:
+======
+create table <table name>
+(
+<column name1> <datatype>[size],
+<column name2> <datatype>[size],
+.....................................................
+);
+
+Ex:
+create table student
+(
+STID ..........
+);
+
+DATATYPES IN ORACLE:
+=====================
+	- is an attribute which is used to store what type of data into a specific 
+column in a table.
+	- oracle supporting the following datatypes are:
+
+			i) number datatypes
+			ii) character / string datatypes
+			iii) long datatype
+			iv) date datatypes
+			v) raw and long raw datatypes
+			vi) lob datatypes (large objects datatypes)
+
+i) number datatypes:
+==================
+		1) int
+		2) number(p,s)
+
+1) int:
+======
+	- storing integer values only.
+	
+	Ex:
+			Sno int  -----> convert ----> Sno number(38) (38 digits)
+					==============
+					int = number(38)	
+					==============
+
+2) number(p,s):
+=============
+	- storing integer and also float values.
+		when we use:
+				number(p) : store integer values only
+				number(p,s) : store float values only
+
+Precision(p):
+===========
+	- counting all digits including left and right sides digits from 
+a decimal point in the given expression.
+
+		Ex:
+				56.23
+				precision = 4
+
+				0970.56
+				precision = 6
+
+Scale(s):
+=======
+	- counting the right side digits only.
+
+		Ex:
+			56.23
+			scale = 2
+			precision=4
+
+			97095.541
+			scale= 3
+			precision = 8
+
+		Ex:
+				price number(7,2)
+				===============
+				from 0.0 to 99999.99
+				
+ii) character / string datatypes:
+==========================
+	- storing string format data only.
+	- in DB string can be represent with '<string>'.
+
+	Ex:
+				Empname char(10)
+				================
+smith ---------> error
+'smith' -------> allowed 
+1021 -----------> error
+'1021' ---------> allowed
+			
+							string format data 
+										|
+		characters only string		alphanumeric string
+			     data 								data
+		[ a - z (or) A - Z ]				[ a-z / A-Z , 0-9,@,#,$,%,&,_,...etc]
+											
+		Ex: 'smith','ALLEN',....etc	Ex: 'smith123@gmail.com','AGN086W',password,....etc
+
+- these datatypes are again classified into two types:
+			1. Non-unicode datatypes
+					> char(size)
+					> varchar2(size)
+			2. Unicode datatypes
+					> Nchar(size)
+					> Nvarchar2(size)
+			Here,
+					"N" ---- National language
+
+1. Non-unicode datatypes:
+======================
+	- storing localized data.(English language only)
+
+char(size):
+=========
+	- it is a fixed length datatype(static).
+	- 1 char = 1 byte
+	- maximum size is 2000 bytes(2000 char's)
+
+	Ex:
+				Sname char(10)
+				=============
+	'hello'----> hello ----> 5 bytes/10 bytes----> 5 bytes wasted
+	'hel'--------> hel -------> 3 bytes/10 bytes---> 7 bytes wasted
+	'he' --------> he ---------> 2 bytes/10 bytes---> 8 bytes wasted
+
+	- the main drawback of char datatype is wasted memory.
+
+varchar2(size):
+=============
+	- it is variable length datatype(dynamic)
+	- 1 char = 1 byte
+	- maximum size is 4000 bytes
+
+	Ex:
+				Sname varchar2(10)
+				=================
+	'hello'----> hello ----> 5 bytes / 5 bytes----> 0 bytes wasted
+	'hel'--------> hel -------> 3 bytes / 3 bytes---> 0 bytes wasted
+	'he' --------> he ---------> 2 bytes / 2 bytes---> 0 bytes wasted
+
+- the main advantage of varchar2 datatype is save memory.
+
+2. Unicode datatypes:
+===================
+	- storing globalized data(all national languages)
+	
+Nchar(size):
+==========
+- it is a fixed length datatype(static).
+- 1 char = 1 byte
+- maximum size is 2000 bytes(2000 char's)
+- the main drawback of Nchar datatype is wasted memory.
+
+Nvarchar2(size):
+=============
+- it is variable length datatype(dynamic)
+- 1 char = 1 byte
+- maximum size is 4000 bytes
+- the main advantage of Nvarchar2 datatype is save memory.
+
+Long datatype:
+============
+	- it is a dynamic datatype.
+	- it can store non-unicode & unicode char's.
+	- 1 char = 1 byte
+	- maximum size is 2gb.
+	- a table is having only one long datatype column.
+
+		Ex:
+				Cname long
+				==========
+'smith'-------> allowed (5 bytes /2gb)
+
+Date datatypes:
+==============
+	- storing date & time information of a particular day.
+	- from '01-JAN-4712 BC' TO '31-DEC-9999 AD'
+	- user not insert time then oracle db server will take 
+	time is '12:00:00AM' (or) '00:00:00am' by default.
+
+i) date:
+======
+	- storing date and time(optional) of a day.
+	- oracle default date format is 'dd-mon-yyyy/yy hh:mi:ss pm'.
+		Ex:
+			'dd-mon-yyyy/yy hh:mi:ss'
+			'23-sep-2022/22 17:40:22pm'
+			  1    1      2         1   1    1 ---------> 7 bytes(fixed memory)
+
+
+ii) timestamp:
+============
+	- storing date and time along with milliseconds.
+	
+	Ex:
+		'dd-mon-yyyy/yy  hh:mi:ss.ms'
+		'24-sep-2022/22  16:22:34.0000'
+		1    1      2           1   1   1   4----------> 11 bytes(fixed memory)
+
+RAW & LONG RAW DATATYPES:
+============================
+	- storing binary format data(01010011010100101001).
+	- these datatypes are called as "binary datatypes" in oracle.
+	- storing image file / audio file / video file inform of 010100101010100
+	format.
+			RAW ---------------> 2000 bytes
+			Long Raw -------> 2 gb
+
+LOB datatypes:
+=============
+	- lob stands for large objects.
+			> Clob
+			> NClob
+			> Blob
+
+Clob:
+=====
+	- character large object.
+	- storing non-unicode characters in the form of 1 char = 1 byte.
+	- maximum size is 4gb.
+
+			> char(size)		-	2000 bytes (static)
+			> varchar2(size)	-	4000 bytes (dynamic)
+			> long 				-	2 gb (dynamic)
+			> clob				- 	4gb (dynamic)
+
+
+NClob:
+=====
+	- national characters large object.
+	- storing unicode characters in the form of 1 char = 1  byte.
+	- max. size is 4gb.
+
+			> Nchar(size)		-	2000 bytes (static)
+			> Nvarchar2(size)	-	4000 bytes (dynamic)
+			> long 				-	2 gb (dynamic)
+			> Nclob				- 	4gb (dynamic)
+
+Blob:
+====
+	- binary large object.
+	- storing image/audio/video file in the form 0100101010010 binary format.
+	- max. size is 4gb
+
+			> Raw			-	2000 bytes(static)
+			> Long Raw	-	2gb (dynamic)
+			> Blob			- 	4gb (dynamic)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+
+
+
+
+
+
+
+				
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ONLINE STUDENTS ADMIN:
+=======================
+Mr.Shubham
+Mbno: 7337313415
+
+Recording videos:
+ORACLE @ 4:00 PM (IST) by Mr. Sudhakar L
+Day-1 https://youtu.be/A5WCSaxcNOs
+Day-2 https://youtu.be/9qhnEjJt0UI
+Day-3 https://youtu.be/6uD4i8aF1h0
+Day-4 https://youtu.be/sHhKlLDsuZs
+Day-5 https://youtu.be/yqqUbaHJUuc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+

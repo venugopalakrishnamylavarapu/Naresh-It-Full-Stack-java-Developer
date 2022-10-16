@@ -1,0 +1,204 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <b style="color:red;font-family: candara;">Welcome to JAVASCRIPTING...!!</b>
+    <p style="color:green;font-family: tahoma;">Welcome to JAVASCRIPTING...!!</p>
+    <i style="color:blue;font-family: arial;">Welcome to JAVASCRIPTING...!!</i>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        b
+        {
+            color:olive;font-size:50px;
+        }
+    </style>
+</head>
+<body>
+</body>
+<b>Welcome to Internal Style Sheets.................!!</b>
+<b>Welcome to Internal Style Sheets.................!!</b>
+<b>Welcome to Internal Style Sheets.................!!</b>
+</html>
+
+Example:External Style Sheets:
+STEP1:Creating CSS File
+b
+{
+    color:green;font-family:candara;font-size:80px;
+}
+
+STEP2:Creating html File
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Hai.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <b>Welcome to Style Sheets...!!</b>
+</body>
+</html>
+
+Example3:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #p
+        {
+            color:red;font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id='p'>Welcome to Selectors....!!</div>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #p
+        {
+            color:red;font-size:30px;
+        }
+        #h1
+        {
+            color:green;font-size:40px;
+        }
+</style>
+</head>
+<body>
+    <div id='p'>Welcome to ID Selectors....!!</div>
+    <i id='h1'>Welcome to ID Selectors....!!</i>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .p
+        {
+            color:red;font-size:30px;
+        }
+        .h1
+        {
+            color:green;font-size:40px;
+        }
+</style>
+</head>
+<body>
+    <div class='p'>Welcome to Class Selectors....!!</div>
+    <i class='h1'>Welcome to Class Selectors....!!</i>
+    <div class='p'>Welcome to Class Selectors....!!</div>
+    <i class='h1'>Welcome to Class Selectors....!!</i>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .p,.h1/*Groping Selectors*/
+        {
+            color:red;font-size:30px;
+        }
+</style>
+</head>
+<body>
+    <div class='p'>Welcome to Class Selectors....!!</div>
+    <i class='h1'>Welcome to Class Selectors....!!</i>
+    <div class='p'>Welcome to Class Selectors....!!</div>
+    <i class='h1'>Welcome to Class Selectors....!!</i>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #p,#h1/*Groping Selectors*/
+        {
+            color:red;font-size:30px;
+        }
+        
+</style>
+</head>
+<body>
+    <div id='p'>Welcome to Class Selectors....!!</div>
+    <i id='h1'>Welcome to Class Selectors....!!</i>
+</body>
+</html>
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .p,#h1/*Groping Selectors*/
+        {
+            color:red;font-size:30px;
+        }
+
+</style>
+</head>
+<body>
+    <div class='p'>Welcome to Class Selectors....!!</div>
+    <i id='h1'>Welcome to Class Selectors....!!</i>
+</body>
+</html>

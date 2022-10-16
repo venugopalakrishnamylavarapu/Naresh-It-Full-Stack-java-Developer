@@ -1,0 +1,92 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="smiley.png">
+        <lable>Select Valid Gender...!!</lable> <br>
+        <input type="radio" name="gen" checked>MALE
+        <input type="radio" name="gen">FEMALE
+        <input type="radio" name="gen">OTHERS <br>
+        <input type="submit" value="NextPage"/>
+    </form>
+</body>
+</html>
+
+NOTE:
+Name attribute must be same to select unique radio button............!!
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="smiley.png">
+        <lable>Select your hobbies...!!</lable> <br>
+        <input type="checkbox" name="ck" checked>Play Cricket
+        <input type="checkbox" name="ck1" >Play Football
+        <input type="checkbox" name="ck2" >Play Chess
+        <input type="checkbox" name="ck3" >Watch TV
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="smiley.png">
+        <lable>Select your hobbies...!!</lable> <br>
+        <input type="checkbox" name="ck" checked>Play Cricket
+        <input type="checkbox" name="ck1" >Play Football
+        <input type="checkbox" name="ck2" >Play Chess
+        <input type="checkbox" name="ck3" >Watch TV
+        <input type='submit' name='sn' value="SignIn"/>
+        <input type='reset' name='can' value="Cancel"/>
+        <button onclick="alert('UserClickedMe')"> Click_Me </button>
+</form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="smiley.png">
+        <fieldset>
+        <legend align="center">Select your hobbies...!!</legend>
+        <input type="checkbox" name="ck" checked>Play Cricket
+        <input type="checkbox" name="ck1" >Play Football
+        <input type="checkbox" name="ck2" >Play Chess
+        <input type="checkbox" name="ck3" >Watch TV
+        <input type='submit' name='sn' value="SignIn"/>
+        <input type='reset' name='can' value="Cancel"/>
+        <button onclick="alert('UserClickedMe')"> Click_Me </button>
+        </fieldset>
+</form>
+</body>
+</html>
+
+Example:
