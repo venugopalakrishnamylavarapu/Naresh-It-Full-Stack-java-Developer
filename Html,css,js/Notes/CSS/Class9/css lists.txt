@@ -168,10 +168,10 @@ The height property of an image is used to set the height of an image. This prop
         src="html.png" />
 
 CSS - Links
-The :link Signifies unvisited hyperlinks.
-The :visited Signifies visited hyperlinks.
-The :hover Signifies an element that currently has the user's mouse pointer hovering over it.
-The :active Signifies an element on which the user is currently clicking.
+link :link Signifies unvisited hyperlinks.
+visited :visited Signifies visited hyperlinks.
+hover :hover Signifies an element that currently has the user's mouse pointer hovering over it.
+alink :active Signifies an element on which the user is currently clicking.
 
 Set the color of Links:
 <style type="text/css">

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    table {
+        /*Collapse Borders
+        ==================
+The border-collapse property sets whether the table borders are collapsed into a single border or separated:*/
+        border-collapse: separate;
+        /*Table Width and Height
+        =========================
+Width and height of a table is defined by the width and height properties.*/
+        width: 450px;
+        height: 200px;
+        /*Table Text Alignment
+        ======================
+The text in a table is aligned with the text-align and vertical-align properties.
+The text-align property sets the horizontal alignment, like left, right, or center:*/
+        text-align: center;
+        /*Table Padding
+        ===============
+To control the space between the border and content in a table, use the padding property on td and th elements:
+*/
+        padding: 15px;
+        /*padding basically means the distance between the border of the interface to the content*/
+        /*Table Color
+        ==============
+The example below specifies the color of the borders, and the text and background color of th elements:
+*/
+        color: red;
+        /*sets the font color*/
+        background-color: yellow/*sets the background of the table see we can even see the padding here*/
+    }
+    
+    th,
+    td {
+        /* CSS Tables
+    ==========
+Table Borders
+To specify table borders in CSS, use the border property.
+*/
+        border: 2px solid blue;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Subba</td>
+            <td>Raju</td>
+        </tr>
+        <tr>
+            <td>Thomus</td>
+            <td>Affee</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

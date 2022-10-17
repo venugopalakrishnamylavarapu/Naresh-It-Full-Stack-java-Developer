@@ -1,0 +1,117 @@
+<!--
+    What are Pseudo-Elements?
+A CSS pseudo-element is used to style specified parts of an element. Style the first letter, or line, of an element, Insert content before, or after, the content of an element.
+
+Syntax
+selector::pseudo-element 
+{
+property:value;
+}
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /*The ::first-line Pseudo-element
+        ==================================
+It is used to add a special style to the first line of a text.*/
+        
+        p::first-line {
+            color: orange;
+        }
+        /*
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        The ::first-letter Pseudo-element
+        ===================================
+The ::first-letter pseudo-element is used to add a special style to the first letter of a text.*/
+        
+        p::first-letter {
+            color: green;
+            font-size: 120px;
+        }
+        /*
+        
+        
+        
+        
+        
+        
+        
+        
+        CSS - The ::before Pseudo-element
+        ==================================
+The ::before pseudo-element can be used to insert some content before the content of an element.
+*/
+        
+        p::before {
+            content: url("icons8-java-50.png")
+        }
+        /*
+        
+        
+        
+        
+        
+        CSS - The ::after Pseudo-element
+        ================================
+The ::after pseudo-element can be used to insert some content after the content of an element.
+*/
+        
+        p::after {
+            content: url("icons8-java-50.png");
+        }
+        /*
+
+
+
+
+
+
+
+CSS - The ::selection Pseudo-element
+=====================================
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+*/
+        
+        p::selection {
+            color: red;
+            font-size: 20px;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more,
+        <br> and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.
+    </p>
+
+
+
+    <p>
+        Hello mowa greetings of the day
+    </p>
+
+    <h1>Select some text on this page:</h1>
+    <p>This is a paragraph.</p>
+    <div>This is some text in a div element.</div>
+
+</body>
+
+</html>

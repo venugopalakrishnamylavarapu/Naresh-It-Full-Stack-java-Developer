@@ -1,0 +1,178 @@
+<!--
+    CSS Basic Text Properties:
+    ==========================
+1. color
+2. direction
+3. letter-spacing 
+4. word-spacing
+5. text-indent 
+6. text-align
+7. text-decoration
+8. text-transform 
+9. white-space
+10. vertical-align 
+	
+Manipulating Text using CSS:
+===========================
+1. The color property is used to set the color of a text.
+2. The direction property is used to set the text direction.
+3. The letter-spacing property is used to add or subtract space between the letters that make up a word.
+4. The word-spacing property is used to add or subtract space between the words of a sentence.
+5. The text-indent property is used to indent the text of a paragraph.
+6. The text-align property is used to align the text of a  document.
+7. The text-decoration property is used to underline, overline, and line-through text.
+8. The text-transform property is used to capitalize text or convert text to uppercase or lowercase letters.
+9. The white-space property is used to control the flow and formatting of text.
+10. The text-shadow property is used to set the text shadow around a text.
+11. vertical-align property sets the vertical alignment of an element.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            color: red;
+        }
+        
+        .b {
+            color: green;
+            direction: rtl;
+            /*the properties are ltr,rtl*/
+        }
+        
+        .c {
+            color: blue;
+            direction: inherit;
+            letter-spacing: 5px;
+        }
+        
+        .d {
+            color: grey;
+            direction: ltr;
+            word-spacing: 5px;
+        }
+        
+        .e {
+            color: pink;
+            direction: ltr;
+            word-spacing: 3px;
+            text-indent: 50px;
+            /*space from start to the first letter of the sentence check the output ull understand*/
+        }
+        
+        .f {
+            color: rgb(255, 0, 255);
+            direction: rtl;
+            letter-spacing: 4px;
+            text-align: center;
+        }
+        
+        .g {
+            color: rgb(77, 16, 77);
+            direction: rtl;
+            word-spacing: 3px;
+            text-align: left;
+            text-decoration: overline;
+            /*useful properties underline,overline,line-through*/
+        }
+        
+        .h {
+            color: steelblue;
+            direction: rtl;
+            text-align: left;
+            text-transform: uppercase;
+            /*capitalize= makes first letter capital of ever word,lowercase,uppercase*/
+        }
+        
+        .i {
+            color: black;
+            direction: rtl;
+            text-align: center;
+            text-transform: capitalize;
+            white-space: nowrap;
+        }
+        
+        .j {
+            color: red;
+            direction: ltr;
+            text-align: left;
+            font-weight: 500;
+            text-shadow: 5px 4px 6px blue;
+            /*first value is x-axis,secondvalue is y-axis,third value is amount of blur for shadow,fourth value is color*/
+        }
+        
+        .k {
+            /*vertical-align Property Values
+            ================================
+            we can use this for highlighting words and some other things
+baseline
+sub
+super
+top
+text-top
+middle
+bottom
+text-bottom
+0px
+10px
+*/
+            background-color: yellow;
+            color: blue;
+            text-transform: lowercase;
+            vertical-align: super;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="a">hello this used color property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+
+    <p class="b">hello this used direction property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+
+    <p class="c">hello this used letter spacing property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+
+    <p class="d">hello this used word spacing property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+
+    <p class="e">hello this used text-indent property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+    <p class="f">hello this used text-align property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+    <p class="g">hello this used text-decoration property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+    <p class="h">hello this used text- transform property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+    <p class="i">hello this used white-space property This is some text.
+    </p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+    <p class="j">hello this used text- shadow property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+    <p>hello this used <b class="k">vertical-align</b> property</p>
+    <hr style="background-color:black ;width:100%;height:3px">
+
+
+
+
+</body>
+
+</html>

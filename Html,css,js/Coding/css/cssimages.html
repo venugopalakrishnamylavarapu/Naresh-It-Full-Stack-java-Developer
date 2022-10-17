@@ -1,0 +1,54 @@
+<!--
+    CSS - Images:
+    =============
+CSS plays a good role to control image display. You can set following image properties using CSS.
+
+1.The border property is used to set the width of an image border.
+2. The height property is used to set the height of an image.
+3. The width property is used to set the width of an image.
+Examples:-
+========
+The image border Property:
+-------------------------
+
+<img style="border:0px;" src="html.png" />
+<br />
+<img style="border:3px dashed red;" src="html.png" />
+
+The image height Property:
+The height property of an image is used to set the height of an image. This property can have a value in length or in %.
+
+<img style="border:1px solid red; height:100px;" 
+        src="html.png" />
+<br />
+<img style="border:1px solid red; height:50%;" 
+        src="html.png" />
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            border: 3px dotted red;
+            /*image border properties ==> size,bordertype,color of the border*/
+            height: 500px;
+            /*about the height of the image*/
+            width: 500px;
+            /*about the width of the image*/
+        }
+    </style>
+</head>
+
+<body>
+    <img src="TrollFace.png">
+
+</body>
+
+</html>

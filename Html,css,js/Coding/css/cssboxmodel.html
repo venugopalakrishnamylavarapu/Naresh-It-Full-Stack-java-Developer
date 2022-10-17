@@ -1,0 +1,136 @@
+<!--
+CSS Box Model
+=============
+The CSS box model is essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.
+
+The box model allows us to place a border around elements and space elements in relation to other elements.
+
+Explanation of the four different parts:
+Margin - Clears an area around the border. The margin does not have a background color, it is completely transparent
+
+Border - A border that goes around the padding and content. The border is affected by the background color
+
+Padding - Clears an area around the content. The padding is affected by the background color of the box
+
+Content - The content of the box, where text and images appear
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            /*CSS - Borders
+            ===============
+The border properties allow you to specify how the border of the box representing an element should look. There are three properties of a border you can change
+
+1. The border-color Specifies the color of a border.
+2. The border-style Specifies whether a border should be solid, dashed line, double line, or one of the other possible values.
+3. The border-width Specifies the width of a border.
+
+The border-style Property:
+
+The border-style property allows you to select one of the following styles of border:
+ none: No border. (Equivalent of border-width:0;)
+ solid: Border is a single solid line.
+ dotted: Border is a series of dots.
+ dashed: Border is a series of short lines.
+ double: Border is two solid lines.
+ groove: Border looks as though it is carved into the page.
+ ridge: Border looks the opposite of groove.
+ inset: Border makes the box look like it is embedded in the page.
+ outset: Border makes the box look like it is coming out of the canvas.
+ hidden: Same as none, except in terms of border-conflict resolution for table elements.*/
+            border: 5px;
+            color: red;
+            border-color: greenyellow;
+            border-radius: 2px;
+            border-style: solid;
+            text-align: center;
+            /*CSS - Margins:
+            ================
+The margin property defines the space around an HTML element. It is possible to use negative values to overlap content.
+
+CSS Margin Properties
+Property		    Description
+margin		        A short hand property for setting the margin.
+margin-bottom	    Sets the bottom margin of an element
+margin-left	        Sets the left margin of an element
+margin-right	    Sets the right margin of an element
+margin-top	        Sets the top margin of an element*/
+            margin: 20px 15px 5px 35px;
+            /*bottom,right,top,left*/
+            /*CSS - Paddings
+            =================
+The padding property allows you to specify how much space should appear between the content of an element and its border:
+
+All CSS Padding Properties
+Property		Description
+padding		A shorthand property for setting all the padding 			properties in one declaration
+padding-bottom	Sets the bottom padding of an element
+padding-left	Sets the left padding of an element
+padding-right	Sets the right padding of an element
+padding-top	Sets the top padding of an element
+*/
+            padding: 5px 5px 5px 5px;
+            /*top,right,bottom,left*/
+            /*CSS - Cursors:
+            ================
+The cursor property of CSS allows you to specify the type of cursor that should be displayed to the user.
+
+auto		Shape of the cursor depends on the context area it is over. 
+crosshair 		A crosshair or plus sign
+default	  	An arrow
+pointer   		A pointing hand 
+move	  	The I bar
+e-resize  		The cursor indicates that an edge of a box is to be moved 
+ne-resize 		The cursor indicates that an edge of a box is to be moved up 
+nw-resize		The cursor indicates that an edge of a box is to be moved up 
+n-resize se-resize 	moved down and sw-resize moved down and left 
+s-resize		moved down (south)
+w-resize		moved left (west)
+text		The I bar
+wait		An hour glass
+help		A question mark or balloon*/
+            cursor: default;
+            /*here when the mouse is hovered over on the content then it chnages the mouse cursor*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>hello this here is the content in the css box model</p>
+    </div>
+    <div>
+        <p>hello this here is other content in the css box model</p>
+    </div>
+    <div>
+        <p>hello this here is other content to check the difference </p>
+    </div>
+    <div style="cursor:auto">Auto</div>
+    <div style="cursor:crosshair">Crosshair</div>
+    <div style="cursor:default">Default</div>
+    <div style="cursor:pointer">Pointer</div>
+    <div style="cursor:move">Move</div>
+    <div style="cursor:e-resize">e-resize</div>
+    <div style="cursor:ne-resize">ne-resize</div>
+    <div style="cursor:nw-resize">nw-resize</div>
+    <div style="cursor:n-resize">n-resize</div>
+    <div style="cursor:se-resize">se-resize</div>
+    <div style="cursor:sw-resize">sw-resize</div>
+    <div style="cursor:s-resize">s-resize</div>
+    <div style="cursor:w-resize">w-resize</div>
+    <div style="cursor:text">text</div>
+    <div style="cursor:wait">wait</div>
+    <div style="cursor:help">help</div>
+
+</body>
+
+</html>

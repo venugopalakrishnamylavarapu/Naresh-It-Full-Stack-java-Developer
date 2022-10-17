@@ -1,0 +1,48 @@
+<!--
+    CSS - Links
+    ==========
+link :link Signifies unvisited hyperlinks.
+visited:visited Signifies visited hyperlinks.
+hover :hover Signifies an element that currently has the user's mouse pointer hovering over it.
+alink :active Signifies an element on which the user is currently clicking.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {
+            color: black;
+        }
+        
+        a:visited {
+            color: purple;
+        }
+        
+        a:hover {
+            color: yellow;
+            font-size: 30px;
+        }
+        
+        a:active {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.reddit.com">reddit</a>
+    <!--represents unvisited links--><br><br>
+    <!--once check the css properties of the a tag ull will observe that 
+    ==>when u see the link at first its black
+    ==>if u hover ur mouse pointer on it changes color
+    ==>if u clicked it.in the millisecong of the clicking animation the color will change generally its set to default(red)
+    ==>if u come back and check the link it will be in purple because we have visited the link.
+-->
+
+</html>
