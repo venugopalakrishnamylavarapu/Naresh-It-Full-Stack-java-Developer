@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<script type="text/javascript" language="javascript">
+    function calc(op) {
+        var a = parseInt(document.form1.fvalue.value);
+        var b = parseInt(document.form1.svalue.value);
+        switch (op) {
+            case '+':
+                c = a + b;
+                break;
+            case '-':
+                c = a - b;
+                break;
+            case '*':
+                c = a * b;
+                break;
+            case '/':
+                c = a / b;
+                break;
+        }
+        document.form1.result.value = c;
+    }
+</script>
+<style type="text/css">
+    body {
+        background: linear-gradient(to left bottom, green, blue);
+        height: 100vh;
+    }
+    
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 300px;
+        color: white;
+        background-color: purple;
+        border-radius: 5vh;
+    }
+    
+    .formside {
+        padding-left: 15%;
+    }
+</style>
+
+<body>
+    <div class="center">
+        <form class="formside" name="form1" onclick="calc(op)">
+            <h1 align="center" style="color: white;text-decoration: underline;">Calculator</h1>
+            <label>Enter the 1st number</label><br>
+            <input type="text" name="fvalue"><br>
+            <label>Enter the 2nd number</label><br>
+            <input type="text" name="svalue">
+            <br><br>&nbsp<label style="background-color:yellow; color:red">result</label><br>
+            <input type="text" placeholder="result is displayed here" name="result">
+            </br><br>
+            <input type="button" value="Addition" onclick="calc('+')">&nbsp;&nbsp;
+            <input type="button" value="Substraction" onclick="calc('-')">&nbsp;&nbsp;
+            <input type="button" value="Multiplication" onclick="calc('*')">&nbsp;&nbsp;
+            <input type="button" value="Division" onclick="calc('/')">&nbsp;&nbsp;
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>

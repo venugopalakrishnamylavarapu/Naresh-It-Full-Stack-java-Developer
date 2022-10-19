@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" language="javascript">
+        function dispwords() {
+            var n = 0,
+                k = 0,
+                i = 0,
+                temp = 0,
+                r = " ";
+            var ar = new Array();
+            n = parseInt(document.f1.num.value);
+            temp = n;
+            while (temp > 0) {
+                k = temp % 10;
+                ar[i++] = words(k);
+                temp = Math.floor(temp / 10);
+            }
+            ar.reverse();
+            r = ar.join(" ");
+            document.f1.res.value = r;
+        }
+
+        function words(k) {
+            switch (k) {
+                case 0:
+                    return "ZERO";
+                case 1:
+                    return "ONE";
+                case 2:
+                    return "TWO";
+                case 3:
+                    return "THREE";
+                case 4:
+                    return "FOUR";
+                case 5:
+                    return "FIVE";
+                case 6:
+                    return "SIX";
+                case 7:
+                    return "SEVEN";
+                case 8:
+                    return "EIGHT";
+                case 9:
+                    return "NINE";
+            }
+        }
+    </script>
+    <style type="text/css" rel="stylesheet">
+        body {
+            background: linear-gradient(to bottom right, black, yellow);
+            height: 100vh;
+            width: 100vh
+        }
+        
+        .center {
+            background-color: rgb(239, 239, 210);
+            position: absolute;
+            border-radius: 9px;
+            top: 50%;
+            left: 40%;
+            transform: translate(-10%, -50%);
+            text-align: center;
+            height: 250px;
+            border-style: double;
+            border-color: blue;
+        }
+        
+        h1 {
+            color: blue;
+            text-shadow: 3px 3px 6px black;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <H1>Enter a number below</H1><br>
+        <form method="post" name="f1">
+            <label>Enter--></label>
+            <input type="text" placeholder="value goes here!!" name="num"><br>
+            <label>Result--></label>
+            <input style="margin-top: 25px;" type="text" placeholder="Result is displayed here!!" name="res"><br>
+            <input style="box-shadow:2px 3px 9px black;margin-top:25px;margin-left:25px;background-color:Skyblue;border-radius:5px " type="button" onclick="dispwords()" value="Convert">
+        </form>
+    </div>
+
+</body>
+
+</html>

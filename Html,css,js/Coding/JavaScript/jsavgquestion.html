@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript" language="javascript">
+    function taken() {
+        A = window.prompt("Enter the first number")
+        B = window.prompt("Enter the second number")
+        C = window.prompt("Enter the third number")
+        a = parseInt(A);
+        b = parseInt(B);
+        c = parseInt(C);
+        data = a + "," + b + "," + c;
+    }
+
+    function sum() {
+        document.writeln("the sum of " + data + " is : " + (a + b + c));
+    }
+
+    function avg() {
+        document.writeln("the avg of " + data + " is : " + ((a + b + c) / 3));
+    }
+
+    function mul() {
+        document.writeln("the sum of" + data + " is : " + (a * b * c));
+    }
+
+    function largest() {
+        Larg = Math.max(Math.max(a, b), c);
+        document.writeln("the largest value among " + data + " is : " + Larg)
+    }
+</script>
+<style type="text/css">
+    body {
+        background: linear-gradient(to bottom left, aqua, yellow);
+        height: 100vh;
+    }
+    
+    .glit {
+        position: absolute;
+        top: 15%;
+        left: 40%;
+        right: 40%;
+        bottom: 15%;
+        background-color: silver;
+        background-size: contain;
+        border-radius: 17px;
+        width: fit-content
+    }
+    
+    .script {
+        background: linear-gradient(to bottom left, aqua, yellow);
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <form class="glit">
+        <table border="2">
+            <caption>
+                <h3>sum,average and largest</h3>
+            </caption>
+            <colgroup>
+                <col span="2" ALIGN="right">
+            </colgroup>
+            <tr>
+                <th>to accept numbers
+                    <td><input type="button" value="insert values" onclick="taken()">
+            </tr>
+            <tr>
+                <th> to sum of those numbers
+                    <td><input type="button" value="sum" onclick="sum()"></tr>
+            <tr>
+                <th>to get average of those numbers
+                    <td>
+                        <input type="button" value="average" onclick="avg()"></tr>
+            <tr>
+                <th>to get largest among those numbers
+                    <td><input type="button" value="largest " onclick="largest()"></tr>
+        </table>
+    </form>
+</body>
+
+
+</html>

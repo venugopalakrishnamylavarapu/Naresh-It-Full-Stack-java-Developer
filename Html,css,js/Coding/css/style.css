@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: linear-gradient(120deg, steelblue, rgb(255, 68, 0));
+    height: 100vh;
+    overflow: hidden;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    background: white;
+    border-radius: 10px;
+}
+
+.center h1 {
+    text-align: left;
+    padding: 0 0 15px 0;
+    border-bottom: 2px solid silver;
+}
+
+
+/*.center form {
+    padding: 0 80px;
+    box-sizing: border-box;
+}
+
+
+form .txtfield {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+
+.txtfield input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.text_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateX(-50%)
+}*/
