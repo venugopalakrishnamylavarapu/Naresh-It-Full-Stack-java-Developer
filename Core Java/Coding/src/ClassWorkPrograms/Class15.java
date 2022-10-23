@@ -13,7 +13,7 @@ Understanding static keyword
 2)we can use static in 3 ways
   a)a variable can be declared as a static
   b)a method can be declared as a static
-  c)a class can be declared as a static
+  c)a block can be declared as a static
   we'll discuss this in the next class
 
 */

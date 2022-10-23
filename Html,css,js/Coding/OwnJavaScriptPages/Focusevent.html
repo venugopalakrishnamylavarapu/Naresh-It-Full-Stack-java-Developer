@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focusing Events</title>
+    <script type="text/javascript" language="javascript">
+        function disp() {
+            document.f1.txt.value = "Enter age between 18 to 25";
+
+        }
+
+        function zinc() {
+            document.f1.txt.value = "Enter age between 18 to 25";
+
+        }
+    </script>
+</head>
+
+<body bgcolor="grey">
+    <form name="f1">
+        <h1>Data Entry Form</h1>
+        Student Name:<input type="text" name="sn">
+        <br> Age:
+        <input type="text" name="a" onfocus="disp()" onblur="zinc()">
+        <br>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+        <input type=text name="txt" size=30 onkeyup="clear()" style="position:absolute;left:300;top:90;background-color:tan;color:black;">
+    </form>
+
+</body>
+
+</html>

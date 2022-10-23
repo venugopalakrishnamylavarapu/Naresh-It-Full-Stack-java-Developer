@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmstrongNumber</title>
+    <script type="text/javascript" language="javascript">
+        var a = window.prompt("Enter the vlaue");
+
+        var sum = 0,
+            temp, j;
+        temp = a;
+        while (temp != 0) {
+            j = temp % 10;
+            sum += j * j * j;
+            temp = Math.floor(temp / 10);
+        }
+        if (sum == a) {
+            document.writeln("The number " + a + " is an Armstrong number ");
+        } else {
+            document.writeln("The number " + a + " is not an Armstrong number ");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
