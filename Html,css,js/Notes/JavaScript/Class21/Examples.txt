@@ -1,0 +1,131 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var a=prompt("Enter Any Number: ");
+        if(a>0)
+        {
+            document.write("The Value is Positive Number..!!")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var a=prompt("Enter Any Number: ");
+        if(a>0)
+        {
+            document.write("The Value is Positive Number..!!")
+        }
+        else
+        {
+            document.write("The Value is Negative Number..!!")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var a=prompt("Enter Any Number: ");
+        if(a>0)
+        {
+            document.write("The Value is Positive Number..!!")
+        }
+        else if(a<0)
+        {
+            document.write("The Value is Negative Number..!!")
+        }
+        else if(a==0)
+        {
+            document.write("The Value is ZERO..!!")
+        }
+        else
+        {
+            document.write("Invalid Input")
+            document.write("Thank U")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var course=prompt("Enter Any Course: ","HTML");
+        switch(course)
+        {
+            case 'HTML':
+                document.write("Selected Course is: "+course);
+                break;
+            case 'CSS':
+                document.write("Selected Course is: "+course);
+                break;
+            case 'HTML5':
+                document.write("Selected Course is: "+course);
+                break;
+            case 'CSS3':
+                document.write("Selected Course is: "+course);
+                break;
+            case 'JS':
+                document.write("Selected Course is: "+course);
+                break;
+            default:
+                document.write("Selected Course is not existed ");
+        }
+        
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var age=prompt("Enter Valid Age: ")
+        var userType=age<18 ? 'TEEN':'Adult';
+        document.write(userType);
+</script>
+</head>
+<body>
+</body>
+</html>

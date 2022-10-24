@@ -1,0 +1,620 @@
+JavaScript Variables/identifiers:
+A JavaScript variable is simply a name of storage location. There are some rules while declaring a JavaScript variable.
+
+1 Names can contain letters, digits, underscores, and dollar signs.
+2 Names must begin with a letter
+3 Names can also begin with $ and _ (but we will not use it in this tutorial)
+4. Reserved words (like JavaScript keywords) cannot be used as names
+5. You declare JavaScript variables with the var keyword
+6. Names are case sensitive (y and Y are different variables)
+
+Correct JavaScript variables
+var x = 10;  
+var _value="NareshIT";  
+
+Incorrect JavaScript variables
+var  1abc=30;  
+var *a=320;  
+
+Example:
+<!doctype html>
+<head>
+<script>  
+var x = 10;  
+var y = 20;  
+var z=x+y;  
+document.write("The Result is: "+z);  
+</script>
+</head>  
+
+One Statement, Many Variables
+You can declare many variables in one statement. Start the statement with var and separate the variables by comma.
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript Variables</h2>
+<script>
+var person = "SARA", bname = "Yamaha", price = 2000;
+document.write(bname +"<br>")
+document.write(price +"<br>")
+</script>
+</body>
+
+Value = undefined
+A variable declared without a value will have the value undefined.
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript Variables</h2>
+<script>
+var bname;
+document.write(bname)
+</script>
+</body>
+
+Re-Declaring JavaScript Variables
+If you re-declare a JavaScript variable, it will not lose its value.
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript Variables</h2>
+<p id="txt"></p>
+<script>
+var bname = "Yamaha";
+var bname;
+document.getElementById("txt").innerHTML = bname;
+</script>
+</body>
+
+JavaScript Dollar Sign $
+A letter (A-Z or a-z), A dollar sign ($), Or an underscore (_)
+Since JavaScript treats a dollar sign as a letter, identifiers containing $ are valid variable names:
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript $</h2>
+<script>
+var $ = 1;
+var $myMoney = 4;
+document.write( $ + $myMoney) 
+</script>
+</body>
+
+JavaScript Underscore (_)
+Since JavaScript treats underscore as a letter, identifiers containing _ are valid variable names:
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript _</h2>
+<script>
+var _x = 2;
+var _y = 5;
+document.write(_x + _y);
+</script>
+</body>
+
+Using let and const (ES6)
+Using the var keyword was the only way to declare a JavaScript variable. JavaScript (ES6) allows the use of the const keyword to define a variable that cannot be reassigned, and the let keyword to define a variable with restricted scope.
+
+JavaScript Block Scope
+Variables declared with the var keyword cannot have Block Scope. Variables declared inside a block {} can be accessed from outside the block.
+
+Example
+{ 
+  var x = 5; 
+}
+// x CAN be used here
+
+Example:
+<!doctype html>
+<head>
+<script>
+{ 
+    var x = 5; 
+    document.write(x)
+  }
+  // x CAN be used here
+  document.write(x)
+</script>
+</head>
+
+NOTE:
+Before ES2015 JavaScript did not have Block Scope. Variables declared with the let keyword can have Block Scope. Variables declared inside a block {} cannot be accessed from outside the block:
+
+Example
+{ 
+  let x = 5;
+}
+// x can NOT be used here
+
+Example:
+<head>
+<script>
+{ 
+    let x = 5; 
+    document.write(x)
+  }
+  // x CAN be used here
+  document.write(x) 
+</script>
+</head>
+
+Redeclaring Variables
+Redeclaring a variable using the var keyword can impose problems. Redeclaring a variable inside a block will also redeclare the variable outside the block:
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>Declaring a Variable Using var</h2>
+<script>
+var  x = 100;
+// Here x is 100
+{  
+  var x = 20;
+  // Here x is 20
+}
+// Here x is 20
+document.write(x);
+</script>
+</body>
+
+JavaScript const
+In JavaScript we can declare constants using 'const' keyword. These are literals, never allow to change.
+
+Assigned when Declared
+JavaScript const variables must be assigned a value when they are declared:
+
+InValid Declaration
+const PI;
+PI = 3.14159265359;
+
+Valid Declaration
+Correct
+const PI = 3.14159265359;
+
+Example:
+<!DOCTYPE html>
+<body>
+<script>
+    // Declaring variables
+    let name = "Subba Raju Sir";
+    let age = 43;
+    let isStudent = true;
+    
+    // Printing variable values
+    document.write(name + "<br>");
+    document.write(age + "<br>");
+    document.write(isStudent + "<br>");
+    
+    // Declaring constant
+    const PI = 3.14;
+    
+    // Printing constant value
+    document.write(PI); // 3.14
+    
+    // Trying to reassign
+    PI = 10; // error
+    </script>
+</body>
+
+Block Scope
+Declaring a variable with const is similar to let when it comes to Block Scope. The x declared in the block, in this example, is not the same as the x declared outside the block:
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>Declaring a Variable Using const</h2>
+<p id="txt"></p>
+<script>
+var  x = 100;
+// Here x is 100
+{  
+  const x = 20;
+  // Here x is 20
+}
+// Here x is 100
+document.write(x);
+</script>
+</body>
+
+Javascript Data Types
+JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript.
+1. Primitive Data Types
+2. Non Primitive(reference) Data Types
+
+JavaScript is a dynamic type language, means you don't need to specify type of the variable because it is dynamically used by JavaScript engine. You need to use var here to specify the data type. It can hold any type of values such as numbers, strings etc.
+
+Example:
+var a=40;//holding number  
+var b="RajuSir";//holding string  
+
+
+1. Primitive Data Types
+JavaScript has five primitive data types. These are the most simple forms of data we can use in JS programming.
+
+Data Type	Description
+String		Represents sequence of characters e.g. "JS"
+Number		Represents numeric values e.g. 100
+Boolean		Represents boolean value either false or true
+Undefined	Represents undefined value
+Null		Represents null i.e. no value at all
+
+JavaScript Strings
+A string is a variable which stores a series of characters like "nit". A string can be any text inside quotes. You can use single or double quotes:
+
+Example
+var name="nit";
+var name='nit';
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+document.write("Hello Welcome to JS Strings")
+document.write("<br/>")
+document.write('Hello Welcome to JS Strings')
+</script>
+</head>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+Str1="Hello",var Str2='World'
+document.write("First String is: "+Str1)
+document.write("<br/>")
+document.write("Second String is: "+Str2)
+</script>
+</head>
+
+Number Data Type
+JavaScript has only one type of numbers. Numbers can be written with, or without decimals:
+
+Example
+var x1=34.00;      // Written with decimals
+var x2=34;         // Written without decimals
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var x=10;var y=20.99; var z=x+y;
+var name="Naresh i Technologies";
+document.write("The value of x is "+x);
+document.write("<br>");
+document.write("The value of y is "+y);
+document.write("<br>");
+document.write("The value of z is "+z);
+document.write("<br>");
+document.write(name+" is Leader in IT Training");	
+</script>
+</head>
+
+Boolean Data Type
+The Boolean data type
+The Boolean data type is used to represent a Boolean value. A Boolean value can be used to represent data that is in either of two states.Booleans are often used in conditional testing.
+
+The two Boolean values
+true // equivalent to true, yes, or on
+false // equivalent to false, no, or off
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var x=10;var y=20;
+document.write("The value is: "+(x>y));
+document.write("<br>");
+document.write("The value is: "+(x<y));
+</script>
+</head>
+
+Undefined 
+It is the value of a variable with no value. 
+
+Example
+var x;               // Now x is undefined
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var x;
+document.write("The value is: "+x +"<br/>");
+var y;
+document.write("The value is: "+y);
+</script>
+</head>
+
+null:
+Variables can be emptied by setting the value to null;
+
+Example:
+var x=null;       // Now x is null
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+var x=null;
+document.write("The value is: "+x +"<br/>");
+var y=null;
+document.write("The value is: "+y);
+</script>
+</head>
+
+2. Non Primitive Data Types
+Object:
+Declaring Variables as Objects.When a variable is declared with the keyword "new", the variable is declared as an object:
+
+Syntax:
+var name = new String();//String Object
+var x =new Number();//Number Object
+var y =new Boolean();//Boolean Object
+
+Dynamic Types:
+JavaScript has dynamic types. This means that the same variable can be used as different types:
+
+Example
+var x;               // Now x is undefined
+var x = 5;           // Now x is a Number
+var x = "RaaJ";      // Now x is a String
+
+Example:
+<!doctype html>
+<body>
+<script>
+var x;
+document.write(x +"<br/>");
+var x=96; 
+document.write(x);
+document.write("<br/>");
+var x="Modern Java Script";
+document.write(x +"<br/>");
+var x=null;
+document.write(x +"<br/>");
+var x=true;
+document.write(x +"<br/>");
+</script>
+</body>
+
+HTML <noscript> Tag
+It is used to provide an alternate content for users that have disabled scripts in their browser or have a browser that doesn’t support client-side scripting. It is a paired tag.
+
+Syntax: 
+<noscript>..............</noscript>
+
+Example:
+<!doctype html>
+<head>
+<script>
+document.write("Welcome to JavaScripting")
+document.write("<br/>")
+document.write("Welcome to JavaScripting")
+</script>
+</head>
+<body>
+<noscript>
+<p>OOPs Script unable to execute on this web browser...!!</p>
+</noscript>
+</body>
+
+JavaScript Operators
+JavaScript operators are symbols that are used to perform operations on operands.There are following types of operators in JavaScript.
+
+1 Arithmetic Operators
+2 Assignment Operators
+3 JavaScript String Operators
+4 JavaScript Incrementing and Decrementing Operators
+5 JavaScript Logical Operators
+6 JavaScript Comparison Operators
+
+JavaScript Arithmetic Operators
+Arithmetic operators are used to perform arithmetic operations on the operands.
+
+Operator		Description		Example
++		Addition			10+20 = 30
+-		Subtraction		20-10 = 10
+*		Multiplication		10*20 = 200
+/		Division			20/10 = 2
+%		Modulus (Remainder)	20%10 = 0
+++		Increment		var a=10; a++; Now a = 11
+--		Decrement		var a=10; a--; Now a = 9
+
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x = 10;
+    var y = 4;
+    document.write(x + y); // display: 14
+    document.write("<br>");
+    
+    document.write(x - y); // Prints: 6
+    document.write("<br>");
+    
+    document.write(x * y); // Prints: 40
+    document.write("<br>");
+    
+    document.write(x / y); // Prints: 2.5
+    document.write("<br>");
+    
+    document.write(x % y); // Prints: 2
+    </script>
+</body>
+
+
+JavaScript Assignment Operators
+The assignment operators are used to assign values to variables.
+Operator 	Description 		Example 	Is The Same As
+= 	Assign 			x = y 	x = y
++= 	Add and assign 		x += y 	x = x + y
+-= 	Subtract and assign 		x -= y 	x = x - y
+*= 	Multiply and assign 		x *= y 	x = x * y
+/= 	Divide and assign quotient 	x /= y 	x = x / y
+%= 	Divide and assign modulus 	x %= y 	x = x % y
+
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x;    // Declaring Variable
+    x = 10;
+    document.write(x + "<br>"); // Prints: 10
+    
+    x = 20;
+    x += 30;
+    document.write(x + "<br>"); // Prints: 50
+     
+    x = 50;
+    x -= 20;
+    document.write(x + "<br>"); // Prints: 30
+     
+    x = 5;
+    x *= 25;
+    document.write(x + "<br>"); // Prints: 125
+     
+    x = 50;
+    x /= 10;
+    document.write(x + "<br>"); // Prints: 5
+     
+    x = 100;
+    x %= 15;
+    document.write(x); // Prints: 10
+    </script>
+</body>
+
+JavaScript String Operators
+There are two operators which can also used be for strings.
+
+Operator 	Description 		Example 		Result
++ 	Concatenation 		str1 + str2 	Concatenation of str1 and str2
++= 	Concatenation assignment 	str1 += str2 	Appends the str2 to the str1
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var str1 = "Hello";
+    var str2 = " World!";
+    document.write(str1 + str2 + "<br>"); // Outputs: Hello World!
+    str1 += str2;
+    document.write(str1); // Outputs: Hello World!
+    </script>
+</body>
+
+JavaScript Incrementing and Decrementing Operators
+The increment/decrement operators are used to increment/decrement a variable's value.
+Operator 	Name 		Effect
+++x 	Pre-increment 	Increments x by one, then returns x
+x++ 	Post-increment 	Returns x, then increments x by one
+--x 	Pre-decrement 	Decrements x by one, then returns x
+x-- 	Post-decrement 	Returns x, then decrements x by one
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x; // Declaring Variable
+    x = 10;
+    document.write(++x); // Prints: 11
+    document.write("<p>" + x + "</p>");   // Prints: 11
+     
+    x = 10;
+    document.write(x++); // Prints: 10
+    document.write("<p>" + x + "</p>");   // Prints: 11
+     
+    x = 10;
+    document.write(--x); // Prints: 9
+    document.write("<p>" + x + "</p>");   // Prints: 9
+     
+    x = 10;
+    document.write(x--); // Prints: 10
+    document.write("<p>" + x + "</p>");   // Prints: 9
+    </script>
+</body>
+
+JavaScript Logical Operators
+The logical operators are typically used to combine conditional statements.
+
+Operator 	Name 	Example 	Result
+&& 	And 	x && y 	True if both x and y are true
+|| 	Or 	x || y 	True if either x or y is true
+! 	Not 	!x 	True if x is not true
+
+Example:
+<!doctype html>
+   <body>   
+      <script type = "text/javascript">
+            var a = true;
+            var b = false;
+            var linebreak = "<br />";
+      
+            document.write("(a && b) => ");
+            result = (a && b);
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write("(a || b) => ");
+            result = (a || b);
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write("!(a && b) => ");
+            result = (!(a && b));
+            document.write(result);
+            document.write(linebreak);
+      </script>      
+   </body>
+
+JavaScript Comparison Operators
+The comparison operators are used to compare two values in a Boolean fashion.
+
+Operator 		Name 			Example 		
+== 		Equal 			x == y 		
+=== 		Identical 			x === y 		
+!= 		Not equal 		x != y 	
+!== 		Not identical 		x !== y 	
+< 		Less than 		x < y 	
+> 		Greater than 		x > y 	
+>= 		Greater than or equal to 	x >= y 	
+<= 		Less than or equal to 	x <= y 	
+
+Example:
+<!DOCTYPE html>
+<body>
+    <script>
+    var x = 25;
+    var y = 35;
+    var z = "25";
+    document.write(x == z);  // Prints: true, Checks only values
+    document.write("<br>");
+    
+    document.write(x === z); // Prints: false,Checks including data types
+    document.write("<br>");
+    
+    document.write(x != y);  // Prints: true
+    document.write("<br>");
+    
+    document.write(x !== z); // Prints: true
+    document.write("<br>");
+    
+    document.write(x < y);   // Prints: true
+    document.write("<br>");
+    
+    document.write(x > y);   // Prints: false
+    document.write("<br>");
+    
+    document.write(x <= y);  // Prints: true
+    document.write("<br>");
+    
+    document.write(x >= y);  // Prints: false
+    </script>
+</body>

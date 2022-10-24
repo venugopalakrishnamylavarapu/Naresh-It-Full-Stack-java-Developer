@@ -1,0 +1,185 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script type="text/javascript" langauge="javascript">
+        document.write("Welcome to Java Scripting..!!")
+        //<script> It is the tag to declare scripting
+        // type is the attribute
+        //text/javascript is the parameter or value
+        //langauge is the attribute
+        //javascript is the value or parameter
+        //document is the object represents webpage
+        //write() is the method to write messages on the web Page
+        //. is the operator to display all methods and attribute in an object
+        //js is PascalCase follows
+        //JS never follw Camelcase
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script type="text/javascript">
+        document.write("Welcome to Live Scripting..!!")
+        //<script> It is the tag to declare scripting
+        // type is the attribute
+        //text/javascript is the parameter or value
+        //langauge is the attribute
+        //javascript is the value or parameter
+        //document is the object represents webpage
+        //write() is the method to write messages on the web Page
+        //. is the operator to display all methods and attribute in an object
+        //js is PascalCase follows
+        //JS never follw Camelcase
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script>
+        document.write("Welcome to JAVA Scripting..!!")
+        //<script> It is the tag to declare scripting
+        // type is the attribute
+        //text/javascript is the parameter or value
+        //langauge is the attribute
+        //javascript is the value or parameter
+        //document is the object represents webpage
+        //write() is the method to write messages on the web Page
+        //. is the operator to display all methods and attribute in an object
+        //js is PascalCase follows
+        //JS never follw Camelcase
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script>
+        document.write("Welcome to Live Scripting..!!")
+        document.write("<br>")
+        document.write("Welcome to JAVA Scripting..!!")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script>
+        document.write("Welcome to Live Scripting..!!")
+        document.write("<br>")
+        document.write('Welcome to JAVA Scripting..!!')
+        document.write("<br>")
+        document.write("Welcome to 'JAVA' Scripting..!!")
+        document.write("<br>")
+        document.write('Welcome to "JAVA" Scripting..!!')
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script>
+        document.write("Welcome to Live Scripting..!!")
+        document.write("<br>")
+        document.write('Welcome to JAVA Scripting..!!')
+        document.write("<br>")
+        document.write("Welcome to 'JAVA' Scripting..!!")
+        document.write("<br>")
+        document.write('Welcome to "JAVA" Scripting..!!')
+        document.write("<br>")
+        document.write('Welcome to \'JAVA\' Scripting..!!')
+        document.write("<br>")
+        document.write("Welcome to \"JAVA\" Scripting..!!")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script>
+        window.document.write("Welcome to Window Object..!!<br>")
+        document.write("Welcome to Document Object..!!")
+        //window means browser
+        // default object is browser
+        //without browser no meaning of web Page...!!
+        //so every time window no need to write....!!
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Examples:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripting</title>
+    <script>
+        //Statements are serial order semicolons are optional
+        document.write("Welcome to Doc Object..!!<br>")
+        document.write("Welcome to Document Object..!!<br>")
+        //Statements are Parallel semicolons are mandatory...!!
+       //+ indicates concatination means Join values or strings together..!!
+        document.write(1 +"<br>");document.write(2+ "<br>")
+    </script>
+</head>
+<body>
+</body>
+</html>

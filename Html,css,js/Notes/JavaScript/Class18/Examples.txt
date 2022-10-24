@@ -1,0 +1,203 @@
+Example: JS Statements
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+        document.write("Welcome to Doc Object..!!<br>")
+        document.write("Welcome to Document Object..!!<br>")
+        document.write(1 +"<br>");document.write(2+ "<br>")
+    </script>
+</head>
+
+Example: JS Code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        document.write("<h1>Welcome to JavaScript..!!</h1>")
+        document.write("<h2>Welcome to Live Script..!!</h2>")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example: JS Block
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+        document.write("<h1>Welcome to JavaScript..!!</h1>")
+        }
+        {
+        document.write("<h2>Welcome to Live Script..!!</h2>")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+Example: Single Line Comments
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+    //    document.write("<h1>Welcome to JavaScript..!!</h1>")
+      //  document.write("<h2>Welcome to Live Script..!!</h2>")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        /*
+        document.write("<h1>Welcome to JavaScript..!!</h1>")
+        document.write("<h2>Welcome to Live Script..!!</h2>")
+        document.write("<h1>Welcome to JavaScript..!!</h1>")
+        document.write("<h2>Welcome to Live Script..!!</h2>")
+        */
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        a=10 //a is variable
+        var b=20// b is a variable
+        //in JavaScript default everything is object ie variable
+        var c=a+b
+        document.write(c)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+5. Realtime Coding Standards:
+Camelcase ==> payPal
+PascalCase ==> PayPal
+for readability purpose we are using these case standards....!!
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+       var var1 = 10; var var2 = 20; 
+        document.write(var1+var2 +"<br>")
+        var1 = 20;  var2 = 40; 
+        document.write(var1+var2)
+        var1 = 20  var2 = 40; //Invalid Declaration, Syntax Error
+        //No Statement get executed....!!
+        document.write(var1+var2)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+       var var1 = 10; var var2 = 20; 
+        document.write(var1+var2 +"<br>")
+        var1 = 20;  var2 = 40; 
+        document.write(var1+var2 +"<br>")
+        var1 = 20;  var2 = 40; //Invalid Declaration, Syntax Error
+        //No Statement get executed....!!
+        document.write(var1+var2 +"<br>")
+        var1=20;  var2=         100   ; 
+        document.write(var1+var2)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var a=10;A=100;b=1;B=100
+        document.write(a+A)
+        document.write("<br/>")
+        document.write(b-B)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var a=10;A=100;b=1;B=100
+        document.write(a+A)
+        document.write("<br/>")
+        document.write(b-B)
+        document.write("<br/>")
+    </script>
+</head>
+<body>
+    <script>
+        var a=10;A=100;b=1;B=100
+        document.write(a+A)
+        document.write("<br/>")
+        document.write(b-B)
+    </script>
+</body>
+</html>

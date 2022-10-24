@@ -1,0 +1,226 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        alert("Click OK to Proceed");
+        alert("Naresh i Technologies");
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        alert("Welcome to Warning Messages..!")
+        alert("Welcome to JS Messages..!")
+     </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        alert("Welcome to <br> Warning Messages..!")
+        alert("Welcome to <br> JS Messages..!")
+     </script>
+</head>
+<body>
+</body>
+</html>
+
+NOTE:
+We can't use the <br> tag here, as we did in write(), because alert() is a method of the window object that cannot interpret HTML tags.
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        alert("Welcome to \n Warning Messages..!")
+        alert("Welcome to \n JS Messages..!")
+     </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+       window.alert("Welcome to \n Warning \t Messages..!")
+        window.alert("Welcome to \n JS \n Messages..!")
+     </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        alert("JavaScript\nis\na\nclient-side\nprogramming\nlanguage");
+        alert("1\n\t2\n\t\t3");
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:Alert Message with Event...!!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        function MyAlert()
+        {
+        alert("JavaScript\nis\na\nclient-side\nprogramming\nlanguage");
+        alert("1\n\t2\n\t\t3");
+        }
+    </script>
+</head>
+<body>
+    <p>Click the button to display alert Message....!!</p>
+    <button onclick="MyAlert()">AlertMessage..!!</button>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var Msg=confirm("Click OK or CANCEL")
+        alert("User Clicked On: "+Msg)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var Msg=confirm("Click OK or CANCEL")
+        alert("User Clicked On: "+Msg)
+        if(Msg==true)
+        {
+            alert("User Clicked on OK Button")
+        }
+        else
+        {
+            alert("User Clicked on CANCEL Button")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        function MyConfirmBox()
+        {
+        var Msg=confirm("Click OK or CANCEL")
+        alert("User Clicked On: "+Msg)
+        if(Msg==true)
+        {
+            alert("User Clicked on OK Button")
+        }
+        else
+        {
+            alert("User Clicked on CANCEL Button")
+        }
+    }
+    </script>
+</head>
+<body>
+    <p>Click the button to display confirm Message....!!</p>
+    <button onclick="MyConfirmBox()">ClickHere</button>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        // prompt default reading only string data
+        var x=prompt("Enter Any Number: ")
+        var y=prompt("Enter Any Number: ")
+        //String+String=FullString
+        //var z=x+y
+        //z=10+10=1010
+        //document.write("The Result is: ",z)
+        var z=parseInt(x)+parseInt(y)
+        //z=10+10=1010
+        document.write("The Result is: ",z)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+Example:

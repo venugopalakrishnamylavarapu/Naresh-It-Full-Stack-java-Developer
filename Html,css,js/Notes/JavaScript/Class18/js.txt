@@ -1,0 +1,218 @@
+JavaScript Statements
+A JavaScript program is a list of logical statements. In HTML, JavaScript programs are executed by the web browser. JavaScript statements are composed of Values, Operators, Expressions, Keywords, and Comments.
+
+Example:
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+        document.write("Welcome to Doc Object..!!<br>")
+        document.write("Welcome to Document Object..!!<br>")
+        document.write(1 +"<br>");document.write(2+ "<br>")
+    </script>
+</head>
+
+JavaScript Code
+JavaScript code is a sequence of JavaScript statements. Each statement is executed by the browser in the sequence they are written.
+
+Example
+<!doctype html>
+<head>
+<script type="text/javascript">
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph.</p>");
+</script> 
+</head>
+
+JavaScript Blocks
+JavaScript statements can be grouped together in blocks. Blocks start with a left curly bracket {, and end with a right curly bracket }. The purpose of a block is to make the sequence of statements execute together. 
+
+This example will write a heading and two paragraphs to a web page:
+Example
+<!doctype html>
+<head>
+<script type="text/javascript">
+{
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph.</p>");
+document.write("<p>This is another paragraph.</p>");
+}
+</script>
+</head>
+
+Comments in JAVASCRIPT:
+Comments are non-executable statements or ignore statements. Comments are using to declare customize statements or user defined statements within the source code.
+
+In JavaScript comments are classified into the following types.
+1. Single line comments
+2. Multiline comments
+
+1. Single line comments
+These comments are applicable to a specific line or statement. It is always denoted with (//) double forward slash.
+
+Syntax:
+// This is a comment
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+//document.write("Hello Comment");
+//document.write("Thank U");
+</script>
+</head>
+
+O/P: Blank Page
+
+2. Multiline comments:
+These comments are applicable one or more lines. It is always denoted with /* */ 
+
+Syntax:
+/* 
+Statements
+Statements
+*/
+
+Example:
+<!doctype html>
+<head>
+<script>
+/* document.write("Welcome to JS");
+document.write("Thank U");
+document.write("Good Bye"); */
+</script>
+</head>
+
+JavaScript Values
+The JavaScript syntax defines two types of values:
+Fixed values => Fixed values are called Literals/Constants.
+Variable values => Variable values are called Variables/Identifier.
+
+JavaScript Literals
+1. Numbers are written with or without decimals:
+10.50; 1001
+
+Example:
+<!DOCTYPE html>
+<body>
+<script>
+var a=10
+document.write("The Value is: "+a +"<br>")
+var a=9.99
+document.write("The Value is: "+a)
+</script>
+</body>
+
+2. Strings are text, written within double or single quotes:
+"JavaScrpt"; 'JavaScript'
+
+JavaScript Variables
+In a programming language, variables are used to store data values. JavaScript uses the var keyword to declare variables. An equal sign is used to assign values to variables.
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript Variables</h2>
+<script>
+var x; x = 6;
+document.write("The Value is: "+x +"<br>")
+</script>
+</body>
+
+
+JavaScript and Camel Case
+Programmers have used different ways of joining multiple words into one variable name:
+
+Hyphens:
+first-name, last-name, master-card, inter-city.
+
+Underscore:
+first_name, last_name, master_card, inter_city.
+
+Upper Camel Case (Pascal Case):
+FirstName, LastName, MasterCard, InterCity.
+
+Lower Camel Case:
+JavaScript programmers tend to use camel case that starts with a lowercase letter:
+firstName, lastName, masterCard, interCity.
+
+Semicolons are Optional:
+Simple statements in JavaScript are generally followed by a semicolon character.
+
+Example:
+<!doctype html>
+<script> 
+var1 = 10 
+var2 = 20 
+</script>
+
+Example:
+<!doctype html>
+<script> 
+var1 = 10; var2 = 20; 
+</script>
+
+Example:
+<!DOCTYPE html>
+<body>
+<script>
+document.write("Hello Welcome to JS");document.write("Hello Welcome to JS")
+</script>
+</body>
+
+Note: It is a good programming practice to use semicolons.
+
+JavaScript White Space
+JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.
+
+Example:
+<!DOCTYPE html>
+<body>
+<script>
+var Name =  "RajuSir";
+var Name="RajuSir"; 
+</script>
+</body>
+
+JavaScript is Case Sensitive
+A function named "myfunction" is not the same as "myFunction" and a variable named "myVar" is not the same as "myvar".
+
+Example:
+<!DOCTYPE html>
+<body>
+<script>
+var a=10;A=100;b=1;B=100
+document.write(a+A)
+document.write("<br/>")
+document.write(b-B)
+</script>
+</body>
+
+JavaScript Place in HTML File:
+There is a flexibility given to include JavaScript code anywhere in  HTML document. But there are following most preferred ways to include JavaScript in your HTML file.
+1. Script in <head>...</head> section.
+2. Script in <body>...</body> section.
+3. Script in <body>...</body> and <head>...</head> sections.
+4. Script in and external file and then include in  <head>...</head> section.
+
+Using an External JavaScript
+JavaScript can also be placed in external files. External JavaScript files often contain code to be used on several different web pages. External JavaScript files have the file extension .js.
+
+NOTE:
+External script cannot contain the <script></script> tags!
+
+NOTE:
+To use an external script, point to the .js file in the "src" attribute of the <script> tag:
+
+1. Step1 --> Create JavaScript File
+document.write("<h1>Wecome to JS External Programming!!</h1>");
+document.write("<b>Bye...!!");  
+
+Save with myscript.js Extension....!!
+
+2. Step2 --> Create HTML file
+<html>
+<head>
+<script type="text/javascript" src="myscript.js"></script>
+</head>
+<body>
+</body>
+</html>

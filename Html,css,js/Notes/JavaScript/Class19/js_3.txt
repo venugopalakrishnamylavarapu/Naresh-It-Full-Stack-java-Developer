@@ -1,0 +1,258 @@
+JavaScript Popup Boxes
+JavaScript has three kind of popup boxes: 
+1. Alert box
+2. Confirm box
+3. Prompt box.
+
+Alert Box
+An alert box is often used if you want to make sure information comes through the user. When an alert box pops up, the user will have to click "OK" to proceed. 
+
+Syntax
+alert("Message");
+
+Example:
+<html>
+<head>
+<title>Alert box</title>
+<script type="text/javascript">
+alert("Click OK to Proceed");
+alert("Naresh i Technologies");
+</script>
+</head>
+<body>
+</body>
+</html>
+
+How to write text on multiple lines in an alert box?
+We can't use the <br> tag here, as we did in write(), because alert() is a method of the window object that cannot interpret HTML tags. Instead we use the new line escape character.
+
+Escape characters in JavaScript:
+Escape characters are characters that can be interpreted in some alternate way then what we intended to. To print these characters as it is, include backslash ‘\’ in front of them.
+Code	Result
+\b	Backspace
+\f	Form Feed
+\n	New Line
+\r	Carriage Return
+\t	Horizontal Tabulator
+\v	Vertical Tabulator
+\\	Backslash
+
+Example:
+<script>
+alert("JavaScript\nis\na\nclient-side\nprogramming\nlanguage");
+</script>
+
+Example:
+<script>
+alert("1\n\t2\n\t\t3");
+</script>
+
+Example:
+<html>
+<head>
+<script type="text/javascript">
+function show_alert()
+{
+alert("I am an alert box!");
+}
+</script>
+</head>
+<body>
+<input type="submit" onclick="show_alert()" value="Show alert box" />
+</body>
+</html>
+
+Confirm Box:
+A confirm box is often used if you want the user to verify or accept something. When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed. If the user clicks "OK", the box returns true. If the user clicks "Cancel", the box returns false.
+
+Syntax
+confirm("Message");
+
+Example:
+<html>
+<head>
+<title>Confirm box</title>
+<script type="text/javascript">
+confirm("Click OK or Cancel");
+</script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<script>
+xyz=confirm("Select OK or Cancel");
+if (xyz==true)
+{
+alert("u selected OK");
+}
+else
+{
+alert("u selected cancel");
+}
+</script>
+<body>
+</body>
+
+Example:
+<html>
+<head>
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("Press a button");
+if (r==true)
+  {
+  alert("You pressed OK!");
+  }
+else
+  {
+  alert("You pressed Cancel!");
+  }
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="show_confirm()" value="Show confirm box" />
+</body>
+</html>
+
+Prompt Box
+A prompt box is often used if you want the user to input a value before entering a page. When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value. If the user clicks "OK" the box returns the input value. If the user clicks "Cancel" the box returns null.
+
+Syntax
+prompt("sometext","defaultvalue");
+
+Example:
+<html>
+<head>
+<title>Prompt box</title>
+<script type="text/javascript">
+var x=prompt("Enter the number","20");
+alert("The Value that u entered is "+x);	
+</script>
+</head>
+<body>
+</body>
+</html>
+
+Example2:
+<html>
+<head>
+<script type="text/javascript">
+function show_prompt()
+{
+var name=prompt("Please enter your name","Raju");
+if (name!=null && name!="")
+  {
+  document.write("<p>Hello " + name + "! How are you today?</p>");
+  }
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="show_prompt()" value="Show prompt box" />
+</body>
+</html>
+
+
+JavaScript Variables/identifiers:
+A JavaScript variable is simply a name of storage location. There are some rules while declaring a JavaScript variable.
+
+1 Names can contain letters, digits, underscores, and dollar signs.
+2 Names must begin with a letter
+3 Names can also begin with $ and _ (but we will not use it in this tutorial)
+4. Reserved words (like JavaScript keywords) cannot be used as names
+5. You declare JavaScript variables with the var keyword
+6. Names are case sensitive (y and Y are different variables)
+
+Correct JavaScript variables
+var x = 10;  
+var _value="NareshIT";  
+
+Incorrect JavaScript variables
+var  1abc=30;  
+var *a=320;  
+
+Example:
+<!doctype html>
+<head>
+<script>  
+var x = 10;  
+var y = 20;  
+var z=x+y;  
+document.write("The Result is: "+z);  
+</script>
+</head>  
+
+One Statement, Many Variables
+You can declare many variables in one statement. Start the statement with var and separate the variables by comma.
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript Variables</h2>
+<script>
+var person = "SARA", bname = "Yamaha", price = 2000;
+document.write(bname +"<br>")
+document.write(price +"<br>")
+</script>
+</body>
+
+Value = undefined
+A variable declared without a value will have the value undefined.
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript Variables</h2>
+<script>
+var bname;
+document.write(bname)
+</script>
+</body>
+
+Re-Declaring JavaScript Variables
+If you re-declare a JavaScript variable, it will not lose its value.
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript Variables</h2>
+<p id="txt"></p>
+<script>
+var bname = "Yamaha";
+var bname;
+document.getElementById("txt").innerHTML = bname;
+</script>
+</body>
+
+JavaScript Dollar Sign $
+A letter (A-Z or a-z), A dollar sign ($), Or an underscore (_)
+Since JavaScript treats a dollar sign as a letter, identifiers containing $ are valid variable names:
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript $</h2>
+<script>
+var $ = 1;
+var $myMoney = 4;
+document.write( $ + $myMoney) 
+</script>
+</body>
+
+JavaScript Underscore (_)
+Since JavaScript treats underscore as a letter, identifiers containing _ are valid variable names:
+
+Example:
+<!DOCTYPE html>
+<body>
+<h2>JavaScript _</h2>
+<script>
+var _x = 2;
+var _y = 5;
+document.write(_x + _y);
+</script>
+</body>

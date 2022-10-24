@@ -1,0 +1,334 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            var x=100;
+            document.write(x +"<br>")
+        }
+        document.write(x)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            x=200;
+            document.write(x +"<br>")
+        }
+        document.write(x)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            x=200;
+            document.write(x +"<br>")
+        }
+        var x=300;
+        document.write(x)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            let x=200;
+            document.write(x +"<br>")
+        }
+        //var x=300;
+        document.write(x)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            let x=200;
+            document.write(x +"<br>")
+        }
+        let x=300;
+        document.write(x)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+            let x=200;
+            let y=300;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+            //let never allows duplicate with in the block
+            let x=300;
+            let y=400;
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            let x=200;
+            let y=300;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+        }
+            //let never allows duplicate with in the block
+            let x=300;
+            let y=400;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+              
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            const x=200;
+            const y=300;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+        }
+            //let never allows duplicate with in the block
+            const x=300;
+            const y=400;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+              
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+
+            const x=200;
+            const y=300;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+
+            //let never allows duplicate with in the block
+            const x=300;
+            const y=400;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+              
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+NOTE: const must not re-declare......................!!
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            var x=200;
+            const y=300;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+        }
+            //let never allows duplicate with in the block
+             //x=300;
+             //y=400;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+              
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        {
+            var x=200.99;
+            let y=300.01;
+            document.write(x +"<br>")
+            document.write(y +"<br>")
+        }
+            //let never allows duplicate with in the block
+             //x=300;
+             //y=400;
+            document.write(x +"<br>")
+            document.write(y +"<br>")//No output...!!
+              
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var x=10,y=200,z=300
+        document.write(x+" "+y+" "+z )
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var x
+        document.write("The value is: "+x);
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        var x=null
+        document.write("The value is: "+x);
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Statements...!</title>
+    <script>
+        document.write("Welcome to JAVASCRIPT...!!");
+    </script>
+</head>
+<body>
+    <noscript>
+        <p>OOPs Your Browser not supporting Scripting...!!</p>
+    </noscript>
+</body>
+</html>
