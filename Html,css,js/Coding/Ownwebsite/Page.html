@@ -7,26 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile website</title>
     <link href="style.css" rel="stylesheet">
-    <script>
-        var circle = document.getElementById("circle")
-        var upBtn = document.getElementById("upBtn");
-        var downBtn = document.getElementById("downBtn");
 
-        var rotateValue = circle.style.transform;
-        var rotateSum;
 
-        upBtn.onclick = function() {
-            rotateSum = rotateValue + "rotate(-90deg)";
-            circel.style.transform = rotateSum;
-            rotateValue = rotateSum;
-        }
-
-        downBtn.onclick = function() {
-            rotateSum = rotateValue + "rotate(90deg)";
-            circel.style.transform = rotateSum;
-            rotateValue = rotateSum;
-        }
-    </script>
 </head>
 
 <body>
@@ -50,7 +32,7 @@
             <img src="mobile.png" class="mobile">
             <div id="circle">
                 <div class="feature one">
-                    <img href="camera.png">
+                    <img href="Camera.png">
                     <div>
                         <h1>Camera</h1>
                         <p>12mp anta</p>
@@ -60,31 +42,53 @@
                     <img href="battery.png">
                     <div>
                         <h1>Battery</h1>
-                        <p>12mp anta</p>
+                        <p>nikenduku ra battery!!</p>
                     </div>
                 </div>
                 <div class="feature three">
                     <img href="display.png">
                     <div>
                         <h1>Display</h1>
-                        <p>12mp anta</p>
+                        <p>Display enduko telsu ley</p>
                     </div>
                 </div>
                 <div class="feature four">
                     <img href="processor.png">
                     <div>
                         <h1>Processor</h1>
-                        <p>12mp anta</p>
+                        <p>manchi processor ye ra</p>
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="controls">
-            <img src="arrow.png" id="upBtn" onclick="upB()">
-            <h3>Feature</h3>
-            <img src="arrow.png" id="downBtn" onclick="downB()">
+            <img src="arrow.png" id="upBtn">
+            <h3>Features</h3>
+            <img src="arrow.png" id="downBtn">
         </div>
+        <script language="javascript" type="text/javascript">
+            var circle = document.getElementById("circle");
+            var upBtn = document.getElementById("upBtn");
+            var downBtn = document.getElementById("downBtn");
+
+            var rotateValue = circle.style.transform;
+            var rotateSum;
+
+            upBtn.onclick = function() {
+                rotateSum = rotateValue + "rotate(-90deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;
+            }
+
+            downBtn.onclick = function() {
+                rotateSum = rotateValue + "rotate(90deg)";
+                circle.style.transform = rotateSum;
+                rotateValue = rotateSum;
+            }
+        </script>
     </div>
+
 
 </body>
 
