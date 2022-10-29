@@ -1,0 +1,123 @@
+
+HTML onchange Event:
+The onchange attribute fires the moment when the value of the element is changed. The onchange attribute can be used with the <input>, <textarea>, and <select> elements.
+
+Syntax
+ <element onchange="script"> 
+
+Attribute Values 
+Value	Description
+script	The script to be run on onchange
+
+Example:
+<!doctype html>
+<head>
+<script>
+function checkField(val)
+{
+alert("The input value has changed. The new value is: " + val);
+}
+</script>
+</head>
+<body>
+Enter text: 
+<input type="text" name="txt" value="NareshTech" onchange="checkField(this.value)">
+<p>Modify the text in the input field, then click outside the field to fire onchange.</p>
+</body>
+
+HTML onselect Event
+The onselect attribute fires after some text has been selected in an element. The onselect attribute can be used within: 
+<input type="file">, <input type="password">, 
+<input type="text">, and <textarea>.
+
+Syntax
+ <element onselect="script"> 
+	
+Attribute Values
+Value	Description
+script	The script to be run on onselect
+
+Examples:
+<!doctype html>
+<head>
+<script>
+function showMsg()
+{
+alert("You have Selected My Text!");
+}
+</script>
+</head>
+<body>
+Some text: 
+<input type="text" value="sraju!!" onselect="showMsg()">
+</body>
+</html>
+
+Form Events:
+onblur:The onblur event occurs when an object loses focus. Onblur is most often used with form validation code (When the user leaves a form field).
+
+Note: The onblur event is the opposite of the onfocus event.
+
+Syntax
+In HTML:
+<element onblur="SomeJavaScriptCode">
+
+In JavaScript:
+object.onblur="SomeJavaScriptCode"
+
+Supported JS objects: 
+Document, Window.
+
+Example:
+<!doctype html>
+<head>
+<script>
+function upperCase()
+{
+var x=document.getElementById("fname");
+x.value=x.value.toUpperCase();
+}
+function lowerCase()
+{
+var x=document.getElementById("fname");
+x.value=x.value.toLowerCase();
+}
+</script>
+</head>
+<body>
+Enter your name: <input type="text" id="fname" onblur="upperCase()" />
+</body>
+
+onfocus Event:
+The onfocus event occurs when an element gets focus. Onfocus is most often used with <input>, <select>, and <a>.
+
+Note: The onfocus event is the opposite of the onblur event.
+
+Syntax
+In HTML:
+<element onfocus="SomeJavaScriptCode">
+
+In JavaScript:
+object.onfocus="SomeJavaScriptCode"
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function setStyle(x)
+{
+document.getElementById(x).style.background="yellow";
+}
+</script>
+</head>
+<body>
+<form action="html5.png" name="myform" id="form1">
+<label>First name: </label> <br/>
+<input type="text" id="fname" onfocus="setStyle(this.id)" />
+<br />
+<label>Last name: </label> <br/>
+<input type="text" id="lname" onfocus="setStyle(this.id)" /> <br/>
+<input type='submit' value="NextPage"/>
+<input type='reset' value="Cancel"/>
+</form>
+</body>

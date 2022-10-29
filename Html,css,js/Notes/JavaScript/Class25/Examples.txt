@@ -1,0 +1,87 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CheckField(val)
+        {
+            alert("Value is: "+val)
+            alert("Thank U....!!")
+        }
+    </script>
+</head>
+<body>
+    <form action="butterfly.gif">
+        <input type="text" name="txt" value="JavaScript"
+        onchange="CheckField(this.value)"/>
+        <p>Update the value from the text box and check the alert Msg.!!</p>
+    </form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SelectField()
+        {
+            alert("Sorry Text must not Select..!!")
+            alert("Thank U....!!")
+        }
+    </script>
+</head>
+<body>
+    <form action="butterfly.gif">
+        <input type="text" name="txt" value="JavaScript"
+        onselect="SelectField()"/>
+        <p>Select the value from the text box and check the alert Msg.!!</p>
+        <input type="submit" value="NextPage"/>
+    </form>
+</body>
+</html>
+
+EXAMPLE:
+<!doctype html>
+<head>
+<script>
+function upperCase()
+{
+var x=document.getElementById("fname");
+x.value=x.value.toUpperCase();
+}
+function lowerCase()
+{
+var x=document.getElementById("lname");
+x.value=x.value.toLowerCase();
+}
+</script>
+</head>
+<body>
+Enter your name: <input type="text" id="lname" onblur="lowerCase()" />
+</body>
+
+
+Example:
+<!doctype html>
+<head>
+<script>
+function SetColor(x)
+{
+    document.getElementById(x).style.background='yellow'
+}
+</script>
+</head>
+<body>
+Enter your Fname: <input type="text" id="lname" onfocus="SetColor(this.id)" />
+<br>
+Enter your Lname: <input type="text" id="fname" onfocus="SetColor(this.id)" />
+</body>

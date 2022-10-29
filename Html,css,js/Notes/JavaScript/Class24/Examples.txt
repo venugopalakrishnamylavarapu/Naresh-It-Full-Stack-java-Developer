@@ -1,0 +1,183 @@
+Examples:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyAlertMsg()
+        {
+            window.alert("Welcome to Alert Messages...")
+        }
+    </script>
+</head>
+<body>
+    <p>Click the button to display Alert Messsage....!!</p>
+    <button onclick="MyAlertMsg()">Messages</button>
+</body>
+</html>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function MyMsg()
+{
+alert("Welcome to JSEvents");
+}
+</script>
+</head>
+<body>
+<p>Click the button to display the alert Msg ..</p>
+<button  onclick="MyMsg()">
+<img src='html5.png' width=10px height=10px> 
+</button>
+<input type='submit' value="ClickMe" onclick="MyMsg()">
+<input type='button' value="ClickMe" onclick="MyMsg()" >
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function MyColorText()
+{
+    document.getElementById('clr').style.color='#FF0000';
+}
+</script>
+</head>
+<body>
+    <p id="clr">Double Click the Button to display the color of text...!!</p>
+    <button ondblclick="MyColorText()">ClickHereTwice</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script>
+function copyText()
+{
+document.getElementById("field2").value
+=
+document.getElementById("field1").value;
+}
+</script>
+</head>
+<body>
+Field1: <input type="text" id="field1" value="Hello World!" /><br />
+Field2: <input type="text" id="field2" />
+<br /><br />
+<button ondblclick="copyText()">Copy Text</button>
+</body>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function PageLoad()
+        {
+            alert("Hey Page Loaded Successfully...!!!")
+        }
+    </script>
+</head>
+<body onload="PageLoad()">
+    <p>Refresh Page and Observe......!!</p>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ImageLoad()
+        {
+            alert("Hey Image Loaded Successfully...!!!")
+        }
+    </script>
+</head>
+<body>
+    <img src="butterfly.gif" width="200px" onload="ImageLoad()" alt="SorryNoImgFound"/>
+    <p>Refresh Page and Observe......!!</p>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function BigImage(x)
+        {
+            x.style.width="300px";
+            x.style.height="300px";
+        }
+        function SmallImage(x)
+        {
+            x.style.width="30px";
+            x.style.height="30px";
+        }
+    </script>
+</head>
+<body>
+    <img src="butterfly.gif" width="30px" height="30px" onmouseover="BigImage(this)" 
+    onmouseout="SmallImage(this)" alt="SorryNoImgFound"/>
+    <p>Refresh Page and Observe......!!</p>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      
+    </script>
+</head>
+<body>
+    <h1 onmouseover="style.color='red'" 
+    onmouseout="style.color='black'">
+    Mouse over this text
+    </h1>
+</body>
+</html>
+
+Examples:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ShowMessage()
+        {
+            alert("Hello Window resized Successfully...!!")
+            alert("Thank U....!!")
+        }
+    </script>
+</head>
+<body onresize="ShowMessage()">
+    <p>Resize the web page and check the Alert....!!</p>
+</body>
+</html>

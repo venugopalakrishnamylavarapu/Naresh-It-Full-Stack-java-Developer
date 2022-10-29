@@ -1,0 +1,215 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=4;i++){
+            document.write("The Number is: "+i)
+            document.write("<br>")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=6;i++){
+            document.write("The Number is: "+i)
+            document.write("<br>")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=6;i++){
+            document.write("<h"+i+">This is Heading: ")
+            document.write("</h"+i+">")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=5;i++){
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+        }
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=5;i++){
+            //True block Inside the loop
+            //Pass value existed
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+        }
+        //False Block
+        //out side loop
+        // fail value existed
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+    </script>
+</head>
+<body>
+    <!-- break ==> terminates the loop at given condition
+    continue ==> Except given condition all get executed -->
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=5;i++){
+            if(i==4)
+            {
+                break;
+            }
+            // h1 h2 h3
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+        }
+            //h4
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=3;i++){
+            if(i==1)
+            {
+                break;
+            }
+            // h1 h2 h3
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+        }
+            //h4
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=6;i++){
+            if(i==6)
+            {
+                continue;
+            }
+            // h1 h2 h3 h4 h5 executed
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+            //h6 is skipped(contine never executed given condition..!!)
+        }
+            //h7 executed
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for(i=1;i<=5;i++){
+            if(i==5)
+            {
+                continue;
+            }
+            // h1 h2 h3 h4 
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+            //h6 is skipped(contine never executed given condition..!!)
+        }
+            //h6 executed
+            document.write("<h"+i+">This is Heading: "+i)
+            document.write("</h"+i+">")
+    </script>
+</head>
+<body>
+</body>
+</html>

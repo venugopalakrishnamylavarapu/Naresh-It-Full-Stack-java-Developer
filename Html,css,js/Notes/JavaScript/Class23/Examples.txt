@@ -1,0 +1,290 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x;// Variable int variable
+        document.write("List of Navigator Object Properties: ")
+        for (x in navigator)//loop navigator is object 
+        //It contains all browser related pros
+        //window is class for all objects in JavaScript
+        //window is represent browser object
+        {
+            document.write(x +"<br>")
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+Function ==> Code reusability or Modulartiy
+or 
+Method ==> Code reusability or Modulartiy
+
+Function is out of the class
+With in the class it is the method
+class ==> Blue print or Prototype or Model or Root
+Object ==> Instance or object or reference
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //It is called part of the function
+        function MyMsg()
+        {
+        alert("Welcome to ALert Message...!!")
+        }
+    </script>
+</head>
+<body>
+    <!--Calling Part of the function...!!-->
+    <p>Click the button to display Alert Message....!!</p>
+    <button onclick="MyMsg()">ClickMe</button>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html>
+    <title>Java-Script Functions...!!</title>
+    <script type="text/javascript">
+    //function body Part
+    //Logical Implementation Part
+    //This is Called Part
+    //Declaring Arguments
+    //Function is return type
+    function WishMe()
+    {
+      window.alert("Welcome to Functions...!!")
+      alert("FunctionsAreCodeReusability...!!")
+    }
+    </script>
+</head>
+<body>
+  <!--Function Calling Part -->
+  <!--Passing Parameters -->
+  <!--Tail Part of the function -->
+<p>Click the Following button to call the function....!!</p>
+<button onclick="WishMe()">ClickHere.!</button>
+</body>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //It is called part of the function
+        function MyMsg()
+        {
+        alert("Welcome to ALert Message...!!")
+        }
+    </script>
+</head>
+<body>
+    <!--Calling Part of the function...!!-->
+    <p>Click the button to display Alert Message....!!</p>
+    <button onclick="MyMsg()">ClickMe</button>
+    <button onclick="MyMsg()">ClickMe</button>
+    <button onclick="MyMsg()">ClickMe</button>
+    <button onclick="MyMsg()">ClickMe</button>
+    <button onclick="MyMsg()">ClickMe</button>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyMsg()
+        {
+        return("Welcome to Javascript Coding...!!")
+        }
+    </script>
+</head>
+<body>
+    <script>
+        document.write(MyMsg())
+    </script>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyMsg(x,y)
+        //x and y are the arguments
+        {
+        return(x+y)
+        }
+    </script>
+</head>
+<body>
+    <script>
+        //Parameters meas Passed values
+        document.write("Addition of two numbers is: "+MyMsg(4,5))
+    </script>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyValues(x,y,z)
+        //x and y are the arguments
+        {
+        return(x+y+z)
+        }
+    </script>
+</head>
+<body>
+    <script>
+        //Parameters meas Passed values
+        document.write("Addition of two numbers is: "+MyValues(4,5,6))
+    </script>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyValues()
+        {
+        //x and y are local variables
+        var x=10;
+        var y=20;
+        document.write(x+y)
+        }
+    </script>
+</head>
+<body>
+    <p>Click the button to display the values....!!</p>
+    <button onclick="MyValues()">ClickHere</button>      
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      //Global Variable Declaration......!!
+        var x=200;
+        var y=300
+        function MyValues()
+        {
+        //x and y are local variables declaration...!!
+        var x=10;
+        var y=20;
+        document.write(x+y)
+        }
+    </script>
+</head>
+<body>
+    <p>Click the button to display the values....!!</p>
+    <button onclick="MyValues()">ClickHere</button>      
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=200;
+        var y=300
+        function MyValues()
+        {
+        //x and y are local variables
+       // var x=10;
+        //var y=20;
+        document.write(x+y +"<br>") 
+        document.write(x-y +"<br>") 
+        document.write(x*y +"<br>") 
+        }
+    </script>
+</head>
+<body>
+    <p>Click the button to display the values....!!</p>
+    <button onclick="MyValues()">ClickHere</button>      
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function BgColorRed()
+        {
+            document.bgColor='red'
+        }
+        function BgColorGreen()
+        {
+            document.bgColor='green'
+        }
+        function BgColorBlue()
+        {
+            document.bgColor='blue'
+        }
+    </script>
+</head>
+<body>
+    <p>Click the button to display Red Color...!!</p>
+    <button onclick="BgColorRed()">RED</button>
+    <p>Click the button to display Green Color...!!</p>
+    <button onclick="BgColorGreen()">GREEN</button>
+    <p>Click the button to display Blue Color...!!</p>
+    <button onclick="BgColorBlue()">BLUE</button>
+</body>
+</html>
