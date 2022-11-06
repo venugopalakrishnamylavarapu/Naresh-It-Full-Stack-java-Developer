@@ -1,0 +1,190 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("Welcome <br>");
+        document.write("Welcome<br>");
+        document.write("Welcome");
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("Welcome <br>);
+        document.write("Welcome<br>");
+        document.write("Welcome");
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+NOTE:
+In the above script leads to syntax error, it effect to total program.....................!!!
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        try
+        {
+        window.alerts("Weclcome")
+        }
+        catch(e)
+        {
+            alert(e.description)
+        }
+        window.alert("Weclcome")
+        window.alert("Weclcome")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=prompt("Enter Value: ");
+        alert(eval(x))
+        alert("NextStatement")
+        alert("Good Bye...!!")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+NOTE:
+The above script successful when ur giving numeical values, If non-numeric it carshes, that time try...catch mandatory...!!
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=prompt("Enter Value: ");
+        try
+        {
+        alert(eval(x))
+        }
+        catch(e)
+        {
+            alert("Sorry only Numers valid: ",e.description)
+        }
+        alert("NextStatement")
+        alert("Good Bye...!!")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=prompt("Enter Value: ");
+        try
+        {
+        alert(eval(x))
+        }
+        catch(e)
+        {
+            alert("Sorry only Numers valid: ",e.description)
+        }
+        finally
+        {
+            alert("FinallyBlockSuccess...!!")
+        }
+        alert("NextStatement")
+        alert("Good Bye...!!")
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=prompt("Enter Any Number: ","100")
+        try
+        {
+            if(x>100)
+            {
+                throw "Err1"
+            }
+            else if(x<=100)
+            {
+                throw "Err2"
+            }
+            else if(isNaN(x))
+            {
+                throw "Err3"
+            }
+        }
+        catch(err)
+        {
+            if(err=="Err1")
+            {
+                document.write("Error is High....!!")
+            }
+            if(err=="Err2")
+            {
+                document.write("Error is Low....!!")
+            }
+            if(err=="Err3")
+            {
+                document.write("Error is NoT a Number....!!")
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:

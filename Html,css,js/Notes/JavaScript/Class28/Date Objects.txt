@@ -1,0 +1,315 @@
+
+
+JavaScript Boolean Object
+The Boolean object represents two values, either "true" or "false". If value parameter is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false.
+
+Syntax
+Use the following syntax to create a boolean object.
+var val = new Boolean(value);
+
+Example1:
+<!doctype html>
+<head>
+<script>
+function myFunction() 
+{
+document.getElementById("demo").innerHTML = Boolean(10 > 9);
+}
+</script>
+</head>
+<body>
+<p id='demo'>Display the value of Boolean(10 > 9):</p>
+<button onclick="myFunction()">ClickMe</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var b1=new Boolean(0);
+var b2=new Boolean(1);
+var b3=new Boolean("");
+var b4=new Boolean(null);
+var b5=new Boolean(NaN);
+document.write("0 is boolean "+ b1 +"<br />");
+document.write("1 is boolean "+ b2 +"<br />");
+document.write("An empty string is boolean "+ b3 + "<br />");
+document.write("null is boolean "+ b4+ "<br />");
+document.write("NaN is boolean "+ b5 +"<br />");
+</script>
+</head>
+
+JavaScript - The Date Object
+The Date object is a datatype built into the JavaScript language. Date objects are created with the new Date( ). Once a Date object is created, a number of methods allows you to operate on it. Most methods simply allows you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC.
+
+There are four ways of instantiating a date:
+var x = new Date();
+var x = new Date(milliseconds);
+var x = new Date(dateString);
+var x = new Date(year, month, day, hours, minutes, seconds, milliseconds); 
+
+Syntax:Date()
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+   var dt = Date();
+   document.write("Date and Time : " + dt ); 
+</script>
+</head>
+
+JavaScript date object Methods:
+The Date object has been created, and now we have a variable that holds the current date! To get the information we need to use the following list of methods...!!
+
+1 getTime() -Number of milliseconds
+2 getSeconds() -Number of seconds (0-59)
+3 getMinutes() -Number of minutes (0-59)
+4 getHours() -Number of hours (0-23)
+5 getDay()-Day of the week(0-6).0=Sunday,6=Saturday
+6 getDate() -Day of the month (0-30)
+7 getMonth() -Number of month (0-11)
+8 getFullYear() -The four digit year (1970-9999)
+
+Example:
+<!doctype html>
+<body>
+<h1  style='color:red;font-family:candara;font-size:50px'>
+<script type='text/javascript'>
+var dt=new Date();
+var  mm=dt.getMonth()+1
+var  dd=dt.getDate()
+var  yy=dt.getFullYear()
+document.write(mm+"/"+dd+"/"+yy+"<br/>")
+var hh=dt.getHours();
+var mm=dt.getMinutes();
+var ss=dt.getSeconds();
+document.write(hh+":"+mm+":"+ss)
+</script></h1>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var dt = new Date()
+var mm = dt.getMonth() + 1
+var dd = dt.getDate()
+var yy = dt.getFullYear()
+document.write(mm + "/" + dd + "/" + yy +"<br>")
+</script>
+</head>
+
+getFullYear() Method
+Description: The getFullYear() method returns the year (four digits) of the specified date. 
+
+Syntax: 
+dt.getFullYear()
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction()
+{
+var dt = new Date();
+var x = document.getElementById("dm");
+x.innerHTML=dt.getFullYear();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display the full year of todays date.</p>
+<button onclick="myFunction()">DisplayFullYear</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+   var dt = new Date("December 25, 1995 23:15:00");
+   document.write("getFullYear() : " + dt.getFullYear() ); 
+</script>
+</head>
+
+The getDate() method returns the day of the month (from 1 to 31) for the specified date.
+
+Syntax: 
+dt.getDate()
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction()
+{
+var dt = new Date();
+var x = document.getElementById("dm");
+x.innerHTML=dt.getDate();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display todays day of the month.</p>
+<button onclick="myFunction()">Display</button>
+</body>
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+var dt=new Date("July 21, 1983 01:15:00");
+var x=document.getElementById("dm");
+x.innerHTML=dt.getDate();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display todays day of the month.</p>
+<button onclick="myFunction()">Display</button>
+</body>
+
+getHours:
+The getHours() method returns the hour (from 0 to 23) of the specified date and time.
+
+Syntax: 
+dt.getHours()
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+var dt = new Date();
+var x = document.getElementById("dm");
+x.innerHTML=dt.getHours();
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display the hour of the time right now.</p>
+<button onclick="myFunction()">DisplayHours</button>
+</body>
+
+JavaScript getTimezoneOffset() Method:
+It returns the time difference between UTC time and local time, in minutes.
+
+Note:
+If your time zone is GMT+2, -120 will be returned.
+
+Note: 
+The returned value is not a constant, because of the practice of using Daylight Saving Time.
+
+Note: 
+UTC time is the same as GMT time.
+
+Syntax
+Date.getTimezoneOffset()
+
+Technical Details
+Return Value: 	
+A Number, representing the time difference between UTC and Local Time, in minutes.
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction() 
+{
+var dt = new Date();
+var x=document.getElementById("dm");
+x.innerHTML=dt.getTimezoneOffset();
+}
+</script>
+</head>
+<body>
+<p>Click the button to display the timedifference between UTC and local time.</p>
+<button onclick="myFunction()"> ClickMe </button>
+<p id="dm"></p>
+</body>
+
+Set Dates
+We can easily manipulate the date by using the methods available for the Date object.
+
+setDate() Method:
+The setDate() method sets the day of the month to the date object.
+
+Syntax: 
+Date.setDate(day)
+
+Example:
+<!doctype html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+var dt = new Date();
+dt.setDate(15);
+var x = document.getElementById("dm");
+x.innerHTML=dt;
+}
+</script>
+</head>
+<body>
+<p id="dm">Click the button to display the date after changing the day of the month. </p>
+<button onclick="myFunction()">Display_SetDate</button>
+</body>
+
+JavaScript setFullYear() Method
+The setFullYear() method sets the year (four digits for dates between year 1000 and 9999) of the date object. This method can also be used to set the month and day of month.
+
+Syntax
+Date.setFullYear(year,month,day)
+
+Example:
+<!doctype html>
+<body>
+<p>Click the button to display a date after changing the year.</p>
+<button onclick="myFunction()">ClickMe</button>
+<p id="dm"></p>
+<script type="text/javascript">
+function myFunction() 
+{
+var dt = new Date();
+dt.setFullYear(2020);
+document.getElementById("dm").innerHTML = dt;
+}
+</script>
+</body>
+
+JavaScript setMonth() Method
+The setMonth() method sets the month of a date object. 
+
+Note: January is 0, February is 1, and so on.
+
+Syntax
+Date.setMonth(month,day)
+
+Example:
+<!doctype html>
+<body>
+<p>Click the button to display the date after changing the month.</p>
+<button onclick="myFunction()">Click it</button>
+<p id="demo"></p>
+<script type="text/javascript">
+function myFunction() 
+{
+var d = new Date();
+d.setMonth(5);
+document.getElementById("demo").innerHTML = d;
+}
+</script>
+</body>
+
+Redirect to Other Location:
+Javascript window.location 
+Control over what page is loaded into the browser rests in the JavaScript property window.location. By setting window.location equal to a new URL, you will in turn change the current webpage to the one that is specified.
+
+Example:
+<!doctype html>
+<script type="text/javascript">
+window.location = "http://www.nareshit.com/"
+</script>

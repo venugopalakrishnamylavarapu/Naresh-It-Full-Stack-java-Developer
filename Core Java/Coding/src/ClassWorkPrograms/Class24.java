@@ -4,7 +4,7 @@ package ClassWorkPrograms;
  my network got a problem so i mostly listened this class on mobile so i may missed some points thats why this thoery will be somewhat like errors
  but i do know the concepts before so i dont mind.
  
- Iteration Statements
+ ITERATION STATEMENTS:-
  ====================
  1)Java iteration statements enable repeated execution of part of a program until a certain termination condition becomes true.
  2)Java provides four iteration statements:

@@ -1,0 +1,130 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function BooleanVaue()
+        {
+            document.getElementById('de').innerHTML=Boolean(100>200)
+            //innerHTML is always with paired tag
+            //value is always non-paired tag
+            // tags are classified into 2 types...!!
+        }
+    </script>
+</head>
+<body>
+    <p id="de">Click the button to display the Value of Boolean...!!</p>
+    <button onclick="BooleanVaue()">BooleanValue</button>
+</body>
+</html>
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+var b1=new Boolean(0);
+var b2=new Boolean(1);
+var b3=new Boolean("");
+var b4=new Boolean(null);
+var b5=new Boolean(NaN);
+document.write("0 is boolean "+ b1 +"<br />");
+document.write("1 is boolean "+ b2 +"<br />");
+document.write("An empty string is boolean "+ b3 + "<br />");
+document.write("null is boolean "+ b4+ "<br />");
+document.write("NaN is boolean "+ b5 +"<br />");
+</script>
+</head>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color:red;font-family:tahoma">
+    <script>
+        var dt=new Date();
+        var mm=dt.getMonth()+1;
+        var dd=dt.getDate();
+        var yy=dt.getFullYear()
+        document.write(mm+"/"+dd+"/"+yy)
+    </script>
+    </h1>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color:red;font-family:tahoma">
+    <script>
+        var dt=new Date();
+        var hh=dt.getHours();
+        var mm=dt.getMinutes();
+        var ss=dt.getSeconds()
+        document.write(hh+":"+mm+":"+ss)
+    </script>
+    </h1>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function MyDate()
+    {
+        var dt=new Date();
+        var x=document.getElementById("x");
+        x.innerHTML=dt.getDate();
+        }
+    </script>
+</head>
+<body>
+    <p id="x">Click the button to display today date...!!</p>
+    <button onclick="MyDate()">ClickMe</button>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function MyDate()
+    {
+        var dt=new Date();//Creating Object
+        var x=document.getElementById("x");//getting based on id
+        x.innerHTML=dt.getDate();//getting date
+        }
+    </script>
+</head>
+<body>
+    <p id="x">Click the button to display today date...!!</p>
+    <button onclick="MyDate()">ClickMe</button>
+</body>
+</html>

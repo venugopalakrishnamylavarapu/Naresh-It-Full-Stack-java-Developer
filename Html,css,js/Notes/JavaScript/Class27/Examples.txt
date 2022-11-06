@@ -1,0 +1,118 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        person=new Object();
+        person.name='Ram';
+        person.age=30;
+        person.gender='male';
+        person.height=6;
+        document.write(person.name+' is '+person.age+' years old, '+person.gender+', and '+person.height+' foot tall.');
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        person=new Object();//new keyword is helping to create object in JS and JAVA
+//Name of the object is person
+        with (person)
+        {
+        name='Ram';//name is property
+        age=30;//age is peroperty
+        gender='male';//gender is property
+        height=6;//height is property
+        document.write(name+' is '+age+' years old, '+gender+', and '+height+' foot tall.');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        PyArr=['html','css','js','jquery','Angular']
+        document.write("Number of values in an Array: "+PyArr.length)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=new Array();
+        x[0]='HTML';
+        x[1]='CSS';
+        x[2]='JavaScript';
+        x[3]='jQuery';
+        x[4]='Angular';
+        document.write("Number of values in an Array: "+x.length)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x=new Array('HTML','CSS','JavaScript','jQuery','Angular',"ExpressJS");
+        document.write("Number of values in an Array: "+x.length)
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var names=['html','html5','css','css3','javascript','jQuery']
+        document.write(names.reverse())
+    </script>
+</head>
+<body>
+</body>
+</html>
