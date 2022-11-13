@@ -1,0 +1,345 @@
+﻿What is a Grid?
+In graphic design, a grid is a structure made up of a series of vertical and horizontal lines used to structure content. A grid is widely used to design layout and content structure in print design. In web design, a grid is a very effective method to create a consistent layout rapidly and effectively using HTML and CSS.
+
+Bootstrap Grid System 
+Bootstrap grid system provides the fastest and easy way to create layouts of web pages.
+
+Bootstrap provides a responsive, mobile-first fluid 12-column grid system. The responsive grid system appropriately scales up to 12 columns as the device or viewport size increases.
+
+MOBILE FIRST STRATEGY
+1 Content
+Determine what is most important.
+2 Layout
+Design to smaller widths first.
+Base CSS address mobile device first;media queries address for tablet,desktops.
+3 Progressive Enhancement
+Add elements as screen size increases.
+
+Grid System Rules
+Some Bootstrap grid system rules:
+1 Rows must be placed within a .container (fixed-width) or .container-fluid (full-width) for proper alignment and padding
+2 Use rows to create horizontal groups of columns
+3 Content should be placed within columns, and only columns may be immediate children of rows
+4 Predefined classes like .row and .col-xs-4 are available for quickly making grid layouts
+5 Columns create gutters (gaps between column content) via padding. That padding is offset in rows for the first and last column via negative margin on .rows
+6 Grid columns are created by specifying the number of 12 available columns you wish to span. For example, three equal columns would use three .col-xs-4
+
+Basic Structure of a Bootstrap Grid
+The following is a basic structure of a Bootstrap grid:
+
+<body>
+<div class="container">
+<div class="row">
+<div class="col-*-*">
+.....................
+.....................
+</div>
+</div>
+<div class="row">
+<div class="col-*-*">
+.....................
+.....................
+</div>
+</div>
+<div class="row">
+<div class="col-*-*">
+.....................
+.....................
+</div>
+</div>
+</div>
+</body>
+
+Media Queries
+Media query is a really fancy term for "conditional CSS rule". It simply applies some CSS based on certain conditions set forth. If those conditions are met, the style is applied.
+
+Media Queries in Bootstrap allow you to move, show and hide content based on viewport size. Following media queries are used in LESS files to create the key breakpoints in the Bootstrap grid system.
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
+
+Grid options:
+Extra small devices Phones (<768px) 	Class prefix --> .col-xs-
+Small devices Tablets (≥768px) 	Class prefix --> .col-sm-
+Medium devices Desktops (≥992px) 	Class prefix --> .col-md-
+Large devices Desktops (≥1200px)	Class prefix --> .col-lg-
+
+Grid Classes
+The Bootstrap grid system has four classes:
+
+1 xs (for phones)
+2 sm (for tablets)
+3 md (for desktops)
+4 lg (for larger desktops)
+
+The classes above can be combined to create more dynamic and flexible layouts.
+
+Bootstrap Grid - Stacked-to-horizontal
+We will use the .col-*-* grid classes to create a basic grid system that starts out stacked on mobiles and tablets (small devices), before becoming horizontal on desktop (medium and large) devices.
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>      
+      <div class="row">
+        <div class="col-sm-6" style="background-color:lavender;">
+          <p>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express..</p>
+          <p> AngularJS is a structural framework for dynamic web apps. </p>
+        </div>
+        <div class="col-sm-6" style="background-color:lavenderblush;">
+          <p>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. </p>
+        </div>
+      </div>
+    </div>
+   </body>
+
+Note: Try The above example with "container-fluid"
+ class.
+
+Bootstrap Grid - Small Devices:
+Assume we have a simple layout with two columns. We want the columns to be split 25%/75% for small devices.
+Small devices are defined as having a screen width from 768 pixels to 991 pixels. For small devices we will use the .col-sm-* classes. We will add the following classes to our two columns:
+
+<div class="col-sm-3">....</div>
+<div class="col-sm-9">....</div>
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+      <div class="row">
+        <div class="col-sm-3" style="background-color:lavender;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="col-sm-9" style="background-color:lavenderblush;">
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+      </div>
+    </div>
+   </body>
+
+
+Bootstrap Grid - Medium Devices
+But on medium devices the design may be better as a 50%/50% split. Medium devices are defined as having a screen width from 992 pixels to 1199 pixels. For medium devices we will use the .col-md-* classes.
+
+Now we will add the column widths for medium devices:
+<div class="col-sm-3 col-md-6">....</div>
+<div class="col-sm-9 col-md-6">....</div>
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+      <div class="row">
+        <div class="col-sm-3 col-md-6" style="background-color:lavender;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="col-sm-9 col-md-6" style="background-color:lavenderblush;">
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+      </div>
+    </div>
+     </body>
+
+Bootstrap Grid - Large Devices
+But on large devices the design may be better as a 33%/66% split. Tip: Large devices are defined as having a screen width from 1200 pixels and above. For large devices we will use the .col-lg-* classes.
+
+So now we will add the column widths for large devices:
+<div class="col-sm-3 col-md-6 col-lg-4">....</div>
+<div class="col-sm-9 col-md-6 col-lg-8">....</div>
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+      <div class="row">
+        <div class="col-sm-3 col-md-6 col-lg-4" style="background-color:lavender;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="col-sm-9 col-md-6 col-lg-8" style="background-color:lavenderblush;">
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+      </div>
+    </div>
+      </body>
+
+Three Equal Columns
+
+The following example shows how to get a three equal-width columns starting at tablets and scaling to large desktops. On mobile phones, the columns will automatically stack:
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+         <div class="row">
+        <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+        <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+        <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+      </div>
+    </div>
+          </body>
+
+Three Unequal Columns
+The following example shows how to get a three various-width columns starting at tablets and scaling to large desktops:
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+            <div class="row">
+        <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+        <div class="col-sm-6" style="background-color:lavenderblush;">.col-sm-6</div>
+        <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+      </div>
+    </div>
+          </body>
+
+
+Two Unequal Columns
+The following example shows how to get two various-width columns starting at tablets and scaling to large desktops:
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+       <div class="row">
+        <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+        <div class="col-sm-8" style="background-color:lavenderblush;">.col-sm-8</div>
+      </div>
+      </div>
+      </body>
+
+Two Columns With Two Nested Columns
+The following example shows how to get two columns starting at tablets and scaling to large desktops, with another two columns (equal widths) within the larger column (at mobile phones, these columns and their nested columns will stack):
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+       <div class="row">
+        <div class="col-sm-8" style="background-color:lavender;">
+          .col-sm-8
+          <div class="row">
+            <div class="col-sm-6" style="background-color:lightcyan;">.col-sm-6</div>
+            <div class="col-sm-6" style="background-color:lightgray;">.col-sm-6</div>
+          </div>
+        </div>
+        <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+      </div>
+        </div>
+      </body>
+
+Mixed: Mobile And Desktop
+The Bootstrap grid system has four classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops). These classes can be combinated to create more dynamic and flexible layouts.
+
+Note: Each class scales up, so if you wish to set the same widths for xs and sm, you only need to specify xs.
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <body>
+    <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+      
+     <div class="row" style="background-color:lavender;">
+        <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+      <div class="row" style="background-color:lavenderblush;">
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+      <div class="row" style="background-color:lightcyan;">
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+      </div>
+      
+    </div>
+      </body>
+
+Note:
+Remember that grid columns should add up to twelve for a row. More than that, columns will stack no matter the viewport.
+
+Mixed: Mobile, Tablet And Desktop
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <body>
+   <div class="container-fluid">
+      <h1>Hello World!</h1>
+      <p>Resize the browser window to see the effect.</p>
+      <div class="row" style="background-color:lavender;">
+        <div class="col-xs-12 col-sm-6 col-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
+        <div class="col-xs-6 col-lg-4">.col-xs-6 .col-lg-4</div>
+      </div>
+      <div class="row" style="background-color:lavenderblush;">
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      </div> 
+   </div>
+      </body>

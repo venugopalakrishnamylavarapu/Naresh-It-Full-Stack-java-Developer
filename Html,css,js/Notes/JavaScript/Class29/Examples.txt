@@ -1,0 +1,101 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyFunction()
+        {
+            setInterval(function(){alert("Hello Welcome")},3000);
+        }
+    </script>
+</head>
+<body>
+    <p>Click the button to display the alert Message for every 3 seconds....!!</p>
+   <button onclick="MyFunction()">ClickMe</button>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function TimeDelay()
+        {
+            window.location='https://www.nareshit.com';
+        }
+    </script>
+</head>
+<body onload="setTimeout('TimeDelay()',5000)">
+    <p>Refresh the page after 5 seconds redirect to new web site...!!</p>
+    <p>The new website is the new location....!!...!!</p>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        setInterval("fun1()",1000);
+        function fun1()
+        {
+            var dt=new Date()
+            var str=dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds()
+            document.getElementById('sp1').innerHTML=str
+        }
+    </script>
+</head>
+<body>
+    <span id="sp1" style="color:red;font-size:40px;font-family:candara"></span>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="Java Script!";
+        document.write(str.match("Script") + "<br />"); 
+        document.write(str.match("Java") + "<br />"); 
+        document.write(str.match("Scriptt") + "<br />"); 
+        document.write(str.match("Java")); 
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="JavaScript ";
+        document.write(str.repeat(30))
+    </script>
+</head>
+<body>
+</body>
+</html>

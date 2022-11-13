@@ -1,0 +1,68 @@
+Redirect to Other Location:
+Javascript window.location 
+Control over what page is loaded into the browser rests in the JavaScript property window.location. By setting window.location equal to a new URL, you will in turn change the current webpage to the one that is specified.
+
+Example:
+<!doctype html>
+<script type="text/javascript">
+window.location = "http://www.nareshit.com/"
+</script>
+
+JavaScript Timing Events
+With JavaScript, it is possible to execute some code at specified time-intervals. This is called timing events. It's very easy to time events in JavaScript. The two key methods that are used are:
+
+1. setInterval() - executes a function, over and over again, at specified time intervals.
+
+Syntax
+window.setInterval("javascript function",milliseconds);
+
+Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+function myFunction()
+{
+setInterval(function(){alert("Hello")},3000);
+}
+</script>
+</head>
+<body>
+<p>Click the button to wait 3 seconds, then alert "Hello".</p>
+<button onclick="myFunction()">Display</button>
+</body>
+
+2. setTimeout() - executes a function, once, after waiting a specified number of milliseconds
+
+Syntax
+window.setTimeout("javascript function",milliseconds);
+
+Example:
+<!doctype html>
+<script type='text/javascript'>
+function delayer()
+{
+window.location = "http://www.nareshit.com"
+}
+</script>
+</head>
+<body onLoad="setTimeout('delayer()', 5000)">
+<h2>Prepare to be redirected!</h2>
+<p>This page is a time delay redirect</p>
+</body>
+
+RealTime Example:
+<!doctype html>
+<head>
+<script type='text/javascript'>
+setInterval("fun1()",1000);
+function fun1()
+{
+var dt=new Date
+str=dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds()
+document.getElementById('sp1').innerHTML=str
+}
+</script>
+</head>
+<body>
+<span id="sp1" style="color:red;font-size:30"></span>
+</body>

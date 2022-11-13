@@ -1,0 +1,414 @@
+Typography: (Bootstrap CSS Basic Text Reference)
+Using typography feature of Bootstrap you can create headings, paragraphs, lists and other inline elements
+Headings
+All HTML headings, <h1> through <h6>, are available. .h1 through .h6 classes are also available.
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>h1 Bootstrap heading (36px)</h1>
+      <h2>h2 Bootstrap heading (30px)</h2>
+      <h3>h3 Bootstrap heading (24px)</h3>
+      <h4>h4 Bootstrap heading (18px)</h4>
+      <h5>h5 Bootstrap heading (14px)</h5>
+      <h6>h6 Bootstrap heading (12px)</h6>
+    </div>
+  </body>
+
+Inline Subheadings: <small>
+In Bootstrap the <small> element will create a lighter, secondary text in any heading. Add .small class and you will get smaller text in a lighter color.
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>h1 heading <small>lighter, smaller text</small></h1>
+      <h2>h2 heading <small>lighter, smaller text</small></h2>
+      <h3>h3 heading <small>lighter, smaller text</small></h3>
+      <h4>h4 heading <small>lighter, smaller text</small></h4>
+      <h5>h5 heading <small>lighter, smaller text</small></h5>
+      <h6>h6 heading <small>lighter, smaller text</small></h6>
+    </div>
+      </body>
+
+Inline text elements
+Marked text
+For highlighting a run of text due to its relevance in another context, use the <mark> tag.
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <p>Use the mark element to <mark>highlight</mark> text.</p>
+    </div>
+  </body>
+
+Deleted text
+For indicating blocks of text that have been deleted use the <del> tag.
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <del>This line of text is meant to be treated as deleted text.</del>
+    </div>
+  </body>
+
+Strikethrough text
+For indicating blocks of text that are no longer relevant use the <s> tag.
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <s>This line of text is meant to be treated as no longer accurate.</s>
+    </div>
+  </body>
+
+Inserted text
+For indicating additions to the document use the <ins> tag.
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <ins>This line of text is meant to be treated as an addition to the document.</ins>
+    </div>
+  </body>
+
+Underlined text
+To underline text use the <u> tag.
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <u>This line of text will render as underlined</u>
+    </div>
+  </body>
+
+Small text
+For de-emphasizing inline or blocks of text, use the <small> tag to set text at 85% the size of the parent. Heading elements receive their own font-size for nested <small> elements.
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+     <small>This line of text is meant to be treated as fine print.</small>
+    </div>
+  </body>
+
+Bold
+For emphasizing a snippet of text with a heavier font-weight.
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+     <strong>rendered as bold text</strong>
+    </div>
+  </body>
+
+Italics
+For emphasizing a snippet of text with italics.
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+     <em>rendered as italicized text</em>
+    </div>
+  </body>
+
+<abbr>
+Bootstrap will style the HTML <abbr> element in the following way (with a dotted bottom border and a help cursor on hover):
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+    </div>
+  </body>
+
+<blockquote>
+Bootstrap will style the HTML <blockquote> element in the following way:
+
+Example:
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+       <blockquote>
+ <p>AngularJS is a structural framework for dynamic web apps. AngularJS extends HTML with new attributes. AngularJS is perfect for SPAs (Single Page Applications)</p>
+        <footer>From Google's website</footer>
+      </blockquote>
+    </div>
+  </body>
+
+.blockquote-reverse 	Indicates a blockquote with right-aligned content
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <blockquote class="blockquote-reverse">
+        <p>AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly.</p>
+        <footer>From RaaJ's Forum..!</footer>
+      </blockquote>
+    </div>
+      </body>
+
+
+<dl>
+Bootstrap will style the HTML <dl> element in the following way:
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+       <p>Use the dl element to indicate a description list:</p>
+      <dl>
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+      </dl>     
+    </div>
+      </body>
+
+<code>
+Bootstrap will style the HTML <code> element in the following way:
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+       <p>The following HTML elements: <code>span</code>, <code>section</code>, and <code>div</code> defines a section in a document.</p> 
+    </div>
+      </body>
+
+<kbd>
+Bootstrap will style the HTML <kbd> element in the following way:
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+       <p>To indicate input that is typically entered via the keyboard</p>
+      <p>Use <kbd>ctrl + s</kbd> to open the Save dialog box.</p>
+    </div>
+      </body>
+
+<pre>
+Bootstrap will style the HTML <pre> element in the following way:
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+       <p>For multiple lines of code, use the pre element:</p>
+<pre>
+AngularJS extends 
+HTML with new attributes. 
+AngularJS is perfect for 
+SPAs (Single Page 
+Applications).
+</pre>
+    </div>
+      </body>
+
+.lead 	
+Makes a paragraph stand out
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <p class="lead">This paragraph stands out.</p>
+      <p>This is a regular paragraph.</p>
+    </div>
+      </body>
+
+.text-left 		Indicates left-aligned text
+.text-center 	Indicates center-aligned text
+.text-right 		Indicates right-aligned text
+.text-justify 	Indicates justified text
+.text-nowrap 	Indicates no wrap text
+.text-lowercase 	Indicates lowercased text
+.text-uppercase 	Indicates uppercased text
+.text-capitalize 	Indicates capitalized text
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <p class="text-left">Left-aligned text.</p>
+      <p class="text-right">Right-aligned text.</p>      
+      <p class="text-center">Center-aligned text.</p>
+      <p class="text-justify">Justified text. Justified text.</p>      
+      <p class="text-nowrap">No wrap text. No wrap text.</p>
+      <p class="text-lowercase">Lowercased text.</p>
+      <p class="text-uppercase">Uppercased text.</p>      
+      <p class="text-capitalize">Capitalized text.</p>
+    </div>
+      </body>
+
+.initialism 	Displays the text inside the <abbr> element in a slightly smaller font size
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948. (normal abbr)</p>      
+      <p>The <abbr title="World Health Organization" class="initialism">WHO</abbr> was founded in 1948. (slightly smaller abbr)</p>
+    </div>
+      </body>
+
+.list-unstyled 	
+Removes the default list-style and left margin on list items (works on both <ul> and <ol>). This class only applies to immediate children list items (to remove the default list-style from any nested lists, apply this class to any nested lists as well)
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <p>The class .list-unstyled removes the default list-style and left margin on list items (immediate children only):</p>
+      <ul class="list-unstyled">
+        <li>Coffee</li>
+        <li>Tea
+          <ul>
+            <li>Black tea</li>
+            <li>Green tea</li>
+          </ul>
+        </li>
+        <li>Milk</li>
+      </ul>
+    </div>
+      </body>
+
+.list-inline 	Places all list items on a single line
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <p>The class .list-inline places all list items on a single line:</p>
+      <ul class="list-inline">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+    </div>
+      </body>
+
+.dl-horizontal 	
+Lines up the terms and descriptions in the <dl> element side-by-side. Starts off like default <dl>s, but when the browser window expands, it will line up side-by-side
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <p>Use the .dl-horizontal class line up the description list side-by-side when the browser window expands:</p>
+      <dl class="dl-horizontal">
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+      </dl>           
+    </div>
+      </body>
+
+.pre-scrollable 	Makes a <pre> element scrollable
+
+Example:
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Code</h2>    
+      <p>For multiple lines of code, use the pre element:</p>
+      <pre>Text in a pre element
+      is displayed in a fixed-width
+      font, and it preserves
+      both      spaces and
+      line breaks.</pre>
+
+    <p>If you add the .pre-scrollable class..</p>
+      <pre class="pre-scrollable">Text in a pre element
+      is displayed in a fixed-width
+      font, and it preserves
+      both      spaces and
+      line breaks.</pre>        
+    </div>
+      </body>

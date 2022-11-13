@@ -1,0 +1,145 @@
+JavaScript Output
+JavaScript does NOT have any built-in print or display functions. JavaScript can "display" data in different ways:
+1 Writing into an alert box, using window.alert().
+2 Writing into the HTML output using document.write().
+3 Writing into an HTML element, using innerHTML.
+4 Writing into the browser console, using console.log().
+
+The console.log() Method
+In your browser, you can use the console.log() method to display data.
+
+<body>
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+</body>
+
+Setting Breakpoints
+In the debugger window, you can set breakpoints in the JavaScript code. At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values. After examining values, you can resume the execution of code (typically with a play button).
+
+The debugger Keyword
+The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function. This has the same function as setting a breakpoint in the debugger.
+
+Example:
+<body>
+<p id="demo"></p>
+<script>
+var x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
+</script>
+</body>
+
+JavaScript Hoisting
+JavaScript Declarations are Hoisted. Hoisting is JavaScript's default behavior of moving declarations to the top. In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared.
+
+Example1:
+<!doctype html>
+<body>
+<script type='text/javascript'>
+x = 5;
+document.write("The Value is: ",x)
+var x; 
+</script>
+</body>
+
+Example2:
+<!doctype html>
+<body>
+<script type='text/javascript'>
+var x; 
+x = 5;
+document.write("The Value is: ",x)
+</script>
+</body>
+
+NOTE:
+JavaScript Initializations are Not Hoisted. JavaScript only hoists declarations, not initializations.
+
+EXAMPLE:
+<!doctype html>
+<body>
+<script type='text/javascript'>
+var x = 5; 
+var y = 7; 
+document.write(x+y)
+</script>
+</body>
+
+EXAMPLE:
+<!doctype html>
+<body>
+<script type='text/javascript'>
+document.write(x+y)
+var x = 5; 
+var y = 7; 
+</script>
+</body>
+
+JavaScript Use Strict
+"use strict";  Defines that JavaScript code should be executed in "strict mode". The "use strict" directive is new in JavaScript 1.8.5 (ECMAScript version 5).
+
+Declaring Strict Mode
+Declared at the beginning of a JavaScript file, it has global scope (all code will execute in strict mode):
+
+Example:
+<body>
+<p>Activate debugging in your browser (F12) to see the error report.</p>
+<script>
+"use strict";
+var x = 3.14;    // This will cause an error (x is not defined).
+</script>
+</body>
+
+Why Strict Mode?
+Strict mode makes it easier to write "secure" JavaScript. Strict mode changes previously accepted "bad syntax" into real errors.
+
+What is a Webform?
+A Webform (HTML form) allows a user to enter data that is sent to a server for processing. These forms contains checkboxes, radio buttons, or text fields.  Webforms are defined in formal programming languages such as HTML, Perl, Php, Java or .NET.
+
+JavaScript Form Validation:
+HTML form validation can be done by a JavaScript.  JavaScript, provides a way to validate form's data on the client's computer before sending it to the web server. Form validation generally performs two functions.
+
+Basic Validation - The form must be checked to make sure data was entered into each form field that required it. This would need just loop through each field in the form and check for data.
+
+Data Format Validation - The data that is entered must be checked for correct form and value. This would need to put more logic to test correctness of data.
+
+Data Validation
+It is the process of ensuring that computer input is clean, correct, and useful.
+
+1 The purpose of data validation is to ensure correct input to a computer application.
+2 Validation can be defined by many different methods, and deployed in many different ways.
+3 Server side validation is performed by a web server, after input has been sent to the server.
+4 Client side validation is performed by a web browser, before input is sent to a web server.
+
+HTML Constraint Validation
+HTML5 introduced a new HTML validation concept called constraint validation.
+
+HTML constraint validation is based on:
+    Constraint validation HTML Input Attributes
+    Constraint validation DOM Properties and Methods
+
+Constraint Validation HTML Input Attributes
+Attribute 	Description
+disabled 	Specifies that the input element should 	be disabled
+max 	Specifies the maximum value of an input 	element
+min 	Specifies the minimum value of an input 	element
+pattern 	Specifies the value pattern of an input 	element
+required 	Specifies that the input field requires an 	element
+type  	Specifies the type of an input element
+
+
+Form data that typically are checked by a JavaScript:
+1. If a text input is empty or not
+2. If a text input is all numbers
+3. If a text input is all letters (only Alphabets)
+4. has the user left required fields empty?
+5. has the user entered a valid e-mail address?
+6. If a text input is all alphanumeric characters (numbers & letters)
+7. If a text input has the correct number of characters in it 
+8. If a selection has been made from an HTML select 
+9. has the user entered a valid date?
+10. has the user entered text in a numeric field?

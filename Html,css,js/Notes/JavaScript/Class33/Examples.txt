@@ -1,0 +1,132 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function NonEmpty()
+        {
+            var MyTextField=document.getElementById('Text');
+            if(MyTextField.value!="")
+            {
+                alert("Hello Thanks You Entered: "+MyTextField.value)
+            }
+            else
+            {
+                alert("Say Hello Plz Enter Something...!!")
+            }
+        }
+</script>
+</head>
+<body>
+    <form action="smiley.png">
+        <input type="text" id="Text"/> <br>
+        <input type="button" onclick="NonEmpty()" value="FormValidate"/>
+</form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Validate()
+        {
+            var r1=document.getElementById('male').checked;
+            var r2=document.getElementById('female').checked;
+            if((r1=="") && (r2==""))
+            {
+                alert("Select Male or Female")
+                return false;
+            }
+            return true;
+        }
+</script>
+</head>
+<body>
+    <form action="smiley.png">
+        <label>Select Valid Gender...!!</label><br>
+        <input type="radio" id="male" value="Male">MALE
+        <input type="radio" id="female" value="Female">FEMALE<br>
+        <input type="submit" onclick="Validate()" value="NextPage"/>
+</form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function LoginValidation()
+        {
+            if(document.getElementById('un').value.length>=6
+            &&
+            document.getElementById('pwd').value.length>=6)
+            {
+                document.getElementById('but1').disabled=false
+            }
+            else
+            {
+                document.getElementById('but1').disabled=true
+            }
+        }
+</script>
+</head>
+<body>
+    <form action="smiley.png">
+        <input type="text" id="un" onblur="LoginValidation()">
+        <br>
+        <input type="password" id="pwd" onblur="LoginValidation()">
+        <br>
+        <input type="button" id="but1" value="ClickHere" disabled>
+</form>
+</body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function LoginValidation(len,cid)
+        {
+            if(len==0)
+            {
+                document.getElementById(cid).style.borderColor="red"
+            }
+            else
+            {
+                document.getElementById(cid).style.borderColor="silver"
+            }
+        }
+</script>
+<style>
+    input{border:1px solid silver;}
+</style>
+</head>
+<body>
+    <form action="smiley.png">
+        <input type="text" id="txt1" onblur="LoginValidation(this.value.length,'txt1')"><br>
+        <input type="text" id="txt2" onblur="LoginValidation(this.value.length,'txt2')"><br>
+        <input type="submit" value="NextPage"/>
+</form>
+</body>
+</html>
+

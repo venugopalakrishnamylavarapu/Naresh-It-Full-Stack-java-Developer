@@ -1,0 +1,56 @@
+package ClassWorkPrograms;
+/*my folder got deleted permanently so this program was written by me on my own not from the class
+ In this class we discussed about String Class and its Methods.
+ */
+public class Class32 {
+	   void meth1()
+	    {
+	        String s1="Java";
+	        String s2=new String("Java");
+	        System.out.println("length() : "+s1.length());// 4
+	        System.out.println("length() : "+s1.concat(" is awesome").length());//15
+	        System.out.println("s1 : "+s1);
+	        System.out.println("I love Java".concat(" because it is awesome").length());
+	        System.out.println("charAt() : "+s1.charAt(0));// J
+	        System.out.println("charAt() : "+s1.charAt(s1.length()-1));
+	        System.out.println(s1.charAt(s1.length()-1)+3);
+	        System.out.println("startsWith() : "+s1.startsWith("Ja"));
+	        System.out.println("startsWith() : "+s1.startsWith(s2));
+	        System.out.println("startsWith() : "+s1.startsWith(" Java"));
+	        System.out.println("startsWith() : "+s1.startsWith(new String(new char[] {s2.charAt(0)})));
+	        System.out.println("toLowerCase() : "+s1.toLowerCase());
+	        System.out.println("s1 : "+s1);
+	        System.out.println("toUpperCase() : "+s1.toUpperCase());
+	       
+	        String s3="I love India";
+	       
+	        System.out.println("substring() : "+s3.substring(7));// India
+	        System.out.println("substring() : "+s3.substring(7,10));
+	       
+	        String s4="Java is awesome";
+	        System.out.println("substring() : "+s4.substring(9,11));
+	        System.out.println("substring() : "+s4.substring(11));
+	        System.out.println("substring() : "+s4.substring(11,s4.length()));
+	       
+	        System.out.println("replace() : "+s4.replace('a', 'A'));
+	        System.out.println("replace() : "+s4.replace('a', (char)65));
+	       
+	        String s5=" Hello World ";
+	        System.out.println(s5.length());
+	        System.out.println(s5.trim().length());
+	       
+	        System.out.println("indexOf() : "+s5.indexOf('o'));
+	        System.out.println("lastIndexOf() : "+s5.lastIndexOf('o'));
+	       
+	        String s6="ABCDEF";
+	        byte arr[]=s6.getBytes();
+	        for(byte x:arr)
+	        {
+	            System.out.print((char)x);            
+	        }                
+	    }
+	    public static void main(String[] args)
+	    {
+	        new Class32().meth1();        
+	    }
+}

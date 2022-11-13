@@ -1,0 +1,176 @@
+What is Bootstrap?
+Bootstrap is a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development. It uses HTML, CSS and Javascript. Designed for everyone, everywhere for all devices of all shapes.
+
+One framework, every device.Bootstrap easily and efficiently scales your websites and applications with a single code base, from phones to tablets to desktops with CSS media queries.
+
+Why Use Bootstrap?
+1 Mobile-first approach: Since Bootstrap 3, the framework consists of mobile-first styles throughout the entire library
+2 Browser support: Bootstrap is supported by all popular browsers
+3 Responsive web design: Bootstrap's responsive CSS adjusts to Desktops, Tablets, and  Mobile phones
+4 Easy to get started: With just the knowledge of HTML and CSS anyone can get started with Bootstrap
+
+What is Responsive Web Design?
+Responsive web design is to create web sites which adjust and align themselves according to what media tool you use for viewing it.
+
+What Does Bootstrap Include?
+1 Scaffolding: Contains layout, grid system, fluid grid system, and responsive design
+2 Base CSS: Contains classes for typography, tables, forms, buttons, images, and more
+3 Components: Contains reusable components: icons, dropdowns, navbars, breadcrumbs, alerts, and more
+4 JavaScript Plugins: Contains over a dozen custom jQuery plugins. You can include them all, or one by one
+5 Customizable Components : Customize Bootstrap's components, LESS variables, and jQuery plugins to create your own version
+
+History
+Bootstrap was developed by Mark Otto and Jacob Thornton at Twitter. It was released as an open source product in August 2011 on GitHub. In June 2014 Bootstrap was the No.1 project on GitHub!
+
+Team
+Bootstrap is maintained by the founding team and a small group of invaluable core contributors.
+1. Mark Otto
+2. Jacob Thornton 
+3. Chris Rebert
+4. Julian Thilo
+5. XhmikosR
+
+Mark and logo
+Use either the Bootstrap mark (a capital B) or the standard logo (just Bootstrap). It should always appear in Helvetica Neue Bold
+
+Advantages of Bootstrap:
+The biggest advantage of using Twitter Bootstrap is that it comes with free set of tools for creating flexible and responsive web layouts as well as common interface components.
+
+Save lots of time — You can save lots of time and efforts using the Bootstrap predefined design templates and classes and concentrate on other development work.
+
+Responsive features — Using Bootstrap you can easily create responsive designs. Bootstrap responsive features make your web pages to appear more appropriately on different devices and screen resolutions without any change in markup.
+    
+Consistent design — All Bootstrap components share the same design templates and styles through a central library, so that the designs and layouts of your web pages are consistent throughout your development.
+    
+Easy to use — Bootstrap is very easy to use. Anybody with the basic working knowledge of HTML and CSS can start development with Twitter Bootstrap.
+    
+Compatible with browsers — Twitter Bootstrap is created with modern browsers in mind and it is compatible with all modern browsers such as Mozilla Firefox, Google Chrome, Safari, Internet Explorer, and Opera.
+    
+Open Source — And the best part is, it is completely free to download and use.
+
+Features of Bootstrap:
+1 Save lots of time
+2 Responsive features
+3 Consistent design 
+4 Easy to to use 
+5 Compatible with browsers
+6 Open Source
+
+Bootstrap Environment Setup:
+It is very easy to setup and start using Bootstrap. 
+
+Download Bootstrap
+You can download the latest version of Bootstrap from http://getbootstrap.com/. When you click on this link.
+
+Here you can see two buttons:
+
+Download Bootstrap: Clicking this, you can download the precompiled and minified versions of Bootstrap CSS, JavaScript, and fonts. No documentation or original source code files are included.
+
+Download Source: Clicking this, you can get the latest Bootstrap LESS and JavaScript source code directly from GitHub.
+
+File structure
+PRECOMPILED BOOTSTRAP
+Once the compiled version Bootstrap is downloaded, extract the ZIP file, and you will see the following file/directory structure:
+
+Goto-->Images/compiledfilestructure Pic.
+
+EOT -->Embedded OpenType 
+WOFF--> Web Open Font Format (Mozilla)
+SVG --> Scalable Vector Graphics
+TTY --> TrueType Font 
+
+What is LESS (stylesheet language)
+Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.
+
+LESS (Leaner CSS) is a dynamic stylesheet language designed by Alexis Sellier. It is influenced by Sass and has influenced the newer "SCSS" syntax of Sass. (visit--> www.lesscss.org)
+
+What is Sass? (Visit --> www.sass-lang.com)
+Sass is the most mature, stable, and powerful professional grade CSS extension language in the world. Sass (Syntactically Awesome Stylesheets) is a stylesheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum.
+
+Sass is a scripting language that is interpreted into Cascading Style Sheets (CSS). SassScript is the scripting language itself. Sass consists of two syntaxes
+1. The indented syntax
+2. SCSS
+
+Bootstrap Getting Started:
+The HTML File
+Since Bootstrap uses HTML elements and CSS properties that require the use of the HTML5 doctype, include the HTML5 doctype at the beginning of the page, along with the correct character set:
+
+<!DOCTYPE html>
+<html>	
+  <head>
+    <meta charset="utf-8">
+  </head>
+</html>
+
+Keep in mind that Bootstrap 3 is mobile-first. Mobile-first styles are found throughout the entire Bootstrap library instead of in separate files.
+
+To ensure proper rendering and touch zooming, also add the viewport meta tag inside the 
+<head> element:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+The width=device-width sets the width of the page to follow the screen-width of the device (which will vary depending on the device). The initial-scale=1 sets the initial zoom level when the page is first loaded by the browser.
+
+Example:
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bootstrap for Mobiles</title>
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1>Hello Front-end Framework..!!</h1>
+</body>
+</html>
+
+Example:
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>My R-Table</h2>
+       <div class="table-responsive">          
+       <table class="table table-striped table-bordered">
+         <thead>
+           <tr>
+             <th>#</th>
+             <th>Name</th>
+             <th>Street</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>1</td>
+             <td>NareshiTech</td>
+             <td>Ameerpet</td>
+           </tr>
+           <tr>
+             <td>2</td>
+             <td>Nacre Services</td>
+             <td>Shivbagh</td>
+           </tr>
+           <tr>
+             <td>3</td>
+             <td>SubbaRaju</td>
+             <td>SriNagarColony</td>
+           </tr>
+         </tbody>
+       </table>
+      </div>    
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+ </head>
+ <body>
+     <h2>Glyphicons</h2>
+     <p>Cloud icon: <span class="glyphicon glyphicon-th-large"></span></p>      
+     <p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p>            
+     <p>Search icon: <span class="glyphicon glyphicon-search"></span></p>
+      </div>
+      </body>

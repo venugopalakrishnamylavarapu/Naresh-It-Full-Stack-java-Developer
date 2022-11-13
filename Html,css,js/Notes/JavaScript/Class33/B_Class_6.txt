@@ -1,0 +1,230 @@
+Bootstrap CSS Tables Reference:
+<table> Classes
+Use the classes below to style any table: 
+Class 		Description 	
+.table 		Adds basic styling 
+.table-striped 	Adds zebra-striping to any table row within <tbody>
+.table-bordered 	Adds border on all sides of the table and cells 	
+.table-hover 	Enables a hover state on table rows within a <tbody> 	
+.table-condensed 	Makes table more compact by cutting cell padding in half
+
+.table 		
+Adds basic styling (light padding and only horizontal dividers) to any <table> 
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+      </head>
+  <body>
+ <div class="container">
+      <h2>Table</h2>
+      <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Firstname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Anna</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Debbie</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>John</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      </body>
+
+.table-hover 	
+Enables a hover state on table rows within a <tbody> 
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+      </head>
+  <body>
+ <div class="container">
+      <h2>Table</h2>
+      <p>The .table-hover class enables a hover state on table rows within a tbody:</p>                              
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Firstname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>RaaJ</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Scott</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>John</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      </body>
+
+
+<tr>, <th> and <td> Classes
+Use the classes below to color table rows or cells:
+Class 		Description 	
+.active 		Applies the hover color to a particular row or cell 	
+.success 		Indicates a successful or positive action 	
+.info 		Indicates a neutral informative change or action 	
+.warning 		Indicates a warning that might need attention 	
+.danger 		Indicates a dangerous or potentially negative action
+
+.active 		
+Applies the hover color to a particular row or cell 
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+      </head>
+  <body>
+ <div class="container">
+      <h2>Table</h2>
+      <p>The .active class applies the hover color to a particular row or cell:</p>                                        
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Firstname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="active">
+            <td>1</td>
+            <td>Anna</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Debbie</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>John</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      </body>
+
+.danger 		
+Indicates a dangerous or potentially negative action
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+      </head>
+  <body>
+ <div class="container">
+      <h2>Table</h2>
+      <p>The .danger class indicates a dangerous or potentially negative action:</p>                                                                                
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Firstname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="danger">
+            <td>1</td>
+            <td>Anna</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Debbie</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>John</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      </body>
+
+Responsive Tables:
+The .table-responsive class creates a responsive table. The table will then scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+      </head>
+  <body>
+ <div class="container">
+      <h2>Table</h2>
+      <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
+      <div class="table-responsive">          
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Firstname</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Anna</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Debbie</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>John</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+      </body>
+
+Bootstrap CSS Images Reference
+The classes below can be used to style any image:
+Class 		Description 	
+.img-rounded 	Adds rounded corners to an image
+.img-circle 	Shapes the image to a circle
+.img-thumbnail 	Shapes the image to a thumbnail 	
+.img-responsive 	Makes an image responsive
+
+Responsive Images
+Create responsive images by adding an .img-responsive class to the <img> tag. The image will then scale nicely to the parent element.
+The .img-responsive class applies max-width: 100%; and height: auto; to the image:
+
+Example:
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="css/bootstrap.min.css">
+      </head>
+  <body>
+ <div class="container">
+      <h2>Image</h2>
+      <p>The .img-responsive class makes the image scale nicely to the parent element:</p>            <img src="file:///D:\HTML Class Materials\BootStrap\Images\sea.jpg" class="img-circle" alt="Boot" width="304" height="236"> 
+    </div>
+      </body>

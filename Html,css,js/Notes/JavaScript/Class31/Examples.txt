@@ -1,0 +1,104 @@
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh i Technologies...!!!</title>
+    <script>
+        function MyFun()
+        {
+            var val=document.getElementById("t1").value;
+            alert("The Value is: "+val)
+        }
+    </script>
+    </head>
+    <body>
+        <form>
+            <label>User Name: </label><br>
+            <input type="text" id="t1" name="uname"><br>
+            <input type="button" value="click" onclick="MyFun()">
+        </form>
+    </body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh i Technologies...!!!</title>
+    <script>
+        function MyFun()
+        {
+            alert(document.getElementById('txtarea').value);
+            alert(document.getElementById('p1').innerHTML);
+        }
+    </script>
+    </head>
+    <body>
+        <p id="p1"><img src="HTML5.png" width="100px" height="50px"></p>
+        <form>
+            <textarea id="txtarea"></textarea><br>
+            <input type="button" value="click" onclick="MyFun()">
+        </form>
+    </body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh i Technologies...!!!</title>
+    <script>
+        function MyFun()
+        {
+            alert(document.getElementById('txtarea').value);
+            alert(document.getElementById('p1').innerHTML);
+        }
+    </script>
+    </head>
+    <body>
+        <p id="p1"><img src="HTML5.png" width="100px" height="50px"></p>
+        <form>
+            <textarea id="txtarea"></textarea><br>
+            <input type="button" value="click" onclick="MyFun()">
+        </form>
+        <!-- only one paired tag textarea is not supporting innerHTML property...!!-->
+    </body>
+</html>
+
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh i Technologies...!!!</title>
+    <script>
+        function MyFun()
+        {
+            var PyArr=document.getElementsByTagName('div');
+            alert(PyArr[0].innerHTML);
+            alert(PyArr[1].innerHTML);
+            alert(PyArr[2].innerHTML);
+            alert(PyArr[3].id);
+            
+        }
+    </script>
+    </head>
+    <body>
+        <div>DIV1</div>
+        <div>DIV2</div>
+        <div>DIV3</div>
+        <div id="HelloID">DIV4</div>
+        <input type="button" value="Click" onclick="MyFun()">
+    </body>
+</html>
