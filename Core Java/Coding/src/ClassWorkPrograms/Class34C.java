@@ -1,5 +1,5 @@
 package ClassWorkPrograms;
-
+/*From next CLass onwards we start OOPS Concepts so it will be in different package so check it out*/
 public class Class34C {
 	   void meth1()
 	    {

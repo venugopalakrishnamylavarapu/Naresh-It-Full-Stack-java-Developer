@@ -105,7 +105,6 @@ public class Store {
 					System.out.println("how many quantity u want?");
 					int b1=sc.nextInt();
 					int price1 = b1*12000;
-					list.add(20101);
 					System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 					int k1=sc.nextInt();
 					switch(k1)
@@ -134,7 +133,8 @@ public class Store {
 					case 1:
 						Refrigerators();
 						break;
-					casstore();
+					case 2:
+						store();
 						break;
 					case 3:
 						billing(20103,"WHIRLPOOL",b2,price2);

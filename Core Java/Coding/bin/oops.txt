@@ -1,0 +1,3 @@
+The concept of oops starts from class 35 and they will be in different package 
+
+there will be sub packages to understand it easily so thats it.
