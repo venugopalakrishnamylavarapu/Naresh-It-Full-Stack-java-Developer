@@ -29,7 +29,7 @@ package ClassWorkPrograms;
   ----------------
   1)U can call a instance method in 2 ways
   	a)by Identifier
-  	b)by CLassobject
+  	b)by Classobject
   2)we can access static and non-static variable easily in instance method.
   3)a method which is declared as static is known as static method
   =================================================================================================

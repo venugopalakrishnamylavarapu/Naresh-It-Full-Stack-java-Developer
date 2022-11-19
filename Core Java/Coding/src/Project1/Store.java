@@ -1,4 +1,4 @@
-package Project1;
+package project1;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -112,7 +112,8 @@ public class Store {
 					case 1:
 						Refrigerators();
 						break;
-					casstore();
+					case 2:
+						store();
 						break;
 					case 3:
 						billing(20102,"LYOD",b1,price1);
