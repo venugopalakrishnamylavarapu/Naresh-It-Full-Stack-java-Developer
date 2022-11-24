@@ -24,7 +24,7 @@ package oopsFeatures;
  9)inside an interface we cannot write constructors,because interface is not a class
 10)if we want to inderit an interface into a class we need to use the keyword implements.
 11)if we are inheriting an interface into a class 100% in the child class we need to provide 
-   implementation(by suing Method Overridding) for all the abstract methods which are present
+   implementation(by using Method Overridding) for all the abstract methods which are present
    in the interface,otherwise we will be getting an compile time error. 
 12)if we dont want to provide implementation for all the abstract methods present in the interface
    then we need to make our child class also as abstract.

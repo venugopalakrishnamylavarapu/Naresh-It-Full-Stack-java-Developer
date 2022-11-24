@@ -2,11 +2,15 @@ package project1;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Hashtable;
  
 /*I RECOMMEND RUN THIS PROGRAM IN ECLIPSE FOR BEST EXPERIENCE AS FOR OTHER IDES U NEED TO MAKE SOME CHANGES*/
 public class Store {
 	static Scanner sc=new Scanner(System.in);
-	static ArrayList<String> list=new ArrayList<String>();
+	static ArrayList<Integer> totPrice=new ArrayList<Integer>();
+	static Hashtable<Integer,Integer> indPrice=new Hashtable<Integer,Integer>();
+	static Hashtable<Integer,String> list=new Hashtable<Integer,String>();
+
 		
 	static void HomeAppliances()// calling method store
 	{
@@ -24,10 +28,9 @@ public class Store {
 				+ "| 203	| RICECOOKERS,MIXERS,GRINDERS	|prestige,pegion,butterfly |\r\n"
 				+ "|	|				|			   |\r\n"
 				+ "|	|				|			   |\r\n"
-				+ "| 204	|   AC,COOLERS,TABLEFANS	|loyd,samsung,mi,kinestar  |\r\n"
+				+ "| 204	|   AC,TABLEFANS	|loyd,samsung,mi,kinestar  |\r\n"
 				+ "|	|				|			   |\r\n"
 				+ ".==================================================================.");
-		
 		System.out.println("Select the desired id from the above categories of Home Appliances");
 		
 		int a=sc.nextInt();
@@ -43,7 +46,7 @@ public class Store {
 			RMG();
 			break;
 		case 204:
-			ACT();
+			AT();
 			break;
 		default:
 			System.out.println();
@@ -55,19 +58,27 @@ public class Store {
 	}
 	
 	
-	static void ACT() {
+	static void AT()
+	{
 		System.out.println();
-		System.out.println("");
+		System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Ac's,TableFans!!<<<<<<<<<<<<<<<<-----------------------------------------------------------");
+		System.out.println();
 	}
 
 
-	static void RMG() {
-		
+	static void RMG() 
+	{
+		System.out.println();
+		System.out.println("------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Rice Cookers,Mixers,Grinders!!<<<<<<<<<<<<<<<<-----------------------------------------------------------");
+		System.out.println();
 	}
 
 
-	static void Televison() {
-		
+	static void Televison() 
+	{
+		System.out.println();
+		System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Televisions!!<<<<<<<<<<<<<<<<-----------------------------------------------------------");
+		System.out.println();	
 	}
 
 
@@ -105,6 +116,7 @@ public class Store {
 					System.out.println("how many quantity u want?");
 					int b1=sc.nextInt();
 					int price1 = b1*12000;
+					
 					System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 					int k1=sc.nextInt();
 					switch(k1)
@@ -190,7 +202,6 @@ public class Store {
 		System.out.println("2.Home Appliances");
 		System.out.println("3.Gaming Consoles");
 		System.out.println("4.Mobile Accesories");
-		System.out.println("Coming soon.....");
 		System.out.println();
 		
 		System.out.println("Select ur desired category");
@@ -222,20 +233,18 @@ public class Store {
 	
 	static void billing(int id,String name,int Quantity,int price)
 	{
+		displayFormat();
 		int sum=0;
 		int total=sum+price;
-		System.out.println(id+" "+name+" "+Quantity+" "+price);
+		
 	}
 	static void displayFormat()
 	{
 		System.out.println(".=======================================================================================.\r\n"
-				+ "|IDNO  |		PRODUCT NAME		|	QUANTITY	|	PRICE		|\r\n"
+				+ "|IDNO  |		PRODUCT NAME		|	QUANTITY	|	PRICE	|\r\n"
 				+ ".=======================================================================================.");
 	}
-	static void display(int id,String name,int Quantity,int price)
-	{
-		System.out.printf("%d  ,%s  ,%d, %d",id,name,Quantity,price);
-	}
+	
 	
 	
 	

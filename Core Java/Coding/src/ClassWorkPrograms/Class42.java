@@ -7,7 +7,7 @@ package ClassWorkPrograms;
  Questions
  =========
  1)Functional interfaces can be annotated as
-      a)@FunctionalInterfaces--> (correct)
+      a)@FunctionalInterfaces--> (correct) -->cc
       b)@functionalinterfaces
       c)@interfaces
       d)@Function
@@ -16,7 +16,7 @@ package ClassWorkPrograms;
       
  2)Which of the following statements regarding abstract classes are true?
       a)an abstract class can be used a data type.
-      b)All of the above
+      b)All of the above-->cc
       c)a subclass of a non-abstract superclass can be abstract
       d)an subclass can override a normal method in a superclass to declare it abstract.-->(correct)
       e)an abstract class can be extended.
@@ -64,7 +64,7 @@ s is S its not mistake its for speed type
    		}
    } 
    
-   a)Compilation Error-->c
+   a)Compilation Error-->c-->cc
    b)Class C method2 Class C method3
    c)Runtime exception
    d)None of the above
@@ -89,7 +89,7 @@ s is S its not mistake its for speed type
    }
    
    a)abcJava
-   b)Java-->c
+   b)Java-->c-->cc
    c)Compile time error
    d)abc
    e)None of the above
@@ -128,7 +128,7 @@ s is S its not mistake its for speed type
  		}
  	}
  	
- 	a)Compile time error
+ 	a)Compile time error-->cc
  	b)None of the above
  	c)Animal-->c
  	d)Animal Dog
@@ -160,7 +160,7 @@ public class ClassB
 
 	a)0true0
 	b)None of the above
-	c)0false0
+	c)0false0-->cc
 	d)Compile errot -static variable must be initialized before use.-->c
 	e)000
 
@@ -183,7 +183,7 @@ public class ClassB
      b)21 14
      c)14 13
      d)14 21-->c
-     e)Compile time Error
+     e)Compile time Error-->cc
      
 ==============================================================================================================
 
@@ -199,7 +199,7 @@ public class ClassB
  c)1 and 3
  d)1 and 2
  e)3 and 4-->c
- f)2 and 4
+ f)2 and 4-->cc
  
 ==============================================================================================================
 9)what is the output of the below code?
@@ -228,12 +228,12 @@ public class ClassB
 	b)Awesome Java is
 	c)Awesome
 	d)Compile time error
-	e)Java is Awesome-->c
+	e)Java is Awesome-->c-->cc
 	
 ==============================================================================================================
 
 10)Method overridding is a combination of inheritance and polymorphism
-     a)True-->c
+     a)True-->c-->cc
      b)False
 
 ==============================================================================================================
@@ -257,7 +257,7 @@ public class Test implements InfA
 
 	a)test-name
 	b)None of the above
-	c)Compile time error-->c
+	c)Compile time error-->c-->cc
 	d)14
 	
 ==============================================================================================================
@@ -272,7 +272,7 @@ public class Test implements InfA
  a)You must add a return statement in method numberOfStudent();
  b)The keywords public and abstract cannot be used together
  c)All the above
- d)Class School must be defined abstract-->c
+ d)Class School must be defined abstract-->c-->cc
  e)The method numberOfStudent() in class School must have a body
  
 ==============================================================================================================
@@ -317,7 +317,7 @@ public class Test implements InfA
 	b)10
 	c)20
 	d)50
-	e)40
+	e)40-->cc
 	
 ==============================================================================================================
 
@@ -353,7 +353,7 @@ public class Test implements InfA
  
  a)C.E
  b)Value-B 11
- c)Value-B 10
+ c)Value-B 10-->cc
  d)Value-A 11
  e)Value-A 10-->c
  
@@ -383,7 +383,7 @@ public class ClassB extends ClassA
 
 a)None of the above
 b)Hi iam ClassB
-c)Compile time error
+c)Compile time error-->cc
 d)Hi iam ClassA
 
 ==============================================================================================================
@@ -391,7 +391,7 @@ d)Hi iam ClassA
 16)An interface with no fields or methods is known as a ---------------;
 		a)Abstract Interface
 		b)Functional interface-->c
-		c)None of the above 
+		c)None of the above -->cc
 		d)Runnable Interface
 
 ==============================================================================================================
@@ -405,7 +405,7 @@ public abstract class Test implements Runnable
 a)None of the above
 b)The program will not compile because it does not implement the run() method.-->c
 c)The program will not compile because it does not contain abstract methods.
-d)The program compiles fine
+d)The program compiles fine-->cc
 
 ==============================================================================================================
 
@@ -444,7 +444,7 @@ class Horse extends Cattle
 
 a)prints "Cattle eats hay"
 b)None of the these
-c)prints "Mammal eats food"
+c)prints "Mammal eats food"-->cc
 d)Exception
 e)prints "Horse eats hay" -->c
  
@@ -460,7 +460,7 @@ e)prints "Horse eats hay" -->c
 	  {
 	  abstract void unfinished(){}
 	  }
-	c)abstract class A-->c
+	c)abstract class A-->c-->cc
 	  {
 	  abstract void unfinished();
 	  } 
@@ -505,27 +505,18 @@ e)prints "Horse eats hay" -->c
 	a)23
 	b)321
 	c)C.E-->c
-	d)123
+	d)123-->cc
 	e)12
 	
 ==============================================================================================================
 
 					Those are all the quesitons
  
- check the key for the correct ansswers
+ check the key for the correct answers
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ c means my answer
+ cc means correct answer by key
  
  
  
