@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public class NonePrac {
         static Scanner sc=new Scanner(System.in);
-        static Hashtable<Integer,Integer> indPrice=new Hashtable<Integer,Integer>();
         static ArrayList<Integer> totalPrice=new ArrayList<Integer>();
         static Hashtable<Integer,String> hash=new Hashtable<Integer,String>();
 
@@ -108,9 +107,10 @@ public class NonePrac {
                 case 20102:
                     System.out.println("how many quantity u want?");
                     int b1=sc.nextInt();
-                    indPrice.put(20102,b1);
+                    
                     int price1 = b1*12000;
-                    hash.put(20102,"|20102|	   LYOD			| 	12000/-RS          |");
+                   
+                    hash.put(20102,"|20102|	   LYOD			| 	12000/-RS          |"+"|	"+b1+"	|"+"|	"+price1);
                     System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                     int k1=sc.nextInt();
                     switch(k1)
@@ -228,8 +228,6 @@ public class NonePrac {
             		+ "| 303	| 	Microsoft Xbox		|	     3		   |\r\n"
             		+ "|	|				|			   |\r\n"
             		+ "|	|				|			   |\r\n"
-            		+ "| 304	|   	     Psp		|	     4  	   |\r\n"
-            		+ "|	|				|			   |\r\n"
             		+ ".==================================================================.");
             System.out.println("select ur desired product id from the above list or press 1 to go back to the homepage");
 
@@ -255,12 +253,193 @@ public class NonePrac {
         }
 
         static void microSoftXbox() {
-        	
+        	System.out.println();
+            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Microsoft Xbox <<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println();
+            System.out.println(".==================================================================.\r\n"
+            		+ "| ID NO	|             NAME		|   	    PRICE	   |\r\n"
+            		+ "|==================================================================|\r\n"
+            		+ "| 30301	|    Xbox 360 Gaming Console	|	   15,999/-	   |\r\n"
+            		+ "|	|    				| 			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 30302	|   Xbox One 1TB Gaming Console |          29,800/-  	   |\r\n"
+            		+ "|	|  				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 30303	| 	Microsoft Xbox One S    |	   21,490/-	   |\r\n"
+            		+ "|	|        1TB Gaming Console	|			   |\r\n"
+            		+ ".==================================================================.");
+            System.out.println("select ur desired product id from the above list or select 1 to go back");
+
+            int a=sc.nextInt();
+            switch(a) {
+	            case 1:
+	            	GamingConsoles();
+	            	break;
+                case 30301:
+                	System.out.println("how many quantity u want?");
+                    int b=sc.nextInt();
+                    int price = b*15999;
+                   totalPrice.add(price);
+                    hash.put(30301,"|30301|	  Xbox 360 Gaming Console	|  	15,999/-RS      "+"|	   "+b+"	 	"+"|     "+price+"             		 | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k=sc.nextInt();
+                    switch(k)
+                    {
+                        case 1:
+                        	microSoftXbox();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            microSoftXbox();
+                            break;
+                    }
+                    break;
+                case 30302:
+                    System.out.println("how many quantity u want?");
+                    int b1=sc.nextInt();
+                    int price1 = b1*29800;
+                    totalPrice.add(price1);
+                    hash.put(30302,"|30302| Xbox One 1TB Gaming Console	 	| 	29,800/-RS       "+"|	   "+b1+"	 	"+"|	"+price1+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k1=sc.nextInt();
+                    switch(k1)
+                    {
+                        case 1:
+                        	microSoftXbox();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price1);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            microSoftXbox();
+                            break;
+                    }
+                    break;
+                case 30303:
+                	   System.out.println("how many quantity u want?");
+                       int b2=sc.nextInt();
+                       int price2 = b2*21490;
+                       totalPrice.add(price2);
+                       hash.put(30303,"|30303|    Microsoft Xbox One S 1TB 		| 	21,490/-RS       "+"|	   "+b2+"	 	"+"|	"+price2+"    		         | ");
+                       System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                       int k2=sc.nextInt();
+                       switch(k2)
+                       {
+                           case 1:
+                        	   microSoftXbox();
+                               break;
+                           case 2:
+                               store();
+                               break;
+                           case 3:
+                               billing(price2);
+                               break;
+                           default:
+                               System.out.println("please enter a valid response");
+                               microSoftXbox();
+                               break;
+                       }
+                       break;
+                default:
+                    	System.out.println("Enter a valid id no ");
+                    	microSoftXbox();
+            }
 		}
 
 
 		static void nintendo() {
-			// TODO Auto-generated method stub
+			System.out.println();
+            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> nintendo <<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println();
+          System.out.println(".==================================================================.\r\n"
+          		+ "| ID NO	|             NAME		|   	    PRICE	   |\r\n"
+          		+ "|==================================================================|\r\n"
+          		+ "| 30201	|	Nintendo Switch OLED 	|	   25,999/-	   |\r\n"
+          		+ "|	|    				| 			   |\r\n"
+          		+ "|	|				|			   |\r\n"
+          		+ "| 30202	|       Nintendo NES 		|          14,800/-  	   |\r\n"
+          		+ "|	|  Classic Mini Gaming Console	|			   |\r\n"
+          		+ "|	|				|			   |\r\n"
+          		+ "| 30203	| 	Nintendo Switch Lite	|	*Out of stock*	   |\r\n"
+          		+ "|	|          Basic Edition	|			   |\r\n"
+          		+ ".==================================================================.\r\n"
+          		+ "");
+            System.out.println("select ur desired product id from the above list or select 1 to go back");
+
+            int a=sc.nextInt();
+            switch(a) {
+	            case 1:
+	            	GamingConsoles();
+	            	break;
+                case 30201:
+                	System.out.println("how many quantity u want?");
+                    int b=sc.nextInt();
+                    int price = b*25999;
+                   totalPrice.add(price);
+                    hash.put(30201,"|30201|	  Nintendo Switch OLED		|  	25,999/-RS      "+"|	   "+b+"	 	"+"|     "+price+"             		 | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k=sc.nextInt();
+                    switch(k)
+                    {
+                        case 1:
+                        	nintendo();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            nintendo();
+                            break;
+                    }
+                    break;
+                case 30202:
+                    System.out.println("how many quantity u want?");
+                    int b1=sc.nextInt();
+                    int price1 = b1*14800;
+                    totalPrice.add(price1);
+                    hash.put(30202,"|30202|    Nintendo NES Classic		| 	14,800/-RS       "+"|	   "+b1+"	 	"+"|	"+price1+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k1=sc.nextInt();
+                    switch(k1)
+                    {
+                        case 1:
+                        	nintendo();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price1);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            nintendo();
+                            break;
+                    }
+                    break;
+                case 30203:
+                	System.out.println("Nintendo Switch Lite Basic Edition is currently out of stock.we will restock it soon until then check our other products");
+                	nintendo();
+                    break;
+       
+                default:
+                    	System.out.println("Enter a valid id no ");
+                    	nintendo();
+            }
 			
 		}
 
@@ -292,16 +471,19 @@ public class NonePrac {
 	            		+ "| 30106	|     Sony PlayStation 4 (PS4) 	|	*Out of stock*	   |\r\n"
 	            		+ "|	|      500GB Gaming Console	|			   |\r\n"
 	            		+ ".==================================================================.");
-	            System.out.println("select ur desired product id from the above list");
+	            System.out.println("select ur desired product id from the above list or select 1 to go back");
 
 	            int a=sc.nextInt();
 	            switch(a) {
+		            case 1:
+		            	GamingConsoles();
+		            	break;
 	                case 30101:
 	                	System.out.println("how many quantity u want?");
 	                    int b=sc.nextInt();
-	                    int price = b*12000;
-	                    indPrice.put(30101,price);
-	                    hash.put(30101,"|30101| Sony PlayStation 5| 	49,000/-RS          |");
+	                    int price = b*49000;
+	                   totalPrice.add(price);
+	                    hash.put(30101,"|30101|    Sony PS5 1TB			| 	49,000/-RS      "+"|	   "+b+"	 	"+"|	"+price+"    		         |	");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k=sc.nextInt();
 	                    switch(k)
@@ -317,6 +499,7 @@ public class NonePrac {
 	                            break;
 	                        default:
 	                            System.out.println("please enter a valid response");
+	                            sonyPlaystations();
 	                            break;
 	                    }
 	                    break;
@@ -324,9 +507,9 @@ public class NonePrac {
 	                case 30102:
 	                    System.out.println("how many quantity u want?");
 	                    int b1=sc.nextInt();
-	                    indPrice.put(20102,b1);
-	                    int price1 = b1*12000;
-	                    hash.put(20102,"|20102|	   LYOD			| 	12000/-RS          |");
+	                    int price1 = b1*7999;
+	                    totalPrice.add(price1);
+	                    hash.put(30102,"|30102|    Sony PS2 Slim			| 	7999/-RS        "+"|	   "+b1+"	 	"+"|	"+price1+"    		         | ");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k1=sc.nextInt();
 	                    switch(k1)
@@ -342,44 +525,27 @@ public class NonePrac {
 	                            break;
 	                        default:
 	                            System.out.println("please enter a valid response");
+	                            sonyPlaystations();
 	                            break;
 	                    }
 	                    break;
 	                case 30103:
-	                    System.out.println("how many quantity u want?");
-	                    int b2=sc.nextInt();
-	                    int price2 =b2*17000;
-	                    hash.put(20103,"|20103|	 WHIRLPOOL		| 	17000/-RS	   |");
-	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
-	                    int k2=sc.nextInt();
-	                    switch(k2)
-	                    {
-	                        case 1:
-	                            Refrigerators();
-	                            break;
-	                        case 2:
-	                            store();
-	                            break;
-	                        case 3:
-	                            billing(price2);
-	                            break;
-	                        default:
-	                            System.out.println("please enter a valid response");
-	                            break;
-	                    }
+	                	System.out.println("Sony PS5 basic edition is currently out of stock.we will restock it soon until then check our other products");
+	                    sonyPlaystations();
 	                    break;
 	                case 30104:
 	                    System.out.println("how many quantity u want?");
 	                    int b3=sc.nextInt();
-	                    int price3 = b3*15000;
+	                    int price3 = b3*27490;
+	                    totalPrice.add(price3);
 	                    billing(price3);
-	                    hash.put(20104,"|20104|        PANASONIC		|	15000/-RS	   |");
+	                    hash.put(30104,"|30104|    Sony PS4 1TB VR			| 	27,490/-RS      "+"|	   "+b3+"	 	"+"|	"+price3+"    		         |	");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k3=sc.nextInt();
 	                    switch(k3)
 	                    {
 	                        case 1:
-	                            Refrigerators();
+	                        	 sonyPlaystations();
 	                            break;
 	                        case 2:
 	                            store();
@@ -389,57 +555,21 @@ public class NonePrac {
 	                            break;
 	                        default:
 	                            System.out.println("please enter a valid response");
+	                            sonyPlaystations();
 	                            break;
 	                    }
 	                    break;
 	                case 30105:
-	                    System.out.println("how many quantity u want?");
-	                    int b4=sc.nextInt();
-	                    int price4 = b4*22000;
-	                    billing(price4);
-	                    hash.put(20102,"|2010|	  GODREJ		|	22000/-RS	   |");
-	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
-	                    int k4=sc.nextInt();
-	                    switch(k4)
-	                    {
-	                        case 1:
-	                            Refrigerators();
-	                            break;
-	                        case 2:
-	                            store();
-	                            break;
-	                        case 3:
-	                            billing(price4);
-	                            break;
-	                        default:
-	                            System.out.println("please enter a valid response");
-	                            break;
-	                    }
+	                	System.out.println("Sony PS3 500GB edition is currently out of stock.we will restock it soon until then check our other products");
+	                    sonyPlaystations();
 	                    break;
 	                case 30106:
-	                    System.out.println("how many quantity u want?");
-	                    int b5=sc.nextInt();
-	                    int price5= b5*22000;
-	                    billing(price5);
-	                    hash.put(20102,"|20105|	  GODREJ		|	22000/-RS	   |");
-	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
-	                    int k5=sc.nextInt();
-	                    switch(k5)
-	                    {
-	                        case 1:
-	                            Refrigerators();
-	                            break;
-	                        case 2:
-	                            store();
-	                            break;
-	                        case 3:
-	                            billing(price5);
-	                            break;
-	                        default:
-	                            System.out.println("please enter a valid response");
-	                            break;
-	                    }
+	                	System.out.println("Sony PS4 500GB edition is currently out of stock.we will restock it soon until then check our other products");
+	                    sonyPlaystations();
 	                    break;
+	                    default:
+	                    	System.out.println("Enter a valid id no ");
+	                    	sonyPlaystations();
 	            }
 			
 		}
@@ -491,19 +621,21 @@ public class NonePrac {
         static void billing(int price)
         {
             int sum=0;
-            int total=sum+price;
-            totalPrice.add(total);
             displayFormat();
-            hash.forEach((key,value)->System.out.println(" "+value+total));
-            for(Integer k:totalPrice)
+            hash.forEach((key,value)->System.out.println(" "+value));
+            System.out.println(" .========================================================================================================================================.");
+            for(Integer a:totalPrice)
             {
-                System.out.println(k);
+            	sum+=a;
             }
+           
+         
         }
         static void displayFormat()
         {
-            System.out.println(" .=======================================================================================================================================.\r\n"
-                    + " |IDNO |		PRODUCT NAME		|	PRICE		|	QUANTITY	|	TOTALPRICE		|\n"
+            System.out.println(" "
+            		+ ".=======================================================================================================================================.\r\n"
+                    + " |IDNO |		PRODUCT NAME		|	PRICE		|	QUANTITY	|	TOTALPRICE		         |\n"
                     + " .=======================================================================================================================================.");
         }
         
@@ -545,5 +677,6 @@ public class NonePrac {
             System.out.println("\n");
             System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> PLEASE PRESS 1 TO ENTER THE STORE<<<<<<<<<<<<<<<<-----------------------------------------------------------");
             store();
+            
         }
     }
