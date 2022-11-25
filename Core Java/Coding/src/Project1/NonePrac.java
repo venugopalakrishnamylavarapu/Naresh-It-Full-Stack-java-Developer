@@ -636,6 +636,9 @@ public class NonePrac {
         }
 
        static void pouches() {
+    	   System.out.println();
+           System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Pouches<<<<<<<<<<<<<<<<-----------------------------------------------------------");
+           System.out.println();
 		
 			
 		}
@@ -1209,10 +1212,22 @@ public class NonePrac {
 
 		static void store()
         {	System.out.println("Check the below List");
-            System.out.println("1.Gadgets");
-            System.out.println("2.Home Appliances");
-            System.out.println("3.Gaming Consoles");
-            System.out.println("4.Mobile Accesories");
+            System.out.println(".=======================================.\r\n"
+            		+ "| ID NO	|          Sections		|\r\n"
+            		+ "|=======================================|\r\n"
+            		+ "|   1	|	   Gadgets		|\r\n"
+            		+ "|	|				|\r\n"
+            		+ "|	|				|\r\n"
+            		+ "|   2   |	Home Appliances		|\r\n"
+            		+ "|	|				|\r\n"
+            		+ "|	|				|\r\n"
+            		+ "|   3	|	Gaming Consoles		|\r\n"
+            		+ "| 	|	 			|\r\n"
+            		+ "| 	|	 			|\r\n"
+            		+ "|   4	|	Mobile Accesories	|\r\n"
+            		+ "| 	|	 			|\r\n"
+            		+ "| 	|	 			|\r\n"
+            		+ ".=======================================.");
             System.out.println();
 
             System.out.println("Select ur desired category");
