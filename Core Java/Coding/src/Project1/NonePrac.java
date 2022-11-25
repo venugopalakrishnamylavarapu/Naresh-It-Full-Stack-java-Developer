@@ -639,6 +639,137 @@ public class NonePrac {
     	   System.out.println();
            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Pouches<<<<<<<<<<<<<<<<-----------------------------------------------------------");
            System.out.println();
+           System.out.println(".==================================================================.\r\n"
+           		+ "| ID NO	|             NAME		|   	   Price  	   |\r\n"
+           		+ "|==================================================================|\r\n"
+           		+ "| 40401	|	Iphone 14 pro pouch     |	   499/-Rs	   |\r\n"
+           		+ "|	|				| 			   |\r\n"
+           		+ "|	|				|			   |\r\n"
+           		+ "| 40402	|	Xiaomi all models	| 	  199/-Rs	   |\r\n"
+           		+ "|	|				|			   |\r\n"
+           		+ "|	|				|			   |\r\n"
+           		+ "| 40403	|  	Custom Pouch any	|	  399/-Rs	   |\r\n"
+           		+ "|	|				|			   |\r\n"
+           		+ "|	|				|			   |\r\n"
+           		+ "| 40404	|   	Grafitee Sticker  	|	  99/-Rs	   |\r\n"
+           		+ "|	|				|			   |\r\n"
+           		+ ".==================================================================.");
+           System.out.println("select ur desired product id from the above list or select 1 to go back");
+
+           int a=sc.nextInt();
+           switch(a) {
+	            case 1:
+	            	MobileAccesories();
+	            	break;
+               case 40401:
+               	System.out.println("how many quantity u want?");
+                   int b=sc.nextInt();
+                   int price = b*499;
+                  totalPrice.add(price);
+                   hash.put(40401,"|40401|    Iphone 14 pro pouch 		| 	499/-RS        "+" |	   "+b+"	 	"+"|	"+price+"    		         	 |	");
+                   System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                   int k=sc.nextInt();
+                   switch(k)
+                   {
+                       case 1:
+                    	   pouches();
+                           break;
+                       case 2:
+                           store();
+                           break;
+                       case 3:
+                           billing(price);
+                           break;
+                       default:
+                           System.out.println("please enter a valid response");
+                           pouches();
+                           break;
+                   }
+                   break;
+                 
+               case 40402:
+                   System.out.println("how many quantity u want?");
+                   int b1=sc.nextInt();
+                   int price1 = b1*199;
+                   totalPrice.add(price1);
+                   hash.put(40402,"|40402|   Xiaomi all models	 	  	| 	199/-RS        "+" |	   "+b1+"	 	"+"|	"+price1+"    		         	 | ");
+                   System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                   int k1=sc.nextInt();
+                   switch(k1)
+                   {
+                       case 1:
+                    	   pouches();
+                           break;
+                       case 2:
+                           store();
+                           break;
+                       case 3:
+                           billing(price1);
+                           break;
+                       default:
+                           System.out.println("please enter a valid response");
+                           pouches();
+                           break;
+                   }
+                   break;
+               case 40403:
+               	System.out.println("how many quantity u want?");
+                   int b2=sc.nextInt();
+                   int price2 = b2*399;
+                   totalPrice.add(price2);
+                   billing(price2);
+                   hash.put(40403,"|40403|    Custom Pouch any brand	  	| 	399/-RS        "+" |	   "+b2+"	 	"+"|	"+price2+"    		         	 |	");
+                   System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                   int k2=sc.nextInt();
+                   switch(k2)
+                   {
+                       case 1:
+                    	   pouches();
+                           break;
+                       case 2:
+                           store();
+                           break;
+                       case 3:
+                           billing(price2);
+                           break;
+                       default:
+                           System.out.println("please enter a valid response");
+                           pouches();
+                           break;
+                   }
+                   break;
+             
+               case 40404:
+                   System.out.println("how many quantity u want?");
+                   int b3=sc.nextInt();
+                   int price3 = b3*2499;
+                   totalPrice.add(price3);
+                   billing(price3);
+                   hash.put(40404,"|40404|    Grafitee Sticker		 	| 	99/-RS"+"          |	   "+b3+"	 	"+"|	"+price3+"    		 	 |	");
+                   System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                   int k3=sc.nextInt();
+                   switch(k3)
+                   {
+                       case 1:
+                    	   pouches();
+                           break;
+                       case 2:
+                           store();
+                           break;
+                       case 3:
+                           billing(price3);
+                           break;
+                       default:
+                           System.out.println("please enter a valid response");
+                           pouches();
+                           break;
+                   }
+                   break;
+             
+               default:
+                  System.out.println("Enter a valid id no ");
+                  pouches();
+           }
 		
 			
 		}
@@ -688,7 +819,7 @@ public class NonePrac {
                  switch(k)
                  {
                      case 1:
-                     	EandH();
+                    	 DandB();
                          break;
                      case 2:
                          store();
@@ -698,7 +829,7 @@ public class NonePrac {
                          break;
                      default:
                          System.out.println("please enter a valid response");
-                         EandH();
+                         DandB();
                          break;
                  }
                  break;
@@ -714,7 +845,7 @@ public class NonePrac {
                  switch(k1)
                  {
                      case 1:
-                     	EandH();
+                    	 DandB();
                          break;
                      case 2:
                          store();
@@ -724,7 +855,7 @@ public class NonePrac {
                          break;
                      default:
                          System.out.println("please enter a valid response");
-                         EandH();
+                         DandB();
                          break;
                  }
                  break;
@@ -740,7 +871,7 @@ public class NonePrac {
                  switch(k2)
                  {
                      case 1:
-                     	EandH();
+                    	 DandB();
                          break;
                      case 2:
                          store();
@@ -750,7 +881,7 @@ public class NonePrac {
                          break;
                      default:
                          System.out.println("please enter a valid response");
-                         EandH();
+                         DandB();
                          break;
                  }
                  break;
@@ -767,7 +898,7 @@ public class NonePrac {
                  switch(k3)
                  {
                      case 1:
-                     	EandH();
+                    	 DandB();
                          break;
                      case 2:
                          store();
@@ -777,7 +908,7 @@ public class NonePrac {
                          break;
                      default:
                          System.out.println("please enter a valid response");
-                         EandH();
+                         DandB();
                          break;
                  }
                  break;
@@ -792,7 +923,7 @@ public class NonePrac {
                  switch(k4)
                  {
                      case 1:
-                     	EandH();
+                    	 DandB();
                          break;
                      case 2:
                          store();
@@ -802,7 +933,7 @@ public class NonePrac {
                          break;
                      default:
                          System.out.println("please enter a valid response");
-                         EandH();
+                         DandB();
                          break;
                  }
                  break;
@@ -817,7 +948,7 @@ public class NonePrac {
                  switch(k5)
                  {
                      case 1:
-                     	EandH();
+                    	 DandB();
                          break;
                      case 2:
                          store();
@@ -827,13 +958,13 @@ public class NonePrac {
                          break;
                      default:
                          System.out.println("please enter a valid response");
-                         EandH();
+                         DandB();
                          break;
                  }
                  break;
              default:
                  System.out.println("Enter a valid id no ");
-                 MobileAccesories();
+                 DandB();
          }
 			
 		}
@@ -1264,7 +1395,9 @@ public class NonePrac {
         {
             displayFormat();
             hash.forEach((key,value)->System.out.println(" "+value));
-            System.out.println(" .========================================================================================================================================.");
+            System.out.println(" .=======================================================================================================================================.");
+            int a=sc.nextInt();
+            
            
          
         }
@@ -1279,14 +1412,38 @@ public class NonePrac {
         
         static void totalBilling() //total bill called in main method
         {
+        	System.out.println("Enter 1 to return to shopping again or press 2 to Exit the Store");
+        	int a=sc.nextInt();
+        	switch (a)
+        	{
+        	case 1:
+        		store();
+        		break;
+        	case 2:
+        		endCard();
+        		break;
+        	default:
+        		System.out.println("Enter a valid option");
+        		totalBilling();
+        		break;
+        		
+        	}
         	
-        }
+        			
+        	}
+        static void endCard() {
+			
+			
+		}
     
 /*---------------------------------------------------------------------Billing list section ends here---------------------------------------------------------------------------------------*/
 
 
 
-        public static void main(String[] args) {
+      
+
+
+		public static void main(String[] args) {
             System.out.println("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>\n"
                     + "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>\n"
                     + "<>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////<>\n"
@@ -1315,6 +1472,8 @@ public class NonePrac {
             System.out.println("\n");
             System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> PLEASE PRESS 1 TO ENTER THE STORE<<<<<<<<<<<<<<<<-----------------------------------------------------------");
             store();
+            
+            
             
         }
     }
