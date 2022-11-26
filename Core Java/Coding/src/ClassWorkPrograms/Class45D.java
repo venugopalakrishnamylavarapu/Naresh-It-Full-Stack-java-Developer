@@ -1,5 +1,5 @@
 package ClassWorkPrograms;
-
+//this is an example of next topic so dont mind the program for now in the next class we will see the program expalination and the concept behind it.
 public class Class45D {
 	public static void main(String[] args)
 	{
@@ -11,8 +11,9 @@ public class Class45D {
 			@Override
 			public void run()
 			{
-				synchronized(A)
-				{//Thread 1 is holding Java
+				synchronized (A)//Thread 1 is holding Java
+				{
+					System.out.println("Thread 1 locked on A");
 				try 
 				{
 					Thread.sleep(100);
@@ -21,16 +22,16 @@ public class Class45D {
 				{
 					e.printStackTrace();
 				}
-				}
-				synchronized(B)//Thread will be waiting for B(Python)
+				synchronized (B)//Thread 1 will be waiting for B(Python)
 				{
 					System.out.println("Thread 1 locked on B");
 				}
 				System.out.println("no dead lock");
 			}
+			}
 		};
 	Thread t2=new Thread()
-			{
+	{
 		@Override
 		public void run()
 		{
@@ -52,7 +53,7 @@ public class Class45D {
 			}
 			System.out.println("no dead lock");
 		}
-			};
+	};
 			t1.start();
 			t2.start();
 		
