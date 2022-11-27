@@ -1,0 +1,211 @@
+INDEXES:
+========
+	- Index is a db object which is used to retrival the required row from a table fastly.
+	- it is similar to book index page in text books.
+by using book index how we can take the required topic from 
+a text book fastly same as by using db index object we can 
+retrive a particular row from a table fastly.
+	- on which column we created an index object that column
+is called as "indexed key column" and this column only use
+under where clause condition to activate indexes on table.
+	- all databases are supporting the following two types of
+searching mechanisms those are,
+				1. Table scan(default)
+				2. Index scan
+
+1. Table scan:
+==============
+	- in this mechanism oracle server is scanning the entire
+table for required row data.
+
+EX:
+SELECT * FROM EMP WHERE SAL=3000;-----NO INDEX OBJECT
+
+SOLUTION:
+=========
+       SAL
+----------
+       800
+      1600
+      1250
+      2975
+      1250
+      2850
+      2450
+      3000					WHERE SAL=3000;
+      5000
+      1500
+      1100
+       950
+      3000
+      1300
+
+2. Index scan:
+==============
+	- In this scan oracle server is scanning based on an indexed key 
+column for required data.
+					i) implicit indexes
+					ii) explicit indexes
+
+i) implicit indexes:
+=====================
+	- these indexes are created by system when we create a table 
+along with "unique" (or) "primary key" constraint.
+
+Ex:
+SQL> CREATE TABLE TEST1(SNO INT UNIQUE,NAME VARCHAR2(10));
+SQL> CREATE TABLE TEST2(EID INT PRIMARY KEY,SAL NUMBER(10));
+
+NOTE:
+=====
+	- if we want to view column name along with index name of a 
+particular table then we use a datadictionaty is "user_ind_columns".
+
+Ex:
+sql> desc user_ind_columns;
+SQL> SELECT COLUMN_NAME,INDEX_NAME FROM USER_IND_COLUMNS WHERE
+  2  TABLE_NAME='TEST1';
+
+COLUMN_NAME									INDEX_NAME
+----------------------	    --------------------------------
+SNO												SYS_C007528
+
+SQL> SELECT COLUMN_NAME,INDEX_NAME FROM USER_IND_COLUMNS WHERE
+  2  TABLE_NAME='TEST2';
+
+COLUMN_NAME									INDEX_NAME
+-------------------				----------------------------------
+EID												SYS_C007529
+
+ii) Explicit indexes:
+=====================
+	- these indexes are created by the user in two types of indexes
+are,
+			1) B-tree index
+						> simple index
+						> composite index
+						> unique index
+						> functional based index
+
+			2) Bitmap index
+
+simple index:
+==============
+	- when we created an index object based on a single column.
+syntax:
+========
+create index <index name> on <tn>(column name);
+
+Ex:
+SQL> CREATE INDEX I1 ON EMP(SAL);
+SQL> SELECT * FROM EMP WHERE SAL=3000;
+
+										B-tree INDEX(I1)
+													|
+									< (LP)|3000|(RP) >=
+										 |             |
+				<(LP)|2975|(RP)>=					<(LP)|5000|(RP)>=
+					|								          |
+2850|*,2450|*,1600|*	,							3000|*,* (* IS ROWID)
+1500|*,1300|*,1250|*,*,
+1100|*,950|*,800|*
+
+ii) COMPOSITE INDEX:
+====================
+	- when we created an index object based on multiple columns.
+syntax:
+=======
+create index <index name> on <tn>(column name1,column name2,....);
+
+Ex:
+SQL> CREATE INDEX I2 ON EMP(DEPTNO,JOB);
+
+EX:
+SQL> SELECT * FROM EMP WHERE DEPTNO=10;-----INDEX SCAN
+SQL> SELECT * FROM EMP WHERE JOB='MANAGER';----TABLE SCAN
+SQL> SELECT * FROM EMP WHERE DEPTNO=10 AND JOB='MANAGER';---INDEX SCAN
+
+NOTE:
+=====
+	IN COMPOSITE INDEX MECHANISM INDEXES ARE ACTIVATED BASED ON LEADING
+COLUMN ONLY.
+
+iii) UNIQUE INDEX:
+==================
+	- when we created an index object with unique constraint.
+
+syntax:
+========
+create unique index <index name> on <tn>(column name);
+
+EX:
+SQL> CREATE UNIQUE INDEX UI ON DEPT(DNAME);
+
+TESTING:
+SQL> INSERT INTO DEPT VALUES(50,'SALES','HYD');
+ERROR at line 1:
+ORA-00001: unique constraint (MYDB4PM.UI) violated
+
+SQL> INSERT INTO DEPT VALUES(50,'DBA','HYD');
+1 row inserted.
+
+iv) FUNCTIONAL BASED INDEX:
+============================
+	- when we created an index object based on a function name.
+
+syntax:
+=======
+create index <index name> on <tn>(<function name>(column name));
+
+EX:
+SQL> CREATE INDEX FI ON EMP(UPPER(ENAME));
+
+TESTING:
+SQL> SELECT * FROM EMP WHERE UPPER(ENAME)='smith';---NOT ALLOWED
+SQL> SELECT * FROM EMP WHERE UPPER(ENAME)='SMITH';---ALLOWED
+
+2) BITMAP INDEX:
+================
+	- are created on "low cardinality" columns in a table to improve the 
+performance of database.
+
+Cardinality:
+============
+	- it refer uniqueness(distinct) values of a column.
+
+formula:
+========
+cardinality of column = no.of distinct values / no.of rows in a table
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

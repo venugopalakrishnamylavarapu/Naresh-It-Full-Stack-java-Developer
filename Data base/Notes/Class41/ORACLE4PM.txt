@@ -1,0 +1,413 @@
+INDEXES:
+========
+	- Index is a db object which is used to retrival the required row from a table fastly.
+	- it is similar to book index page in text books.
+by using book index how we can take the required topic from 
+a text book fastly same as by using db index object we can 
+retrive a particular row from a table fastly.
+	- on which column we created an index object that column
+is called as "indexed key column" and this column only use
+under where clause condition to activate indexes on table.
+	- all databases are supporting the following two types of
+searching mechanisms those are,
+				1. Table scan(default)
+				2. Index scan
+
+1. Table scan:
+==============
+	- in this mechanism oracle server is scanning the entire
+table for required row data.
+
+EX:
+SELECT * FROM EMP WHERE SAL=3000;-----NO INDEX OBJECT
+
+SOLUTION:
+=========
+       SAL
+----------
+       800
+      1600
+      1250
+      2975
+      1250
+      2850
+      2450
+      3000					WHERE SAL=3000;
+      5000
+      1500
+      1100
+       950
+      3000
+      1300
+
+2. Index scan:
+==============
+	- In this scan oracle server is scanning based on an indexed key 
+column for required data.
+					i) implicit indexes
+					ii) explicit indexes
+
+i) implicit indexes:
+=====================
+	- these indexes are created by system when we create a table 
+along with "unique" (or) "primary key" constraint.
+
+Ex:
+SQL> CREATE TABLE TEST1(SNO INT UNIQUE,NAME VARCHAR2(10));
+SQL> CREATE TABLE TEST2(EID INT PRIMARY KEY,SAL NUMBER(10));
+
+NOTE:
+=====
+	- if we want to view column name along with index name of a 
+particular table then we use a datadictionaty is "user_ind_columns".
+
+Ex:
+sql> desc user_ind_columns;
+SQL> SELECT COLUMN_NAME,INDEX_NAME FROM USER_IND_COLUMNS WHERE
+  2  TABLE_NAME='TEST1';
+
+COLUMN_NAME									INDEX_NAME
+----------------------	    --------------------------------
+SNO												SYS_C007528
+
+SQL> SELECT COLUMN_NAME,INDEX_NAME FROM USER_IND_COLUMNS WHERE
+  2  TABLE_NAME='TEST2';
+
+COLUMN_NAME									INDEX_NAME
+-------------------				----------------------------------
+EID												SYS_C007529
+
+ii) Explicit indexes:
+=====================
+	- these indexes are created by the user in two types of indexes
+are,
+			1) B-tree index
+						> simple index
+						> composite index
+						> unique index
+						> functional based index
+
+			2) Bitmap index
+
+simple index:
+==============
+	- when we created an index object based on a single column.
+syntax:
+========
+create index <index name> on <tn>(column name);
+
+Ex:
+SQL> CREATE INDEX I1 ON EMP(SAL);
+SQL> SELECT * FROM EMP WHERE SAL=3000;
+
+										B-tree INDEX(I1)
+													|
+									< (LP)|3000|(RP) >=
+										 |             |
+				<(LP)|2975|(RP)>=					<(LP)|5000|(RP)>=
+					|								          |
+2850|*,2450|*,1600|*	,							3000|*,* (* IS ROWID)
+1500|*,1300|*,1250|*,*,
+1100|*,950|*,800|*
+
+ii) COMPOSITE INDEX:
+====================
+	- when we created an index object based on multiple columns.
+syntax:
+=======
+create index <index name> on <tn>(column name1,column name2,....);
+
+Ex:
+SQL> CREATE INDEX I2 ON EMP(DEPTNO,JOB);
+
+EX:
+SQL> SELECT * FROM EMP WHERE DEPTNO=10;-----INDEX SCAN
+SQL> SELECT * FROM EMP WHERE JOB='MANAGER';----TABLE SCAN
+SQL> SELECT * FROM EMP WHERE DEPTNO=10 AND JOB='MANAGER';---INDEX SCAN
+
+NOTE:
+=====
+	IN COMPOSITE INDEX MECHANISM INDEXES ARE ACTIVATED BASED ON LEADING
+COLUMN ONLY.
+
+iii) UNIQUE INDEX:
+==================
+	- when we created an index object with unique constraint.
+
+syntax:
+========
+create unique index <index name> on <tn>(column name);
+
+EX:
+SQL> CREATE UNIQUE INDEX UI ON DEPT(DNAME);
+
+TESTING:
+SQL> INSERT INTO DEPT VALUES(50,'SALES','HYD');
+ERROR at line 1:
+ORA-00001: unique constraint (MYDB4PM.UI) violated
+
+SQL> INSERT INTO DEPT VALUES(50,'DBA','HYD');
+1 row inserted.
+
+iv) FUNCTIONAL BASED INDEX:
+============================
+	- when we created an index object based on a function name.
+
+syntax:
+=======
+create index <index name> on <tn>(<function name>(column name));
+
+EX:
+SQL> CREATE INDEX FI ON EMP(UPPER(ENAME));
+
+TESTING:
+SQL> SELECT * FROM EMP WHERE UPPER(ENAME)='smith';---NOT ALLOWED
+SQL> SELECT * FROM EMP WHERE UPPER(ENAME)='SMITH';---ALLOWED
+
+2) BITMAP INDEX:
+================
+	- are created on "low cardinality" columns in a table to improve the 
+performance of database.
+
+Cardinality:
+============
+	- it refer uniqueness(distinct) values of a column.
+
+formula:
+========
+cardinality of column = no.of distinct values / no.of rows in a table
+
+EX:
+cardinality of empno = 14 / 14 =====> 1 (high cardinality)---> btree index
+
+cardinality of job = 5 / 14 ====> 0.35 (low cardinality)---> bitmap index
+
+syntax:
+=======
+create bitmap index <index name> on <tn>(column name);
+
+Ex:
+SQL> CREATE BITMAP INDEX BIT ON EMP(JOB);
+SQL> SELECT * FROM EMP WHERE JOB='CLERK';
+		
+	- When we created a bitmap index object internally system will create 
+a bitmap indexed table with bit numbers "1" and "0".here "1" is represent 
+condition true whereas "0" is represent condition is false.
+								
+						bitmap indexed table(bit) ( 1 = ROWID)
+============================================================================================
+JOB		|	1	|	2	|	3	|	4	|	5	|	6	|	7	|	8	|	9	|	10		|	11		|	12		|	13		|	14		|
+=============================================================================================
+CLERK		|	1	|	0	|	0	|	0	|	0	|	0	|	0	|	0	|	0	|	0		|	1		|	1		|	0		|	1		
+===============================================================================================
+PRESIDNT|	0	|	0	|	0	|	0	|	0	|	0	|	0	|	0	|	1	|	0		|	0		|	0		|	0		|	0
+================================================================================================
+MANAGER	 |	0	|	0	|	0	|	1	|	0	|	1	|	1	|	0	|	0	|	0		|	0		|	0		|	0		|	0
+================================================================================================
+ANALYST	 |	0	|	0	|	0	|	0	|	0	|	0	|	0	|	1	|	0	|	0		|	0		|	0		|	1		|	0
+==================================================================================================
+SALESMAN |	0	|	1	|	1	|	0	|	1	|	0	|	0	|	0	|	0	|	1		|	0		|	0		|	0		|	0
+================================================================================================
+
+NOTE:
+=====
+	- TO VIEW INDEX NAME AND INDEX TYPE ON PARTICULAR TABLE IN ORACLE DB
+THEN WE USE A DATADICTIONARY "USER_INDEXES".
+
+EX:
+SQL> DESC USER_INDEXES;
+SQL> SELECT INDEX_NAME,INDEX_TYPE FROM USER_INDEXES
+  2  WHERE TABLE_NAME='EMP';
+
+INDEX_NAME                            INDEX_TYPE
+-------------------------------------------------------------------------------------------------------------------------------- ---------------------------
+I1                                     NORMAL(btree index)
+I2                                     NORMAL(btree index)
+FI                                     FUNCTION-BASED NORMAL(btree index)
+BIT                                    BITMAP
+
+HOW TO DROP AN INDEX:
+======================
+SYNTAX:
+=======
+DROP INDEX <INDEX NAME>;
+
+EX:
+SQL> DROP INDEX I1;
+
+Index dropped.
+
+SQL> DROP INDEX FI;
+
+Index dropped.
+
+SQL> DROP INDEX BIT;
+==========================================================================
+CLUSTER:
+========
+	- IT IS A COLLECTION OF TABLES TOGEHTER SAVED IN SAME DATABLOCK MEMORY.
+	- WE CREATE CLUSTER FOR IMPROVING THE PERFORMANCE OF JOINS.
+	- CLUSTER CAN BE CREATED AT THE TIME OF CREATING TABLES.
+	- WHENEVER WE CREATE A CLUSTER WE SHOULD HAVE A COMMON COLUMN IN TABLES
+OTHERWISE WE CANNOT CREATE A CLUSTER.
+	- TO CREATE A CLUSTER MEMORY THEN WE FOLLOW THE FOLLOWING 3 STEPS:
+
+STEP1: CREATE A CLUSTER:
+========================
+SYNTAX:
+=======
+CREATE CLUSTER <CLUSTER NAME>(<COMMON COLUMN NAME> <DT>[SIZE]);
+
+STEP2: CREATE AN INDEX OBJECT ON CLUSTER MEMORY:
+================================================
+SYNTAX:
+=======
+CREATE INDEX <INDEX NAME> ON CLUSTER <CLUSTER NAME>;
+
+STEP3: CREATE CLUSTER TABLES:
+=============================
+SYNTAX:
+=======
+CREATE TABLE <TN>(<COLUMN NAME1> <DT>[SIZE],......................)
+CLUSTER <CLUSTER NAME>(COMMON COLUMN NAME);
+	
+EX:
+SQL> CREATE CLUSTER EMP_DEPT(DEPTNO INT);
+Cluster created.
+
+SQL> CREATE INDEX IND1 ON CLUSTER EMP_DEPT;
+Index created.
+
+SQL> CREATE TABLE EMP1(EID INT,ENAME VARCHAR2(10),DEPTNO INT)
+     CLUSTER EMP_DEPT(DEPTNO);
+Table created.
+
+SQL> INSERT INTO EMP1 VALUES(1021,'SMITH',10);
+SQL> INSERT INTO EMP1 VALUES(1022,'WARD',20);
+SQL> COMMIT;
+
+SQL> CREATE TABLE DEPT1(DEPTNO INT,DNAME VARCHAR2(10))
+  2  CLUSTER EMP_DEPT(DEPTNO);
+Table created.
+
+SQL> INSERT INTO DEPT1 VALUES(10,'D1');
+SQL> INSERT INTO DEPT1 VALUES(20,'D2');
+SQL> COMMIT;
+
+NOTE:
+=====
+	WHEN WE WANT TO KNOW THESE TABLES ARE IN CLUSTER MEMORY OR NOT 
+THEN CHECK ROWID's OF TABLES  LIKE BELOW,
+
+SQL> SELECT ROWID FROM EMP1;
+
+ROWID
+------------------
+AAASUNAAHAAAAJGAAA
+AAASUNAAHAAAAJHAAA
+
+SQL> SELECT ROWID FROM DEPT1;
+
+ROWID
+------------------
+AAASUNAAHAAAAJGAAA
+AAASUNAAHAAAAJHAAA
+
+NOTE:
+=====
+	- TO VIEW ALL CLUSTERS IN ORACLE DB THEN USE A DATADICTIONARY IS 
+"USER_CLUSTERS".
+
+EX:
+SQL> DESC USER_CLUSTERS;
+SQL> SELECT CLUSTER_NAME FROM USER_CLUSTERS;
+
+CLUSTER_NAME
+--------------------
+EMP_DEPT
+
+NOTE:
+=====
+	- TO VIEW CLUSTER TABLES IN ORACLE DB THEN USE A DATADICTIONARY IS
+"USER_TABLES".
+
+EX:
+SQL> DESC USER_TABLES;
+SQL> SELECT TABLE_NAME FROM USER_TABLES WHERE CLUSTER_NAME='EMP_DEPT';
+
+TABLE_NAME
+---------------------
+EMP1
+DEPT1
+
+HOW TO DROP A CLUSTER:
+======================
+SYNTAX:
+========
+DROP CLSUTER <CLUSTER NAME>;
+
+EX:
+SQL> DROP CLUSTER EMP_DEPT
+ERROR at line 1:
+ORA-00951: cluster not empty
+
+		- IF WE WANT TO DROP A CLUSTER THEN USE "INCLUDING TABLES" STATEMENT.
+
+SYNTAX:
+========
+DROP CLSUTER <CLUSTER NAME> INCLUDING TABLES;
+
+EX:
+SQL> DROP CLUSTER EMP_DEPT INCLUDING TABLES;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
