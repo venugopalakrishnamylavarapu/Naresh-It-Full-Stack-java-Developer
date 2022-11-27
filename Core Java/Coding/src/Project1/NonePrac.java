@@ -27,7 +27,7 @@ public class NonePrac {
                     + "| 203	| Ricecookers,Mixers,Grinders	|prestige,pegion,butterfly |\r\n"
                     + "|	|				|			   |\r\n"
                     + "|	|				|			   |\r\n"
-                    + "| 204	|   AC's,TableFans	 	|loyd,samsung,mi,kinestar  |\r\n"
+                    + "| 204	|   AC's,Coolers,TableFans	|loyd,samsung,mi,kinestar  |\r\n"
                     + "|	|				|			   |\r\n"
                     + ".==================================================================.");
 
@@ -68,12 +68,436 @@ public class NonePrac {
 
 
         static void RMG() {
+        	System.out.println();
+            System.out.println("----------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Rice Cookers,Mixers,Grinders <<<<<<<<<<<<<<<<---------------------------------------------------");
+            System.out.println();
+            System.out.println(".==================================================================.\r\n"
+            		+ "| ID NO	|             NAME		|  NO OF ITEMS AVAILAB	   |\r\n"
+            		+ "|==================================================================|\r\n"
+            		+ "| 20301	|	 RICECOOKERS		|    		4	   |\r\n"
+            		+ "|	|				| 			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 20302	|	   MIXIES		| 		3          |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 20303	|	 GRINDERS		| 	 	3	   |\r\n"
+            		+ ".==================================================================.\r\n"
+            		+ "");
+            System.out.println("Enter the product id u want to see its menu");
+            int a=sc.nextInt();
+            switch (a)
+            {
+            	case 20301:
+            		riceCookers();
+            		break;
+            	case 20302:
+            		mixies();
+            		break;
+            	case 20303:
+            		grinders();
+            		break;
+            	default:
+            		System.out.println("Please Enter a valid id number");
+            		RMG();
+            		break;
+            }
 
         }
 
 
-        static void Televison() {
+        private static void grinders() {
+        	System.out.println();
+            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Grinders <<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println();
+            System.out.println(".==================================================================.\r\n"
+            		+ "| ID NO	|             NAME		|  	     PRICE	   |\r\n"
+            		+ "|==================================================================|\r\n"
+            		+ "| 203021|	 PRESTIGE		|    	   8999/-	   |\r\n"
+            		+ "|	|				| 			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 203022|	   GANGA		| 	   6999/      	   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 203023|	 BUTTERFLY		| 	   11599/-	   |\r\n"
+            		+ "| 	|	 			| 	 		   |\r\n"
+            		+ ".==================================================================.");
+			
+		}
 
+
+		private static void mixies() {
+
+			System.out.println();
+            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Mixies <<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println();
+			System.out.println(".==================================================================.\r\n"
+					+ "| ID NO	|             NAME		|  	     PRICE	   |\r\n"
+					+ "|==================================================================|\r\n"
+					+ "| 203021|	 PRESTIGE		|    	   1599/-	   |\r\n"
+					+ "|	|				| 			   |\r\n"
+					+ "|	|				|			   |\r\n"
+					+ "| 203022|	   GANGA		| 	   3999/      	   |\r\n"
+					+ "|	|				|			   |\r\n"
+					+ "|	|				|			   |\r\n"
+					+ "| 203023|	 BUTTERFLY		| 	   5599/-	   |\r\n"
+					+ "| 	|	 			| 	 		   |\r\n"
+					+ ".==================================================================.");
+			  System.out.println("select ur desired product id from the above list or select 1 to go back");
+
+	            int a=sc.nextInt();
+	            switch(a) {
+		            case 1:
+		            	HomeAppliances();
+		            	break;
+	                case 203021:
+	                	System.out.println("how many quantity u want?");
+	                    int b=sc.nextInt();
+	                    int price = b*1599;
+	                    totalPrice.add(price);
+	                    hash.put(203021,"|203021|    PRESTIGE(mixie)			| 	1599/-RS        "+"|	   "+b+"	 	"+"|	"+price+"    		         | ");
+	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+	                    int k=sc.nextInt();
+	                    switch(k)
+	                    {
+	                        case 1:
+	                        	mixies();
+	                            break;
+	                        case 2:
+	                            store();
+	                            break;
+	                        case 3:
+	                            billing(price);
+	                            break;
+	                        default:
+	                            System.out.println("please enter a valid response");
+	                            mixies();
+	                            break;
+	                    }
+	                    break;
+	                  
+	                case 203022:
+	                    System.out.println("how many quantity u want?");
+	                    int b1=sc.nextInt();
+	                    int price1 = b1*3999;
+	                    totalPrice.add(price1);
+	                    hash.put(203022,"|203022|    GANGA(mixie)			| 	3999/-RS        "+"|	   "+b1+"	 	"+"|	"+price1+"    		         | ");
+	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+	                    int k1=sc.nextInt();
+	                    switch(k1)
+	                    {
+	                        case 1:
+	                        	mixies();
+	                            break;
+	                        case 2:
+	                            store();
+	                            break;
+	                        case 3:
+	                            billing(price1);
+	                            break;
+	                        default:
+	                            System.out.println("please enter a valid response");
+	                            mixies();
+	                            break;
+	                    }
+	                    break;
+	                case 203023:
+	                    System.out.println("how many quantity u want?");
+	                    int b2=sc.nextInt();
+	                    int price2 = b2*5599;
+	                    totalPrice.add(price2);
+	                    hash.put(203023,"|203023|    BUTTERFLY(mixie)			| 	5599/-RS        "+"| 	  "+b2+"	 	"+"|	"+price2+"    		         | ");
+	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+	                    int k2=sc.nextInt();
+	                    switch(k2)
+	                    {
+	                        case 1:
+	                        	mixies();
+	                            break;
+	                        case 2:
+	                            store();
+	                            break;
+	                        case 3:
+	                            billing(price2);
+	                            break;
+	                        default:
+	                            System.out.println("please enter a valid response");
+	                            mixies();
+	                            break;
+	                    }
+	                    break;
+	                default:
+	                 	System.out.println("Enter a valid id no ");
+	                 	mixies();
+	            }
+		}
+
+
+		private static void riceCookers()
+		{
+			System.out.println();
+            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Rice Cookers  <<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println();
+            System.out.println(".==================================================================.\r\n"
+            		+ "| ID NO	|             NAME		|  	     PRICE	   |\r\n"
+            		+ "|==================================================================|\r\n"
+            		+ "| 203011|	 PRESTIGE		|    	   4999/-	   |\r\n"
+            		+ "|	|				| 			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 203012|	   PIGEON		| 	   3500/      	   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 203013|	 BUTTERFLY		| 	   7599/-	   |\r\n"
+            		+ "| 	|	 			| 	 		   |\r\n"
+            		+ "| 	|	 			| 	 		   |\r\n"
+            		+ "| 203014|	 PRESTIGE BLACKPRINCE	| 	   8999/-	   |\r\n"
+            		+ "| 	|	 			| 	 		   |\r\n"
+            		+ ".==================================================================.");
+            System.out.println("select ur desired product id from the above list or select 1 to go back");
+
+            int a=sc.nextInt();
+            switch(a) {
+	            case 1:
+	            	HomeAppliances();
+	            	break;
+                case 203011:
+                	System.out.println("how many quantity u want?");
+                    int b=sc.nextInt();
+                    int price = b*4999;
+                    totalPrice.add(price);
+                    hash.put(203011,"|203011|    PRESTIGE(cooker)			| 	4999/-RS        "+"|	   "+b+"	 	"+"|	"+price+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k=sc.nextInt();
+                    switch(k)
+                    {
+                        case 1:
+                        	riceCookers();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            riceCookers();
+                            break;
+                    }
+                    break;
+                  
+                case 203012:
+                    System.out.println("how many quantity u want?");
+                    int b1=sc.nextInt();
+                    int price1 = b1*3500;
+                    totalPrice.add(price1);
+                    hash.put(203012,"|203012|    PIGEON(cooker)			| 	3500/-RS        "+"|	   "+b1+"	 	"+"|	"+price1+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k1=sc.nextInt();
+                    switch(k1)
+                    {
+                        case 1:
+                        	riceCookers();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price1);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            riceCookers();
+                            break;
+                    }
+                    break;
+                case 203013:
+                    System.out.println("how many quantity u want?");
+                    int b2=sc.nextInt();
+                    int price2 = b2*7599;
+                    totalPrice.add(price2);
+                    hash.put(203013,"|203013|    BUTTERFLY(cooker)			| 	7599/-RS        "+"| 	  "+b2+"	 	"+"|	"+price2+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k2=sc.nextInt();
+                    switch(k2)
+                    {
+                        case 1:
+                        	riceCookers();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price2);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            riceCookers();
+                            break;
+                    }
+                    break;
+                case 203014:
+                    System.out.println("how many quantity u want?");
+                    int b3=sc.nextInt();
+                    int price3 = b3*8999;
+                    totalPrice.add(price3);
+                    hash.put(203014,"|203014|    PRESTIGE BLACKPRINCE(cooker)	| 	8999/-RS       "+" |	   "+b3+"	 	"+"|	"+price3+"    		         |	");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k3=sc.nextInt();
+                    switch(k3)
+                    {
+                        case 1:
+                        	riceCookers();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price3);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            riceCookers();
+                            break;
+                    }
+                    break;
+                default:
+                 	System.out.println("Enter a valid id no ");
+                 	riceCookers();
+            }
+		}
+
+
+		static void Televison() {
+        	System.out.println();
+            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Televisions  <<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println();
+            System.out.println(".==================================================================.\r\n"
+            		+ "| ID NO	|             NAME		|         PRICE	   	   |\r\n"
+            		+ "|==================================================================|\r\n"
+            		+ "| 20201	|	  SAMSUNG		|    	 25000/-RS         |\r\n"
+            		+ "|	|				| 			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 20202	|	   SANSUI		| 	 6999/-RS          |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 20203	|	    LG			| 	12999/-RS	   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 20204	|           MI			|	14999/-RS	   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ ".==================================================================.");
+            System.out.println("select ur desired product id from the above list or select 1 to go back");
+
+            int a=sc.nextInt();
+            switch(a) {
+	            case 1:
+	            	HomeAppliances();
+	            	break;
+                case 20201:
+                	System.out.println("how many quantity u want?");
+                    int b=sc.nextInt();
+                    int price = b*25000;
+                    totalPrice.add(price);
+                    hash.put(20201,"|20201|    SAMSUNG(tv)				| 	25000/-RS       "+"|	   "+b+"	 	"+"|	"+price+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k=sc.nextInt();
+                    switch(k)
+                    {
+                        case 1:
+                        	Televison();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            Televison();
+                            break;
+                    }
+                    break;
+                  
+                case 20202:
+                    System.out.println("how many quantity u want?");
+                    int b1=sc.nextInt();
+                    int price1 = b1*6999;
+                    totalPrice.add(price1);
+                    hash.put(20202,"|20202|    SANSUI(tv)				| 	6999/-RS        "+"|	   "+b1+"	 	"+"|	"+price1+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k1=sc.nextInt();
+                    switch(k1)
+                    {
+                        case 1:
+                        	Televison();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price1);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            Televison();
+                            break;
+                    }
+                    break;
+                case 20203:
+                    System.out.println("how many quantity u want?");
+                    int b2=sc.nextInt();
+                    int price2 = b2*12999;
+                    totalPrice.add(price2);
+                    hash.put(20203,"|20203|    LG (tv)				| 	12999/-RS       "+"|	   "+b2+"	 	"+"|	"+price2+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k2=sc.nextInt();
+                    switch(k2)
+                    {
+                        case 1:
+                        	Televison();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price2);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            Televison();
+                            break;
+                    }
+                    break;
+                case 20204:
+                    System.out.println("how many quantity u want?");
+                    int b3=sc.nextInt();
+                    int price3 = b3*14999;
+                    totalPrice.add(price3);
+                    hash.put(20204,"|20204|    MI (tv)				| 	14999/-RS       "+"|	   "+b3+"	 	"+"|	"+price3+"    		         |	");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k3=sc.nextInt();
+                    switch(k3)
+                    {
+                        case 1:
+                        	Televison();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price3);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            Televison();
+                            break;
+                    }
+                    break;
+                default:
+                 	System.out.println("Enter a valid id no ");
+                 	Televison();
+            }
         }
 
 
@@ -99,7 +523,7 @@ public class NonePrac {
                     + "| 20105	|	  GODREJ		|	22000/-RS	   |\r\n"
                     + "|	|				|			   |\r\n"
                     + ".==================================================================.");
-            System.out.println("select ur desired product id from the above list or press 1 to go back to home appliances page" );
+            System.out.println("select ur desired product id from the above list or select 1 to go back");
 
             int a=sc.nextInt();
             switch(a) {
@@ -107,22 +531,34 @@ public class NonePrac {
 	            	HomeAppliances();
 	            	break;
                 case 20101:
-                    System.out.println("Samsung refrigerators are currently out of stock.new stock will come in the comming days so plz bear with us.");
-                    Refrigerators();
+                	System.out.println("\t\tSamsung refrigerators are currently out of stock we will restock them \n\t\t\tso plz bear with us.until then \ncheck our other products by pressing 1 || press 2 to go back to store page|| press 3 to go back to homeappliances menu");
+                    int k=sc.nextInt();
+                    switch(k)
+                    {
+                        case 1:
+                        	Refrigerators();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                        	HomeAppliances();
+                        	break;
+                    }
                     break;
+                  
                 case 20102:
                     System.out.println("how many quantity u want?");
                     int b1=sc.nextInt();
-                    
                     int price1 = b1*12000;
-                   
-                    hash.put(20102,"|20102|	   LYOD			| 	12000/-RS          |"+"|	"+b1+"	|"+"|	"+price1);
+                    totalPrice.add(price1);
+                    hash.put(20102,"|20102|    LYOD(rf)				| 	12000/-RS        "+"|	   "+b1+"	 	"+"|	"+price1+"    		         | ");
                     System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                     int k1=sc.nextInt();
                     switch(k1)
                     {
                         case 1:
-                            Refrigerators();
+                        	Refrigerators();
                             break;
                         case 2:
                             store();
@@ -132,20 +568,22 @@ public class NonePrac {
                             break;
                         default:
                             System.out.println("please enter a valid response");
+                            Refrigerators();
                             break;
                     }
                     break;
                 case 20103:
                     System.out.println("how many quantity u want?");
                     int b2=sc.nextInt();
-                    int price2 =b2*17000;
-                    hash.put(20103,"|20103|	 WHIRLPOOL		| 	17000/-RS	   |");
+                    int price2 = b2*17000;
+                    totalPrice.add(price2);
+                    hash.put(20103,"|20103|    WHIRLPOOL (rf)			| 	17000/-RS        "+"|	   "+b2+"	 	"+"|	"+price2+"    		         | ");
                     System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                     int k2=sc.nextInt();
                     switch(k2)
                     {
                         case 1:
-                            Refrigerators();
+                        	Refrigerators();
                             break;
                         case 2:
                             store();
@@ -155,6 +593,7 @@ public class NonePrac {
                             break;
                         default:
                             System.out.println("please enter a valid response");
+                            Refrigerators();
                             break;
                     }
                     break;
@@ -162,14 +601,14 @@ public class NonePrac {
                     System.out.println("how many quantity u want?");
                     int b3=sc.nextInt();
                     int price3 = b3*15000;
-                    billing(price3);
-                    hash.put(20104,"|20104|        PANASONIC		|	15000/-RS	   |");
+                    totalPrice.add(price3);
+                    hash.put(20104,"|20104|    PANASONIC (rf)			| 	15000/-RS       "+"|	   "+b3+"	 	"+"|	"+price3+"    		         |	");
                     System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                     int k3=sc.nextInt();
                     switch(k3)
                     {
                         case 1:
-                            Refrigerators();
+                        	Refrigerators();
                             break;
                         case 2:
                             store();
@@ -179,21 +618,22 @@ public class NonePrac {
                             break;
                         default:
                             System.out.println("please enter a valid response");
+                            Refrigerators();
                             break;
                     }
                     break;
                 case 20105:
-                    System.out.println("how many quantity u want?");
+                	System.out.println("how many quantity u want?");
                     int b4=sc.nextInt();
                     int price4 = b4*22000;
-                    billing(price4);
-                    hash.put(20102,"|20105|	  GODREJ		|	22000/-RS	   |");
+                    totalPrice.add(price4);
+                    hash.put(20105,"|20105|    GODREJ				| 	22000/-RS        "+"|	   "+b4+"	 	"+"|	"+price4+"    		         | ");
                     System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                     int k4=sc.nextInt();
                     switch(k4)
                     {
                         case 1:
-                            Refrigerators();
+                        	Refrigerators();
                             break;
                         case 2:
                             store();
@@ -203,22 +643,160 @@ public class NonePrac {
                             break;
                         default:
                             System.out.println("please enter a valid response");
+                            Refrigerators();
                             break;
                     }
                     break;
+              default:
+                 	System.out.println("Enter a valid id no ");
+                 	Refrigerators();
             }
         }
 /*---------------------------------------------------------------------Home Appliances section ends here---------------------------------------------------------------------------------------*/
         
-/*---------------------------------------------------------------------Gadgets section starts here---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------Laptops section starts here---------------------------------------------------------------------------------------*/
 
-        static void Gadgets()//calling method store
+        static void Laptops()//calling method store
         {
             System.out.println();
-            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> GADGETS!!<<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> Laptops!!<<<<<<<<<<<<<<<<-----------------------------------------------------------");
+            System.out.println();
+            System.out.println(".==================================================================.\r\n"
+            		+ "| ID NO	|             NAME		|   	    PRICE	   |\r\n"
+            		+ "|==================================================================|\r\n"
+            		+ "| 101	|  Dell inspiron 1tbhdd/256ssd  |	  65000/-Rs	   |\r\n"
+            		+ "|	| backlit,8gbram/2gb nvedia card| 			   |\r\n"
+            		+ "|	| i5 10th gen,15 inch display	|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 102	| hp 15s 1tbhdd/256ssd backlit,	|         67000/-Rs  	   |\r\n"
+            		+ "|	| 8gbram iris,i5 intel 11gen	|			   |\r\n"
+            		+ "|	| 				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 103	| Lenovo IdeaPad Slim 1		|	  39000/-Rs	   |\r\n"
+            		+ "|	|  AMD Ryzen 3 Thin & Light 	|			   |\r\n"
+            		+ "|	|Laptop (8GB/512GB SSD/Windows11|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ "| 104	|ASUS ROG Strix G17 (2022)	|	109599/-Rs  	   |\r\n"
+            		+ "|	|Gaming Laptop (16GB/512GB SSD,	|			   |\r\n"
+            		+ "|	|/Windows 11/Green/2.5 Kg)	|			   |\r\n"
+            		+ "|	|				|			   |\r\n"
+            		+ ".==================================================================.\r\n"
+            		+ "");
+            System.out.println("select ur desired product id from the above list or select 1 to go back");
+
+            int a=sc.nextInt();
+            switch(a) {
+	            case 1:
+	            	store();
+	            	break;
+                case 101:
+                	System.out.println("how many quantity u want?");
+                    int b=sc.nextInt();
+                    int price = b*65000;
+                   totalPrice.add(price);
+                    hash.put(101,"|101  |Dell inspiron 1tbhdd/256ssd		|  	65000/-RS       "+"|	  "+b+"	 	"+"|       "+price+"           		 | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k=sc.nextInt();
+                    switch(k)
+                    {
+                        case 1:
+                        	Laptops();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            Laptops();
+                            break;
+                    }
+                    break;
+                case 102:
+                    System.out.println("how many quantity u want?");
+                    int b1=sc.nextInt();
+                    int price1 = b1*67000;
+                    totalPrice.add(price1);
+                    hash.put(102,"|102  |    hp 15s 1tbhdd/256ssd		| 	67000/-RS       "+"|	  "+b1+"	 	"+"|	"+price1+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k1=sc.nextInt();
+                    switch(k1)
+                    {
+                        case 1:
+                        	Laptops();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price1);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            Laptops();
+                            break;
+                    }
+                    break;
+                case 103:
+                	  System.out.println("how many quantity u want?");
+                      int b2=sc.nextInt();
+                      int price2 = b2*39000;
+                      totalPrice.add(price2);
+                      hash.put(103,"|103  |LenovoIdeaPad Slim 1 8GB/512GB SSD	| 	39000/-RS       "+"|	   "+b2+"	 	"+"|	"+price2+"    		         | ");
+                      System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                      int k2=sc.nextInt();
+                      switch(k2)
+                      {
+                          case 1:
+                        	  Laptops();
+                              break;
+                          case 2:
+                              store();
+                              break;
+                          case 3:
+                              billing(price2);
+                              break;
+                          default:
+                              System.out.println("please enter a valid response");
+                              Laptops();
+                              break;
+                      }
+                case 104:
+              	  System.out.println("how many quantity u want?");
+                    int b3=sc.nextInt();
+                    int price3 = b3*109599;
+                    totalPrice.add(price3);
+                    hash.put(104,"|104  |   ASUS ROG Strix G17 16GB/1Tb ssd	| 	109599/-RS      "+"|	   "+b3+"	 	"+"|	"+price3+"    		         | ");
+                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
+                    int k3=sc.nextInt();
+                    switch(k3)
+                    {
+                        case 1:
+                        	Laptops();
+                            break;
+                        case 2:
+                            store();
+                            break;
+                        case 3:
+                            billing(price3);
+                            break;
+                        default:
+                            System.out.println("please enter a valid response");
+                            Laptops();
+                            break;
+                    }
+       
+                default:
+                    	System.out.println("Enter a valid id no ");
+                    	Laptops();
+            }
           
         }
-/*---------------------------------------------------------------------Gadgets section ends here---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------Laptop section ends here---------------------------------------------------------------------------------------*/
       
   
 /*---------------------------------------------------------------------Gaming consoles section starts here---------------------------------------------------------------------------------------*/
@@ -550,7 +1128,6 @@ public class NonePrac {
 	                    int b3=sc.nextInt();
 	                    int price3 = b3*27490;
 	                    totalPrice.add(price3);
-	                    billing(price3);
 	                    hash.put(30104,"|30104|    Sony PS4 1TB VR			| 	27,490/-RS      "+"|	   "+b3+"	 	"+"|	"+price3+"    		         |	");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k3=sc.nextInt();
@@ -717,7 +1294,6 @@ public class NonePrac {
                    int b2=sc.nextInt();
                    int price2 = b2*399;
                    totalPrice.add(price2);
-                   billing(price2);
                    hash.put(40403,"|40403|    Custom Pouch any brand	  	| 	399/-RS        "+" |	   "+b2+"	 	"+"|	"+price2+"    		         	 |	");
                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                    int k2=sc.nextInt();
@@ -744,7 +1320,6 @@ public class NonePrac {
                    int b3=sc.nextInt();
                    int price3 = b3*2499;
                    totalPrice.add(price3);
-                   billing(price3);
                    hash.put(40404,"|40404|    Grafitee Sticker		 	| 	99/-RS"+"          |	   "+b3+"	 	"+"|	"+price3+"    		 	 |	");
                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                    int k3=sc.nextInt();
@@ -864,7 +1439,6 @@ public class NonePrac {
                  int b2=sc.nextInt();
                  int price2 = b2*149;
                  totalPrice.add(price2);
-                 billing(price2);
                  hash.put(40303,"|40303|    Tampered Glass			| 	149/-RS        "+"|	   "+b2+"	 	"+"|	"+price2+"    		         |	");
                  System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                  int k2=sc.nextInt();
@@ -891,7 +1465,6 @@ public class NonePrac {
                  int b3=sc.nextInt();
                  int price3 = b3*1999;
                  totalPrice.add(price3);
-                 billing(price3);
                  hash.put(40304,"|40304|    5000Mah Generic Battery	 	| 	1999/-RS	"+"|	   "+b3+"	 	"+"|	"+price3+"    		         |	");
                  System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
                  int k3=sc.nextInt();
@@ -1065,7 +1638,6 @@ public class NonePrac {
 	                    int b2=sc.nextInt();
 	                    int price2 = b2*2779;
 	                    totalPrice.add(price2);
-	                    billing(price2);
 	                    hash.put(40203,"|40203|    Sony Wh-Ch510			| 	2779/-RS        "+"|	   "+b2+"	 	"+"|	"+price2+"    		         |	");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k2=sc.nextInt();
@@ -1092,7 +1664,6 @@ public class NonePrac {
 	                    int b3=sc.nextInt();
 	                    int price3 = b3*2499;
 	                    totalPrice.add(price3);
-	                    billing(price3);
 	                    hash.put(40204,"|40204|    Boult Ear Cracker		 	| 	2499/-RS	"+"|	   "+b3+"	 	"+"|	"+price3+"    		         |	");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k3=sc.nextInt();
@@ -1280,7 +1851,6 @@ public class NonePrac {
 	                    int b2=sc.nextInt();
 	                    int price2 = b2*1599;
 	                    totalPrice.add(price2);
-	                    billing(price2);
 	                    hash.put(40103,"|40103|    Iphone Charger Brick		| 	1599/-RS        "+"|	   "+b2+"	 	"+"|	"+price2+"    		         |	");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k2=sc.nextInt();
@@ -1307,7 +1877,6 @@ public class NonePrac {
 	                    int b3=sc.nextInt();
 	                    int price3 = b3*2499;
 	                    totalPrice.add(price3);
-	                    billing(price3);
 	                    hash.put(40104,"|40104|    Samsung 120W Power Brick 		| 	2499/-RS	"+"|	   "+b3+"	 	"+"|	"+price3+"    		         |	");
 	                    System.out.println("to go back press 1, to go back to the home page press 2, to go to the billing press 3");
 	                    int k3=sc.nextInt();
@@ -1346,7 +1915,7 @@ public class NonePrac {
             System.out.println(".=======================================.\r\n"
             		+ "| ID NO	|          Sections		|\r\n"
             		+ "|=======================================|\r\n"
-            		+ "|   1	|	   Gadgets		|\r\n"
+            		+ "|   1	|	   Laptops		|\r\n"
             		+ "|	|				|\r\n"
             		+ "|	|				|\r\n"
             		+ "|   2   |	Home Appliances		|\r\n"
@@ -1366,7 +1935,7 @@ public class NonePrac {
             switch(a)
             {
                 case 1:
-                    Gadgets();
+                    Laptops();
                     break;
                 case 2:
                     HomeAppliances();
@@ -1471,9 +2040,6 @@ public class NonePrac {
                     + "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>");
             System.out.println("\n");
             System.out.println("------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>> PLEASE PRESS 1 TO ENTER THE STORE<<<<<<<<<<<<<<<<-----------------------------------------------------------");
-            store();
-            
-            
-            
+            store();   
         }
     }
