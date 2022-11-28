@@ -2318,6 +2318,8 @@ public class Store {
     }
     static void displayFormat()
     {
+    	System.out.println();
+    	System.out.println("									Bill Chit											");
         System.out.println(" "
         		+ ".=======================================================================================================================================.\r\n"
                 + " |IDNO |		PRODUCT NAME		|	PRICE		|	QUANTITY	|	TOTALPRICE		         |\n"
@@ -2325,8 +2327,9 @@ public class Store {
     }
     static void totalBilling()  //total bill called in main method
     {
+    	System.out.println("Enter your name for bill purpose please.");
+    	String name=sc.next();
     	firstEndCard();
-    	System.out.println();
     	System.out.println();
     	int sum=0,count=0;
     	for(Integer k:totalPrice)
@@ -2342,28 +2345,28 @@ public class Store {
     		int disc=(sum*5)/100;
     		int discountedPrice=sum-disc;
     		System.out.println("The discount amount is :"+disc+"/-Rs");
-    		System.out.println("Congratulations Mr.Kisan u have received 5% discount and now ur bill is :"+discountedPrice+"/-Rs");
+    		System.out.println("Congratulations Mr/Mrs."+name+" u have received 5% discount and now ur bill is :"+discountedPrice+"/-Rs");
     	}
     	else if(sum>=10000 && sum<=50000)
     	{
     		int disc=(sum*10)/100;
     		int discountedPrice=sum-disc;
     		System.out.println("The discount amount is :"+disc+"/-Rs");
-    		System.out.println("Congratulations Mr.Kisan u have received 10% discount and now ur bill is :"+discountedPrice+"/-Rs");
+    		System.out.println("Congratulations Mr/Mrs."+name+" u have received 10% discount and now ur bill is :"+discountedPrice+"/-Rs");
     	}
     	else if(sum>=50000 && sum<=100000)
     	{
     		int disc=(sum*20)/100;
     		int discountedPrice=sum-disc;
     		System.out.println("The discount amount is :"+disc+"/-Rs");
-    		System.out.println("Congratulations Mr.Kisan u have received 20% discount and now ur bill is :"+discountedPrice+"/-Rs");
+    		System.out.println("Congratulations Mr/Mrs."+name+" have received 20% discount and now ur bill is :"+discountedPrice+"/-Rs");
     	}
     	else if(sum>100000)
     	{
     		int disc=(sum*22)/100;
     		int discountedPrice=sum-disc;
     		System.out.println("The discount amount is :"+disc+"/-Rs");
-    		System.out.println("Congratulations Mr.Kisan u have received 22% discount and u got a KTM DUKE 200 bike \n Now ur bill is :"+discountedPrice+"/-Rs");
+    		System.out.println("Congratulations Mr/Mrs."+name+" u have received 22% discount and u got a KTM DUKE 200 bike \n Now ur bill is :"+discountedPrice+"/-Rs");
     	}
     	else
     	{
@@ -2422,7 +2425,7 @@ public class Store {
                 + "<>############################################		        |_  |  |_  | 	 |  |__| |  | |\\ |  |	|    |__		############################################################<>\n"
                 + "<>############################################		        |__ |__|__ |__	 |  |\\	 |__| |	\\| _|_	|__   __|		############################################################<>\n"
                 + "<>############################################			==================================================		############################################################<>\n"
-                + "<>############################################		PLACE WHERE U CAN BUY ANY ELECTRONICS                                  ############################################################<>\n"
+                + "<>############################################		PLACE WHERE U CAN BUY ANY ELECTRONICS                                   ############################################################<>\n"
                 + "<>##########################################################################################################################################################################################<>\n"
                 + "<>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////<>\n"
                 + "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>\n"
