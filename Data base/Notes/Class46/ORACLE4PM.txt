@@ -1,0 +1,189 @@
+CURSORS:
+========
+	-CURSOR IS A TEMPORARY MEMORY / SQL PRIVATE AREA / WORKSPACE.
+					i) EXPLICIT CURSOR
+					ii)IMPLICIT CURSOR
+
+i) EXPLICIT CURSOR:
+===================	
+	- these cursors are created by user for fetching multiple 
+rows in row by row manner from a cursor memory table.
+	- explicit cursor can hold multiple rows but it will access
+only one row at a time.
+	- to create an explicit cursor memory we need to follow 
+the following 4 steps are:
+
+step1: declare cursor variable:
+================================
+syntax:
+=======
+declare cursor <cursor name> is <select query>;
+
+step2: open cursor connection:
+==============================
+syntax:
+=======
+open <cursor name>;
+
+step3: fetching rows from a cursor memory:
+===========================================
+syntax:
+=======
+fetch <cursor name> into <variables>;
+
+step4: close cursor connection:
+================================
+syntax:
+========
+close <cursor name>;			
+
+ATTRIBUTES OF AN EXPLICIT CURSORS:
+==================================
+	- these attributes are used tro check the status of cursor.
+
+i) %isopen:
+============
+	- it is a default attribute.
+	- when cursor connection is successfully open then it returs
+true otherwise false.
+	- boolean type.
+
+ii) %notfound:
+==============
+	- when there is no data in cursor then return true otherwise
+false.
+	- boolean type.
+
+iii) %found:
+=============
+	- when there is a data in cursor then return true otherwise
+false.
+	- boolean type.
+
+iv) %rowcount:
+==============
+	- it returns no.of executed fetch statements.
+	- number type.
+
+syntax:
+=======
+	<cursor name>%<attribute name>;
+
+Ex:
+a cursor program to fetch a single row from a table?
+SQL> DECLARE CURSOR C1 IS SELECT ENAME,SAL FROM EMP;
+    v_ENAME VARCHAR2(10);
+    v_SAL NUMBER(10);
+    BEGIN
+    OPEN C1;
+    FETCH C1 INTO v_ENAME,v_SAL;
+    DBMS_OUTPUT.PUT_LINE(v_ENAME||','||v_SAL);
+    CLOSE C1;
+    END;
+   /
+SMITH,800
+
+PL/SQL procedure successfully completed.
+
+Ex:
+a cursor program to fetch multiple rows from a table?
+SQL> DECLARE CURSOR C1 IS SELECT ENAME,SAL FROM EMP;
+        v_ENAME VARCHAR2(10);
+        v_SAL NUMBER(10);
+        BEGIN
+        OPEN C1;
+        FETCH C1 INTO v_ENAME,v_SAL;
+        DBMS_OUTPUT.PUT_LINE(v_ENAME||','||v_SAL);
+    	  FETCH C1 INTO v_ENAME,v_SAL;
+        DBMS_OUTPUT.PUT_LINE(v_ENAME||','||v_SAL);
+   	  FETCH C1 INTO v_ENAME,v_SAL;
+        DBMS_OUTPUT.PUT_LINE(v_ENAME||','||v_SAL);
+		  CLOSE C1;
+		  END;
+			/
+NOTE:
+=====
+	- In the above example we used no.of fetch statements to
+fetch multiple rows from a table.so to avoid this problem we
+use "looping statements" like below,
+
+i) by using "smiple loop":
+==========================
+EX:
+SQL> DECLARE CURSOR C1 IS SELECT ENAME,SAL FROM EMP;
+  2  v_ENAME VARCHAR2(10);
+  3  v_SAL NUMBER(10);
+  4  BEGIN
+  5  OPEN C1;
+  6  LOOP
+  7  FETCH C1 INTO v_ENAME,v_SAL;
+  8  EXIT WHEN C1%NOTFOUND;
+  9  DBMS_OUTPUT.PUT_LINE(v_ENAME||','||v_SAL);
+ 10  END LOOP;
+ 11  CLOSE C1;
+ 12  END;
+ 13  /
+SMITH,800
+ALLEN,1600
+WARD,1250
+JONES,2975
+MARTIN,1250
+BLAKE,2850
+CLARK,2450
+SCOTT,3000
+KING,5000
+TURNER,1500
+ADAMS,1100
+JAMES,950
+FORD,3000
+MILLER,1300
+
+ii) by using "while loop":
+===========================
+EX:
+SQL> DECLARE CURSOR C1 IS SELECT ENAME,SAL FROM EMP;
+  2  v_ENAME VARCHAR2(10);
+  3  v_SAL NUMBER(10);
+  4  BEGIN
+  5  OPEN C1;
+  6  FETCH C1 INTO v_ENAME,v_SAL;----fetch starts from 1st row
+  7  WHILE(C1%FOUND)
+  8  LOOP
+  9  DBMS_OUTPUT.PUT_LINE(v_ENAME||','||v_SAL);
+ 10  FETCH C1 INTO v_ENAME,v_SAL;----fetching upto last row
+ 11  END LOOP;
+ 12  CLOSE C1;
+ 13  END;
+ 14  /
+SMITH,800
+ALLEN,1600
+WARD,1250
+JONES,2975
+MARTIN,1250
+BLAKE,2850
+CLARK,2450
+SCOTT,3000
+KING,5000
+TURNER,1500
+ADAMS,1100
+JAMES,950
+FORD,3000
+MILLER,1300
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

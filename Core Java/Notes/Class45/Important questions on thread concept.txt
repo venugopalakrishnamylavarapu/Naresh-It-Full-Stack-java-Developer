@@ -1,0 +1,18 @@
+1) What is a Thread?
+2)Which Thread by default runs in every java program?
+3) What is the default priority of the Thread?
+4) How can you change the priority number of the Thread?
+5) Which method is executed by any Thread?
+6) How can you stop a Thread which is running?
+7) Explain the two types of multitasking?
+8) What is the difference between a process and a Thread?
+9) What is Thread scheduler?
+10) Explain the synchronization of Threads?
+11) What is the difference between synchronized block and synchronized method?
+12) What is Thread deadlock? How can you resolve deadlock situation?
+13) Which methods are used in Thread communication?
+14) What is the difference between notify() and notifyAll() methods?
+15) What is the difference between sleep(100) and wait(100) methods and join()?
+16) Explain the life cycle of a Thread?
+17) What is daemon Thread?// Garbage collector
+ Def: Daemon thread is a low priority thread that runs in background to perform tasks such as garbage collection (gc) etc.,
