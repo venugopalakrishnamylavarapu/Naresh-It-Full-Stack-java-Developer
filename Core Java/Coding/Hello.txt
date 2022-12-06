@@ -1,1 +1,2 @@
 hello im venu gopala krishna Iam from Btech Background
+ This is a new line write by FileOutputStream class

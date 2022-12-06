@@ -1,0 +1,4 @@
+This Contains the data used by ByteStreams
+This line here is written by ByteStream
+This line here is written by CharacterStream
+This line here is copied from CharacterStream.txt by using CharacterStream class

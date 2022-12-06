@@ -1,0 +1,3 @@
+hello im venu gopala krishna Iam from Btech Background
+ This is a new line write by FileOutputStream class
+this file is copied from Hello.txt and this line is written by the FileOutputStream Class

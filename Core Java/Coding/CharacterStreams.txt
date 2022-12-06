@@ -1,0 +1,3 @@
+This Contains the data used by ByteStreams
+This line here is written by ByteStream
+This line here is written by CharacterStream
