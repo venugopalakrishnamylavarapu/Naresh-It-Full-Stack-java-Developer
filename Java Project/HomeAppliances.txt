@@ -1,0 +1,15 @@
+.==================================================================.
+| ID NO	|             NAME		|   COMPANIES AVAILABLE	   |
+|==================================================================|
+| 101	|	REFRIGERATORS		| samsung,whirlpool,lg,god-|
+|	|				| -rej,panasonic.	   |
+|	|				|			   |
+| 102	|	TELEVISION		| sansui,samsung,Lg,Mitv   |
+|	|				|			   |
+|	|				|			   |
+| 103	| RICECOOKERS,MIXERS,GRINDERS	|prestige,pegion,butterfly |
+|	|				|			   |
+|	|				|			   |
+| 104	|   AC,COOLERS,TABLEFANS	|loyd,samsung,mi,kinestar  |
+|	|				|			   |
+.==================================================================.

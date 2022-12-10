@@ -1,0 +1,28 @@
+Laptop
+======
+
+.==================================================================.
+| ID NO	|             NAME		|   	    PRICE	   |
+|==================================================================|
+| 101	|  Dell inspiron 1tbhdd/256ssd  |	  65000/-Rs	   |
+|	| backlit,8gbram/2gb nvedia card| 			   |
+|	| i5 10th gen,15 inch display	|			   |
+|	|				|			   |
+| 102	| hp 15s 1tbhdd/256ssd backlit,	|         67000/-Rs  	   |
+|	| 8gbram iris,i5 intel 11gen	|			   |
+|	| 				|			   |
+|	|				|			   |
+| 103	| Lenovo IdeaPad Slim 1		|	  39000/-Rs	   |
+|	|  AMD Ryzen 3 Thin & Light 	|			   |
+|	|Laptop (8GB/512GB SSD/Windows11|			   |
+|	|				|			   |
+|	|				|			   |
+|	|				|			   |
+| 104	|ASUS ROG Strix G17 (2022)	|	109599/-Rs  	   |
+|	|Gaming Laptop (16GB/512GB SSD,	|			   |
+|	|/Windows 11/Green/2.5 Kg)	|			   |
+|	|				|			   |
+.==================================================================.
+
+
+

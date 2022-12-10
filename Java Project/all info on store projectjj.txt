@@ -1,0 +1,31 @@
+class 1 :-
+=======
+store
+
+
+meths:-
+=====
+store()
+main()
+display()
+displayFormat()
+billing()
+gadgets()
+homeappliances()
+	refrigerators()
+	telivision()
+	rmg()
+	   RICECOOKERS()
+	   MIXIES()
+	   grinders()
+	act()
+	   ac()
+	   coolers()
+	   tableFans()
+gamingconsoles()
+mobileaccesories()
+
+
+objects:-
+=======
+4 objects created all combined
