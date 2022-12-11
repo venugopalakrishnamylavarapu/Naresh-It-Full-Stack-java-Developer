@@ -220,7 +220,7 @@ SQL> SELECT OBJECT_NAME,ORIGINAL_NAME FROM RECYCLEBIN;
 
 OBJECT_NAME											ORIGINAL_NAME
 ---------------------------------------------------------------				-----------------------------------------------------------------
-BIN$KB/3u/nRQC2zjhL7ZDH5pQ==$0					STUDENT
+BIN$KB/3u/nRQC2zjhL7ZDH5pQ==$0								STUDENT
 
 ii) flashback:
 ===========

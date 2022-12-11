@@ -1,0 +1,486 @@
+sub blocks:
+===========
+	- are named blocks which can store a program source code 
+in database automatically.
+	- sub block objects are 4 types those are,
+				1. stored procedures
+				2. stored functions
+				3. packages
+				4. triggers
+
+1. stored procedures:
+=====================
+	- it is a named object which contains 
+pre-compiled code / query.
+	- it is a block code to perform some operation and it may
+be or may not be return a value.
+	- generally stored procedures are never returns a value.if
+a procedure want to return a value then we use "OUT" parameters
+in stored procedure.
+
+syntax:
+========
+create [or replace] procedure <pname>(<parameter name1> [mode type] <datatype>,.........)
+is / as
+<declare variables>;
+begin
+<procedure body / statements>;
+end;
+/
+
+How to call a stored procedure:
+================================
+syntax1:
+========
+execute <pname>(value/(s));
+		(or)
+exec <pname>(value / (s));
+
+syntax2: anonymous block:
+=========================
+begin
+<pname>(value / (s));
+end;
+/
+
+Types of parameters modes:
+==========================
+	- in pl/sql a stored procedure is supporting the following
+three types of parameters modes those are,
+				I) IN mode
+				II) OUT mode
+				III) IN OUT mode
+
+I) IN mode:
+===========
+	- these parameters are storing input values which was given
+by user at execution time.
+	- these are default parameters of a stored procedure.
+
+II) OUT mode:
+=============
+	-these parameters are used to return output value from a 
+stored procedure.
+
+
+III) IN OUT mode:
+=================
+	- a prameter which can store and also which can return a
+value.
+
+Ex.on IN mode:
+==============
+create a SP to accept empno as IN parameter and display that
+employee name and salary details from emp table?
+SQL> CREATE OR REPLACE PROCEDURE SP1(p_EMPNO IN NUMBER)
+  2  IS
+  3  v_ENAME VARCHAR2(10);
+  4  v_SAL NUMBER(10);
+  5  BEGIN
+  6  SELECT ENAME,SAL INTO v_ENAME,v_SAL FROM EMP
+  7  WHERE EMPNO=p_EMPNO;
+  8  DBMS_OUTPUT.PUT_LINE(v_ENAME||','||v_SAL);
+  9  END;
+ 10  /
+
+Procedure created.
+
+CALLING A SP:
+=============
+SQL> EXECUTE SP1(7788);
+SCOTT,3000
+			(OR)
+SQL> EXEC SP1(7788);
+SCOTT,3000
+			(OR)
+SQL> BEGIN
+  2  SP1(7788);
+  3  END;
+  4  /
+SCOTT,3000
+
+NOTE:
+=====
+	- To view all sub blocks objects(SP,SF,package,trigger)
+in oracle db then use a datadictionary "user_objects".
+
+EX:
+SQL> DESC USER_OBJECTS;
+SQL> SELECT OBJECT_NAME FROM USER_OBJECTS WHERE OBJECT_TYPE='PROCEDURE';
+
+OBJECT_NAME
+-----------------
+SP1
+
+NOTE:
+=====
+	- To view the source code of a sub block object(SP/SF/Package/Trigger)
+then use a datadictionary is "user_source".
+
+EX:
+SQL> DESC USER_SOURCE;
+SQL> SELECT TEXT FROM USER_SOURCE WHERE NAME='SP1';
+
+EX.ON "OUT" PARAMETERS:
+=======================
+SQL> CREATE OR REPLACE PROCEDURE SP2(X IN NUMBER,Y OUT NUMBER)
+  2  IS
+  3  BEGIN
+  4  Y:=X*X;
+  5  END;
+  6  /
+Procedure created.
+
+SQL> EXECUTE SP2(5);
+ERROR at line 1:
+ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'SP2'
+
+	- To overcome the above problem we should follow the 
+following 3 steps procedure,
+
+step1: declare bind / referenced variables for "OUT" parameters:
+================================================================
+syntax:
+=======
+	var[iable] <bind variable name> <datatype>[size];
+
+step2: to add bind / referenced variables to a stored procedure:
+=================================================================
+syntax:
+========
+	execute <pname>(value1,value2,.....,:<bind variable name1>,
+:<bind variable name2>,..............);
+
+step3: print bind / referenced variables:
+===========================================
+syntax:
+=======
+	print <bind variable name>;
+
+
+OUTPUT:
+=======
+SQL> VAR A NUMBER;
+SQL> EXECUTE SP2(5,:A);
+
+PL/SQL procedure successfully completed.
+
+SQL> PRINT A;
+
+         A
+----------
+        25
+
+EX:
+create a SP to input empno as a IN parameter and returns that
+employee provident fund,professional tax at 5%,10% on basic
+salary of employee by using "OUT" parameters?
+SQL> CREATE OR REPLACE PROCEDURE SP3(p_EMPNO IN NUMBER,PF OUT NUMBER,PT OUT NUMBER)
+  2  IS
+  3  v_BSAL NUMBER(10);
+  4  BEGIN
+  5  SELECT SAL INTO v_BSAL FROM EMP WHERE EMPNO=p_EMPNO;
+  6  PF:=v_BSAL*0.05;
+  7  PT:=v_BSAL*0.1;
+  8  END;
+  9  /
+
+Procedure created.
+
+SQL> VAR rPF NUMBER;
+SQL> VAR rPT NUMBER;
+SQL> EXECUTE SP3(7788,:rPF,:rPT);
+PL/SQL procedure successfully completed.
+
+SQL> PRINT rPF rPT;
+
+       RPF
+----------
+       150
+
+
+       RPT
+----------
+       300
+
+EX.ON "IN OUT" PARAMETER:
+=========================
+SQL> CREATE OR REPLACE PROCEDURE SP4(X IN OUT NUMBER)
+  2  IS
+  3  BEGIN
+  4  X:=X*X*X;
+  5  END;
+  6  /
+
+Procedure created.
+
+SQL> EXECUTE SP4(5);
+ERROR at line 1:
+ORA-06550: line 1, column 11:
+PLS-00363: expression '5' cannot be used as an assignment target
+
+	- To overcome the above problem we need to follow the 
+following 4 steps procedure,
+
+step1: declare bind / referenced variable for "OUT" parameter:
+==============================================================
+syntax:
+========
+	var[iable] <bind variable name> <datatype>[size];
+
+step2: to assign a value to bind variable:
+==========================================
+syntax:
+=======
+	execute :<bind variable name> := <value>;
+
+step3: to add bind variable to a stored procedure:
+==================================================
+syntax:
+=======
+	execute <pname>(:<bind variable name>);
+
+step4: to print bind variables:
+===============================
+syntax:
+=======
+	print <bind variable name>;
+
+OUTPUT:
+=======
+SQL> VAR A NUMBER;
+SQL> EXECUTE :A:=5;
+
+PL/SQL procedure successfully completed.
+
+SQL> EXECUTE SP4(:A);
+
+PL/SQL procedure successfully completed.
+
+SQL> PRINT A;
+
+         A
+----------
+       125
+
+HOW TO DROP A STORED PROCEDURE:
+===============================
+SYNTAX:
+=======
+DROP PROCEDURE <PNAME>;
+
+EX:
+DROP PROCEDURE SP1;
+=============================================================
+2) STORED FUNCTIONS:
+====================
+	- a function is block of code to perform some task and it
+must return a value. 
+	- these functions are created by user as per requirement.
+so that stored functions are also called as "user defined functions"
+in oracle.
+
+syntax:
+=======
+create [or replace] function <fname>(<parameter name1> <datatype>,..........)
+return <return VARIABLE DATATYPE>
+is / as
+<declare variables>;
+begin
+<function body / statements>;
+return <return VARIABLE NAME>;
+end;
+/
+
+How to call a stored function:
+==============================
+syntax:
+=======
+select <fname>(value/(s)) from dual;
+
+EX:
+create a SF to input empno and return that employee name 
+from emp table?
+SQL> CREATE OR REPLACE FUNCTION SF1(p_EMPNO NUMBER)
+  2  RETURN VARCHAR2
+  3  AS
+  4  v_ENAME VARCHAR2(10);
+  5  BEGIN
+  6  SELECT ENAME INTO v_ENAME FROM EMP WHERE EMPNO=p_EMPNO;
+  7  RETURN v_ENAME;
+  8  END;
+  9  /
+
+Function created.
+
+OUTPUT:
+=======
+SQL> SELECT SF1(7369) FROM DUAL;
+
+SF1(7369)
+---------
+SMITH
+
+EX:
+create a SF to return the sum of salaries of given department name?
+SQL> CREATE OR REPLACE FUNCTION SF2(p_DNAME VARCHAR2)
+  2  RETURN NUMBER
+  3  AS
+  4  v_SUMSAL NUMBER(10);
+  5  BEGIN
+  6  SELECT SUM(SAL) INTO v_SUMSAL FROM EMP E INNER JOIN DEPT D
+  7  ON E.DEPTNO=D.DEPTNO AND DNAME=p_DNAME;
+  8  RETURN v_SUMSAL;
+  9  END;
+ 10  /
+
+Function created.
+
+SQL> SELECT SF2('SALES') FROM DUAL;
+
+SF2('SALES')
+------------
+        8450
+EX:
+create a SF to return the no.of employees are joined in between
+the given two date expressions?
+SQL> CREATE OR REPLACE FUNCTION SF3(SD DATE,ED DATE)
+  2  RETURN NUMBER
+  3  AS
+  4  v_NUMEMP NUMBER(10);
+  5  BEGIN
+  6  SELECT COUNT(*) INTO v_NUMEMP FROM EMP
+  7  WHERE HIREDATE BETWEEN SD AND ED;
+  8  RETURN v_NUMEMP;
+  9  END;
+ 10  /
+
+Function created.
+
+SQL> SELECT SF3('01-JAN-81','31-DEC-81') FROM DUAL;
+
+SF3('01-JAN-81','31-DEC-81')
+----------------------------
+                           9
+EX:
+create a SF to input empno and return that employee gross 
+salary based on the following conditions are,
+			i) HRA ------ 10%
+			ii) DA ------ 20%
+			iii) PF ----- 10%
+on basic salary ?
+
+	empno : 7788 
+				> bsal : 3000			
+								HRA = bsal*10%
+									 = 3000*0.1
+									 = 300
+								DA  = 3000*0.2
+									 = 600
+								PF	 = 3000*0.1
+									 = 300
+				> gross = bsal+hra+da+pf
+						  = 3000+300+600+300
+						  = 4200
+
+
+SQL> CREATE OR REPLACE FUNCTION SF4(p_EMPNO NUMBER)
+  2  RETURN NUMBER
+  3  AS
+  4  v_BSAL NUMBER(10);
+  5  v_HRA NUMBER(10);
+  6  v_DA NUMBER(10);
+  7  v_PF NUMBER(10);
+  8  v_GROSS NUMBER(10);
+  9  BEGIN
+ 10  SELECT SAL INTO v_BSAL FROM EMP WHERE EMPNO=p_EMPNO;
+ 11  v_HRA:=v_BSAL*0.1;
+ 12  v_DA:=v_BSAL*0.2;
+ 13  v_PF:=v_BSAL*0.1;
+ 14  v_GROSS:=v_BSAL+v_HRA+v_DA+v_PF;
+ 15  RETURN v_GROSS;
+ 16  END;
+ 17  /
+
+Function created.
+
+SQL> SELECT SF4(7788) FROM DUAL;
+
+ SF4(7788)
+----------
+      4200
+
+NOTE:
+=====
+SQL> SELECT OBJECT_NAME FROM USER_OBJECTS WHERE OBJECT_TYPE='FUNCTION';
+SQL> SELECT TEXT FROM USER_SOURCE WHERE NAME='SF1';
+
+HOW TO DROP A STORED FUNCTION:
+==============================
+SYNTAX:
+=======
+DROP FUNCTION <FNAME>;
+
+EX:
+DROP FUNCTION SF1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,389 @@
+EXCEPTION HANDLING:
+===================
+	What is an Exception?
+			- it is a runtime / execution error.
+
+	What is an Exception Handling?
+			- to avoid abnormal terimination of a program execution
+problem.
+
+	- In pl/sql there are two types of exceptions,
+				1. pre-defined exceptions
+				2. user-defined exceptions
+
+1. pre-defined exceptions:
+==========================
+		- these are inbuilt exceptions in oracle.
+				> no_data_found
+				> too_many_rows
+				> zero_divide
+				> invalid_cursor
+				> cursor_already_open .........etc
+
+no_data_found:
+==============
+	- when we try to fetch data from a table by using select...
+into statement and that row is not found in a table then oracle
+server raise an exception is called as "no data found".
+Ex:
+SQL> DECLARE
+  2  v_ENAME VARCHAR2(10);
+  3  BEGIN
+  4  SELECT ENAME INTO v_ENAME FROM EMP WHERE EMPNO=&EMPNO;
+  5  DBMS_OUTPUT.PUT_LINE(v_ENAME);
+  6  END;
+  7  /
+Enter value for empno: 7788
+SCOTT
+PL/SQL procedure successfully completed.
+
+SQL> /
+Enter value for empno: 1122
+ERROR at line 1:
+ORA-01403: no data found
+ORA-06512: at line 4
+
+	- to overcome the an exception oracle server provide a 
+pre-defined exception name is "no_data_found".
+
+solution:
+=========
+SQL> DECLARE
+  2  v_ENAME VARCHAR2(10);
+  3  BEGIN
+  4  SELECT ENAME INTO v_ENAME FROM EMP WHERE EMPNO=&EMPNO;
+  5  DBMS_OUTPUT.PUT_LINE(v_ENAME);
+  6  EXCEPTION
+  7  WHEN NO_DATA_FOUND THEN
+  8  DBMS_OUTPUT.PUT_LINE('RECORD IS NOT FOUND');
+  9  END;
+ 10  /
+Enter value for empno: 7900
+RECORD IS NOT FOUND
+PL/SQL procedure successfully completed.
+
+II) TOO_MANY_ROWS:
+===================
+	- when we fetch more than one row from a table by using
+select.....into statement then oracle server raise an exception
+is "exact fetch returns more than requested number of rows".
+
+Ex:
+SQL> SELECT * FROM TEST1;
+
+       SNO        SAL
+---------- ----------
+         1      24000
+         2      34000
+
+SQL> DECLARE
+  2  v_SAL NUMBER(10);
+  3  BEGIN
+  4  SELECT SAL INTO v_SAL FROM TEST1;
+  5  DBMS_OUTPUT.PUT_LINE(v_SAL);
+  6  END;
+  7  /
+ERROR at line 1:
+ORA-01422: exact fetch returns more than requested number of rows
+ORA-06512: at line 4
+
+	- to handle the above exception oracle server provide a 
+pre-defined exception name is "too_many_rows".
+
+solution:
+=========
+SQL> DECLARE
+  2  v_SAL NUMBER(10);
+  3  BEGIN
+  4  SELECT SAL INTO v_SAL FROM TEST1;
+  5  DBMS_OUTPUT.PUT_LINE(v_SAL);
+  6  EXCEPTION
+  7  WHEN TOO_MANY_ROWS THEN
+  8  DBMS_OUTPUT.PUT_LINE('A TABLE IS HAVING MORE THAN ONE ROW');
+  9  END;
+ 10  /
+A TABLE IS HAVING MORE THAN ONE ROW
+PL/SQL procedure successfully completed.
+
+III)ZERO_DIVIDE:
+================
+	- when we perform division by zero then oracle returns
+an exception is called as " divisor is equal to zero".
+
+Ex:
+SQL> DECLARE
+  2  X NUMBER(10);
+  3  Y NUMBER(10);
+  4  Z NUMBER(10);
+  5  BEGIN
+  6  X:=&X;
+  7  Y:=&Y;
+  8  Z:=X/Y;
+  9  DBMS_OUTPUT.PUT_LINE(Z);
+ 10  END;
+ 11  /
+Enter value for x: 10
+Enter value for y: 2
+5
+PL/SQL procedure successfully completed.
+
+SQL> /
+Enter value for x: 10
+Enter value for y: 0
+ERROR at line 1:
+ORA-01476: divisor is equal to zero
+ORA-06512: at line 8
+
+	- to handle the above exception oracle provide a pre-defined
+exception name is " zero_divide ".
+
+SOLUTION:
+==========
+SQL> DECLARE
+  2  X NUMBER(10);
+  3  Y NUMBER(10);
+  4  Z NUMBER(10);
+  5  BEGIN
+  6  X:=&X;
+  7  Y:=&Y;
+  8  Z:=X/Y;
+  9  DBMS_OUTPUT.PUT_LINE(Z);
+ 10  EXCEPTION
+ 11  WHEN ZERO_DIVIDE THEN
+ 12  DBMS_OUTPUT.PUT_LINE('SECOND NUMBER SHOULD NOT BE ZERO');
+ 13  END;
+ 14  /
+
+Enter value for x: 10
+Enter value for y: 0
+SECOND NUMBER SHOULD NOT BE ZERO
+PL/SQL procedure successfully completed.
+
+SQLCODE & SQLERRM:
+==================
+	- these are pre-defined properties which are used to handle
+exceptions which was raised in a pl/sql program automatically
+and return the information of an exception.
+	- when we use these properties we should use "others"
+exception name.
+		SQLCODE : returns exception number / code.
+		SQLERRM : returns error message.
+
+EX:
+SQL> DECLARE
+  2  X NUMBER(10);
+  3  Y NUMBER(10);
+  4  Z NUMBER(10);
+  5  BEGIN
+  6  X:=&X;
+  7  Y:=&Y;
+  8  Z:=X/Y;
+  9  DBMS_OUTPUT.PUT_LINE(Z);
+ 10  EXCEPTION
+ 11  WHEN OTHERS THEN
+ 12  DBMS_OUTPUT.PUT_LINE(SQLCODE);
+ 13  DBMS_OUTPUT.PUT_LINE(SQLERRM);
+ 14  END;
+ 15  /
+Enter value for x: 10
+Enter value for y: 2
+5
+PL/SQL procedure successfully completed.
+
+SQL> /
+Enter value for x: 10
+Enter value for y: 0
+
+-1476
+ORA-01476: divisor is equal to zero
+PL/SQL procedure successfully completed.
+
+2) USER DEFINED EXCEPTION NAMES:
+================================
+	- when we create an exception name to raise and handling 
+exception in pl/sql program is called as "user defined 
+exception name".
+	- to create a user defined exception name then we follow
+the following 3 steps are:
+
+step1: declare user defined exeption name:
+==========================================
+syntax:
+=======
+	<UD exception name> exception;
+
+
+step2: to raise a UD exception name:
+====================================
+method-1:
+=========
+syntax:
+=======		
+			raise <UD exception name>;
+
+- "raise" statement raised an excption and also handled 
+an exception in pl/sql program.
+
+method-2:
+=========
+syntax:
+========
+	raise_application_error(number,message);
+
+	- this statement will raise an exception but not handled 
+an exception in a pl/sql program.
+	- thise statement is having two arguments those are
+		
+			number : it return user defined exception number.
+					   UD exception number must be form -20000
+						to -20999.
+			message : it return user defined error message.
+
+step3: Handling exceptions by using UD exception name:
+======================================================
+syntax:
+=======
+	when <UD excpetion name> then
+	<statements>;
+	end;
+	/
+
+EX:
+i) BY USING "RAISE" STATEMENT:
+==============================
+SQL> DECLARE
+  2  X NUMBER(10);
+  3  Y NUMBER(10);
+  4  Z NUMBER(10);
+  5  EX EXCEPTION;------(1)
+  6  BEGIN
+  7  X:=&X;
+  8  Y:=&Y;
+  9  IF Y=0 THEN
+ 10  RAISE EX;-------(2)
+ 11  ELSE
+ 12  Z:=X/Y;
+ 13  DBMS_OUTPUT.PUT_LINE(Z);
+ 14  END IF;
+ 15  EXCEPTION
+ 16  WHEN EX THEN----(3)
+ 17  DBMS_OUTPUT.PUT_LINE('SECOND NUMBER NOT BE ZERO');
+ 18  END;
+ 19  /
+Enter value for x: 10
+Enter value for y: 2
+5
+PL/SQL procedure successfully completed.
+
+SQL> /
+Enter value for x: 10
+Enter value for y: 0
+SECOND NUMBER NOT BE ZERO
+PL/SQL procedure successfully completed.
+
+ii) BY USING "RAISE_APPLICATION_ERROR()":
+==========================================
+SQL> DECLARE
+  2  X NUMBER(10);
+  3  Y NUMBER(10);
+  4  Z NUMBER(10);
+  5  EX EXCEPTION;
+  6  BEGIN
+  7  X:=&X;
+  8  Y:=&Y;
+  9  IF Y=0 THEN
+ 10  RAISE EX;
+ 11  ELSE
+ 12  Z:=X/Y;
+ 13  DBMS_OUTPUT.PUT_LINE(Z);
+ 14  END IF;
+ 15  EXCEPTION
+ 16  WHEN EX THEN
+ 17  RAISE_APPLICATION_ERROR(-20478,'SECOND NUMBER NOT ZERO');
+ 18  END;
+ 19  /
+Enter value for x: 10
+Enter value for y: 2
+5
+PL/SQL procedure successfully completed.
+
+SQL> /
+Enter value for x: 10
+Enter value for y: 0
+ERROR at line 1:
+ORA-20478: SECOND NUMBER NOT ZERO
+ORA-06512: at line 17
+
+EXCEPTION PROPAGATION:
+=======================
+	- Exception block can handled exceptions which was raise in
+execution block but not in declarion block.so to overcome
+this problem we use a mechanism which can handle exceptions 
+which was raised in declaration block.this mechanism is called 
+as "exception propagation".
+	- by using exception propagation mechanism we can handle 
+exceptions which was raised in declaration block in pl/sql program.
+
+Ex:
+SQL> DECLARE
+  2  X VARCHAR2(3):='WARD';
+  3  BEGIN
+  4  DBMS_OUTPUT.PUT_LINE(X);
+  5  EXCEPTION
+  6  WHEN VALUE_ERROR THEN
+  7  DBMS_OUTPUT.PUT_LINE('INVALID STRING LENGTH');
+  8  END;
+  9  /
+ERROR at line 1:
+ORA-06502: PL/SQL: numeric or value error: character string buffer too small
+ORA-06512: at line 2
+
+	- to handle the above exception then we use "exception
+propagation". it can be implemented by using "nested pl/sql 
+block".whereas in nested pl/sql block outer block exception
+block only can handle exceptions which was raised in declaration
+block.
+
+SOLUTION:
+=========
+SQL> BEGIN
+  2  DECLARE
+  3  X VARCHAR2(3):='WARD';
+  4  BEGIN
+  5  DBMS_OUTPUT.PUT_LINE(X);
+  6  EXCEPTION
+  7  WHEN VALUE_ERROR THEN
+  8  DBMS_OUTPUT.PUT_LINE('INVALID STRING LENGTH');
+  9  END;
+ 10  EXCEPTION
+ 11  WHEN VALUE_ERROR THEN
+ 12  DBMS_OUTPUT.PUT_LINE('STRING LENGTH IS MORE THAN THE SIZE OF DATATYPE');
+ 13  END;
+ 14  /
+
+STRING LENGTH IS MORE THAN THE SIZE OF DATATYPE
+PL/SQL procedure successfully completed.
+
+
+
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

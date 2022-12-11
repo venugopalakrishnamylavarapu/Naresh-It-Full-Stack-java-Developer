@@ -1,0 +1,201 @@
+3. packages:
+============
+	- it is a collection of variables,stored procedures
+and stored functions are stored in a single unit of
+memory is called as "package".
+	- by using package we can share the required 
+sub programs(procedures and functions) to client 
+application and importing that package into client
+application for reusable of those sub programs.
+	- by using packages we are implementing 
+encapsulating and function overloading mechanisms.
+	- to create a package in pl/sql then we should
+create the following two blocks those are
+		1. package specification block
+		2. package implementation  block(body)
+
+1. package specification block:
+===============================
+	- in this block we can declare variables,procedures
+and functions.
+
+syntax:
+=======
+create [or replace] package <package name>
+is / as
+<declare variables>;
+<declare stored procedures>;
+<declare stored functions>;
+end;
+/
+
+2. Package implementation block(body):
+======================================
+	- in this block we can implement the logical 
+code of procedure and function which was declared 
+in package specification block.
+
+syntax:
+=======
+create [or replace] package body <package name>
+is / as
+<implementing logical code>;
+end;
+/
+
+How to call a SP from a package:
+================================
+syntax:
+=======
+execute <package name>.<pname>(values);
+
+How to call a SF from a package:
+================================
+syntax:
+=======
+select <package name>.<fname>(value/(s)) from dual;
+
+Ex:
+create a package to bind multiple stored procedures
+in a single pl/sql block.
+SQL> CREATE OR REPLACE PACKAGE PK1
+  2  IS
+  3  PROCEDURE SP1;
+  4  PROCEDURE SP2;
+  5  END;
+  6  /
+
+Package created.
+
+SQL> CREATE OR REPLACE PACKAGE BODY PK1
+  2  IS
+  3  PROCEDURE SP1
+  4  AS
+  5  BEGIN
+  6  DBMS_OUTPUT.PUT_LINE('I AM PROCEDURE-1');
+  7  END SP1;
+  8  PROCEDURE SP2
+  9  AS
+ 10  BEGIN
+ 11  DBMS_OUTPUT.PUT_LINE('I AM PROCEDURE-2');
+ 12  END SP2;
+ 13  END;
+ 14  /
+
+Package body created.
+
+OUTPUT:
+=======
+SQL> EXECUTE PK1.SP1;
+I AM PROCEDURE-1
+PL/SQL procedure successfully completed.
+
+SQL> EXECUTE PK1.SP2;
+I AM PROCEDURE-2
+PL/SQL procedure successfully completed.
+
+EX:
+create a package to bind variable,stored procedure
+and stored function in a single unit of memory?
+
+SQL> CREATE OR REPLACE PACKAGE PK2
+  2  AS
+  3  X NUMBER(10):=1000;
+  4  PROCEDURE SP1;
+  5  FUNCTION SF1(A NUMBER) RETURN NUMBER;
+  6  END;
+  7  /
+
+Package created.
+
+SQL> CREATE OR REPLACE PACKAGE BODY PK2
+  2  AS
+  3  PROCEDURE SP1
+  4  IS
+  5  A NUMBER(10);
+  6  BEGIN
+  7  A:=X/2;
+  8  DBMS_OUTPUT.PUT_LINE(A);
+  9  END SP1;
+ 10  FUNCTION SF1(A NUMBER)
+ 11  RETURN NUMBER
+ 12  AS
+ 13  BEGIN
+ 14  RETURN A*X;
+ 15  END SF1;
+ 16  END;
+ 17  /
+
+Package body created.
+
+SQL> SELECT PK2.SF1(5) FROM DUAL;
+
+PK2.SF1(5)
+----------
+      5000
+
+SQL> EXECUTE PK2.SP1;
+500
+PL/SQL procedure successfully completed.
+
+IMPLEMENTING FUNCTION OVERLOADING MECHANISM:
+============================================
+	- TO CHANGE NO.OF ARGUMENTS TO THE SAME FUNCTION IS 
+CALLED AS "FUNCTION OVERLOADING".
+	Ex:
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

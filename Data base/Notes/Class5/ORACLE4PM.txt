@@ -411,7 +411,7 @@ SQL> DELETE FROM STUDENT WHERE STID IS NULL;
 DELETE vs TRUNCATE:
 ====================
 
-	DELETE			TRUNCATE
+	DELETE				TRUNCATE
 	========			=========
 1. can delete a specific row.		1. no. 
 
