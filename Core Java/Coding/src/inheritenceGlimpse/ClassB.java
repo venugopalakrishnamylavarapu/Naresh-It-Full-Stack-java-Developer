@@ -1,6 +1,6 @@
 package inheritenceGlimpse;
 
-public class ClassB extends ClassA{
+public class ClassB extends Class64E{
 	void meth2()
 	{
 		System.out.println("Class B is accessed");
