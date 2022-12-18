@@ -1,0 +1,694 @@
+3. packages:
+============
+	- it is a collection of variables,stored procedures
+and stored functions are stored in a single unit of
+memory is called as "package".
+	- by using package we can share the required 
+sub programs(procedures and functions) to client 
+application and importing that package into client
+application for reusable of those sub programs.
+	- by using packages we are implementing 
+encapsulating and function overloading mechanisms.
+	- to create a package in pl/sql then we should
+create the following two blocks those are
+		1. package specification block
+		2. package implementation  block(body)
+
+1. package specification block:
+===============================
+	- in this block we can declare variables,procedures
+and functions.
+
+syntax:
+=======
+create [or replace] package <package name>
+is / as
+<declare variables>;
+<declare stored procedures>;
+<declare stored functions>;
+end;
+/
+
+2. Package implementation block(body):
+======================================
+	- in this block we can implement the logical 
+code of procedure and function which was declared 
+in package specification block.
+
+syntax:
+=======
+create [or replace] package body <package name>
+is / as
+<implementing logical code>;
+end;
+/
+
+How to call a SP from a package:
+================================
+syntax:
+=======
+execute <package name>.<pname>(values);
+
+How to call a SF from a package:
+================================
+syntax:
+=======
+select <package name>.<fname>(value/(s)) from dual;
+
+Ex:
+create a package to bind multiple stored procedures
+in a single pl/sql block.
+SQL> CREATE OR REPLACE PACKAGE PK1
+  2  IS
+  3  PROCEDURE SP1;
+  4  PROCEDURE SP2;
+  5  END;
+  6  /
+
+Package created.
+
+SQL> CREATE OR REPLACE PACKAGE BODY PK1
+  2  IS
+  3  PROCEDURE SP1
+  4  AS
+  5  BEGIN
+  6  DBMS_OUTPUT.PUT_LINE('I AM PROCEDURE-1');
+  7  END SP1;
+  8  PROCEDURE SP2
+  9  AS
+ 10  BEGIN
+ 11  DBMS_OUTPUT.PUT_LINE('I AM PROCEDURE-2');
+ 12  END SP2;
+ 13  END;
+ 14  /
+
+Package body created.
+
+OUTPUT:
+=======
+SQL> EXECUTE PK1.SP1;
+I AM PROCEDURE-1
+PL/SQL procedure successfully completed.
+
+SQL> EXECUTE PK1.SP2;
+I AM PROCEDURE-2
+PL/SQL procedure successfully completed.
+
+EX:
+create a package to bind variable,stored procedure
+and stored function in a single unit of memory?
+
+SQL> CREATE OR REPLACE PACKAGE PK2
+  2  AS
+  3  X NUMBER(10):=1000;
+  4  PROCEDURE SP1;
+  5  FUNCTION SF1(A NUMBER) RETURN NUMBER;
+  6  END;
+  7  /
+
+Package created.
+
+SQL> CREATE OR REPLACE PACKAGE BODY PK2
+  2  AS
+  3  PROCEDURE SP1
+  4  IS
+  5  A NUMBER(10);
+  6  BEGIN
+  7  A:=X/2;
+  8  DBMS_OUTPUT.PUT_LINE(A);
+  9  END SP1;
+ 10  FUNCTION SF1(A NUMBER)
+ 11  RETURN NUMBER
+ 12  AS
+ 13  BEGIN
+ 14  RETURN A*X;
+ 15  END SF1;
+ 16  END;
+ 17  /
+
+Package body created.
+
+SQL> SELECT PK2.SF1(5) FROM DUAL;
+
+PK2.SF1(5)
+----------
+      5000
+
+SQL> EXECUTE PK2.SP1;
+500
+PL/SQL procedure successfully completed.
+
+IMPLEMENTING FUNCTION OVERLOADING MECHANISM:
+============================================
+	- TO CHANGE NO.OF ARGUMENTS TO THE SAME FUNCTION IS 
+CALLED AS "FUNCTION OVERLOADING".
+	
+		EX:	FUNCTION F1(X NUMBER,Y NUMBER);
+				FUNCTION F1(A NUMBER,B NUMBER,C NUMBER);
+
+EX:
+SQL> CREATE OR REPLACE PACKAGE PK3
+  2  IS
+  3  FUNCTION F1(X NUMBER,Y NUMBER) RETURN NUMBER;
+  4  FUNCTION F1(A NUMBER,B NUMBER,C NUMBER) RETURN NUMBER;
+  5  END;
+  6  /
+Package created.
+		
+SQL> CREATE OR REPLACE PACKAGE BODY PK3
+  2  IS
+  3  FUNCTION F1(X NUMBER,Y NUMBER)
+  4  RETURN NUMBER
+  5  AS
+  6  BEGIN
+  7  RETURN X*Y;
+  8  END F1;
+  9  FUNCTION F1(A NUMBER,B NUMBER,C NUMBER)
+ 10  RETURN NUMBER
+ 11  AS
+ 12  BEGIN
+ 13  RETURN A+B+C;
+ 14  END F1;
+ 15  END;
+ 16  /
+Package body created.
+
+SQL> SELECT PK3.F1(10,20,30) FROM DUAL;
+
+PK3.F1(10,20,30)
+----------------
+              60
+
+SQL> SELECT PK3.F1(10,20) FROM DUAL;
+
+PK3.F1(10,20)
+-------------
+          200
+
+NOTE:
+SQL> SELECT OBJECT_NAME FROM USER_OBJECTS WHERE OBJECT_TYPE='PACKAGE';
+SQL> SELECT TEXT FROM USER_SOURCE WHERE NAME='PK1';
+
+HOW TO DROP A PACKAGE BODY:
+============================
+SYNTAX:
+=======
+DROP PACKAGE BODY <PACKAGE NAME>;
+
+EX:
+DROP PACKAGE BODY PK1;
+
+HOW TO DROP A PACKAGE:
+=======================
+SYNTAX:
+=======
+DROP PACKAGE <PACKAGE NAME>;
+
+EX:
+DROP PACKAGE PK1;
+==============================================================
+TRIGGERS:
+=========
+	- it is named block similar to stored procedure but executed
+by system automatically.
+
+purpose of triggers:
+====================
+1. to raise user defined alerts along with security.
+2. to control / restricted dml and ddl operations over database.
+3. to implement business logical conditions.
+4. to validating data
+5. for auditing
+
+Types of triggers:
+================== 
+		1. DML triggers
+		2. DDL triggers(DB triggers)
+
+1. DML triggers:
+================
+	- when we created a trigger object based on dml commands
+(insert/update/delete) then we called as "DML triggers".
+	- these trigger are executed by system automatically when
+user perform dml operations on a particular table in database.
+
+syntax:
+=======
+create [or replace] trigger <trigger name>
+before / after insert or update or delete on <table name>
+[for each row ] -----> use in row level triggers only
+begin
+<trigger body / statements>;
+end;
+/
+
+Trigger events:
+===============
+Before trigger:
+================
+	- when we created a trigger object with "before" event then,
+				first : trigger body executed
+				later : DML command will execute
+
+After trigger:
+================
+	- when we created a trigger object with "after" event then,
+				first : DML command executed
+				later : trigger body will execute
+
+NOTE: both are providing same result / output.
+
+Levels of triggers:
+===================
+	- trigger object can be created at two levels.
+				i) row level triggers
+				ii) statement level triggers
+
+i) row level triggers:
+=======================
+	- in this level a trigger body is executing for each row
+wise in a table so that we should use "for each row" statement.
+
+EX:
+SQL> SELECT * FROM TEST;
+
+ENAME             SAL
+---------- ----------
+SMITH           12000
+JONES           35000
+ALLEN           12000
+WARD            68000
+
+SQL> CREATE OR REPLACE TRIGGER TR1
+  2  AFTER UPDATE ON TEST
+  3  FOR EACH ROW
+  4  BEGIN
+  5  DBMS_OUTPUT.PUT_LINE('HELLO');
+  6  END;
+  7  /
+Trigger created.
+
+TESTING:
+SQL> UPDATE TEST SET SAL=18000 WHERE SAL=12000;
+HELLO
+HELLO
+2 rows updated.
+
+ii) statement level triggers:
+=============================
+	- in this level a trigger body is executed only one time 
+for a dml operation.
+
+Ex:
+SQL>CREATE OR REPLACE TRIGGER TR1
+    AFTER UPDATE ON TEST
+    BEGIN
+    DBMS_OUTPUT.PUT_LINE('HELLO');
+    END;
+    /
+Trigger created.
+
+TESTING:
+SQL> UPDATE TEST SET SAL=10000 WHERE SAL=18000;
+HELLO
+
+2 rows updated.
+
+BIND VARIABLES:
+================
+	- these variables are working just like normal variables
+to store values while inserting,updating,deleting data from a 
+table.these are two types,
+
+i) :NEW :
+=========
+	- when we insert a new row into a table those new values 
+are storing in :new bind variable.
+
+syntax:
+=======
+	:new.<column name>
+
+ii) :OLD:
+=========
+	- when we delete old values from a table those old values
+are storing in :old bind variable.
+
+syntax:
+=======
+	:old.<column name>
+
+NOTE:
+=====
+	- these bind variables are used in row level triggers only.
+
+To raise user defined alerts along with security:
+=================================================
+EX:
+SQL> CREATE OR REPLACE TRIGGER TR1
+  2  AFTER INSERT ON TEST
+  3  BEGIN
+  4  DBMS_OUTPUT.PUT_LINE('SOME ONE INSERTED A ROW INTO YOUR TABLE.PLZ CHECK IT !!!');
+  5  END;
+  6  /
+Trigger created.
+
+TESTING:
+SQL> INSERT INTO TEST VALUES(1022,'AALEN',45000);---ALLOWED
+SOME ONE INSERTED A ROW INTO YOUR TABLE.PLZ CHECK IT !!!
+1 row created.
+
+	- in the above trigger we raised a user defined alert but 
+not restricted a dml operation on test table.so we need to 
+restrict a dml operation on test table then we use a 
+statement is called as"raise_application_erro()".
+
+EX:
+SQL> CREATE OR REPLACE TRIGGER TR1
+  2  AFTER INSERT ON TEST
+  3  BEGIN
+  4  RAISE_APPLICATION_ERROR(-20478,'SOME ONE INSERTED A ROW INTO YOUR TABLE.PLZ CHECK IT !!!');
+  5  END;
+  6  /
+
+Trigger created.
+
+SQL> INSERT INTO TEST VALUES(1023,'WARD',32000);--NOT ALLOWED
+ERROR at line 1:
+ORA-20478: SOME ONE INSERTED A ROW INTO YOUR TABLE.PLZ CHECK IT !!!
+
+EX:
+SQL> CREATE OR REPLACE TRIGGER TR1
+    AFTER UPDATE ON TEST
+    BEGIN
+    RAISE_APPLICATION_ERROR(-20478,'SOME ONE UPDATED A ROW IN YOUR TABLE.PLZ CHECK IT !!!');
+    END;
+    /
+SQL> UPDATE TEST SET SAL=28000 WHERE SNO=1021;---NOT ALLOWED     
+ERROR at line 1:
+ORA-20478: SOME ONE UPDATED A ROW IN YOUR TABLE.PLZ CHECK IT !!!
+
+EX:
+SQL> CREATE OR REPLACE TRIGGER TR1
+    AFTER DELETE ON TEST
+    BEGIN
+    RAISE_APPLICATION_ERROR(-20478,'SOME ONE DELETED A ROW FROM YOUR TABLE.PLZ CHECK IT !!!');
+    END;
+    /
+
+SQL> DELETE FROM TEST WHERE SNO=1022;---NOT ALLOWED
+ERROR at line 1:
+ORA-20478: SOME ONE DELETED A ROW FROM YOUR TABLE.PLZ CHECK IT !!!
+
+TRIGGER WITH ALL DML OPERATIONS:
+================================
+EX:
+SQL> CREATE OR REPLACE TRIGGER TR1
+    AFTER INSERT OR UPDATE OR DELETE ON TEST
+    BEGIN
+    RAISE_APPLICATION_ERROR(-20478,'SOME ONE PERFORMING DML OPERATIONS ON YOUR TABLE.PLZ CHECK IT !!!');
+    END;
+    /
+TESTING:
+SQL> INSERT INTO TEST VALUES(1023,'WARD',32000);--NOT ALLOWED
+SQL> UPDATE TEST SET SAL=28000 WHERE SNO=1021;---NOT ALLOWED     
+SQL> DELETE FROM TEST WHERE SNO=1022;---NOT ALLOWED
+ERROR at line 1:
+ORA-20478: SOME ONE PERFORM DML OPERATIONS ON YOUR TABLE.PLZ CHECK IT !!!
+
+2. to control / restricted dml operations by using 
+business logical conditions:
+============================
+Ex:
+create a trigger to restrict all dml operations on test table 
+on every monday?
+SQL> CREATE OR REPLACE TRIGGER TRDAY
+  2  AFTER INSERT OR UPDATE OR DELETE ON TEST
+  3  BEGIN
+  4  IF TO_CHAR(SYSDATE,'DY') = 'MON' THEN
+  5  RAISE_APPLICATION_ERROR(-20569,'WE CANNOT PERFORM DML OPERATIONS ON MONDAY');
+  6  END IF;
+  7  END;
+  8  /
+
+Trigger created.
+
+EX:
+create a trigger to restricted all dml operations on a table
+between 9am to 5pm?
+SQL> CREATE OR REPLACE TRIGGER TRTIME
+  2  AFTER INSERT OR UPDATE OR DELETE ON TEST
+  3  BEGIN
+  4  IF TO_CHAR(SYSDATE,'HH24') BETWEEN 9 AND 16 THEN
+  5  RAISE_APPLICATION_ERROR(-20657,'INVALID TIME');
+  6  END IF;
+  7  END;
+  8  /
+
+LOGIC:
+======
+		9AM(9) = 9:00:00 TO 9:59:59 --- UNDER 9 O CLOCK
+		5PM(17)= 5:00:00 TO 5:59:59 --- UP TO 6 O CLOCK 
+		4PM(16)= 4:00:00 TO 4:59:59 --- UP TO 5 O CLOCK
+
+to validating data:
+===================
+EX:
+create a trigger to control insert operation on a table if 
+new salary is less than to 10000?
+SQL> CREATE OR REPLACE TRIGGER TRSAL
+  2  BEFORE INSERT ON TEST
+  3  FOR EACH ROW
+  4  BEGIN
+  5  IF :NEW.SAL < 10000 THEN
+  6  RAISE_APPLICATION_ERROR(-20574,'NEW SAL SHOULD NOT BE LESS THAN TO 10000');
+  7  END IF;
+  8  END;
+  9  /
+
+Trigger created.
+
+TESTING:
+SQL> INSERT INTO TEST VALUES(1023,'ADAMS',9500);--NOT ALLOWED
+SQL> INSERT INTO TEST VALUES(1023,'ADAMS',12000);--ALLOWED
+
+EX:
+create a trigger to control delete operation on a table if 
+we try delete the employee "smith" details?
+SQL> CREATE OR REPLACE TRIGGER TRNAME
+  2  BEFORE DELETE ON TEST
+  3  FOR EACH ROW
+  4  BEGIN
+  5  IF :OLD.NAME='SMITH' THEN
+  6  RAISE_APPLICATION_ERROR(-20478,'NOT ALLOWED');
+  7  END IF;
+  8  END;
+  9  /
+TESTING:
+SQL> DELETE FROM TEST WHERE NAME='ADAMS';----ALLOWED
+SQL> DELETE FROM TEST WHERE NAME='SMITH';---NOT ALLOWED
+
+auditing:
+=========
+	- when we perform transactions(i/u/d) on a table those 
+transactional values are stored in an other table in database
+is called as "audit table".
+
+EX:
+SQL> CREATE TABLE EMP1(EID INT,ENAME VARCHAR2(10),SAL NUMBER(10));
+Table created.
+
+SQL> CREATE TABLE EMP1_AUDIT(EID INT,AUDIT_INFO VARCHAR2(100));
+Table created.
+
+SQL> SELECT * FROM EMP1;
+no rows selected
+
+SQL> SELECT * FROM EMP1_AUDIT;
+no rows selected
+
+SQL> CREATE OR REPLACE TRIGGER TR_AUDIT
+  2  BEFORE INSERT ON EMP1
+  3  FOR EACH ROW
+  4  BEGIN
+  5  INSERT INTO EMP1_AUDIT VALUES(:NEW.EID,'SOME ONE INSERTED A NEW ROW INTO YOUR TABLE ON'
+  6  ||' '||TO_CHAR(SYSDATE,'DD-MON-YYYY HH:MI:SS AM'));
+  7  END;
+  8  /
+Trigger created.
+
+TESTING:
+SQL> INSERT INTO EMP1 VALUES(1021,'SMITH',58000);
+1 row created.
+
+OUTPUT:
+SQL> SELECT * FROM EMP1;
+
+       EID ENAME             SAL
+---------- ---------- ----------
+      1021 SMITH           58000
+
+SQL> SELECT * FROM EMP1_AUDIT;
+
+       EID AUDIT_INFO
+---------- ----------------------------------------------------------------------------------------------------
+      1021 SOME ONE INSERTED A NEW ROW INTO YOUR TABLE ON 13-DEC-2022 05:07:55 PM
+
+EX:
+SQL>CREATE OR REPLACE TRIGGER TR_AUDIT
+    BEFORE UPDATE ON EMP1
+    FOR EACH ROW
+    BEGIN
+    INSERT INTO EMP1_AUDIT VALUES(:OLD.EID,'SOME ONE UPDATED A ROW INTO YOUR TABLE ON'
+    ||' '||TO_CHAR(SYSDATE,'DD-MON-YYYY HH:MI:SS AM'));
+    END;
+    /
+TESTING:
+SQL> UPDATE EMP1 SET SAL=12000 WHERE EID=1021;
+
+EX:
+    CREATE OR REPLACE TRIGGER TR_AUDIT
+    BEFORE DELETE ON EMP1
+    FOR EACH ROW
+    BEGIN
+    INSERT INTO EMP1_AUDIT VALUES(:OLD.EID,'SOME ONE DELETED A ROW FROM YOUR TABLE ON'
+    ||' '||TO_CHAR(SYSDATE,'DD-MON-YYYY HH:MI:SS AM'));
+    END;
+	/
+
+TESTING:
+SQL> DELETE FROM EMP1 WHERE EID=1022;
+
+HOW TO DROP A DML TRIGGER:
+==========================
+SYNTAX:
+========
+DROP TRIGGER <TRIGGER NAME>;
+
+EX:
+DROP TRIGGER TRSAL;
+
+DDLTRIGGERS:
+============
+	- WHEN WE CREATED A TRIGGER BASED ON DDL COMMANDS(CREATE,
+ALTER,RENAME,DROP) THEN WE CALLED AS DDLTRIGGERS.
+	- DDL TRIGGERS ARE WORKING ON A PARTICULAR DATABASE.SO THAT
+DDLTRIGGER ARE ALSO CALLED AS "DB TRIGGERS".
+
+SYNTAX:
+=======
+CREATE [OR REPLACE] TRIGGER <TRIGGER NAME>
+BEFORE / AFTER  CREATE OR ALTER OR RENAME OR DROP 
+ON <USERNAME>.SCHEMA
+BEGIN
+<TRIGGER BODY / STATEMENTS>;
+END;
+/
+
+EX:
+CREATE A DDLTRIGGER TO RESTRICTED CREATE OPERATION ON MYDB4PM
+DATABASE?
+SQL> CREATE OR REPLACE TRIGGER TRDDL
+  2  BEFORE CREATE ON MYDB4PM.SCHEMA
+  3  BEGIN
+  4  RAISE_APPLICATION_ERROR(-20478,'WE CANNOT PERFORM CREATE COMMAND ON MYDB4PM');
+  5  END;
+  6  /
+
+SQL> CREATE TABLE T1(SNO INT);
+ERROR at line 1:
+ORA-20478: WE CANNOT PERFORM CREATE COMMAND ON MYDB4PM
+
+HOW TO DROP DDL TRIGGER:
+========================
+SYNTAX:
+=======
+DROP TRIGGER <TRIGGER NAME>
+
+EX:
+DROP TRIGGER TRDDL;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
