@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function NonEmpty() {
+            var r1 = document.getElementById('Male').checked;
+            var r2 = document.getElementById('Female').checked;
+            if ((r1 == "") && (r2 == "")) {
+                alert("Select Male or Female")
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="TrollFace.png">
+        <label>Select valid gender</label><br>
+
+    </form>
+</body>
+
+</html>

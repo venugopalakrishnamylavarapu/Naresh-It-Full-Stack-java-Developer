@@ -7,18 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile website</title>
     <link href="style.css" rel="stylesheet">
-
+    <style type="text/css">
+        @media (max-width:720px) {
+            .lists li a {
+                font-size: small;
+                text-align: justify;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
     <div class="main">
         <nav>
-            <div class="logo">
-                <img style="height:50px;width:50px" src="Gamesterlogo.png">
-            </div>
+
             <div class="nav-links">
-                <ul>
+                <ul class="lists">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Website</a></li>
@@ -87,9 +92,10 @@
                 rotateValue = rotateSum;
             }
         </script>
+        <div class="logo">
+            <img style="height:50px;width:50px" src="Gamesterlogo.png">
+        </div>
     </div>
-
-
 </body>
 
 </html>
