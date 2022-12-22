@@ -1,4 +1,8 @@
 package TasksInClass;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /*
  Task:
  ----
@@ -8,5 +12,14 @@ package TasksInClass;
  
  */
 public class Task67 {
-	
+	public static void main(String[] args) {
+		List<Task67A> li=new ArrayList<Task67A>();
+		li.add(new Task67A("Venu",25,35000));
+		li.add(new Task67A("Suresh",24,17000));
+		li.add(new Task67A("Ramesh",27,47000));
+		li.add(new Task67A("Suresh",22,23375));
+		
+		
+		
+	}
 }
