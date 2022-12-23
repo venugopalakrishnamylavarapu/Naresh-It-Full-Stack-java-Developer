@@ -19,7 +19,5 @@ public class Task67 {
 		li.add(new Task67A("Ramesh",27,47000));
 		li.add(new Task67A("Suresh",22,23375));
 		
-		
-		
 	}
 }
