@@ -37,7 +37,7 @@ What is Data?
 	- data can not be predict.(no meaning)
 
 	Ex:
-			SMITH				1021
+			SMITH			1021
 			WARNER			1022
 			MILLER			1023
 
@@ -49,7 +49,7 @@ What is Information?
 	Ex:
 		  customer_name		customer_id
 		  =============		==========
-			SMITH				1021
+			SMITH			1021
 			WARNER			1022
 			MILLER			1023
 
@@ -206,7 +206,7 @@ Advantages of DBMS:
 	- easy to retrieval the required data 
 ===============================================================
 session-1(19-09-2022)			ORACLE19c
-==================		==========
+==================			==========
 	- Oracle is a RDBMS(ORDBMS) product which was introduced by 
 "oracle corporation" in 1979.
 	- Oracle is used to store data / information of particular organization
@@ -312,15 +312,15 @@ SQLPLUS vs SQL:
 		SQLPLUS								SQL
 		========								====
 1. it is db tool which was						1. it is a db language which
-introduced by "Oracle corporation".			was introduced by IBM.
+introduced by "Oracle corporation".					   was introduced by IBM.
 
-2. it is used to connect to oracle server.	2. is used to communicate 
-												with database.
+2. it is used to connect to oracle server.				2.it is used to communicate 
+									  with database.
 
-3. it will work as an "editor" for 				3. will provide sub languages
-writting & executing SQL queries.			are DDL,DML,DQL/DRL,TCL,
-												DCL for performing some
-												operations over database.
+3. it will work as an "editor" for 				       3. will provide sub languages
+writting & executing SQL queries.				        are DDL,DML,DQL/DRL,TCL,
+								        DCL for performing some
+								        operations over database.
 
 HOW TO CONNECT TO ORACLE SERVER:
 ==================================
@@ -750,7 +750,7 @@ RAW & LONG RAW DATATYPES:
 ============================
 	- storing binary format data(01010011010100101001).
 	- these datatypes are called as "binary datatypes" in oracle.
-	- storing image file / audio file / video file inform of 010100101010100
+	- storing image file / audio file / video file in form of 010100101010100
 	format.
 			RAW ---------------> 2000 bytes
 			Long Raw -------> 2 gb

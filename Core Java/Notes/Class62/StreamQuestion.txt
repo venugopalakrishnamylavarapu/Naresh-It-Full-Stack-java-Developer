@@ -1,0 +1,112 @@
+Task:
+-----------
+Let us consider We have a list of employees, where each employee has attributes like age, name and salary
+WAP to increase the salary of each employee whose age is greater than 25 by 10% and print the updated employee details in ascending order.
+
+
+Answer:
+-----------
+
+ClassA.java
+---------------
+public class ClassA 
+{
+	int empAge;
+	String empName;
+	float empSal;
+	
+	public ClassA(int empAge, String empName, float empSal) 
+	{
+		this.empAge = empAge;
+		this.empName = empName;
+		this.empSal = empSal;
+	}
+
+	public int getEmpAge() 
+	{
+		return empAge;
+	}
+
+	public String getEmpName() 
+	{
+		return empName;
+	}
+
+	public float getEmpSal() 
+	{
+		return empSal;
+	}
+	public void setEmpSal(float empSal) 
+	{
+		this.empSal = empSal;
+	}
+
+	@Override
+	public String toString() 
+	{
+		return "ClassA [empAge=" + empAge + ", empName=" + empName + ", empSal=" + empSal + "]";
+	}		
+}
+-------------------------------
+ClassB.java
+-------------------------------
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class ClassB 
+{
+	void meth1()
+	{
+		ArrayList<ClassA> al=new ArrayList<ClassA>();
+		
+		ClassA aobj1=new ClassA(34,"Kishan",90000);
+		ClassA aobj2=new ClassA(22,"Vijay",25000);
+		ClassA aobj3=new ClassA(24,"Ghouse",30000);
+		ClassA aobj4=new ClassA(33,"Sujatha",50000);
+		
+		al.add(aobj1);al.add(aobj2);al.add(aobj3);al.add(aobj4);
+		
+		Stream<ClassA> s1=al.stream();
+		Stream<ClassA>s2=s1.map(data->
+		{
+			if(data.getEmpAge()>25)
+			{
+				data.setEmpSal(data.getEmpSal()*1.10f);
+			}
+			return data;
+		});
+		
+		ArrayList<ClassA>li=(ArrayList<ClassA>)s2.collect(Collectors.toList());
+		for(Object o:li)
+		{
+			System.out.println(o);
+		}
+		System.out.println("--------------");
+		Collections.sort(li,new ClassA_Comparator());
+		li.forEach(data->System.out.println(data));
+	}
+	public static void main(String[] args) 
+	{
+		new ClassB().meth1();		
+	}
+}
+-------------------------
+ClassA_Comparator.java
+-------------------------
+import java.util.Comparator;
+
+public class ClassA_Comparator implements Comparator<ClassA> 
+{
+
+	@Override
+	public int compare(ClassA o1, ClassA o2) 
+	{
+		return (int)(o1.getEmpSal()-o2.getEmpSal());
+	}	
+}
+
+
+ 
