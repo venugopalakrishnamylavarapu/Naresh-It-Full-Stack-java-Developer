@@ -1,0 +1,26 @@
+JDBC API:
+=========
+JDBC API is a Java API that can access any kind of tabular data & data especially stored in RDBMS
+(Relational Database Management System).
+
+List of packages:
+=================
+1)java.sql package
+2)javax.sql package
+3)javax.
+
+1)java.sql package:
+===================
+
+		Classes					Interface
+		=======					=========
+	1)DriverManager					1)Driver
+	2)SQLException					2)Connection
+	3)Date						3)Statement
+	4)Time						4)PreparedStatement
+	5)Types						5)CallableStatement
+							6)ResultSet
+							7)ResultSetMetaData
+							8)DatabaseMetaData
+							9)Blob
+							10)Clob
