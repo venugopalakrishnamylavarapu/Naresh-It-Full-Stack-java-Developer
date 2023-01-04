@@ -7,7 +7,7 @@ List of packages:
 =================
 1)java.sql package
 2)javax.sql package
-3)javax.
+3)javax.sql.rowset package
 
 1)java.sql package:
 ===================
@@ -24,3 +24,46 @@ List of packages:
 							8)DatabaseMetaData
 							9)Blob
 							10)Clob
+
+All jdbc interfaces are implemented in driver software by driver vendors.
+
+ 1)java.sql.DriverManager
+
+->Method:
+  ------
+  public static Connection getConnection(String, String, String) throws SQLException;\
+
+--> here 1st string is url,2nd string is username,3rd string is password.
+
+=>It is used to establish a connection between Java application & database.
+
+URL(Uniform Resource Locator):
+=============================
+jdbc::oracle:oci8:@service-id
+
+what it means?? is
+protocol:subprotocol:logicalname:serviceid
+
+->Here oci means Oracle Call Interface
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

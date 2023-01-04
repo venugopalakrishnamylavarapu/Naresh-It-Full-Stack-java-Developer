@@ -1,0 +1,35 @@
+	jdbc:oracle:oci8:@service-id
+
+to get service id,use the following at sql prompt:
+SQL>select * from global_name;
+
+/*Program to establish a connection between Java Application and oracle database by using type 2 driver*/
+
+import java.sql.*;
+Class Demo
+{
+	public static void main(String args[])
+	{
+		try{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:oci8:@xe","system","manager");
+		System.out.println("COnnection Established Successfully");
+		}
+		catch(Exception e)
+		{
+			System.err.println(e);
+		}
+	}
+}
+
+
+Type 2 Driver Vendor
+====================
+Oracle Corporation
+
+Type 2 Driver Functionality
+===========================
+it converts Java calls into Native Calls
+
+
+
