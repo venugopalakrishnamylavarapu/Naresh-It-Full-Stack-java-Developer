@@ -1,0 +1,10 @@
+===Selenium WebDriver with Project :
+Project Name  : HRMS
+==Testing url
+http://183.82.103.245/nareshit/login.php
+username : nareshit
+password : nareshit
+==Live url
+https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+username : Admin
+password : admin123

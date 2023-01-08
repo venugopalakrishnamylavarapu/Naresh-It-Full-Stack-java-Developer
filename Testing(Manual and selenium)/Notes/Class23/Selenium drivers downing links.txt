@@ -1,0 +1,7 @@
+==jarFiles :
+https://www.selenium.dev/downloads/
+
+==chromedriver for chromebrowser
+https://chromedriver.chromium.org/downloads
+==geckodriver for Firefox browser
+https://github.com/mozilla/geckodriver/releases
