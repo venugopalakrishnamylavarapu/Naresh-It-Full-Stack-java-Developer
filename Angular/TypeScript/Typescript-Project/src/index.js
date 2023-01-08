@@ -1,6 +1,6 @@
-function Demo() {
-    x = 25;
-    console.log("x=" + x);
-    var x;
+var k;
+function kill() {
+    k = 25;
+    console.log(k);
 }
-Demo();
+kill();

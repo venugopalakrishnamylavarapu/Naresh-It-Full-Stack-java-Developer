@@ -95,7 +95,7 @@ session-2:
 2. OLAP:
 =======
 	- these databases are used to stored "historical data"(big data).
-	- it can supporting "select" operation.
+	- it can support "select" operation.
 	Ex: Datawarehouse
 
 What are Datastorage?
@@ -131,7 +131,7 @@ ii) Data inconsistency:
 
 iii) Data retrieval:
 ===============
-	- if we want retrieval the required data from a faltfile then we 
+	- if we want retrieval the required data from a flatfile then we 
 need to develop an application by using high level languages are
 C,C++,JAVA,.NET.........etc
 
@@ -310,7 +310,7 @@ SQLPLUS vs SQL:
 ===============
 
 		SQLPLUS								SQL
-		========								====
+		========							====
 1. it is db tool which was						1. it is a db language which
 introduced by "Oracle corporation".					   was introduced by IBM.
 

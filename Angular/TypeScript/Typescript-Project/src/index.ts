@@ -1,7 +1,7 @@
-function Demo()
+let k=17;
+function kill()
 {
-    x=25;
-    console.log("x="+x);
-    var x;
+    k=25;
+    console.log(k);
 }
-Demo();
+kill();
