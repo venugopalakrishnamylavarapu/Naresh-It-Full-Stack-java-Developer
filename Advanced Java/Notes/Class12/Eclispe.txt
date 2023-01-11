@@ -1,0 +1,179 @@
+Eclipse:
+========
+it is an IDE(Integrated Developement Environment)
+programming language & other programming languages like C,C++,Perl,..etc.,
+
+Eclipse IDE contains editors,compilers,interpreters,plugins,..etc.,
+
+A plugin is a software and it is used to extend the functionality of an IDE
+
+There are two eclipse softwares for Java Programming:
+1)Eclipse for Java
+2)Eclipse for JavaEE
+
+Eclipse for Java suppourts JavaSE applications only.
+Eclipse for JavaEE supourts both JavaSe & JavaEE applications.
+
+
+Eclipse Software developed in Java Language only.
+
+Eclipse Software developed by Eclipse foundation.
+
+Eclipse released in 2004.
+
+Latest version of Eclipse is 4.26
+
+To download eclipse software open the following website:
+https://www.eclipse.org/downloads/
+
+Eclipse official website is https://www.eclipse.org
+
+To start eclipse:
+=================
+1)Double Click on Eclipse shortcut icon on desktop
+		(or)
+  Double click eclipse icon on eclipse folder
+  C:\eclipse
+
+2)select the workspace by clicking on Browse button 
+  (Default workspace is C:\Users\Dell\eclipse-workspace(in my system))
+Note:Eclipse stores projects in a folder is called workspace.
+
+3)Click on Launch button.
+
+Perspective:
+===========
+A perspective is a layout of views & editors.
+
+There are many perspectives:
+1)Java perspective
+2)JavaEE perspective
+3)JPA perspective
+4)XML perspective,..etc.,
+
+
+JavaEE stands for Java platform Enterprise Edition.
+JPA stands for Java Persistence API.
+XML stands for eXtensible Markable Language.
+
+Java perspective suppourts to write Core Java programs & JDBC programs.
+
+JavaEE perspective supports to write Servlets,Servlet Listeners,Filters,JSP,HTML,CSS,Java Script,..etc.,
+
+To open Perspective:
+===================
+1)Click on Window Menu
+2)Click on Perspective.
+3)CLick on Open Perspective
+4)Click on Other
+5)Select Java perspective
+6)Click on Open button.
+
+To close Perspective:
+====================
+1)Right click on perspective icon at top corner
+2)Click on close
+
+To write jdbc programs:
+======================
+1)Open Java Perspective
+2)Click on File Menu
+3)Click on New
+4)Click on Java Project
+5)type project name 
+  Example:jdbc
+6)Click on Next button
+7)Click on Finish button
+8)Right click on jdbc in a package explorer
+9)Click on New
+10)Click on Class
+11)Type class name 
+   Example:ConnectionDemo
+12)Select main() method
+13)Click on Finish button
+14)Write the program in editor
+
+
+To add Jar file:
+===============
+1)Right click on jdbc in package Explorer
+2)Click on buildpath 
+3)Click on configure build path
+4)Click on Libraries tab
+5)Click on classpath
+6)Click on Add External JARS button
+7)Select ojdbc8_g.jar file from the following location
+  the location will be in the jdbc folder in the oracle software folder.
+8)Click on Open button
+9)Click on Apply and Close button
+
+To run the above application:
+============================
+1)Right click on jdbc in package explorer
+2)Click on Run as
+3)Click on Java application
+4)Select COnnectionDemo
+5)Click on OK button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

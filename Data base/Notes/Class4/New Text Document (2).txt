@@ -1,4 +1,4 @@
-						Topic-3 : SQL
+sql						Topic-3 : SQL
 						===========
 	- SQL is a db language which was introduced by IBM.
 	- The initial name was "SEQUEL" later renamed as "SQL".

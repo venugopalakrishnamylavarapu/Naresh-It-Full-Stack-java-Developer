@@ -1,6 +1,6 @@
-var k;
-function kill() {
+var k = 17;
+function wake() {
     k = 25;
     console.log(k);
 }
-kill();
+wake();
