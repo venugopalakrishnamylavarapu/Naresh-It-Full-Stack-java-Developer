@@ -1,0 +1,23 @@
+ResultSet Enhancements:
+=======================
+A ResultSet is an object that encapsulates set of rows from database.
+
+it is generated based on SQL query.
+
+Whenever ResultSet is Generated then ResultSet pointer or cursor points to before first record.
+
+ResultSet enhancements are divided into 2 categories:
+1)ResultSet types
+2)Concurrency types
+
+
+1)ResultSet types:
+==================
+There are 3 types of ResultSet.
+1)public static final int TYPE_FORWARD_ONLY;
+2)public static final int TYPE_SCROLL_INSENSITIVE;
+3)public static final int TYPE_SCROLL_SENSITIVE;
+
+
+The above all ResultSet types are static members in 
+java.sql.ResultSet interface.

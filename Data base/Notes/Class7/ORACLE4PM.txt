@@ -3,23 +3,23 @@ OPERATORS:
 	- operator are used to perform some operation on the given operand 
 values.oracle supports the following operators are:
 
-	i) Assignment operator	=> 	=
+	i) Assignment operator		=> 	=
 	ii) Arithmetic operators	=>	+ , - ,* , /
 	iii) Relational operators	=>	< , > , <= , >= ,!=(or)<>
-	iv) Logical operators	=>	AND,OR,NOT
+	iv) Logical operators		=>	AND,OR,NOT
 	v) Set operators		=>	UNION,UNION ALL,
-					INTERSECT,MINUS
+						INTERSECT,MINUS
 
-	vi) Special operators	=>   (+ve) operators	      (-ve) operator
-				       =============	      ============
-				      IN 		      NOT IN
-				      BETWEEN                 NOT BETWEEN
-				      IS NULL	      IS NOT NULL
-				      LIKE 		      NOT LIKE
+	vi) Special operators		=>   (+ve) operators	      (-ve) operator
+					       =============	      ============
+				 		     IN 		      NOT IN
+				  		    BETWEEN                 NOT BETWEEN
+				  		    IS NULL	      	      IS NOT NULL
+				    		     LIKE 		      NOT LIKE
 
 i) Assignment operator:
 ====================
-	- to assign a values to varibale / attribute.
+	- to assign a values to variable / attribute.
 
 syntax:
 ======
@@ -40,7 +40,8 @@ syntax:
 	<column name> <arithmetic operator> <value>
 
 Ex:
-waq to display SQL> SELECT SAL OLD_SALARY,SAL+1000 NEW_SALARY
+waq to display salary increment of 1000 rs.
+SQL> SELECT SAL OLD_SALARY,SAL+1000 NEW_SALARY
   2  FROM EMP;
 
 OLD_SALARY 	NEW_SALARY
