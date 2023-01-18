@@ -1,7 +1,7 @@
 package JDBC;
 
 import java.sql.*;
-
+//to connect to database
 public class Class6 {
 	public static void main(String[] args) throws Exception {
 		Class.forName("oracle.jdbc.driver.OracleDriver");

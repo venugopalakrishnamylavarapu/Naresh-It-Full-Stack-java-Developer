@@ -30,7 +30,7 @@ public class Class11 {
  		 while(rs.next())
  		 {
  		 	System.out.print(rs.getInt("rollno")+"\t");
- 		 	System.out.print(rs.getInt("rollno")+"\t");
+ 		 	System.out.print(rs.getInt("name")+"\t");
  		 	System.out.print(rs.getInt("marks"));
  		 }
  		 
@@ -39,7 +39,7 @@ public class Class11 {
  		   
  		  while(rs.next())
  		  {
- 		  	for(int i=1;i<=n;i++)
+ 		  	for(int i=1;i<=rsmd.getColumnCount();i++)
  		  	{
 				System.out.print(rs.getString(i)+"\t");
 			}
