@@ -1,0 +1,232 @@
+Summary
+- TypeScript Variables
+- Data Types
+    a) Primitive
+            - number
+            - string
+            - boolean
+            - null
+            - undefined
+            - symbol
+    b) Non Primitive
+            - array
+            - object
+            - map
+            - date
+
+                                     Symbol
+- It is a primitive data type of JavaScript introduced with E6.
+  [ECMA Script 2016]
+- It is used to configure a unique reference for object.
+- It is hidden in iterations but accessible inidividually.
+
+Syntax:
+         let  ProductId = Symbol();
+   
+         let  product = {
+            [ProductId] : 1,
+            Name: "TV",
+            Price: 40000.44
+         }
+
+        for(var property in  product)
+        {
+          console.log(property);
+        }
+         console.log("ProductId=" + product[ProductId]);
+
+Ex:
+let ProductId = Symbol();
+
+let product:any = {
+    [ProductId]: 1,
+    Name : "TV",
+    Price: 45000.44
+};
+for(var property in product)
+{
+    console.log(property);
+}
+console.log("ProductId=" + product[ProductId]);
+
+- TypeScript Operators same as JavaScript
+    1. Unary        ++, --
+    2. Binary        +, -, *
+    3. Ternary    ?:
+
+    1. Arithematic
+    2. Logical
+    3. Assignment
+    4. Comparision
+    5. Bitwise
+    6. Special
+
+- New Operator from ES5  "**" [Exponent]
+   
+        2**3                    = 8        ES5
+        Math.pow(2,3)        = 8        ES4
+
+- What is difference between "==" & "===" ?
+   
+        ==         can compare values of different types
+        ===        can compare values only of same type.
+
+        10=="10"        true
+        10==="10"        false
+
+                            TypeScript Statements
+1. Selection Statements
+    if, else, switch, case, default
+
+2. Looping Control Statements
+    for, while, do while
+
+3. Iteration Statements
+    for..in,  for..of
+
+4. Jump Statements
+    break, continue, return
+
+5. Exception Handling Statements
+    try, catch, throw, finally
+
+Summary of Language Basics
+- Variables
+- Data Types
+- Operators
+- Statements
+- Functions
+
+                            TypeScript Functions
+
+- A function is used in "Refactoring" the code.
+- Refactoring is a mechanism of encapsulating a set of statements and extracting to a function or file.
+
+
+Syntax:
+        function  Name(params)
+        {
+             statements;
+        }
+
+        function  Name(params)        => Declaration
+        Name(params)                    => Signature
+        { }                                    => Definition
+
+- Function Parameters
+- Function Return
+- Anonymous Function
+- Function Recursion
+- Function Closure
+- Arrow Function
+
+Note: TypeScript functions are same as JavaScript but they are configured with data type for both function and parameters.
+
+Syntax:
+            function  Name(param:type) : type
+            {
+            }
+
+Ex:
+
+function Hello(username:string):string
+{
+    return `Hello ! ${username}`;
+}
+function Welcome():void
+{
+    console.log("Welcome to TypeScript");
+}
+console.log(Hello("john"));
+Welcome();
+
+- If function is not returning any value then it is configured as "void".
+
+        function  welcome():void
+        {
+        }
+
+        function  addition(a:number, b:number) : number
+        {
+         return a + b;
+        }
+
+- You can define optional parameters in TypeScript function.
+
+        function Details(Name:string, Price?:number)
+        {
+        }
+
+- You can't define a required parameter after optional parameter.
+- Optional parameters must be last parameters.
+
+        function Details(Name:string, Price?number, Stock:boolean)
+        {
+
+        }        // not valid
+
+Ex:
+
+function Details(Name:string,Price?:number):void {
+    if(Price)
+    {
+        console.log(`Name=${Name}\nPrice=${Price}`);
+    } else {
+        console.log(`Name=${Name}`);
+    }
+}
+Details("Samsung TV", 34000.33);
+
+
+                            TypeScript OOP
+
+- Real world application development uses 3 types of programming systems
+        a) POPS [Process Oriented Programming System]
+        b) OBPS [Object Based Programming System]
+        c) OOPS [Object Oriented Programming System]
+
+- Real world application development uses various programming approaches
+        a) Functional Programming
+        b) Structrual Programming
+        c) Imperative Programming
+        d) Procedure Oriented Programming etc..
+
+POPS
+- It supports low level features.
+- It can directly interact with hardware.
+- It is faster.
+- It uses less memory.
+
+Ex: C, Pascal, COBOL
+
+- Code reusability Issues
+- Code separation Issues
+- Dynamic memory issues
+- Code security
+- Extensibility
+
+OBPS
+- It supports code reusability
+- It support code separation
+- It support dynamic memory
+- It support limited extensibility
+
+Ex: JavaScript, Visual Basic
+
+- No dynamic polymorphism
+- No code level security
+
+OOPS Features                            OOP Characterstics
+- Code reusiblity                            Inheritance
+- Code separation                            Aggregation
+- Code extensibility                        Polymorphism
+- Dynamic polymorphism                    Encapsulation
+- Code level security                        Abstraction
+
+Ex: C++, Java, C#
+
+- Can't interact with hardware directly
+- Don't support low level features
+- Need more memory
+- Heavy
+- Slow

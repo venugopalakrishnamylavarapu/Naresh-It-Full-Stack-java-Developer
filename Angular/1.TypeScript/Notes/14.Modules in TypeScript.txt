@@ -1,0 +1,188 @@
+Modules in TypeScript
+- Module is a set of variables, functions, classes, contracts, templates etc.
+- Modules are used to build a library for application.
+- JavaScript requires various module systems to handle modules.
+- The popular module systems are
+            Common JS
+            Require JS
+            UMD [Universal Module Distribution]
+            AMD [Asynchronous Module Distribution] etc..
+       
+Note: You view or change the current module system in your project
+        go to "tsconfig.json"
+       
+        NPM installs a module system called common js.
+
+- Every TypeScript or JavaScript file is considered as a Module.
+
+            ProductContract.ts  =>   Module Name : "ProductContract"
+
+- In a module every member is private at module level. It is not accessible outside module.
+
+- If you want any member accessible outside module then you can mark it as "export".
+
+Syntax:
+        export interface Name { }
+        export function Name() { }
+        export class Name {  }
+        export const Name = function() { }
+        export const Name = class {  }
+
+- A module can have one "default" export.
+
+Syntax:
+        export default interface Name {  }
+
+Note: Only one member can be marked as default. There can't be multiple defaults in a module.
+
+- The members of any module can be accessed and used in another module by importing into context.
+
+Syntax:
+        import   {MemberName}  from  "ModuleName";
+        import   {IProductContract} from  "ProductContract";
+
+- To import any default member you don't need "{  }".
+
+Syntax:
+        import  MemberName  from  "ModuleName";
+
+- You can import both default and non-default members, but the default member can't be last.
+
+Syntax:
+        import  Default_Member, {MemberName} from "ModuleName";
+
+Ex:
+1. Add following folders into "library" folder
+        contracts
+        templates
+        component
+
+2. Add a new file into contracts
+
+        ProductContract.ts
+
+export interface IProductContract
+{
+    Name:string;
+    Price:number;
+    Qty:number;
+    Total():number;
+    Print():void;
+}
+export default interface ICategory
+{
+    CategoryName:string;
+}
+
+3. Go to Templates folder and add
+
+        ProductTemplate.ts
+
+import ICategory, {IProductContract} from "../contracts/ProductContract";
+
+export abstract class ProductTemplate implements ICategory, IProductContract
+{
+    public Name: string = "";
+    public Price: number = 0;
+    public Qty: number = 0;
+    public CategoryName: string = "";
+    public abstract Total(): number;
+    public abstract Print(): void;
+}
+
+4. Go to Component and add
+
+        ProductComponent.ts
+
+import { ProductTemplate } from "../templates/ProductTemplate";
+
+export class ProductComponent extends ProductTemplate
+{
+    Name = "Samsung TV";
+    Price = 40000.33;
+    Qty = 2;
+    CategoryName = "Electronics";
+    Total(){
+        return this.Qty * this.Price;
+    }
+    Print(){
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}`);
+    }
+}
+
+5. Add a new folder "app"  with a new file
+
+            Index.ts
+
+import { ProductComponent } from "../library/components/ProductComponent";
+
+let tv = new ProductComponent();
+tv.Print();
+
+6. Compile Index.ts
+
+        > tsc  index.ts
+        > node index.js
+
+
+Ex: JavaScript Module
+
+1. Demo.js
+
+
+export function Hello(){
+    return "Hello ! Welcome to Modules in JavaScript";
+}
+export function Addition(a,b) {
+    return a + b;
+}
+
+2. Index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import {Hello, Addition} from "../library/demo.js";
+        document.querySelector("p").innerHTML = Hello() + "<br>" + "Addition=" + Addition(20,30);
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+                        TypeScript Summary
+- TypeScript Evolution - History
+- TypeScript Features
+- TypeScript Architecture
+- TypeScript Language Basics
+    Variables
+    Data Types
+    Operators
+    Statements
+    Functions
+- TypeScript OOP
+    Contracts
+    Templates
+    Components
+    Polymorphism
+    Inheritance
+    Enum
+    Generics
+- TypeScript Modules
+
+                                Angular

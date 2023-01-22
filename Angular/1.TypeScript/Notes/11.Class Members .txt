@@ -1,0 +1,275 @@
+OOP
+- Contracts
+- Class
+    Declaration
+    Expression
+    Members
+    Static and Non Static
+    Access Modifiers: public, private, protected
+
+                                       Property
+- Properties are used to store data.
+
+Syntax:
+        public  Name:string = "John";
+        private Price:number = 45000.44;
+        protected Stock:boolean = true;
+
+- You can store any type of data in property
+        a) Primitive Type
+        b) Non Primitive Type
+
+Syntax:
+        public  Cities:string[] = [ ];
+        public  Rating:{Rate:number, Count:number} = { };
+                                (or)
+        public  Rating:IProduct = {  };
+
+- Properties are mutable.
+- Their state can change dynamically by using "Accessors"
+
+
+                                     Accessors
+- Accessor is used to give a fine grained control over any property.
+- Accessors are 2 types
+        a) Getter
+        b) Setter
+- Getter is used to read and return value.
+- Setter is used to input and write value.
+- You can read and write into a property by using accessors.
+
+Syntax:
+            get  aliasName()
+            {
+              return value;
+            }
+            set  aliasName(newValue)
+            {
+                property = newValue;
+            }
+
+Note: Accessors are available from JavaScript ES5 version
+
+Ex:
+index.ts
+
+var username:string|null = prompt("Enter Name");
+var role:string|null = prompt("Enter Your Role","admin|manager|customer");
+var productname:string|null = prompt("Enter Product Name");
+
+class Product
+{
+    public _productName:string|null = null;
+
+    get ProductName(){
+       return this._productName;
+    }
+    set ProductName(newName:string|null){
+        if(role=="admin"){
+            this._productName = newName;
+        } else {
+            document.write(`Hello ! ${username} your role ${role} is not authorized to set product name.`);
+        }
+    }
+}
+
+let tv = new Product();
+tv.ProductName = productname;
+if(tv.ProductName){
+  document.write("Product Name : " + tv.ProductName);
+}
+
+> tsc index.ts
+
+Index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="src/index.js"></script>
+</head>
+<body>
+   
+</body>
+</html>
+
+- You can also use accessors to access any property from multi level hierarchy.
+
+Ex: Index.ts
+
+class Product
+{
+    public Name:string = "Samsung TV";
+    public Rating:any = {
+        CustomerRating: {Rate:3.4, Count:4600},
+        VendorRating: {Rate:4.5, Count:300}
+    }
+    get VendorRating(){
+        return this.Rating.VendorRating.Rate;
+    }
+}
+let tv = new Product();
+console.log(`Vendor Rating: ${tv.VendorRating}`);
+
+                                    Methods
+- All about methods is same as in JavaScript.
+- You have to configure methods with access modifier and return type.
+
+Syntax:
+        public Total():number
+        {
+           return  0;
+        }
+       
+        public Print():void
+        {
+        }
+- Method is used for refactoring the code.
+- Methods are mutable.
+
+                                Constructor
+- Constructor configuration is same as in JavaScript
+- Constructor is used for instantiation.
+- Constructor is responsible for creating object for class.
+- Constructor is a software design pattern.
+- It is under "Creational Patterns" category.
+- Constructor is anonymous.
+
+Syntax:
+        class Product
+        {
+           constructor() {
+
+           }
+        }
+
+- It's parameters are same as method parameters.
+- Constructor is a special type of sub-routine that executes automatically for every object.
+
+
+FAQ: If constructor is parameterized when to pass values into constructor?
+Ans: At the time of allocting memory for object.
+
+            new className(values);
+
+JavaScript Special Operators
+- new
+- void
+- delete
+- typeof
+- instanceof
+- in
+- of   etc..
+
+Ex:
+class Database
+{
+    constructor(dbName:string){
+        console.log(`Connected with ${dbName} Database`);
+    }
+    public Insert():void{
+        console.log("Record Inserted");
+    }
+    public Delete():void {
+        console.log("Record Deleted");
+    }
+}
+let ins = new Database("oracle");
+ins.Insert();
+
+- In TypeScript constructor can't overload.
+- It will not support static and private constructor.
+
+
+Summary - Class:
+- Property
+- Method
+- Accessor
+- Constructor
+
+                             Class Implementation
+- Every class is designed as per the contract.
+- Contract is implemented by class.
+- A class can implement multiple contracts.
+
+Syntax:
+  class   className implements Contract1, Contract2
+  {
+
+  }
+
+FAQ: Can we define any member additionaly in a class which is not configured in contract?
+Ans: Yes. [Class is a Template]
+
+Ex:
+interface IProduct
+{
+    Name:string;
+    Price:number;
+    Qty:number;
+    Total():number;
+    Print():void;
+}
+interface ICategory
+{
+    CategoryName:string;
+}
+class Product implements IProduct, ICategory
+{
+    public Name: string = "";
+    public Price: number = 0;
+    public Qty: number = 0;
+    public CategoryName: string = "";
+    public Stock:boolean = true;
+    public Total(): number {
+        return this.Qty * this.Price;
+    }
+    public Print(): void {
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}\nCategory=${this.CategoryName}\nStock=${this.Stock}`);
+    }
+}
+let tv  = new Product();
+tv.Name = "Samsung TV";
+tv.Price = 45000.44;
+tv.Qty = 2;
+tv.CategoryName = "Electronics";
+tv.Print();
+
+                                Class Inhertiance
+- A class can extend another class.
+- It supports single and multi level inheritance.
+- Class can't extend multiple classes.  [Constructor Deadlock]
+- TypeScript derived class constructor must call super class constructor.
+
+Syntax:
+    class Super
+    {
+     constructor(param?){ }
+    }
+    class Derived extends Super
+    {
+      constructor(){
+         super(value);
+      }
+    }
+
+               
+Ex:
+class Super
+{
+    constructor(){
+        console.log("Super Class Constructor");
+    }
+}
+class Derived extends Super
+{
+    constructor(){
+        super();
+        console.log("Derived class Constructor");
+    }
+}
+let obj = new Derived();

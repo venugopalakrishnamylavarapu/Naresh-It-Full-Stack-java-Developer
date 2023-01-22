@@ -1,0 +1,167 @@
+TypeScript Variables
+- var
+- let
+- const
+
+                                   TypeScript Data Types                            
+- Data Type defines the data structure.
+- It defines the type, range and behaviour.
+- TypeScript is a strongly typed language.
+- It can set restriction for data reference.
+- TypeScript data types are same as JavaScript types classified into 2 groups
+
+        a) Primitive Type
+        b) Non Primitive
+
+Syntax:
+            var  variableName:dataType = value;
+
+            :            Inheritance operator
+            .        Invoking operator
+
+Note: If data type is not defined for variable in typescript then the default type
+         is "any".
+
+             var  variableName;        =>      variableName:any
+
+        TypeScript supports "Type Inference", the data type will be determined
+        according to value initialized.
+
+              var  x;                x:any
+              var x = 10;            x:number
+
+        Type Inference is based on the value initialized not assigned.
+
+               var x;                x:any
+               x = 10;                x:any
+               x = "John";        x:any
+
+Primitive Types
+- They are immutable types.
+- Structure can't change
+- Have fixed range for values.
+- Stored in memory Stack [LIFO]
+
+        a) number
+        b) string
+        c) boolean
+        d) null
+        e) undefined
+        f) symbol
+
+                                           Number
+- It can handle
+        signed integer             - 45
+        unsigned integer           45
+        floating point               34.45
+        double                    345.56
+        decimal                  3450.56
+        binary                        0b101
+        hexa                        0 to f
+        octa                        0o495
+        bigint                        Binary [format]
+        exponent                    2e3                     2 x 10[3] = 2000
+
+ Syntax:
+              var  price:number  = 3400.56;
+              var  rate:number =  2e3;                [2000]
+              var  bit:number  = 0b1010;                [10]
+
+Ex:
+const bit:number = 0b1010;
+const exp:number = 2e3;
+console.log("Bit=" + bit + "\n" + "Exponent=" + exp);
+
+- To verify the input type number or not, we use the function "isNaN()".
+- To convert string format numeric value into number we use
+            a) parseInt()
+            b) parseFloat()
+
+<script>
+     document.write(Number.MIN_SAFE_INTEGER);
+      document.write(Number.MAX_SAFE_INTEGER);
+</script>
+
+                                       String Type
+
+- String is a literal with group of characters enclosed in
+            a) Single Quote        '     '
+            b) Double Quote        "   "
+            c) BackTick                `    `
+- Back Tick is new from ES5+, it allows embedded expression "${ }"
+
+Syntax:
+            var  link:string  = "<a href='home.html'>Home</a>";
+            var link:string  = '<a href="home.html">Home</a>';
+
+- Single and double quote uses "+"  to concat expression.
+- Back tick uses embedded data binding expression  "${}"
+
+Ex:
+var username:string = "John";
+var age:number = 23;
+var msg1:string = "Hello !" + " " + username + " " + "you will be" + " " + (age+1) + " " + "next year";
+var msg2:string = `Hello ! ${username} you will be ${age+1} next year`;
+console.log(msg1);
+console.log(msg2);
+
+
+- String formatting and manipulation methods are same in TypeScript.
+
+String Formatting Methods:
+bold()
+italics()
+sup()
+sub()
+fontsize()
+fontcolor()
+toUpperCase()
+toLowerCase()
+
+String Manipulations Methods:
+indexOf()
+lastIndexOf()
+charAt()
+charCodeAt()
+startsWith()
+endsWith()
+slice()
+substr()
+substring()
+match()
+split()
+trim()
+length etc..
+
+Ex:
+var mobile:string = "+(44)(30) 2242 4563";
+if(mobile.match(/\+\(44\)\([0-9]{2}\)\s[0-9]{4}\s[0-9]{4}/)) {
+   console.log("OTP Sent");
+} else {
+  console.log("Invalid Mobile");
+}
+
+
+                                        Boolean Type
+- Boolean types are used in decision making.
+- Boolean type can handle
+        a) true
+        b) false
+- JavaScript boolean type  "true = 1"  and "false = 0".
+- TypeScript will not allow  1 and 0 for boolean. You have to use "true or false".
+
+Syntax:
+        var  stock:boolean  = true;
+        if(stock==1)     // invalid in typescript but valid in javascript
+        {
+        }
+        if(stock==true)
+        {
+        }
+
+Note: TypeScript supports "Union of Types".
+
+            var name:string|number;
+
+             var username:string|null = prompt("Enter Name");
+             var username:string = prompt("Enter Name");     // invalid

@@ -1,0 +1,194 @@
+Contracts
+- Contract defines rules for designing any component.
+- Contracts are designed by using "interface".
+- Interface contains the rules for designing a component.
+
+Syntax:
+        interface  Name
+        {
+            // rules
+        }
+
+- Interface must contain only rules not any implementation.
+
+        interface  Name
+        {
+           Property:Type = value;        // invalid
+        }
+
+Ex:
+  interface   IProduct
+  {
+    Name:string;
+    Price:number;
+    Stock:boolean;
+  }
+
+  let  product: IProduct = {
+        Name: "Samsung TV",
+        Price: 34000.44,
+       Stock: true
+  }
+
+- Contract can have optional rules
+- Optional rules are defined by using "null reference character - ?"
+- Optional rules are required to design goals.
+
+Syntax:
+    interface IProduct
+    {
+     Name:string;                ]
+     Price:number;                ]  Objectives
+     Stock:boolean;            ]
+     Rating?:number;            => Goal
+    }
+
+- A contract can have read-only rules.
+- Readonly rule will not allow to assign a value after initialization.
+
+Syntax:
+interface  IProduct
+{
+  Name:string;
+  readonly Price:number;
+}
+let  product:IProduct = {
+  Name: "TV",
+  Price: 45000.44,
+}
+product.Name = "Samsung TV";        // valid
+product.Price = 60000.44;                // invalid - readonly
+
+- Contract can have rules for methods.
+- Method rule comprises of declaration and signature.
+- Method rule can't have definition.
+- Method name in contract is defined by using "( )".
+
+Syntax:
+ interface IProduct
+ {
+   Name:string;
+   Total():number;
+   Print():void;
+ }
+
+- Method rule can define parameters.
+
+Syntax:
+ interface  IProduct
+ {
+    Details(Name:string, Price:number): void;
+ }
+
+Ex:
+interface IProduct
+{
+    Name:string;
+    Price:number;
+    Qty:number;
+    Total():number;
+    Print?():void;
+}
+let product:IProduct = {
+    Name : "TV",
+    Price: 45000.44,
+    Qty: 2,
+    Total: function(){
+        return this.Qty * this.Price;
+    },
+    Print:function(){
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}`);
+    }
+}
+product.Print();
+
+- You can extend contracts.
+- You have to extend contracts inorder to achive "Backward Compability".
+- Backward compability allow users to use older version and its features even when a new version is available.
+
+Syntax:
+    interface  version1
+    {
+       A:string;
+       B:string;
+    }
+    interface  version2 extends  version1
+    {
+      C:string;
+    }
+
+Ex:
+interface Hdfc_Version1_Contract
+{
+    Personal:string;
+    NRI:string;
+}
+interface Hdfc_Version2_Contract extends Hdfc_Version1_Contract
+{
+    Loans:string;
+}
+
+let low_compatible_user:Hdfc_Version1_Contract = {
+    Personal : "Personal Banking",
+    NRI: "NRI Banking",
+}
+let high_compatible_user:Hdfc_Version2_Contract = {
+    Personal : "Personal Banking",
+    NRI : "NRI Banking",
+    Loans: "Personal and Housing Loans"
+}
+
+- Contract support  multiple and multi level extentions.
+   [Inheritance]
+
+FAQ: What is backward compatiblity?
+FAQ: What is side by side execution?
+ANs : It is the ability of running multiple versions of same application
+        on a device.
+
+Ex:
+interface Hdfc_Version1_Contract
+{
+    Personal:string;
+    NRI:string;
+}
+interface Hdfc_Version2_Contract extends Hdfc_Version1_Contract
+{
+    Loans:string;
+}
+interface Hdfc_Version3_Contract extends Hdfc_Version2_Contract
+{
+    GovtSchemes:string;
+}
+
+let low_compatible_user:Hdfc_Version1_Contract = {
+    Personal : "Personal Banking",
+    NRI: "NRI Banking",
+}
+let high_compatible_user:Hdfc_Version2_Contract = {
+    Personal : "Personal Banking",
+    NRI : "NRI Banking",
+    Loans: "Personal and Housing Loans"
+}
+
+Ex: Multiple
+
+interface IProduct
+{
+    Name:string;
+    Price:number;
+}
+interface ICategory
+{
+    CategoryName:string;
+}
+interface ProductContract extends IProduct, ICategory
+{
+    Title:string;
+}
+let obj :ProductContract = {
+    Name : "TV",
+    Price : 45000.44,
+    CategoryName : "Electronics",
+    Title:"Samsung"
+}
