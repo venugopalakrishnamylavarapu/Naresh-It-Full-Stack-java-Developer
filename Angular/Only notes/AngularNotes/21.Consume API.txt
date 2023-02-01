@@ -1,0 +1,149 @@
+One Way Binding
+Two Way Binding
+    a) MVC
+    b) MVVM
+                    Consuming Data from API
+
+- There are 3 types of specification for services on Web.
+        a) SOAP
+        b) REST
+        c) JSON
+
+- SOAP
+    Service Oriented Architecture Protocol
+    Consumer sends XML request.
+    Provider sends XML response.
+
+- REST
+    Representational State Transfer
+    Consumer sends a query request.
+    Provider sends XML or JSON response.
+
+- JSON
+    JavaScript Object Notation
+    Consumer sends JSON request.
+    Provider send JSON response.
+
+
+Syntax: REST
+           
+            http://sitename.com/products?id=2
+            http://sitename.com/products?category=mobiles&brand=lg
+
+                                (or)
+            http://sitename.com/products/2                    [Routing]
+            http://sitename.com/products/mobiles/lg        [Routing]
+
+            {
+              Name: "TV",
+              Price: 45000.44
+            }
+
+            <Product>
+               <Name> TV </Name>
+               <Price> 45000.44 </Price>
+            </Product>
+
+- JavaScript provides "fetch()" promise to access data from API.
+
+Syntax:
+        fetch("url")
+        .then(function(response){        => binary format
+           return response.json();
+        })    
+        .then(function(data){
+            ...present data..
+        })
+
+Ex: Fakestore API  [Data for ERP]
+        http://fakestoreapi.com
+
+Methods:
+ 
+GET        http://fakestoreapi.com/products        [ { }, { } ]
+GET        http://fakestoreapi.com/products/1        { }
+
+
+Ex:
+1. Add a new contract
+       
+        FakestoreProductContract.ts
+
+export interface FakestoreProductContract
+{
+    id:number;
+    title:string;
+    price:number;
+    description:string;
+    category:string;
+    image:string;
+    rating:{rate:number, count:number}
+}
+
+2.  fakestore.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+
+@Component({
+  selector: 'app-fakestore',
+  templateUrl: './fakestore.component.html',
+  styleUrls: ['./fakestore.component.css']
+})
+export class FakestoreComponent implements OnInit {
+   constructor(){
+
+   }
+   public Product:FakestoreProductContract = {
+       id: 0,
+       title: '',
+       price: 0,
+       description: '',
+       category:'',
+       image:'',
+       rating: {rate: 0, count: 0}
+   }
+   public LoadProduct(id:number):void {
+      fetch(`http://fakestoreapi.com/products/${id}`)
+      .then(response=> response.json())
+      .then(data=> {
+         this.Product = data;
+      })
+   }
+   ngOnInit(): void {
+      this.LoadProduct(1);
+   }
+   public Count:number = 1;
+   public NextClick():void {
+      this.Count++;
+      this.LoadProduct(this.Count);
+   }
+   public PreviousClick():void {
+     this.Count--;
+     this.LoadProduct(this.Count);
+   }
+}
+
+3. fakestore.component.html
+
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Title</dt>
+        <dd>{{Product.title}}</dd>
+        <dt>Price</dt>
+        <dd>{{Product.price}}</dd>
+        <dt>Preview</dt>
+        <dd>
+            <img [src]="Product.image" width="200" height="200">
+        </dd>
+        <dt>Rating</dt>
+        <dd><span class="bi bi-star-fill text-success"></span> {{Product.rating.rate}} [{{Product.rating.count}}]</dd>
+    </dl>
+    <button (click)="PreviousClick()" class="btn btn-success me-2">
+        <span class="bi bi-chevron-left"></span>
+    </button>
+    <button (click)="NextClick()" class="btn btn-success">
+        <span class="bi bi-chevron-right"></span>
+    </button>
+</div>

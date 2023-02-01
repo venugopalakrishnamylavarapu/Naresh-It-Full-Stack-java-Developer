@@ -1,0 +1,113 @@
+Adding Component using Code Behind Technique
+- In this technique component is defined using 4 files
+
+        1. component.html            Presentation
+        2. component.css            Styles
+        3. component.ts            Logic
+        4. component.spec.ts        Testing
+
+- Clean separation of presentation, styles and logic.
+- Easy to extend and test.
+- Easy to re-use.
+- The number of requests will increase, hence it will effect the page load time.
+- If you need a component with regular extentions then better use code behind technique.
+
+Ex:
+1. Go to components folder and add a sub folder "login".
+
+2. Add following files into login folder
+
+        login.component.ts
+        login.component.html
+        login.component.css
+
+login.component.ts
+
+import { Component } from "@angular/core";
+
+@Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
+})
+export class LoginComponent
+{
+
+}
+
+login.component.html
+
+<div class="container-fluid">
+    <div class="login-form">
+        <form>
+            <h2> <span class="bi bi-person-fill"></span> User Login</h2>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" class="form-control"></dd>
+                <dt>Password</dt>
+                <dd><input type="password" class="form-control"></dd>
+            </dl>
+            <button class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>
+
+login.component.css
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+form {
+    border:1px solid gray;
+    box-shadow: 2px 2px 3px gray;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+3. Register the component is app.module.ts
+
+    declarations : [  LoginComponent ]
+    bootstrap: [ LoginComponent ]
+
+4. Index.html
+        <app-login> </app-login>
+
+Note: In code behind technique @Component() directive will use
+                a) templateUrl : " "
+                b) styleUrls  : [ ]
+        In inline technique  @Component() uses
+                a) template : ""
+                b) styles    : []
+
+            Adding Components by using CLI commands
+            --------------------------------------------------------------
+- Angular supports "Scaffolding".
+- Scaffolding is a technique where the code is generated according to the developers requirement.
+- Run the following commands in terminal  [ app\components> ]
+
+Command                                Purpose
+----------------------------------------------------------------------------------
+ ng generate component  name    It generates a new component.
+                    (or)                    It adds 4 files
+ ng  g   c  name                            .html
+                                                .css
+                                                .ts
+                                                .spec.ts
+                                            It registers is app.module.ts
+
+--dry-run                                    The "--dry-run" option means no                                                 changes were made.
+
+--inline-template                        It will not generate .html
+
+--inline-style                                It will not generate .css
+
+--skip-tests                                It will not generate .spec.ts
+
+Syntax:
+
+ >ng generate component  home  --dry-run  --inline-template --inline-style  --skip-tests
+
+> ng  g  c  home

@@ -1,0 +1,121 @@
+Project File System
+
+File/Folder                    Description
+---------------------------------------------------------------------------------------------
+tsconfig.app.json            It comprises of rules for typescript used in
+                                current application. [project].
+
+tsconfig.spec.json            It is a test specification file, that comprises
+                                methods which are used for testing typescript
+                                rules.
+
+src                                It is a project folder that comprises of all
+                                project resources.
+
+src/app                        It comprises of application dynamic
+                                resources like
+                                - components
+                                - services
+                                - modules
+                                - pipes etc...
+
+src/assets                    It comprises of static resources like
+                                - images
+                                - documents [docs, pdf]
+                                - multi media [audio, video] etc..
+
+favicon.ico                    It defines the shortcut icon displayed in
+                                browser title bar.
+
+
+index.html                    It is the startup page.
+
+
+main.ts                        It is the entry point for application.
+                                The execution of application starts from main.
+
+styles.css                    It comprises of global styles used in
+                                application.
+
+src/app/app.module.ts    It imports and exports all library that is
+                                required for application.
+
+
+                        Angular Application Architecture
+1. Factory
+    - It is a set for values and functions.
+    - It uses single call mechanism.
+    - In single call mechanism an object is created everytime when a
+     function is required.
+
+2. Service
+    - It is a pre-defined business logic.
+    - It comprises of set of factories.
+    - It uses single ton mechanism.
+    - Single ton creates an object for first request and uses the same
+     accross all other requests.
+
+3. Component
+    - It comprises of presentation, styles and logic.
+    - It is a template for desing and funcitonality.
+    - Component uses services.
+    - Markup is using HTML, styles by using CSS and logic with Typescript.
+
+4. SPA Environment
+    - Index is the startup page in SPA.
+    - Index page uses components for presentation and functionality.
+    - SPA is component based.
+
+Ex:
+1. Go to "app" folder
+2. Customize "app.component.html"
+
+<div class="container">
+  <h1>Angular Shopping</h1>
+</div>
+
+3. Add styles in "app.component.css"
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+h1 {
+    padding: 20px;
+    border:1px solid gray;
+    box-shadow: 2px 2px 3px black;
+    font-family: Arial;
+    border-radius: 20px;
+    background-color: yellow;
+}
+
+4. Index.html uses App Component by its selector name "app-root"
+
+ <body>
+    <app-root> </app-root>
+ </body>
+
+
+                          Application Flow
+
+1. User Requests application from browser
+            http://localhost:4200
+
+2. It invokes "main.ts"
+
+3. main.ts imports "AppModule" and bootstraps "AppModule".
+
+Note: Bootstrapping is the process of converting the static library into
+         dynamic. [Injecting => Compiling => Processing]
+
+4. app.module.ts  imports all library required for project.
+
+5.  app.module.ts will bootstrap the components that you want in index.html
+
+6. Index.html  uses the bootstrap components by using selectors
+
+            <app-login>
+            <app-register>
+            <app-root>

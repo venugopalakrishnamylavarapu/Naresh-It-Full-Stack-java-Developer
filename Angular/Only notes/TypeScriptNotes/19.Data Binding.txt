@@ -1,0 +1,139 @@
+Summary
+- What is component?
+- How to add component manually?
+- How to add component using CLI commands?
+- How to add inline and code behind components?
+- How to access a component in another?
+
+                        Data Binding in Angular
+
+- Data binding is a technique used in web applications, where the data is accessed from source and binded to UI. It identifies the changes in UI and update back to source.
+
+- JavaScript and jQuery handles data binding by using lot of DOM methods and Events.
+
+- Angular is completely de-coupled from DOM manipulations.
+
+- Angular implicitly uses Frameworks like
+        a) MVC [Model-View-Controller]
+        b) MVVM [Model-View View-Model]
+
+- MVC and MVVM framework will handle data binding.
+- Framework is a set of libraries with implicit flow controlled for application.
+
+                             What is MVC?
+- It is an software architectural pattern.
+- Architectural pattern can build and control application flow.
+- It is same like design pattern but have broader scope.
+- Trygve introduced MVC in early 1970's with Small Talk.
+- Originally designed for "DeskTop Applications"
+- Now it is used in web applications.
+- Every technology knows and uses MVC
+
+        Java                    Spring MVC
+        Python                Django, Flask, Grok
+        PHP                    Cake PHP, Code Igniter
+        .NET                    ASP.NET MVC
+        Ruby                    Ruby on Rails
+        Perl                    Catalyst, Dancer
+        JavaScript            SPINE, AngularJS, Backbone etc..
+
+MVC Architecture
+- It separates application into 3 components
+        a) Model    
+        b) View
+        c) Controller
+- Model Represents Data
+- View Represents UI
+- Controller Represents Application Logic.
+- Angular uses MVC framework for data binding.
+- Data Binding is classified into 2 types
+        a) One Way Binding
+        b) Two Way Binding
+
+One Way Binding
+- It is the process of accessing data from source and binding to UI.
+- It will not update the changes in UI to source.
+- You can binding the value by using various binding techniques
+
+    a) Attribute Binding
+    b) Property Binding
+    c) Interpolation
+
+- Interpolation is the process of binding a value by using data binding expression "{{  }}"
+
+Syntax:
+            public  UserName:string = "John";
+
+            <input type="text"  value="{{Username}}">  
+            <span> {{ UserName }} </span>
+
+- Interpolation is forward only and one time only.
+
+Syntax:
+            public  Stock:booelan = true;
+   
+            <input type="checkbox"  checked="{{Stock}}">
+
+ Note: Checked attribute will not update the boolean or assign boolean.
+
+                            Property Binding
+- It allows to bind any value to element.
+- It keeps the value updated.
+- Property binding is defined by specifying the property name in "[ ]"
+
+        <input type="checkbox" [checked]="Stock">
+
+Attribute Binding:
+==================
+- Every element don't have all the properties that are available as attributes.
+
+        <table  height="200"  width="300" border="1">
+
+        var table = document.createElement("table");
+        table.width = "300";
+        table.height ="200";       // error : height is not a property
+
+
+- You have to bind directly to attribute by using the prefix "attr"
+
+        public tWidth:number = 300;
+        public tHeight:number = 200;
+
+        <table  [width]="tWidth"  [attr.height]="tHeight" border="1">
+        <table  [width]="tWidth"  [height]="tHeight" border="1">
+
+            Error: height is not a property of table.
+
+
+
+Ex:
+data-binding.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-data-binding',
+  templateUrl: './data-binding.component.html',
+  styleUrls: ['./data-binding.component.css']
+})
+export class DataBindingComponent {
+   public Stock:boolean = false;
+   public UserName:string = "John";
+}
+
+
+data-binding.component.html
+
+<div class="container-fluid">
+   <h2>Interpolation</h2>
+   <dl>
+    <dt>Stock</dt>
+    <dd>
+        <input type="checkbox" [checked]="Stock" > {{(Stock==true)?"Available":"Out of Stock"}}
+    </dd>
+    <dt>Name</dt>
+    <dd>
+        <input type="text" [value]="UserName">
+    </dd>
+   </dl>
+</div>

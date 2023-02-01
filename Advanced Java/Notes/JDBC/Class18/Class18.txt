@@ -1,0 +1,85 @@
+inserting records with methods:
+==============================
+java.sql.ResultSet
+
+Method:
+public abstract void moveToInsertRow() throws SQLException;
+
+=>it is used to move the cursor to insert a record.
+  public abstract void insertRow() throws SQLException;
+=>it is used to insert a record.
+
+
+Deleting records with methods:
+=============================
+java.sql.ResultSet
+
+Method:
+public abtract void deleteRow() throws SQLException;
+=>It is used to delete a record.
+
+
+Batch Processing (or) Batch Updates:
+====================================
+This feature allows to execute more than one sql query at a time.
+
+By using this feature we can reduce network traffic in realtime applications.
+
+Methods:
+
+public abstract void addBatch(String) throws SQLException;
+
+public abstract int[] executeBatch() throws SQLException;
+
+
+Advanced Data Types:
+====================
+1) BLOB
+2) CLOB
+
+BLOB:
+=====
+BLOB stands for Binary Large OBject.
+
+it is used to store or retrirve large amount of binary data as a single entity in/from database.
+
+BLOB supports all types of data (text,image,graphics,animation,audio,vedio,..etc.,)
+
+CLOB:
+====
+CLOB stands for Character Large OBject.
+it is used to store or retrieve large amount of character data as a single entitiy in/from database.
+CLOB supports text only.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

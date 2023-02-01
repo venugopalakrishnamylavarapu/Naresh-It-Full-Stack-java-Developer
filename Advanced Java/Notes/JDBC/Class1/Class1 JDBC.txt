@@ -1,0 +1,64 @@
+Jdbc
+====
+Jdbc stands for Java DataBase Connectivity.
+
+Jdbc is a specification for developing database applications
+with java programming language.
+
+
+Database Application
+=====================
+An "application" that communicates with "database" is known as database 
+application.
+
+Application
+===========
+An application is a program in which we interact with on the desktop.
+ex:-notepad,games,mypc etc
+
+Database
+========
+A database is a software and it is an organized collection of "data".
+
+Data is organized in a database in the form of tables.
+
+Here each table contains fields and records.
+
+Database software contains two parts
+1)Database Application[ex:-sqlplus,sqlservices]
+2)Database[ex:-oracle,mysql,sql]
+
+List of database softwares
+==========================
+1)Oracle
+2)MySQL
+3)MS-Access
+4)Derby
+5)DB2
+6)Sybase
+7)DBase
+8)FoxPro
+9)MS-SQL server
+10)Visual FoxPro
+11)MongoDB... etc.,
+
+
+Data Application is frontend where as database is a backend.
+
+Applications are communicating with databases by using "SQL".
+
+SQL:-
+===
+SQL stands for Structured Query Language and it is used by application to communicate with
+database.
+
+Application is called as client where as database is called as server.
+
+Client
+======
+a client is a software that sends the request to get the response.
+
+Server
+======
+a server is a software that receives request from the client,process the request,
+constructs the response & sends the response back to a client.

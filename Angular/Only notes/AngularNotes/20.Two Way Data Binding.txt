@@ -1,0 +1,196 @@
+Angular Data Binding
+- One Way Binding
+    a) Interpolation                {{ }}
+    b) Property binding        [ ]
+    c) Attribute binding        [attr.name]
+- MVC, MVVM
+
+                         Two Way Data Binding
+- Two way refers to bi-directional data transfer.
+- The data present in source is binded to UI.
+- The modificiations on data in UI will update to source.
+-  It is managed by "Model" in MVC.
+- Angular model is "NgModel", which is known as a Directive.
+- It refers to "Single-Source-Of-Truth".
+- It tracks and keeps information about the changes in data.
+
+            " Model  is  Single-Source-Of-Truth"
+
+- NgModel is a member of "FormsModule" which is defined in
+  "@angular/forms"
+
+- In order to use "NgModel" you have to import in "app.module.ts"
+
+    import  { FormsModule } from  "@angular/forms";
+
+    imports: [
+                FormsModule
+               ]
+
+- NgModel uses property and event binding techniques.
+- NgModel uses [property] binding to get value from source and attach to UI.
+- NgModel uses (event) biniding to identify the changes and update back to source.
+
+Syntax:        
+            [ ]        => Property Binding [value, checked..]
+            ( )        => Event Binding    [change]
+
+    <input type="text"  [(ngModel)]="SourceRefName">
+
+Ex:
+databinding.component.ts
+
+   public UserName:string = "John";
+
+databinding.component.html
+
+<div class="container-fluid">
+   <h2>Two Way Binding</h2>
+   User Name : <input type="text" [(ngModel)]="UserName">
+   <h4>Hello ! {{UserName}} </h4>
+</div>
+
+Ex: MVC
+- Add contracts folder
+- Add a new file
+        "ProductContract.ts"
+
+export interface ProductContract
+{
+    Name:string;
+    Price:number;
+    Stock:boolean;
+    ShippedTo:string;
+}
+
+
+Databinding.component.ts
+
+import { Component } from '@angular/core';
+import { ProductContract } from '../../contracts/ProductContract';
+
+@Component({
+  selector: 'app-data-binding',
+  templateUrl: './data-binding.component.html',
+  styleUrls: ['./data-binding.component.css']
+})
+export class DataBindingComponent {
+     public Product:ProductContract = {
+        Name: "",
+        Price: 0,
+        Stock: false,
+        ShippedTo: ""
+     }
+     public UpdatedProduct:ProductContract = {
+        Name: "",
+        Price: 0,
+        Stock: false,
+        ShippedTo: ""
+     }
+     public RegisterClick():void {
+         this.UpdatedProduct = this.Product;
+     }
+}
+
+
+databinding.component.html
+
+<div class="container-fluid">
+   <div class="row">
+        <div class="col-3">
+            <h2>Register Product</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd><input type="text" [(ngModel)]="Product.Name" class="form-control"></dd>
+                <dt>Price</dt>
+                <dd><input type="text" [(ngModel)]="Product.Price" class="form-control"></dd>
+                <dt>Stock</dt>
+                <dd class="form-switch"> <input [(ngModel)]="Product.Stock" type="checkbox" class="form-check-input"> Available</dd>
+                <dt>Shipped To</dt>
+                <dd>
+                    <select [(ngModel)]="Product.ShippedTo" class="form-select">
+                        <option>Delhi</option>
+                        <option>Hyd</option>
+                    </select>
+                </dd>
+            </dl>
+            <button (click)="RegisterClick()" class="btn btn-primary w-100">Register</button>
+        </div>
+        <div class="col-9">
+           <h2>Details</h2>
+           <dl>
+            <dt>Name</dt>
+            <dd [innerText]="UpdatedProduct.Name"></dd>
+            <dt>Price</dt>
+            <dd>{{UpdatedProduct.Price}}</dd>
+            <dt>Stock</dt>
+            <dd>{{(UpdatedProduct.Stock==true)?"Available":"Out of Stock"}}</dd>
+            <dt>Shipped To</dt>
+            <dd>{{UpdatedProduct.ShippedTo}}</dd>
+           </dl>
+        </div>
+   </div>
+</div>
+
+                                    MVVM
+- It is an software architectural pattern.
+- Model-View  View-Model
+- Model configures memory in View and uses the memory for data.
+- You don't need the use of controller for handling data updates.
+- NgModel will manage MVVM.
+
+Syntax:
+    <input type="text"  ngModel   #Name="ngModel">
+
+- Every ViewModel object contains lot of properties
+
+        Name.value
+        Name.pristine
+        Name.dirty
+        Name.valid
+        Name.invalid
+        Name.touched
+        Name.untouched etc...
+
+        <p> {{ Name.value }}
+
+        <input type="text"  required  minlength  maxlength pattern>
+
+Ex:
+databinding.component.html
+
+<div class="container-fluid">
+   <div class="row">
+        <div class="col-3">
+            <h2>Register Product</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd><input type="text" ngModel #Name="ngModel" class="form-control"></dd>
+                <dt>Price</dt>
+                <dd><input type="text" ngModel #Price="ngModel" class="form-control"></dd>
+                <dt>Stock</dt>
+                <dd class="form-switch"> <input ngModel #Stock="ngModel" type="checkbox" class="form-check-input"> Available</dd>
+                <dt>Shipped To</dt>
+                <dd>
+                    <select ngModel #ShippedTo="ngModel"  class="form-select">
+                        <option>Delhi</option>
+                        <option>Hyd</option>
+                    </select>
+                </dd>
+            </dl>
+        </div>
+        <div class="col-9">
+           <h2>Details</h2>
+           <dl>
+            <dt>Name</dt>
+            <dd>{{Name.value}}</dd>
+            <dt>Price</dt>
+            <dd>{{Price.value}}</dd>
+            <dt>Stock</dt>
+            <dd>{{(Stock.value==true)?"Available":"Out of Stock"}}</dd>
+            <dt>Shipped To</dt>
+            <dd>{{ShippedTo.value}}</dd>
+           </dl>
+        </div>
+   </div>
+</div>

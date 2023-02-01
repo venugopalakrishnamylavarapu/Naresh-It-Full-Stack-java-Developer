@@ -1,0 +1,216 @@
+javax.sql.RowSet
+
+Methods:
+public abstract void setUrl(String) throws SQLException;
+
+public abstract void setUsername(String) throws SQLException;
+
+public abstract void setPassword(String) throws SQLException;
+
+public abstract void setCommand(String) throws SQLException;
+
+public abstract void execute() throws SQLException;
+
+
+JdbcRowSet:
+==========
+it is a serilizable object.
+it is a connected object.
+it is a java bean.
+in order to get JdbcRowSet we need JdbcRowSet implementation class only.
+
+JdbcRowSet jrs=new OracleJDBCRowSet();
+
+program example:
+----------------
+
+import javax.sql.rowset.JdbcRowSet;
+
+import oracle.jdbc.rowset.OracleJDBCRowSet;
+
+public class JdbcRowSet {
+	public static void main(String[] args) {
+		try {
+			JdbcRowSet jrs=new OracleJDBCRowSet();
+			jrs.setUrl("jdbc:oracle:thin:@localhost:1521:SYSTEM");
+			jrs.setUsername("system");
+			jrs.setPassword("tiger");
+			jrs.setCommand("select * from test1002");
+			jrs.execute();
+			while(jrs.next())
+			{
+				System.out.print(jrs.getInt(1)+"\t");
+				System.out.print(jrs.getString(2)+"\t\t");
+				System.out.println(jrs.getString(3));
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+CachedRowSet:
+=============
+it is serilizable object.
+it is a disconnected object.
+it is a java bean.
+in order to get CachedRowSet we need CachedRowSet implementation class only.
+
+CachedRowSet jrs=new OracleCachedRowSet();
+
+examle:
+======
+import javax.sql.rowset.CachedRowSet;
+
+import oracle.jdbc.rowset.OracleCachedRowSet;
+
+//CachedRowSet
+public class Class20A {
+	public static void main(String[] args) {
+		try {
+			CachedRowSet jrs=new OracleCachedRowSet();
+			/*same as JdbcRowSet program from here onwards*/
+			jrs.setUrl("jdbc:oracle:thin:@localhost:1521:SYSTEM");
+			jrs.setUsername("system");
+			jrs.setPassword("tiger");
+			jrs.setCommand("select * from test1002");
+			jrs.execute();
+			while(jrs.next())
+			{
+				System.out.print(jrs.getInt(1)+"\t");
+				System.out.print(jrs.getString(2)+"\t\t");
+				System.out.println(jrs.getString(3));
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+WebRowSet:
+==========
+it is same as CachedRowSet and additionally it allows to write WebRowSet data to xml file.
+XML stands for eXtensible Markup Language.
+Generated Xml file can be used in internet applications.
+
+javax.sql.rowset.WebRowSet
+
+Methods:
+public abstract void writeXml(Writer) throws SQLException;
+public abstract void writeXml(OutputStream) throws SQLException,IOException;
+
+=>The above methods are used to write WebRowSet data to spexified xml file
+
+Example:
+========
+import java.io.FileOutputStream;
+
+import javax.sql.rowset.WebRowSet;
+
+import oracle.jdbc.rowset.OracleWebRowSet;
+//WebRowSet -> mostly it is used to create xml files
+public class WRSet {
+	public static void main(String[] args) {
+		try {
+			WebRowSet wrs=new OracleWebRowSet();
+			wrs.setUrl("jdbc:oracle:thin:@localhost:1521:SYSTEM");
+			wrs.setUsername("system");
+			wrs.setPassword("tiger");
+			wrs.setCommand("select * from test1002");
+			wrs.execute();
+			FileOutputStream fos=new FileOutputStream("test1002.xml");
+			wrs.writeXml(fos);
+			System.out.println("Xml file created");
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
