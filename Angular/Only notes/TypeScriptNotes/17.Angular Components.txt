@@ -24,8 +24,8 @@ Angular Components
 - Inline technique reduces the number of requests and improves the page load time.
 - Inline technique is not good for reusability, extensibility and testability.
 
-           Manually adding a component using Inline Technique
-           -------------------------------------------------------------------------
+          Manually adding a component using Inline Technique
+          --------------------------------------------------
 - Technically component is TypeScript class
 
         class  NetflixRegister

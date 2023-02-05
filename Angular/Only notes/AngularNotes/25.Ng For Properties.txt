@@ -1,0 +1,228 @@
+NgFor Properties
+
+Property                Type                Description
+-----------------------------------------------------------------------------
+index                    number            It returns the index number of
+                                            repeating element.
+
+first                    boolean            It returns true if the repeating
+                                            element is the first element.
+
+last                    boolean            It returns true if the repeating
+                                            element is the last element.
+
+even                    boolean            It returns true if the repeating
+                                            element is at even occurance.
+
+odd                    boolean            It returns true if the repeating
+                                            element is at odd occurance.
+
+trackBy                function            It tracks the changes in iterator
+                                            and updates only the elements
+                                            that changed.
+
+
+Ex:
+for-demo.component.css
+
+.odd {
+    background-color: rgb(250, 193, 193);
+}
+.even {
+    background-color: rgb(224, 254, 179);
+}
+
+for-demo.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+
+@Component({
+  selector: 'app-for-demo',
+  templateUrl: './for-demo.component.html',
+  styleUrls: ['./for-demo.component.css']
+})
+export class ForDemoComponent implements OnInit {
+    public Products:FakestoreProductContract[] = [];
+    constructor(){}
+    ngOnInit(): void {
+        fetch("http://fakestoreapi.com/products&quot;)
+        .then(response=> response.json())
+        .then(data=> {
+           this.Products = data;
+        })
+    }
+}
+
+for-demo.component.html
+
+<div class="container-fluid">
+   <div class="mt-4">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+               <th>Preview</th>
+               <th>Index</th>
+               <th>First</th>
+               <th>Last</th>
+               <th>Even</th>
+               <th>Odd</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr [class.even]="e" [class.odd]="o" *ngFor="let item of Products; let i=index; let f=first; let l=last; let e=even; let o=odd">
+               <td> <img [src]="item.image" width="100" height="100"> </td>
+               <td> {{i}} </td>
+               <td>{{f}}</td>
+               <td>{{l}}</td>
+               <td>{{e}}</td>
+               <td>{{o}}</td>
+            </tr>
+          </tbody>
+        </table>
+   </div>
+</div>
+
+
+Ex: Track By
+
+for-demo.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+
+@Component({
+  selector: 'app-for-demo',
+  templateUrl: './for-demo.component.html',
+  styleUrls: ['./for-demo.component.css']
+})
+export class ForDemoComponent implements OnInit {
+    public Products:any[] = [
+      {Name: "TV", Price: 45000.44},
+      {Name: "Mobile", Price:13400.44},
+      {Name: "Shoe", Price: 5000.33}
+    ]
+    constructor(){}
+    ngOnInit(): void {
+     
+    }
+    public UpdateClick(){
+       alert('Update Clicked');
+       this.Products = [
+        {Name: "TV", Price: 45000.44},
+        {Name: "Mobile", Price:13400.44},
+        {Name: "Shoe", Price: 5000.33},
+        {Name: "Watch", Price: 2300.44}
+       ]
+    }
+    public TrackChanges(index:number){
+        return index;
+    }
+}
+
+for-demo.component.html
+
+<div class="container-fluid">
+   <div class="mt-4">
+      <div class="mb-2">
+         <button (click)="UpdateClick()" class="btn btn-primary">Update</button>
+      </div>
+       <table class="table table-hover">
+          <thead>
+            <tr>
+               <th>Name</th>
+               <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of Products; trackBy:TrackChanges">
+               <td>{{item.Name}}</td>
+               <td>{{item.Price}}</td>
+            </tr>
+          </tbody>
+       </table>
+   </div>
+</div>
+
+                                api.nasa.gov
+Ex: Table
+
+for-demo.component.ts
+
+
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+
+@Component({
+  selector: 'app-for-demo',
+  templateUrl: './for-demo.component.html',
+  styleUrls: ['./for-demo.component.css']
+})
+export class ForDemoComponent implements OnInit {
+    public MarsObject:any = {};
+
+    constructor(){}
+    ngOnInit(): void {
+        fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY&quot;)
+        .then(response=> response.json())
+        .then(data=>{
+           this.MarsObject = data;
+        })
+    }
+
+}
+
+for-demo.component.html
+
+<div class="container-fluid">
+   <div class="mt-4">
+       <table class="table table-hover">
+         <thead>
+            <tr>
+               <th>Photo Id</th>
+               <th>Preview</th>
+               <th>Camera</th>
+               <th>Rover</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let item of MarsObject.photos">
+                <td>{{item.id}}</td>
+                <td>
+                  <a [href]="item.img_src" target="_blank">
+                     <img width="100" height="100" [src]="item.img_src">
+                  </a>
+                </td>
+                <td>
+                  {{item.camera.full_name}}
+                </td>
+                <td>
+                  {{item.rover.name}}
+                </td>
+            </tr>
+         </tbody>
+       </table>
+   </div>
+</div>
+
+
+Ex: Cards
+
+<div class="container-fluid">
+   <div class="mt-4 d-flex flex-wrap">
+      <div *ngFor="let item of MarsObject.photos" class="card p-2 m-2" style="width:200px">
+         <img [src]="item.img_src" class="card-img-top" height="180">
+         <div class="card-header">
+            <h3>{{item.id}}</h3>
+         </div>
+         <div class="card-body">
+            <dl>
+               <dt>Camera Name</dt>
+               <dd>{{item.camera.full_name}}</dd>
+               <dt>Rover Name</dt>
+               <dd>{{item.rover.name}}</dd>
+            </dl>
+         </div>
+      </div>
+   </div>
+</div>

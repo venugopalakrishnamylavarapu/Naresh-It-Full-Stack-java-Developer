@@ -1,0 +1,190 @@
+Angular Directives
+- Directive is a function in angular that can handle various tasks.
+        a) It can return markup
+        b) It can extend markup
+        c) It can make the markup more interactive and responsive
+
+- A directive can be used as
+        a) Element             : to return markup
+        b) Attribute            : to extend markup
+        c) Class                : to make markup more responsive and
+                                  interactive.
+
+Syntax:
+        <app-netflix-header>                    Element
+        <input type="text" ngModel>        Attribute
+         input.ng-invalid { }                        Class
+
+- Directives in Angular are classified into 3 major groups
+
+            a) Component Directives
+            b) Structural Directives
+            c) Attribute Directives
+
+Component Directive:
+- It returns markup.
+- It uses Angular component which renders markup.
+
+Syntax:
+     <app-netflix-register> </app-netflix-register>
+
+
+Structural Directives:
+- A structural directive is used
+        a) To add elements
+        b) To remove elements
+        c)  To repeat elements
+- They can control the DOM structure by adding, remove and repeating elements in page.
+- Angular structural directives are
+        a) NgIf
+        b) NgSwitch
+        c) NgFor
+
+
+                                    NgIF
+- It is a structural directive.
+- It can add element to page or remove element from page.
+- It uses a boolean value or expression.
+- Structural directives are added to HTML elements by using "*".
+
+        <div  *ngIf="true/false" (or) BooleanExpression>
+
+- Every element can have only one structural directive.
+
+        <div  *ngIf=""    *ngFor="">     invalid
+
+- Boolean "false" will remove element from page.
+- Boolean "true" will add element to page.
+
+        <div  *ngIf="false">            => removed
+        </div>
+   
+        <div  *ngIf="true">                => added
+        <div>
+
+Ex:
+FakestoreProductContract.ts
+
+export interface FakestoreProductContract
+{
+    id:number;
+    title:string;
+    price:number;
+    description:string;
+    category:string;
+    image:string;
+    rating:{rate:number, count:number}
+}
+
+
+fakestore.component.s
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+
+@Component({
+  selector: 'app-fakestore',
+  templateUrl: './fakestore.component.html',
+  styleUrls: ['./fakestore.component.css']
+})
+export class FakestoreComponent implements OnInit {
+   constructor(){
+
+   }
+   public Product:FakestoreProductContract = {
+       id: 0,
+       title: '',
+       price: 0,
+       description: '',
+       category:'',
+       image:'',
+       rating: {rate: 0, count: 0}
+   }
+   public LoadProduct(id:number):void {
+      fetch(`http://fakestoreapi.com/products/${id}`)
+      .then(response=> response.json())
+      .then(data=> {
+         this.Product = data;
+      })
+   }
+   ngOnInit(): void {
+      this.LoadProduct(1);
+   }
+   public Count:number = 1;
+   public NextClick():void {
+      this.Count++;
+      this.LoadProduct(this.Count);
+   }
+   public PreviousClick():void {
+     this.Count--;
+     this.LoadProduct(this.Count);
+   }
+}
+
+
+fakestore.component.html
+
+<div class="container-fluid">
+    <div class="description" *ngIf="toggleDescription.value">
+        <textarea rows="4" cols="40" disabled>
+            {{Product.description}}
+        </textarea>
+    </div>
+    <h2>Product Details</h2>
+    <div class="form-switch">
+       <input type="checkbox" ngModel #toggleDescription="ngModel" class="form-check-input"> View Description
+    </div>
+    <dl>
+        <dt>Title</dt>
+        <dd>{{Product.title}}</dd>
+        <dt>Price</dt>
+        <dd>{{Product.price}}</dd>
+        <dt>Preview</dt>
+        <dd>
+            <img [src]="Product.image" width="200" height="200">
+        </dd>
+        <dt>Rating</dt>
+        <dd><span class="bi bi-star-fill text-success"></span> {{Product.rating.rate}} [{{Product.rating.count}}]</dd>
+    </dl>
+    <button (click)="PreviousClick()" class="btn btn-success me-2">
+        <span class="bi bi-chevron-left"></span>
+    </button>
+    <button (click)="NextClick()" class="btn btn-success">
+        <span class="bi bi-chevron-right"></span>
+    </button>
+</div>
+
+fakestore.component.css
+
+.description {
+    position: fixed;
+    left: 300px;
+    top: 200px;
+}
+
+                            NgIF with Alternative Block
+- Alternative block refers to container that renders into page when condition is false.
+
+Syntax:
+         <div *ngIf="condition; then  thenBlockId else elseBlockId">
+         </div>
+   
+- The "then and else" keywords refers to clauses, they can't control HTML blocks.
+- Hence you need to create a dynamic block in Angular by using
+        "<ng-template>"
+
+
+
+Syntax:
+    <div  *ngIf="true; then  thenBlock  else  elseBlock">  </div>
+   
+    <ng-template #thenBlock>
+        ... on true ....
+    </ng-template>
+
+    <ng-template #elseBlock>
+        ..on false...
+    </ng-template>
+
+Note: The dynamic templates  <ng-template> must be outside the condition block.
+
+                            Content Projection
