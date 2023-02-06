@@ -1,0 +1,119 @@
+Servlets API:
+===========
+Servlets API is a Java API that can be used to develop 
+web applications.
+
+1) javax.servlet (or) jakarta.servlet 
+2) javax.servlet.http (or) jakarta.servlet.http
+
+1) javax.servet (or) jakarta.servlet package:
+=====================================
+	Classes			Interfaces
+======================	=========================
+1) GenericServlet		1) Servlet
+2) ServletInputStream	2) ServletRequest
+3) ServletOutputStream	3) ServletResponse
+4) ServletException		4) ServletConfig
+5) UnavailableException	5) ServletContext
+			6) RequestDispatcher
+			7) SingleThreadModel
+
+2) javax.servlet.http (or) jakarta.servlet.http package:
+=============================================
+	Classes			Interfaces
+========================	========================
+1) HttpServlet		1) HttpServletRequest
+2) Cookie			2) HttpServletResponse
+			3) HttpSession
+
+Servlets API is a part of servlet-api.jar file in a tomcat
+web server.
+
+Steps to download tomcat web server:
+=================================
+1) Open the browser
+2) Open Google
+3) Type tomcat 10 download in search bar
+4) Click on the following hyper link:
+https://tomcat.apache.org/download-10.cgi
+5) Scroll down
+6) Click on the following hyper link:
+32-bit/64-bit Window Service Installer
+
+Steps to install tomcat web server:
+==============================
+1) Open downloads folder
+2) Double click on apache-tomcat-10.0.27.exe file
+3) Click on Yes button
+4) Click on Next button
+5) Click on I Agree button
+6) Select all check boxes 
+7) Click on Next button
+8) Type server shutdown port: 8005
+9) Type HTTP/1.1 Connector port: 8082
+10) Type username: admin
+11) Type password: admin
+12) Click on Next button
+13) Again click on Next button
+14) Click on Install button
+15) Click on Finish button
+
+To view Servlets API, we need to set the classpath.
+
+Temporary classpath:
+===================
+C:\>set classpath="%classpath%".;C:\Program Files\
+Apache Software Foundation\Tomcat 10.0\lib\servlet-api.jar;
+
+Permanent classpath:
+===================
+1) Click on Window button
+2) Type Environment Variables in search bar
+3) Click on Edit the System Environment Variables App
+4) Click on Advanced tab
+5) Click on Environment Variables button
+6) Select the classpath variable
+7) Click on Edit button
+8) Click on New button
+9) Type the following:
+C:\Program Files\Apache Software Foundation\
+Tomcat 10.0\lib\servlet-api.jar
+10) Click on OK buttons
+
+There are three ways to write servlet program:
+1) By implementing jakarta.servlet.Servlet interface.
+2) By extending jakarta.servlet.GenericServlet class.
+3) By extending jakarta.servlet.http.HttpServlet class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
