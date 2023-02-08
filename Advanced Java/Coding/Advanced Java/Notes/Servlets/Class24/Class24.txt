@@ -1,0 +1,124 @@
+Servlets:
+=========
+it is a specification for developing web applications.
+Distributed Applications:
+========================
+An application that is installed on one computer and runs on many computers is called distributed application
+
+
+There are two types of web applications:
+----------------------------------------
+1)Static Web application
+2)Dynamic Web Application
+
+1)Static Web Application:
+=========================
+->A web Application that is already preapared and placed in server is called static web application.
+Static web application resides in server & runs in browser.
+Static web applications are common to all users.
+The server sends the program to browser whenever request comes to static web application.
+Static web applications can be developed by using HTML,CSS,JavaScript,VB Script,Applets,..etc
+
+HTML -> Hyper Text Markup Language
+Css  ->Cascade Style Sheets
+VB   -> Visual Basic Script.
+Applets-> Java programs.(Out dated)
+
+
+2)Dynamic web applications:
+==========================
+->A web application that is prepared dynamically whenever request comes to a server is called as dynamic web application.
+Dynamic web application resided in server & runs in server only.
+Dynamic web applications are specific to user.
+The server executes the program & sends the output to a browser whenever request comes to a dynamic web application.
+Dynamic web application can be developed by using Servlets,JSP,Struts,JSF,Spring MVC,ASP,ColdFusion,ASP.Net,..etc..,
+
+JSP -> Java Server Pages.
+JSF -> Java Server Faces.
+MVC -> Model View Controller.
+ASP -> Active Server pages.
+Servlets,JSP,Struts,JSF,Spring MVC are Java Programs.
+
+Browser:
+=======
+A Browser is a software that executes web pages containing image ,graphics,animation,audio,video..etc.,
+Browser can also be called as web client.
+List of web browsers
+====================
+1)Internet Explorer
+2)Mozilla
+3)Chrome
+4)Opera
+5)America Online
+6)NetScape Navigator
+7)Lynx
+8)Hot Java
+9)Microsoft Edge
+10)Neo Planet
+11)Brave Browser
+12)win Web
+13)Mac Web
+14)Mosaic
+15)Eye Browser
+16)Cyber dog
+17)Tor browser..etc..,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

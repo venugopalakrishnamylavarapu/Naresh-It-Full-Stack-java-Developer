@@ -1,0 +1,62 @@
+PreparedStatement Interface:
+============================
+it is used to execute dynamic sql queries
+
+
+1)create table student(rollno number(3),name varchar2(10));
+2)insert into student values(1,'venu');
+3)select * from test1002;
+
+
+java.sql.PreparedStatement
+
+Methods:
+public abstract void setInt(int,int) throws SQLException;
+public abstract void setFloat(int,float) throws SQLException;
+public abstract void setString(int,String) throws SQLException;
+
+=>The above 3 methods are used to set the data.
+
+public abstract ResultSet executeQuery() throws SQLException;
+public abstract int executeUpdate() throws SQLException;
+
+program for PreparedStatement
+=============================
+package JDBC;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+//Prepared Statement 
+//the plus point of using preparedStatement is we can compile it once then execute numerous times(we can insert dynamic sql queries and execute it through command line)
+public class Class12 {
+	public static void main(String[] args) {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYSTEM","system","tiger");
+			PreparedStatement pstmt=con.prepareStatement("insert into test1002 values(?,?,?)");
+			pstmt.setInt(1,Integer.parseInt(args[0]));
+			pstmt.setString(2, args[1]);
+			pstmt.setString(3,args[2]);
+			pstmt.executeUpdate();
+			System.out.println("One record inserted successfully");
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+in the above example,query compiled only once and executed many times(in simple terms we can execute the values dynamically ).
+
+To add command line arguments in eclipse:
+==========================================
+1)Right Click on the required program in package explorer
+2)Click on run as
+3)Click on run configurations
+4)Click on arguments tab
+5)type the arguments in program arguments box
+  ex:1 venu
+6)Click on Apply button
+7)Click on Run button

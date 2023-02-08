@@ -1,0 +1,81 @@
+by using odbc driver because odbc cannot understand java instructions.
+
+To solve the above proble jdbc drivers were introduced.
+There are four types of Jdbc drivers:
+1)Type 1 Driver(JDBC Bridge Driver)
+2)Type 2 Driver(JDBC Native API Driver)
+3)Type 3 Driver(JDBC Network Protocol Driver)
+4)Type 4 Driver(JDBC 100% Pure Java Driver)
+
+There are two ways to connect Java Application to Database
+
+Type 1 JDBC Driver(JDBC ODBC Bridge Driver):
+============================================
+Driver Class Name:
+==================
+sun.jdbc.odbc.JdbcOdbcDriver
+
+this driver is a part of Java Software(JDK).
+
+Type 1 Driver Architecture:
+===========================
+		Diagram
+
+Type 1 driver functionality
+===========================
+It converts Java Instructions into Odbc understandable format.
+
+Type 1 driver developed in C language.
+
+Type 1 driver vendor is Sun Microsystems.
+
+ODBC drivers also developed in C language.
+
+Type 1 driver Advantages:
+=========================
+1)Only one driver that supports all Obdc enabled databases.
+
+Type 1 driver Disadvantages:
+===========================
+1)Performanvce overhead since Java calls should go through via Jdbc & Odbc drivers.
+2)It is a platform dependent.
+3)Database client software needs to be installed on local system.
+
+Note:Type 1 driver removed from jdk 1.8 onwards.
+
+Type 2 JDBC Driver(JDBC Native API Driver):
+==========================================
+it is also called as Partly Java Partly Native Driver (or) Partial Java Driver.
+
+Type 2 drivers developed in Native Languages and Java Language.
+
+Native Languages are C & C++.
+
+Type 2 Driver Class Name for Oracle Database:
+============================================
+oracle.jdbc.driver.OracleDriver
+(package.subpackages.Class)
+
+Type 2 driver class is a part of ojdbc6_g.jar file (or) ojdbc8_g.jar file in Oracle Software.
+
+JAR(Java Archive) file location:
+================================
+c:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+Deployement Location in Tomcat Web Server:
+=========================================
+C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps
+
+http://localhost:8082/first/test
+
+http      -->protocol
+
+localhost -->Domain name
+
+8082	  -->Port Number
+
+first	  -->War Filename
+
+test	  --><url-pattern> of a FirstServlet in web.xml
+
+http:
+====
+HTTP stands for Hyper Text Transfer Protocol
+
+it transfers hyper text.
+Hyper text means HTML text.
+HTML stands for Hyper Text Markup Language.
+it is used by browser and server to communicate on the web.
+
+localhost:
+=========
+it is a domain name.
+if the server is installed on the same computer then use localhost as a domain name otherwise 
+use computer name as domain name.
+
+8082:
+====
+it is a port number and it is used to identify the service.
+Tomcat web server default port number is 8080.
+JBoss(Wildfly) server default port number is 8080.
+Oracle database server default port number is 8080.
+WebLogic server default port number is 7001.
+
+Open server.xml file from the following folder to change the port number.
+C:\Program Files\Apache Software Foundation\Tomcat 10.0\conf
+in that open server.xml
+
+<Connector port="8080">  --> change that to 8082
+0 to 1023 Reserved Ports
+1024 to 65535 Free Ports
+
+
+http://localhost:8082   ---> URL(Uniform Resource Locator)
+first/test		---> URN(Uniform Resource Name)
+
+the combination of both (http://localhost:8082/first/test) is called  -->URI
+
+URI=URL+URN	=>URI(Universal Resource Identfier)
+
+
+web.xml:
+=======
+it is called as configuration file and it is used to configure servlets,listeners,filters,JSPs,welcome files,initalizaion
+parameters,context parameters,..etc.,
+
+here we have
+------------
+<web-app>
+<servlet>
+<servlet-name>demo</servlet-name>
+<servlet-class>FirstServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>demo</servlet-name>
+<url-pattern>/test</url-pattern>
+</servlet-mapping>
+</web-app>
+
+1st demo and 2nd demo must be same and it is used by deployer
+/test is used by users to run FirstServlet
+FirstServlet is used by java programmer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

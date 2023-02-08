@@ -1,0 +1,68 @@
+Version					New Features
+=======					============
+JDBC 1.0				Initital specification
+
+JDBC 2.0				1)ResultSet Enchancements
+					2)Batch Processing
+					3)Advanced Data Types(BLOBS & CLOBS)
+
+JDBC 3.0				1)RowSets
+					2)Savepoint in Transaction Management
+
+JDBC 4.0				1)Auto Loading Driver Class
+
+AUTO LOADING DRIVER CLASS
+=========================
+This feature loads the jdbc driver class automatically in a Java Program.
+It doess not require to write Class.forName(); statement.
+in a jdbc program
+
+
+From now on its servlets
+
+Servlets:
+========
+Servlets is a specification for developing web applications with java programming language.
+
+
+Web Application:
+================
+A web application is a distributed application which runs on browser & server.
+
+Distributed Application:
+========================
+An application that is installed on one computer & runs on many computers is called as distributed application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
