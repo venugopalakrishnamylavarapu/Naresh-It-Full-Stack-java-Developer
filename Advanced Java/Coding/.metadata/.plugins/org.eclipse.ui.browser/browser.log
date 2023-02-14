@@ -1,0 +1,56 @@
+
+Feb 04, 2023 20:56:36.752 NEW SESSION
+Feb 04, 2023 20:56:36.752 [2023-02-04T15:26:36Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 04, 2023 20:56:36.755 [2023-02-04T15:26:36Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Feb 04, 2023 22:45:23.713 NEW SESSION
+Feb 04, 2023 22:45:23.713 [2023-02-04T17:15:23Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 04, 2023 22:45:23.718 [2023-02-04T17:15:23Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 04, 2023 22:46:25.858 [2023-02-04T17:16:25Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 04, 2023 22:46:25.881 [2023-02-04T17:16:25Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Feb 06, 2023 19:55:07.483 NEW SESSION
+Feb 06, 2023 19:55:07.483 [2023-02-06T14:25:07Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 19:55:07.483 [2023-02-06T14:25:07Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:16:27.89 [2023-02-06T14:46:27Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:16:27.90 [2023-02-06T14:46:27Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:31:23.318 [2023-02-06T15:01:23Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:31:23.319 [2023-02-06T15:01:23Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:33:51.295 [2023-02-06T15:03:51Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:33:51.297 [2023-02-06T15:03:51Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:50:19.119 [2023-02-06T15:20:19Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:50:19.119 [2023-02-06T15:20:19Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:55:58.49 [2023-02-06T15:25:58Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:55:58.50 [2023-02-06T15:25:58Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 06, 2023 20:55:58.73 [Parent 6736, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+
+Feb 07, 2023 19:43:46.333 NEW SESSION
+Feb 07, 2023 19:43:46.334 [2023-02-07T14:13:46Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 07, 2023 19:43:46.335 [2023-02-07T14:13:46Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 07, 2023 20:09:01.621 [Parent 12588, IPDL Background] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:583
+Feb 07, 2023 20:09:19.849 [2023-02-07T14:39:19Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 07, 2023 20:09:19.850 [2023-02-07T14:39:19Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 07, 2023 20:26:49.111 [2023-02-07T14:56:49Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 07, 2023 20:26:49.112 [2023-02-07T14:56:49Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 07, 2023 20:27:35.918 [2023-02-07T14:57:35Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 07, 2023 20:27:35.918 [2023-02-07T14:57:35Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Feb 08, 2023 21:02:19.433 NEW SESSION
+Feb 08, 2023 21:02:19.433 [2023-02-08T15:32:19Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 08, 2023 21:02:19.446 [2023-02-08T15:32:19Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Feb 10, 2023 21:00:05.702 NEW SESSION
+Feb 10, 2023 21:00:05.704 [2023-02-10T15:30:05Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 10, 2023 21:00:05.705 [2023-02-10T15:30:05Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Feb 11, 2023 21:01:34.519 NEW SESSION
+Feb 11, 2023 21:01:34.519 [2023-02-11T15:31:34Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 11, 2023 21:01:34.528 [2023-02-11T15:31:34Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Feb 13, 2023 21:07:33.330 NEW SESSION
+Feb 13, 2023 21:07:33.331 [2023-02-13T15:37:33Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 13, 2023 21:07:33.331 [2023-02-13T15:37:33Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Feb 14, 2023 18:11:16.250 NEW SESSION
+Feb 14, 2023 18:11:16.251 [2023-02-14T12:41:16Z ERROR viaduct::backend::ffi] Missing HTTP status
+Feb 14, 2023 18:11:16.258 [2023-02-14T12:41:16Z ERROR viaduct::backend::ffi] Missing HTTP status

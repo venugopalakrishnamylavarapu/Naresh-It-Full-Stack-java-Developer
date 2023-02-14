@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="red" text="Yellow">
+<center>
+<h1><u>Registration Form</u></h1>
+<form action="reg" method="POST">
+First Name<input type="text"><br>
+Last Name<input type="text"><br>
+Username <input type="text" name="uname"><br>
+Password <input type="password" name="pword"><br><br>
+<input type="submit" value="submit">&nbsp<input type="reset">
+</form>
+</center>
+</body>
+</html>

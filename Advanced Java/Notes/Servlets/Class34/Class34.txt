@@ -1,0 +1,108 @@
+There are 7 http methods:
+========================
+1)GET
+2)POST
+3)PUT
+4)DELETE
+5)HEAD
+6)OPTIONS
+7)TRACE
+
+Default http method is GET
+
+Differences between GET & POST:
+===============================
+
+		GET				POST
+		---				----
+1)In this method all request		1)In this method all request parameters 
+  parameters are included in		  are included in a request body in a packet.
+  request header in a packet.
+  (figure in folder)			  (figure in folder)
+
+2)Here size of the data is limited.	2)Here size of the data is not limited.
+
+3)In this method all request 		3)In this method request parameters are not 
+  parameters are displayed in		  displayed.
+  address bar.
+
+4)It is little fast.			4)It is slow.
+
+5)it is not suitable for		5)it is suitable for uploadings also. 
+  uploadings.		
+
+
+Differences Between GenericServlet & HttpServlet:
+=================================================
+
+	GenericServlet				HttpServlet
+	==============				===========
+1)It is a protocol independent.		1)it is http protocol dependent.(http only)
+
+2)it supports common services.		2)It supports http specific services
+  (Examples:Forwarding & Including)	  (Examples:Redirecting & Session Tracking)
+
+3)By using GenericServlet,we can use	3)By using HttpServlet,we can use both common
+  common services only.			  services & http specific services because HttpServlet
+					  is a sub class of GenericServlet.
+
+jakarta.servlet.http.HttpServlet
+
+Methods:
+--------
+ protected void doGet(HttpServletRequest,HttpServletResponse) throws ServletException,IOExceptiom;
+
+ protected void doPost(HttpServletRequest,HttpServletResponse) throws ServletException,IOException;
+
+ protected void service(HttpServletRequest,HttpServletResponse) throws ServletException,IOException;
+
+ public void service(ServletRequest,ServletResponse) throws ServletException,IOException;
+
+ 
+doGet() method:
+===============
+it handles GET type requests only.
+
+doPost() method:
+================
+it handles POST type requests only.
+
+service() method:
+================
+it handles both GET & POST type requests.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

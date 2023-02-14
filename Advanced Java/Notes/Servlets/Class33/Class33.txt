@@ -1,0 +1,143 @@
+The object creation order by web container:
+===========================================
+1)ServletContext
+2)User defined Servlet
+3)ServletConfig
+4)ServletRequest & ServletResponse
+
+ServletContext is created by web container whenever web application is deployed on server.
+
+User defined Servlet object is created by web container whenever first request comes to a servlet.
+
+ServletConfig is created by web container whenever init() method is called.
+
+ServletRequest & ServletResponse are created by web container for every request
+
+
+ServletRequest:
+==============
+it is used to get the request parameters.
+it is created by web container for every request.
+
+ jakarta.servlet.ServletRequest
+
+Methods:
+=======
+public abstract String getParameter(String);
+=>it is used to get the request parameter value of specified request parameter name
+
+public abstract Enumeration<String> getParameterNames();
+=>it is used to get the all request parameter names.
+
+public abstract String[] getParameterValues(String);
+=>it is used to get the request parameter values of specified request parameter name
+
+public abstract Map<String,String[]> getParameterMap();
+=>it is used to get the request parameter names & values.
+
+
+program of login:
+=================
+1)Create a dynamic project with login name
+2)Create html files 
+3)Create java files
+
+homepage.html:
+==============
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="Yellow" text="red">
+<center>
+<h1>Welcome to Servlets Login Form</h1>
+<a href="login.html">Login</a><br>
+<a href="reg.html">Register</a>
+</center>
+</body>
+</html>
+
+
+login.html:
+===========
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="red" text="Yellow">
+<center>
+<h1><u>Login Form</u></h1>
+<form action="login" method="POST">
+Username <input type="text" name="uname"><br>
+Password <input type="password" name="pword"><br><br>
+<input type="submit" value="submit">&nbsp<input type="reset">
+</form>
+</center>
+</body>
+</html>
+
+Note:-Default functionality available for submit & reset buttons only
+
+The Value of action attribute in a <form> tag is executed whenever submit button is clicked
+
+
+reg.html:
+=========
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="green" text="Yellow">
+<center>
+<h1><u>Registration Form</u></h1>
+<form action="reg" method="POST">
+First Name<input type="text"><br><br>
+Last Name<input type="text"><br><br>
+Username <input type="text" name="uname"><br><br>
+Password <input type="password" name="pword"><br><br>
+<input type="submit" value="submit">&nbsp<input type="reset">
+</form>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

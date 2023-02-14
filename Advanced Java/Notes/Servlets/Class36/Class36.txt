@@ -1,0 +1,121 @@
+LoginServlet.java
+=================
+
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import java.io.*;
+import java.sql.*;
+
+public class LoginServlet extends HttpServlet{
+	Connection conn;
+	public void init(ServletConfig config)
+	{
+	try{
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYSTEM","login","login");
+	}catch(SQLException e)
+	{	
+		e.printStackTrace();	
+	}
+	}
+	public void destroy(){
+		conn.close()
+	}
+	protected void doPost(HttpServletRequest request,HttpServletResponse response)
+	{
+	try{
+	String s1=request.getParameter("uname");
+	String s2=request.getParameter("pword");
+	PreparedStatemet pstmt=conn.prepareStatement("select * from loginfo where uname=? and pword=?");
+	pstmt.setString(1,s1);
+	pstmt.setString(2.s2);
+	ResultSet rs=pstmt.executeQuery();
+	PrintWriter pw=response.getWriter();
+	pw.println("<html><body bgcolor="yellow" text="blue"><h1>");
+	if(rs.next)
+		pw.println("Welcome "+s1);
+	else
+		pw.println("Invalid UserName/Password)
+	}
+	pw.println("</h1></body></html>");
+	}catch(SQLException |IOException e)
+	{	
+	e.printStackTrace();
+	}	
+}
+
+Eclipse Shortcut Keys:
+======================
+1)to close current window(editor) => Ctrl+w
+
+2)to close all the window(editor) => Ctrl+Shift+w
+
+3)to open Resource => Ctrl+Shift+r then type resource name
+			(example:LoginServlet.java)
+
+4)to Convert UpperCase letters =>Select the text & press Ctrl+Shift+x
+
+5)to convert lowerCase letters =>Select the text & press Ctrl+Shift+y
+
+6)to Increase the fontsize =>Ctrl++
+
+7)to Decrease the fontsize =>Ctrl+-
+
+8)to make a single line comment(and to remove it same process) =>Select the text & press Ctrl+/
+
+9)to make multi line comment(and to remove it same process) =>Select the text & press Ctrl+Shift+/
+
+10)to organise import statement =>Ctrl+Shift+o
+
+11)to move the line of text => Select the text & Press Alt+UpArrow (or) Alt+DownArrow
+
+12)to write try&catch blocks (or) To write the code inside loops &inside block =>Select the text & press Alt+Shift+z
+
+13)to format the text =>Ctrl+Shift+f
+
+14)to delete current line of the text => Ctrl+d
+
+15)to move the cursor to a particular line number => Ctrl+l & type the line number
+
+16)to generate getters&setters =>Alt+Shift+s then press r
+
+17)to generate parameterized constructor to initialize => Alt+Shift+s then press o
+
+18)to write System.out.println(); =>Type sysout then press Ctrl+Spacebar
+
+19)to write main() method =>Type main then press Ctrl+Spacebar
+
+20)to write forloop=>Type for then press Ctrl+Spacebar
+
+21)to write enchanced forloop=>Type foreach then press Ctrl+Space
+
+22)to run the application => Ctrl+F11
+
+23)to display shortcut keyslist =>Ctrl+Shift+l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

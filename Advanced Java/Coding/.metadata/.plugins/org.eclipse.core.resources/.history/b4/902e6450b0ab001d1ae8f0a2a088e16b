@@ -1,0 +1,25 @@
+package Login;
+
+import java.io.IOException;
+import java.sql.DriverManager;
+
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+public class LoginServlet extends HttpServlet {
+	Connection conn;
+	public void init(ServletConfig config) {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYSTEM")
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;jrs&apos; in &apos;JDBC.Class20A.main(...)&apos; to &apos;crs&apos;&#x0D;&#x0A;- Original project: &apos;AdvancedJava&apos;&#x0D;&#x0A;- Original element: &apos;JDBC.Class20A.main(String[]).jrs&apos;&#x0D;&#x0A;- Renamed element: &apos;jrs&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;jrs&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;JDBC{Class20A.java[Class20A~main~\[QString;@jrs!203!244!216!218!QCachedRowSet;!0!false" name="crs" references="true" stamp="1674659298310" version="1.0"/>
+</session>
