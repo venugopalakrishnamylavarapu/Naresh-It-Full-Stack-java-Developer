@@ -1,0 +1,175 @@
+web.xml:
+========
+it is called as configuration file and it is used to configure servlets,JSPs,welcome files
+initialization parameters,context parameters,..etc.,
+
+Initialization Parameters:
+==========================
+initialization parameters are used to initialize servlet..
+
+To configure initialization parameters,we use
+<init-param>,<param-name> & <param-value> tags in web.xml
+
+initialization parameters are specific to servlet.
+
+Example:
+========
+we need to write inside the <servlet> after the <servlet-class>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
+  <servlet>
+    <description></description>
+    <display-name>RegServlet</display-name>
+    <servlet-name>RegServlet</servlet-name>
+    <servlet-class>Login.RegServlet</servlet-class>
+    <init-param>
+    	<param-name>driver</param-name>
+    	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+    </init-param>
+     <init-param>
+    	<param-name>url</param-name>
+    	<param-value>jdbc:oracle:thin:@localhost:1521:SYSTEM</param-value>
+    </init-param>
+     <init-param>
+    	<param-name>username</param-name>
+    	<param-value>login</param-value>
+    </init-param>
+     <init-param>
+    	<param-name>password</param-name>
+    	<param-value>login</param-value>
+    </init-param>
+  </servlet>
+  ........................
+  ........................
+
+The above initialization parameters are specified to RegServlet.
+
+To retrieve these parameters in a servlet,we use the following method of jakarta.servlet.ServletConfig interface.
+
+public abstract String getInitParameter(String);
+
+1st String ->value of the parameter  -->comes
+2nd String ->name of the parameter  -->we need to pass as parameter
+
+Context Parameters:
+===================
+Context Parameters are used to initialize servlet.
+To configure context paramters,we use <context-param>,<param-name>&<param-value> tags in web.xml.
+
+Context Parameters are common to all servlets in a web application(.war file).
+
+Example:
+========
+we need to write inside the <web-app> before the <servlet>
+
+    <context-param>
+    	<param-name>driver</param-name>
+    	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+     </context-param>
+     <context-param>
+    	<param-name>url</param-name>
+    	<param-value>jdbc:oracle:thin:@localhost:1521:SYSTEM</param-value>
+    </context-param>
+     <context-param>
+    	<param-name>username</param-name>
+    	<param-value>login</param-value>
+    </context-param>
+     <context-param>
+    	<param-name>password</param-name>
+    	<param-value>login</param-value>
+    </context-param>
+
+The above context parameters are common to all servlets(LoginServlet&RegServlet) in that application.
+
+the above context parameters can be retrived in a servlet by using the following method of 
+jakarta.servlet.ServletContext interface.
+
+public abstract String getInitParameter(String);(same as initialization paramter)
+
+
+ServletConfig vs ServletContext:
+================================
+
+		ServletConfig					ServletContext
+		=============					==============
+1)it is created by web container whenever		1)it is created by web container whenever
+  init() method is called.				  web application is deployed on server.
+
+2)it is created by web container one per 		2)it is created by web container one per web
+  servlet.						  application(.war file).
+
+3)this memory is specific to servlet.			3)This memory is common to all servlets.
+
+4)it is used to retrieve initialization 		4)it is used to retrieve context parameters
+  parameters from web.xml file	.			  from web.xml file.
+
+ServletConfig Example:
+=====================
+public void init(ServletConfig config)
+{
+try{
+  String s1=config.getInitParameter("driver");
+  String s2=config.getInitParameter("url");
+  String s3=config.getInitParameter("username");
+  String s4=config.getInitParameter("password");
+	Class.forName(s1);
+	conn=DriverManager.getConnection(s2,s3,s4);
+	}catch(SQLExcpetion | ClassNotFoundException e)
+	{
+	  e.printStackTrace();
+	}
+}
+
+ServletContext Example:
+=======================
+public void init(ServletConfig config)
+{
+try{
+  ServletContext sc=config.getServletContext();
+  String s1=sc.getInitParameter("driver");
+  String s2=sc.getInitParameter("url");
+  String s3=sc.getInitParameter("username");
+  String s4=sc.getInitParameter("password");
+	Class.forName(s1);
+	conn=DriverManager.getConnection(s2,s3,s4);
+	}catch(SQLExcpetion | ClassNotFoundException e)
+	{
+	  e.printStackTrace();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

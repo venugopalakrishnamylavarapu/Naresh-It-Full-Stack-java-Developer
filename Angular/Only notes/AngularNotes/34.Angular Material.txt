@@ -1,0 +1,72 @@
+Angular Material
+- Angular Material is a component library.
+- A component library provides several pre-defined components, which you can customize and implement in your project.
+- It saves your development time and improves the performance of application.
+- Angular Material library provides
+        a) CDK
+        b) Components
+
+- Component is a template with design, logic and styles.
+- CDK is Component Development Kit, which provides performance and behaviour for components.
+
+                        https://material.angular.io/
+
+Setup Angular Material for Project:
+-----------------------------------------------
+1. Open Terminal in your project workspace.
+
+2. Run the following command
+
+        >ng add  @angular/material                [installs latest version]
+        >ng add  @angular/material@v14        [install 14 version]
+
+Q: Choose a prebuilt theme name, or "custom" for a custom theme:
+        Indigo-Pink
+ 
+Q:  Set up global Angular Material typography styles? (y/N)  y
+
+Q:  Include the Angular animations module? Include and Enable
+
+
+FAQ: What are the changes identified in a project after installing angular material?
+Ans:
+        1. Animation Modules in imported into "app.module.ts"
+        2. angular.json is configure with "css" theme.
+        3. index.html links typography files to page.
+        4. styles.css is included with global styles.
+
+Ex:
+1. Go to "app.module.ts" and import the modules
+
+import { MatFormFieldModule  } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
+imports : [
+        MatFormFieldModule,
+        MatInputModule
+     ]
+
+2. Add a new component
+        > ng g c material-demo --skip-tests
+
+3. material-demo.component.html
+
+<div class="container-fluid">
+    <h2>Bootstrap Input</h2>
+    <div class="w-25">
+        <label class="form-label">User Name</label>
+        <div>
+            <input type="text" placeholder="Enter Name" class="form-control">
+        </div>
+    </div>
+    <h2>Material Input</h2>
+    <mat-form-field appearance="fill" >
+        <mat-label>User Name</mat-label>
+        <input type="text" ngModel #UserName="ngModel" matInput placeholder="Enter Name">
+    </mat-form-field>
+
+    <h2>Hello ! {{UserName.value}} </h2>
+</div>
+
+
+Task: Design Calendar - Date Picker

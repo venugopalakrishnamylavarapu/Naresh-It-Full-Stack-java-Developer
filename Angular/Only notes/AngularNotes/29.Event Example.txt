@@ -1,0 +1,233 @@
+1. What is Event?
+2. Which design pattern it follow?
+3. Event Handler
+4. Delegate
+5. EventEmitter
+6. Event Args - $event
+7. Custom Args
+8. Various Categories of Events
+
+                            Keyboard Events
+keyup
+keydown
+keypress
+               
+- If you are handling any logic with regard to key or char then use the event "keyup and keydown".
+
+- If you are handling any logic with regard to key or char codes then use "keypress".
+                        A = 65   Z = 90
+
+- Keyup and Keydown can't return the keycode or charcode, usually they are returned only with keypress.
+
+Ex:
+event-binding.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-event-binding',
+  templateUrl: './event-binding.component.html',
+  styleUrls: ['./event-binding.component.css']
+})
+export class EventBindingComponent {
+   public users:any[] = [
+    {UserName:'john'},
+    {UserName:'john12'},
+    {UserName:'john_nit'},
+    {UserName:'david'}
+   ];
+   public UserError:string = '';
+   public isInValid:boolean = false;
+   public isPwdWarnVisible = false;
+
+   public VerifyUser(e:any){
+        for(var user of this.users)
+        {
+            if(user.UserName==e.target.value){
+                this.UserError = 'User Name Taken - Try Another';
+                this.isInValid = true;
+                break;
+            } else {
+                this.UserError = 'User Name Available';
+                this.isInValid = false;
+            }
+        }
+   }
+   public VerifyPassword(e:any){
+         if(e.keyCode>=65 && e.keyCode<=90){
+             this.isPwdWarnVisible = true;
+         } else {
+            this.isPwdWarnVisible = false;
+         }
+   }
+}
+
+
+event-binding.component.html
+
+<div class="container-fluid">
+   <h2>Regiser User</h2>
+   <dl>
+     <dt>User Name</dt>
+     <dd><input type="text" (keyup)="VerifyUser($event)"></dd>
+     <dd [ngClass]="{'text-danger':isInValid, 'text-success':true}">{{UserError}}</dd>
+     <dt>Password</dt>
+     <dd><input type="password" (keypress)="VerifyPassword($event)"></dd>
+     <dd class="text-warning" *ngIf="isPwdWarnVisible">
+         <span class="bi bi-exclamation-triangle-fill"></span> Caps ON
+     </dd>
+   </dl>
+</div>
+
+                            Element State Events
+-focus
+-blur
+-change
+-selectstart
+
+Ex:
+ event-binding.component.ts
+
+ import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-event-binding',
+  templateUrl: './event-binding.component.html',
+  styleUrls: ['./event-binding.component.css']
+})
+export class EventBindingComponent {
+   public users:any[] = [
+    {UserName:'john'},
+    {UserName:'john12'},
+    {UserName:'john_nit'},
+    {UserName:'david'}
+   ];
+   public UserError:string = '';
+   public isInValid:boolean = false;
+   public isPwdWarnVisible = false;
+   public PwdError:string = '';
+
+   public VerifyUser(e:any){
+        for(var user of this.users)
+        {
+            if(user.UserName==e.target.value){
+                this.UserError = 'User Name Taken - Try Another';
+                this.isInValid = true;
+                break;
+            } else {
+                this.UserError = 'User Name Available';
+                this.isInValid = false;
+            }
+        }
+   }
+   public VerifyPassword(e:any){
+         if(e.keyCode>=65 && e.keyCode<=90){
+             this.isPwdWarnVisible = true;
+         } else {
+            this.isPwdWarnVisible = false;
+         }
+   }
+   public VerifyRequired(e:any){
+       if(e.target.value=="") {
+          this.UserError = "User Name Required";
+          this.isInValid = true;
+       } else {
+          this.UserError = "";
+       }
+   }
+   public PasswordFocus(){
+       this.PwdError = 'Caps Not Allowed';
+   }
+   public PasswordBlur(){
+    this.PwdError = '';
+   }
+}
+
+
+event-binding.component.html
+
+<div class="container-fluid">
+   <h2>Regiser User</h2>
+   <dl>
+     <dt>User Name</dt>
+     <dd><input type="text" (blur)="VerifyRequired($event)" (keyup)="VerifyUser($event)"></dd>
+     <dd [ngClass]="{'text-danger':isInValid, 'text-success':true}">{{UserError}}</dd>
+     <dt>Password</dt>
+     <dd><input type="password" (focus)="PasswordFocus()" (blur)="PasswordBlur()" (keypress)="VerifyPassword($event)"></dd>
+     <dd class="text-warning" *ngIf="isPwdWarnVisible">
+         <span class="bi bi-exclamation-triangle-fill"></span> Caps ON
+     </dd>
+     <dd>{{PwdError}}</dd>
+   </dl>
+</div>
+
+Ex:
+emi-component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-emi',
+  templateUrl: './emi.component.html',
+  styleUrls: ['./emi.component.css']
+})
+export class EmiComponent {
+    public P:number = 10000;
+    public r:number = 10.25;
+    public n:number = 1;
+    public EMI:number = 0;
+
+    public AmountChange(e:any) {
+       this.P = e.target.value;
+    }
+    public YearChange(e:any){
+      this.n = e.target.value;
+    }
+    public RateChange(e:any){
+      this.r = e.target.value;
+    }
+    public CalculateClick(){
+        var n = this.n * 12;
+        var r = this.r / 12 / 100;
+        this.EMI = this.P * r * Math.pow(1+r, n) / Math.pow(1+r,n) - 1;
+    }
+}
+
+
+emi-component.html
+
+<div class="container-fluid">
+    <h2 class="text-center">Personal Loan EMI Calculator</h2>
+    <div class="border border-2 border-dark p-3">
+        <div class="row">
+            <div class="col">
+                Amount you need &#8377;<input type="text" [value]="P" size="10">
+            </div>
+            <div class="col">
+                For <input type="text" [value]="n" size="4"> years
+            </div>
+            <div class="col">
+                Interest rate <input [value]="r" type="text" size="4"> %
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                &#8377; 10,000 <input type="range" (change)="AmountChange($event)" value="10000" min="10000" max="1000000"> &#8377; 10,00,000
+            </div>
+            <div class="col">
+                1 <input type="range" value="1" (change)="YearChange($event)" min="1" max="5"> 5
+            </div>
+            <div class="col">
+                10.25% <input min="10.25" value="10.25" (change)="RateChange($event)" step="0.1" max="18.45" type="range"> 18.45%
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <button (click)="CalculateClick()" class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center mt-4">
+        Your monthy installed is <span class="text-primary"> {{EMI | currency:'INR'}} </span> for {{n}} years.
+    </h1>
+</div>

@@ -1,0 +1,222 @@
+Angular Event Binding
+
+- Event is a message sent by sender to its subscriber in order to notify the change.
+
+- Event uses a delegate mechanism [function pointer].
+
+                function  InsertClick()        => Subscriber
+                {
+                }
+           
+                <button onclick="InsertClick()">      => Sender
+
+- Subscriber defines actions to perform.
+- Sender notifies the changes. It specifies when the actions need to perform.
+- Event uses a software design pattern called "Observer", which is a communication pattern under "Behavioural Patterns".
+- Angular uses all JavaScript browser events.
+- Angular Events are configure by "EventEmitter" class of "@angular/core" library.
+
+    Angular EventEmitter            => JavaScript Browser Event
+       
+    click                                     onclick
+    change                                 onchange
+
+FAQ: Why angular can't use JavaScript events directly?
+Ans : Angular is "de-coupled" form  DOM
+
+- Angular events are categorized into various groups
+
+1. Mouse Events
+        mouseover
+        mouseout
+        mousedown
+        mouseup
+        mousemove
+
+2. Keyboard Events
+        keyup
+        keydown
+        keypress
+
+3. Button Events
+        click
+        dblclick
+        contextmenu
+
+4. Element State Events
+        blur
+        focus
+        change
+        selectstart
+
+5. Cliboard Events
+        cut
+        copy
+        paste
+
+6.  Touch Events
+        touchstart
+        touchend
+        touchmove
+
+7.  Form Events
+        submit
+        ngSubmit
+        reset
+
+8.  Timer Events
+        setTimeout
+        clearTimeout
+        setInterval
+        clearInterval
+     etc...
+
+- Angular events are binded to any HTML element by using "( )".
+
+Syntax:
+            <select (change)="Method()">
+            <button (click)="Method()">
+
+Ex:
+            <buton  (click)="InsertClick()">
+
+             (click)                            => Event
+             (click)="InsertClick()"            => Event Handler
+
+- Every event handler can have one default argument "$event".
+
+            JavaScript Event Args
+   
+            onclick="InsertClick(event, this)"
+               
+            this => sends information about current object
+                      [id, value, name, className etc..]
+
+            event => sends information about current event
+                          [clientX, clientY, keyCode, charCode, which...]
+
+- Angular allows only one default argument "$event", which send information about both object and event.
+
+            public InsertClick(e)
+            {
+            }
+
+            <button (click)="InsertClick($event)">
+
+- You can access object related information by using "e.target"
+   
+            e.target.id
+            e.target.name
+            e.target.className
+
+- You can access event related informaiton by using "e"
+            e.clientX
+            e.clientY
+            e.ctrlKey
+            e.keyCode etc..
+
+Ex:
+event-binding.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-event-binding',
+  templateUrl: './event-binding.component.html',
+  styleUrls: ['./event-binding.component.css']
+})
+export class EventBindingComponent {
+    public InsertClick(e:any):void {
+       document.write(`
+         Button Id    : ${e.target.id} <br>
+         Button Name  : ${e.target.name} <br>
+         Button Class : ${e.target.className} <br>
+         X Position   : ${e.clientX} <br>
+         Ctrl Key     : ${e.ctrlKey}
+       `);
+    }
+}
+
+
+event-binding.component.html
+
+<div class="container-fluid">
+    <h2>Event Binding</h2>
+    <button (click)="InsertClick($event)" id="btnInsert" name="InsertButton" class="btn btn-primary">Insert</button>
+</div>
+
+
+- Angular and JavaScript allows custom event arguments, you can define custom args individually or along with default argument.
+
+
+        <button (click)="InsertClick('Record Inserted')">
+        <button (click)="InsertClick(['TV', 'Mobile'])">
+        <button (click)="InsertClick({id:1, name="TV"})>
+        <button (click)="InsertClick(1, "TV", true)">
+        <button (click)="InsertClick($event, "Record Inserted")">
+
+
+                             Mouse Events
+- mouseover
+- mouseout
+- mousedown
+- mouseup
+- mousemove
+
+Ex:
+event-binding.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-event-binding',
+  templateUrl: './event-binding.component.html',
+  styleUrls: ['./event-binding.component.css']
+})
+export class EventBindingComponent {
+    public img_src:string = "assets/shoe.jpg";
+
+    public styleObject:{position:string, left:string, top:string} = {
+       position: '',
+       left: '',
+       top: ''
+    };
+
+    public SetColor(colorName:string){
+         switch(colorName){
+            case "black":
+             this.img_src = "assets/blackshoe.jpg";
+             break;
+             case "green":
+             this.img_src = "assets/greenshoe.jpg";
+             break;
+             case "blue":
+             this.img_src = "assets/blueshoe.jpg";
+             break;
+         }
+    }
+    public MouseMove(e:any){
+        this.styleObject = {
+           position : 'fixed',
+           left: e.clientX + 'px',
+           top: e.clientY + 'px'
+        }
+    }
+}
+
+
+event-binding.component.html
+
+<div class="container-fluid" (mousemove)="MouseMove($event)">
+    <h2>Shoe</h2>
+    <img width="200" [src]="img_src" height="100">
+    <div class="mt-2">
+        <div class="btn-group">
+            <button (mouseover)="SetColor('black')" name="black" class="text-white" style="background-color:black">Black</button>
+            <button (mouseover)="SetColor('green')" name="green" class="text-white" style="background-color:green">Green</button>
+            <button (mouseover)="SetColor('blue')" name="blue" class="text-white" style="background-color:blue">Blue</button>
+        </div>
+    </div>
+    <div style="height:1000px"></div>
+    <img src="assets/flag.gif" [ngStyle]="styleObject" width="50" height="50">
+</div>

@@ -1,0 +1,136 @@
+Polymorphism
+- Poly means Many
+- Morphos means Forms
+- The ability of any component to serve for different situations is know as polymorphism.
+- A component can have multiple behaviours.
+- A component can change its behaviour according to state and situation.
+- Instead of creating lot of components, you can create one component that exhibits polymorphism.
+- Polymorphism is the process of overloading the memory with different functionalities.
+- A method or function can overload.
+- A class memory can overload.
+- An object memory can overload.
+- Technically polymorphism is a single base class reference can use the memory of multiple derived classes.
+
+    let employees:Employee[] = [ new Admin(), new Developer().. ];
+
+Ex:
+1. index.ts
+
+class Employee
+{
+    public FirstName:string = "";
+    public LastName:string = "";
+    public Designation:string = "";
+    public Print():void {
+        document.write(`${this.FirstName} ${this.LastName} - ${this.Designation}<br>`);
+    }
+}
+class Developer extends Employee
+{
+    FirstName = "Raj";
+    LastName = "Kumar";
+    Designation = "Developer";
+    Role = "Developer Role : Build, Debug, Test, Deploy";
+    Print(){
+        super.Print();
+        document.write(this.Role);
+    }
+}
+class Admin extends Employee
+{
+    FirstName = "Kiran";
+    LastName = "Kumar";
+    Designation = "Admin";
+    Role = "Admin Role : Authorizations and Authentication";
+    Print(){
+        super.Print();
+        document.write(this.Role);
+    }
+}
+class Manager extends Employee
+{
+    FirstName = "Tom";
+    LastName = "Hanks";
+    Designation = "Manager";
+    Role = "Manager Role : Approvals";
+    Print(){
+        super.Print();
+        document.write(this.Role);
+    }
+}
+
+let employees:Employee[] = [new Developer(), new Admin(), new Manager()];
+
+>tsc index.ts
+
+2. index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="src/index.js"></script>
+    <script>
+        var designation = prompt("Enter Designation");
+        for(var employee of employees)
+        {
+            if(employee.Designation==designation) {
+                employee.Print();
+            }
+        }
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
+
+Summary:
+Contracts                Interface
+Component[Entity]        Class
+
+                            Templates in OOP
+- Abstract classes are used to design templates.
+- A template comprises of data and logic which is already implemented partially, so that developer and extend and complete the implementation according to client requirements
+- Abstract class contains both methods that are impemented and not implemented.
+- Developer have to implement and customize the methods that are not implemented.
+- If any method is incomplete then it is marked as "abstract".
+- If any one member of a class is abstract then class is marked as "abstract".
+- Abstraction is the process of hiding the structure of component and providing only the functionality.
+
+
+Ex:
+interface ProductContract
+{
+    Name:string;
+    Price:number;
+    Qty:number;
+    Total():number;
+    Print():void;
+}
+abstract class ProductTemplate implements ProductContract
+{
+    public Name:string = "";
+    public Price:number = 0;
+    public Qty:number = 0;
+    public abstract Total():number;
+    public abstract Print(): void;
+}
+class ProductComponent extends ProductTemplate
+{
+    Name = "Samsung TV";
+    Price = 45000.44;
+    Qty = 2;
+    Total(){
+        return this.Qty * this.Price;
+     }
+    Print(){
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}`);
+     }
+}
+
+let tv= new ProductComponent();
+tv.Print();

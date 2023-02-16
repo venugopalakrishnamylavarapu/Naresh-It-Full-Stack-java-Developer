@@ -1,0 +1,78 @@
+Servlet Forwarding:
+==================
+Forwarding request & response of one servlet to another servlet is called as servlet forwarding.
+
+The main advantage of servlet forwarding is modularity
+
+Servlet Including:
+==================
+Including request and response of one servlet into another servlet is called as servlet including.
+
+The main advantage of servlet including is servlet reusability.
+
+--------------------------------------------------------------------------
+
+jakarta.servlet.RequestDispatcher
+
+Methods:
+========
+public abstract void forward(ServletRequest,ServletResponse) throws ServletException,IOException;
+
+public abstract void include(ServletRequest,ServletResponse) throws ServletException,IOException;
+
+----------------------------------------------------------------------------
+
+jakarta.servlet.ServletRequest
+
+Methods:-
+========
+public abstract RequestDispatcher getRequestDispatcher(String);
+->Here String in parameter is <url-pattern> of next servlet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

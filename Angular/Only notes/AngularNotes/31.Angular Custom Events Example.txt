@@ -1,0 +1,126 @@
+Ex:
+filter.component.ts
+
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-filter',
+  templateUrl: './filter.component.html',
+  styleUrls: ['./filter.component.css']
+})
+export class FilterComponent {
+   @Input() public ElectronicsCount:number = 0;
+   @Input() public JeweleryCount:number = 0;
+   @Input() public MensCount:number = 0;
+   @Input() public WomensCount:number = 0;
+   @Input() public AllCount:number = 0;
+   public CategoryName:string = 'all';
+
+   @Output() public CategoryChanged:EventEmitter<string> = new EventEmitter<string>();
+   @Output() public SendClick:EventEmitter<any> = new EventEmitter<any>();
+
+   public SendCategoryName(e:any) {
+       this.CategoryChanged.emit(e.target.value);
+   }
+   public SendButtonClick(){
+      this.SendClick.emit({'Name':'TV', 'Price':56000});
+   }
+
+}
+
+
+filter.component.html
+
+<h3>Filter Products</h3>
+<ul class="list-unstyled">
+    <li class="d-flex justify-content-between mb-2"><span> <input type="radio" value="all" (change)="SendCategoryName($event)" class="form-check-input" name="category">  All </span> <span class="badge bg-dark">{{AllCount}}</span> </li>
+    <li class="d-flex justify-content-between mb-2"><span> <input type="radio" value="electronics" (change)="SendCategoryName($event)" class="form-check-input" name="category">  Electronics</span> <span class="badge bg-dark">{{ElectronicsCount}}</span> </li>
+    <li class="d-flex justify-content-between mb-2"> <span> <input type="radio" value="jewelery" (change)="SendCategoryName($event)"  class="form-check-input"  name="category"> Jewelery</span> <span class="badge bg-dark">{{JeweleryCount}}</span> </li>
+    <li class="d-flex justify-content-between mb-2"> <span> <input type="radio" value="men's clothing" (change)="SendCategoryName($event)" class="form-check-input"  name="category"> Men's Clothing</span> <span class="badge bg-dark">{{MensCount}}</span> </li>
+    <li class="d-flex justify-content-between mb-2"> <span> <input type="radio" value="women's clothing" (change)="SendCategoryName($event)" class="form-check-input"  name="category"> Women's Clothing</span> <span class="badge bg-dark">{{WomensCount}}</span> </li>
+
+</ul>
+<button (click)="SendButtonClick()">Send</button>
+
+
+
+ 
+products-data.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+
+@Component({
+  selector: 'app-products-data',
+  templateUrl: './products-data.component.html',
+  styleUrls: ['./products-data.component.css']
+})
+export class ProductsDataComponent implements OnInit {
+    public Products:FakestoreProductContract[] = [];
+    public AllCount:number = 0;
+    public ElectronicsCount:number = 0;
+    public JeweleryCount:number = 0;
+    public MensCount:number = 0;
+    public WomensCount:number = 0;
+
+    ngOnInit(): void {
+       fetch('http://fakestoreapi.com/products&#39;)
+       .then(response=>response.json())
+       .then(data=>{
+        this.Products = data;
+        this.AllCount = data.length;
+        this.ElectronicsCount = data.filter((product:any)=> product.category=='electronics').length;
+        this.JeweleryCount = data.filter((product:any)=> product.category=='jewelery').length;
+        this.MensCount = data.filter((product:any)=> product.category=="men's clothing").length;
+        this.WomensCount = data.filter((product:any)=> product.category=="women's clothing").length;
+       });
+    }
+    public GetCategoryName(e:any){
+       
+        if(e=="all") {
+          fetch(`http://fakestoreapi.com/products`)
+          .then(response=> response.json())
+          .then(data=>{
+            this.Products = data;
+          })
+        }
+        else {
+           fetch(`http://fakestoreapi.com/products/category/${e}`)
+          .then(response=> response.json())
+          .then(data=>{
+            this.Products = data;
+          })
+        }
+       
+    }
+    public product:any = {};
+    public GetProduct(e:any){
+        this.product = e;
+    }
+}
+
+
+products-data.component.html
+
+<div class="container-fluid">
+    <header class="bg-dark text-white p-1 text-center">
+        <h2> <span class="bi bi-cart3"></span> Shopping - Online</h2>
+    </header>
+    <section class="row">
+        <nav class="col-3">
+            <app-filter [AllCount]="AllCount" [ElectronicsCount]="ElectronicsCount" [JeweleryCount]="JeweleryCount" [MensCount]="MensCount" [WomensCount]="WomensCount" (CategoryChanged)="GetCategoryName($event)" (SendClick)="GetProduct($event)" ></app-filter>
+        </nav>
+        <main class="col-9 d-flex flex-wrap overflow-auto" style="height:500px">
+            <pre>
+                {{product.Name}}
+                {{product.Price}}
+            </pre>
+            <div *ngFor="let item of Products" class="card m-2 p-2" style="width:200px">
+                <img [src]="item.image" class="card-img-top" height="150">
+                <div class="card-header" style="height:150px">
+                    <p>{{item.title}}</p>
+                </div>
+            </div>
+        </main>
+    </section>
+</div>

@@ -1,0 +1,169 @@
+Object Type
+- Object is used to keep all related data and logic together.
+- "Alan Kay" introduced concept of object into computer programming in early 1960's.
+- OOP started in early 1967 with SIMULA 67.
+
+Syntax:
+        let  tv  = {
+            Key:value,
+            Key:value,
+            Key:function() { }
+        }
+
+- Above syntax will not have any restriction for keys and value.
+- TypeScript can set restriction for key and value.
+- TypeScript object type is defined using "{ }"
+
+Syntax:
+        let   tv: {Name:string, Price:number} = {
+
+            Name: "Samsung TV",
+            Price : 45000.44
+        }
+
+- Every property defined for object is mandatory to implement.
+- You can configure nullable property by using "?" [null reference character]
+
+Syntax:
+        let  tv : {Name:string, Price:number, Stock?:boolean}  = { }
+
+- You can define multiple optional properties.
+
+
+Ex:
+let tv:{Name:string, Price:number, Stock?:boolean} = {
+    Name : "Samsung TV",
+    Price: 45000.44,
+}
+console.log(`Name=${tv.Name}\nPrice=${tv.Price}`);
+
+- If your object comprises of only data then it is known as JSON.
+  [JavaScript Object Notation]
+
+- You can access object related properties within object by using "this" keyword.
+- You can access object properties outside object by using object name.
+- Object related functionality is defined by using function inside object.
+
+Syntax:
+            object : {
+                Name:string,
+                Total:any
+              }
+
+- You can configure any type of data in object
+
+Syntax : Array
+
+    tv : { Name:string, Price:number, Cities:string[] }  =  {  }
+
+Syntax : Embedded Object
+
+     tv : {Name:string, Price:number, Rating:{Rate:number, Count:number}} = { }
+
+Ex:
+let tv:{Name:string, Price:number, Qty:number, Cities:string[], Rating:{Rate:number, Count:number} , Total:any, Print?:any} = {
+    Name: "Samsung TV",
+    Price: 45000.44,
+    Qty: 2,
+    Cities: ["Delhi", "Hyd"],
+    Rating: {Rate:4.3, Count:600},
+    Total: function(){
+        return this.Qty * this.Price;
+    },
+    Print: function(){
+        console.log(`
+          Name=${this.Name}\n
+          Price=${this.Price}\n
+          Qty=${this.Qty}\n
+          Total=${this.Total()}\n
+          Cities=${this.Cities.toString()}\n
+          Rating=${this.Rating.Rate} [${this.Rating.Count}]
+        `);
+    }
+}
+tv.Print();
+
+Note: Object properties are string type and value can be any type.
+
+ let  tv : { "Name":string, "Price":number } = {  }
+
+
+                                 Array of Objects
+
+Data Type         :  Object Type Array    =>    { }[]
+Value Type        :  Array of Objects         =>    [{ }, { }]
+
+Ex:
+let students:{Name:string, Age:number}[] = [
+    {"Name": "John", "Age": 23},
+    {"Name": "David", "Age": 45}
+];
+for(var student of students) {
+    console.log(`${student.Name} - ${student.Age}`);
+}
+
+                        (or)
+let students:any[] = [ { }, { } ];
+
+                                    Map Type
+- It is same like object with and key and value.
+- Key can be any type.
+- In object keys are only string type.
+- Map is faster that object
+- It have implicit methods
+
+            set()
+            get()
+            has()
+            clear()
+            delete()
+            values()
+            keys()
+            entries()
+
+Syntax:
+        let   data:Map<any, any> = new Map();
+
+        data.set(1, " ");
+        data.set("", 0);
+        data.keys()
+        data.values()
+
+FAQ: What is difference between object and map?
+Ans :
+        Object                            Map
+        -------------------------------------------------
+        Key and Value                Key and Value
+       
+        Key is string                    Key can be any
+
+        Requires explicit            It have implicit iterators
+        iterators and loops
+
+        Slow                            Fast
+
+        Structured                    Schema less
+
+
+                                    Date Type
+- TypeScript "Date" type is used to configure and handle date and time values.
+- All JavaScript date functions are same in typescript
+
+Syntax:
+          let  Mfd:Date = new Date("year-month-day hrs:min:sec.milliSec");
+   
+          getHours()                    setHours()
+          getMinutes()                setDate() etc...
+          getSeconds()
+          getMilliSeconds()
+          getDay()
+          getDate()
+          getMonth()
+          getFullYear()
+          toLocaleDateString()
+          toLocaleTimeString()
+
+Ex:
+
+let Mfd:Date = new Date("2023-01-02 10:20:32.89");
+console.log("Mdf=" + Mfd.toLocaleDateString());

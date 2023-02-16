@@ -1,0 +1,138 @@
+Angular Component Life Cycle Hooks
+
+1. ngOnChanges()
+
+2. ngOnInit()
+- It allocates memory for current component, which is known as context memory.
+- You can store values in context memory, which are accessible to other components that run within the context of a component.
+- Parent component can send data into child component.
+
+3. ngDoCheck()
+- The data of child component is not accessible to parent.
+- The context memory of child is not accessible to its parent.
+- It is the method that is executed to transport data explicitly from child component to parent.
+- If any action can't handle implicity then its defined explicilty by using ngDoCheck.
+- Custom events are created by using
+        @Output()
+        EventEmitter
+- Event Args are emitted from child to parent.
+
+4. ngAfterContentInit()
+- It initializes the memory for creating layout.
+- It configures the memory for rendering the layout.
+- The output is ready.
+- Implicit templates are used.
+        ngIf, ngFor, ngSwitch
+
+5. ngAfterContentChecked()
+- In this phase the explicit templates are created
+- The explicit templates are added to page dynamically
+- It handles "Content Projection".
+- Content Projection is managed by
+        TemplateRef<T>
+        @ViewChild()
+
+6. ngAfterViewInit()
+- It is responsible for handling initial Painiting
+- It is the output before change.
+- The default UI is presented on browser.
+
+7. ngAfterViewChecked()
+- It is responsible for generating final output.
+- The changes in UI are update in this phase.
+- The final output is ready.
+
+8. ngOnDestroy()
+- It is called when you change from one component to another.
+- The memory allocated for current component is destroyed.
+- It will unsubscribe all the methods.
+- It disconnects all actions.
+- Cleans up the memory allocated for component.
+
+                          Angular Material Components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ex: Change Detection
+
+child.component.ts
+
+import { Component, Input, EventEmitter, Output, OnChanges, SimpleChanges } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent implements OnChanges {
+    @Input() public UserName:string|null = null;
+    public currentValue:string | null = null;
+    public previousValue:string | null = null;
+    public msg:string|null = null;
+   
+    ngOnChanges(changes : SimpleChanges){
+        for(var property in changes)
+        {
+            let change = changes[property];
+            this.currentValue = change.currentValue;
+            this.previousValue = change.previousValue;
+        }
+        if(this.currentValue==this.previousValue) {
+            this.msg = "No Change Detected";
+        } else {
+            this.msg = "Change Detected";
+        }
+       
+    }
+}
+
+
+child.component.html
+
+<div class="container p-4 bg-light text-dark" style="height:200px">
+    <h3>Child Component</h3>
+    <p>Hello ! {{UserName}}</p>
+    <h3>{{msg}}</h3>
+    Previous Value: {{(previousValue==undefined)?"Undefined":previousValue}} <br>
+    Current Value : {{currentValue}}
+</div>
+
+parent.component.ts
+
+import { Component, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css']
+})
+export class ParentComponent  {
+    public UserName:string|null = "John";
+   
+}
+
+parent.component.html
+
+<div class="container-fluid p-4 m-3 bg-dark text-white" style="height:400px">
+  <h2>Parent Component</h2>
+  <dl>
+    <dt>User Name</dt>
+    <dd><input type="text" [(ngModel)]="UserName"></dd>
+  </dl>
+  <app-child [UserName]="UserName" ></app-child>
+</div>

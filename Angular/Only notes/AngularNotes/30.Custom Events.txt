@@ -1,0 +1,160 @@
+BMI Calculator
+
+bmi.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-bmi',
+  templateUrl: './bmi.component.html',
+  styleUrls: ['./bmi.component.css']
+})
+export class BmiComponent {
+    public BMIStatus:{'margin-left':string} = {
+        "margin-left" : '550px'
+    }
+}
+
+
+bmi.component.html
+
+
+<div class="container-fluid">
+    <h2>BMI Status</h2>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:400px">
+             < 52 low weight
+        </div>
+        <div class="progress-bar bg-primary" style="width:400px">
+            53 - 72 normal weight
+       </div>
+       <div class="progress-bar bg-dark" style="width:400px">
+         > 73 over weight
+        </div>
+    </div>
+    <div class="bi bi-triangle-fill" [ngStyle]="BMIStatus">
+
+    </div>
+</div>
+
+
+                                 Custom Events
+- You can create a custom component.
+- Custom components are designed for resuability.
+- You can reuse in the same way how it is designed or you can customize according to requirements.
+- If you want a component to customize according requirements then you have to configure with custom events.
+
+Challenges
+1. Accessing a component in another.
+    [Parent and Child]
+
+    Syntax:
+            <app-parent>
+                    <app-child> </app-child>
+            </app-parent>
+
+2. Transporting data from parent to child.
+
+3. Transporting data from child to parent.
+
+
+Syntax: Transport data from parent to child
+
+- Create a property in child component that can accept input from parent.
+
+    import  { Input }  from  '@angular/core';
+
+    @Input()  public  MsgFromParent:string=" ";
+
+    Note: @Input() is a marker or directive which is used to mark any
+             property that is expecting data from parent component.
+
+- Send data into the component using "Property Biniding Technique".
+
+
+    <app-child  [MsgFromParent]=" 'message' "> </app-child>
+
+Syntax: Transporting data from child to parent
+
+- You have to create a custom event
+
+  import { Output, EventEmitter } from '@angular/core';
+
+  @Output()  public  ChildClick:EventEmitter<string> = new EventEmitter<string>();
+
+- Emit the value by using any built-in event
+
+    public  OnButtonClick()
+    {
+         this.ChildClick.emit( 'message' );
+    }
+
+- Child component uses custom event to emit value
+
+    <app-child  (ChildClick)="GetMessageFromChild($event)">
+
+- Parent component have to collect the event arguments and use in its context.
+
+     public  GetMessageFromChild(e:string)
+    {
+         this.messageFromChild = e;
+    }
+
+    <p> {{messageFromChild}} </p>
+
+Ex:
+ child.component.ts
+
+ import { Component, Input, EventEmitter, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
+})
+export class ChildComponent {
+   @Input() public MsgFromParent:string = '';
+
+   @Output() public ChildClick:EventEmitter<string> = new EventEmitter<string>();
+
+   public ChildButtonClick(){
+        this.ChildClick.emit('Hello ! from child');
+   }
+}
+
+child.component.html
+
+<div class="container p-4 bg-light text-dark" style="height:200px">
+    <h3>Child Container <button (click)="ChildButtonClick()">Msg to Parent</button> </h3>
+    <p>{{MsgFromParent}}</p>
+</div>
+
+
+parent-component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css']
+})
+export class ParentComponent {
+    public msg:string = '';
+    public msgFromChild:string = '';
+    public SendClick(){
+       this.msg = 'Hello ! from Parent';
+    }
+    public GetMessageFromChild(e:string){
+        this.msgFromChild = e;
+    }
+}
+
+
+parent.component.html
+
+<div class="container-fluid p-4 m-3 bg-dark text-white" style="height:400px">
+    <h2>Parent Container <button (click)="SendClick()">Send Msg to Child</button> </h2>
+    <p>{{msgFromChild}}</p>
+    <app-child [MsgFromParent]="msg" (ChildClick)="GetMessageFromChild($event)" ></app-child>
+</div>

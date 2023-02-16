@@ -1,0 +1,153 @@
+EX: Date Picker
+
+app.module.ts
+
+import { MatFormFieldModule  } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
+imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
+
+
+material-demo.component.html
+
+<div class="container-fluid">
+    <h2>Date Picker</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Departure Date</mat-label>
+        <mat-datepicker-toggle matSuffix [for]="departure"></mat-datepicker-toggle>
+        <input type="text" matInput [matDatepicker]="departure">
+        <mat-datepicker #departure></mat-datepicker>
+    </mat-form-field>
+</div>
+
+                                Material CDK
+- CDK is component development kit.
+- It provides performance and behaviour for components.
+
+Ex: Lazy Loading
+
+1. Go to app.module.ts
+
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
+imports: [
+ ScrollingModule
+]
+
+2. material-demo.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+
+@Component({
+  selector: 'app-material-demo',
+  templateUrl: './material-demo.component.html',
+  styleUrls: ['./material-demo.component.css']
+})
+export class MaterialDemoComponent implements OnInit {
+    public Products:FakestoreProductContract[] = [];
+    ngOnInit(){
+        fetch('http://fakestoreapi.com/products&#39;)
+        .then(res=>res.json())
+        .then(data=>{
+           this.Products = data;
+        })
+    }
+}
+
+3. material-demo.component.html
+
+<div class="container-fluid">
+   <h2>Without Lazy Loading</h2>
+    <div class="overflow-auto" style="height:300px; border:1px solid black; padding:5px; width:250px">
+      <div *ngFor="let item of Products">
+         <img [src]="item.image" width="150" height="150">
+      </div>
+    </div>
+   <h2>With Lazy Loading</h2>
+   <cdk-virtual-scroll-viewport itemSize="100" class="overflow-auto" style="height:300px; border:1px solid black; padding:5px; width:250px">
+        <div *cdkVirtualFor="let item of Products">
+            <img [src]="item.image" width="150" height="150">
+        </div>
+   </cdk-virtual-scroll-viewport>
+</div>
+
+                            Angular Pipes
+- Pipe is used to transform data.
+- It allows to change the format of data and present.
+- Pipe is a class that implements "PipeTransform" base.
+- Pipe class container "transform()" method that can transform and return your data.
+- Pipe transforms data in a user friendly format.
+- Angular provides several bulit-in Pipes and also allows to create Custom pipes.
+- Angular built-in pipes are
+            uppercase
+            lowercase
+            titlecase
+            number
+            currency
+            date
+            json
+            slice
+            i18nSelect
+            i18nPlural
+            async
+            percent etc..
+- Pipe is attached to your data by using "|" symbol.
+- Pipe can have parameters which are defined using ":"
+
+Syntax:
+            data | pipeName:param1:param2
+
+
+1. uppercase                : Changes all to CAPS
+2. lowercase                : Sets all chars to lowercase
+3. titlecase                    : Sets every first char in word to CAPS.
+
+       public Name:string = "welcome";
+
+      {{ Name | uppercase }}
+
+4. number                    : It is used to display numeric values with
+                                  decimal places. It class is "Decimal"
+
+      public  Price:number = 34000.40;
+
+      {{ Price | number: '0.2' }}
+
+
+5. currency                    : It is similar to number but can have currency
+                                  symbol.
+
+    {{Product.Price | currency:'INR'}}
+
+
+6. date                        : It can display date in various formats.
+
+                                short
+                                long
+                                full
+                                shortDate
+                                longDate
+                                fullDate
+                                dd            - day
+                                MM        - month
+                                yy            - year
+                                MMM        - short month
+                                MMMM    - long month
+                                yyyy
+
+Syntax:
+         public  Mfd:Date  = new Date("2023-01-22");
+       
+        {{Product.Mfd | date : 'dd-MMM-yyyy'}}

@@ -1,0 +1,68 @@
+Angular Component Life Cycle Hooks
+
+Angular Application Flow:
+1. Client makes a request from browser
+
+            http://localhost:4200/login
+
+2. The request to be processed in "HttpServer" by using "HttpHandler" inside "HttpProcessingPipeline".
+
+3. HttpHandler uses a "Routing Engine".
+
+4. Routing Engine gets the URL request and checks with "RouteTable"
+
+5. Route Table comprises of information about the request and component.
+
+6. If requested path is not matching with Route path in Table then it returns "404" - Not Found.
+
+            2xx         Success
+            3xx         Redirection
+            4xx         Client Side Error
+            5xx         Server Side Error
+
+7. If requested path is matching, then the component is created and loaded into page. [index.html]
+
+8. The compopent in Angular will undergo various phases from start to end, which are known as "Life Cycle Phases".
+
+9. The lifecyle phases are managed by various methods, which are known as "LifeCyle Hooks".
+
+Note: The Engine used for processing the request and response with route path is "Ivy".
+
+10. The life hooks comprises of following methods
+
+                                ngOnChanges()
+                                ------------------------
+
+- It is the first phase that starts after the component object is created.
+- Memory is allocated for references in component.
+
+                public Name:string;
+
+- Values are initialized into memory.
+
+                public  Name:string = "John";
+
+- This is reffered as "Change Detection".
+
+- The values a binded to UI
+                 interpolation
+                 property binding
+                 attribute binding
+- The changes in UI are identified and update to the data source
+                 event binding [two way] - Not custom Events
+                 [(ngModel)]
+
+- The changes are detected and managed by "SimpleChanges" object, which is a member of "OnChanges".
+
+- SimpleChanges object provides an alogirithm with 2 values
+
+                PreviousValue == CurrentValue  => No Change Detected
+                PreviousValue != CurrentValue  => Change Detected
+
+Syntax:
+            public Name:string = "john";
+
+            PreviousValue        Name = undefined
+            CurrentValue        Name = "john"
+
+            PreviousValue ! = CurrentValue => Change Detected
