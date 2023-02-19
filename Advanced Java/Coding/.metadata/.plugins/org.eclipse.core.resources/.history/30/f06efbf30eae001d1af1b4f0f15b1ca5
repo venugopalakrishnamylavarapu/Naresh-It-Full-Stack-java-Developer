@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 			{//for Servlet Forwarding use the below 2 lines of code
 //				RequestDispatcher rd=request.getRequestDispatcher("/welcome");
 //				rd.forward(request, response);
-				response.sendRedirect("welcome");
+				response.sendRedirect("\welcome");
 			}
 			else
 			{

@@ -51,4 +51,14 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WeclomeServlet</display-name>
+    <servlet-name>WeclomeServlet</servlet-name>
+    <servlet-class>Login.WeclomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WeclomeServlet</servlet-name>
+    <url-pattern>/weclome</url-pattern>
+  </servlet-mapping>
 </web-app>

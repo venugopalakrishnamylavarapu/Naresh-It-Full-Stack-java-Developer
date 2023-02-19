@@ -1,0 +1,147 @@
+Sorting Pipe - Custom Pipe with Parameters
+
+> ng  generate  pipe  sorting --skip-tests
+
+Ex:
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'sorting'
+})
+export class SortingPipe implements PipeTransform {
+
+  transform(collection:string[], reverse?:boolean) {
+   
+       if(reverse==true){
+          collection.sort();
+          collection.reverse();
+          return collection;
+       } else {
+           return collection.sort();
+       }
+       
+  }
+}
+
+                                    FAQ's
+1. What is a Pipe? What is the role of Pipe in Angular?
+A. Pipe is a class, which transforms the data.
+
+2. What is Parameterized Pipe?
+A. Pipe can be parameter less, which perform same functionality every time.
+    A Parameterized pipe can change the functionality according to
+    situation.
+
+3. What is chaining of Pipes?
+A. It is the process of defining multiple pipes to data.
+
+      *ngFor="let item of collection | keyvalue | slice:0:2 | uppercase"
+
+4. What is a Pure and Impure Pipe?
+A. A pure pipe will not change the value.
+                uppercase, number, slice
+    An Impure pipe can change the value.
+                percent, i18nSelect, i18nPlural
+
+5. What is the base class for Pipe?
+A. PipeTransform
+
+6. What is the marker for Pipe?
+A. @Pipe()
+
+                             Angular Services
+- Service is a pre-defined bussiness logic, which you can implement and customize according to requirements.
+- You can use a service to extend the functionality of your application without writing the functionality.
+- Service enables
+        a) Reusability
+        b) Maintainability
+        c) Testability
+        d) Security
+        e) Extensibility
+- Services is a set of factories.
+- Factory is a set of values and functions.
+- Factory uses single call mechanism, where an object is created every time to access a function.
+- Service uses a "single ton" mechanism, where object is create for very first request and same object is accross requests.
+- Service uses DI [Dependency Injection].
+- DI comprises of 2 components
+        a) Provider
+        b) Injector
+- Provider is responsible for locating the values or functions from memory.
+- Injector is responsible for Injecting the value into component.
+- Angular Provides several built-in services and also allows to create custom services.
+- Angular Built-in Services
+        HttpClient Service
+        Routing Services
+        Security Services etc...
+
+Ex:
+1. Add a new folder in app folder
+        "services"
+
+2. Generate new service
+       
+        > ng  g service  captcha
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn : "root"
+})
+export class CaptchaService {
+
+  public GenerateCode():string {
+      var a = Math.random() * 10;
+      var b = Math.random() * 10;
+      var c = Math.random() * 10;
+      var d = Math.random() * 10;
+      var e = Math.random() * 10;
+      var f = Math.random() * 10;
+      var code = `${Math.round(a)} ${Math.round(b)} ${Math.round(c)} ${Math.round(d)} ${Math.round(e)} ${Math.round(f)}`;
+      return code;
+  }
+  constructor() { }
+}
+
+4. login.component.ts
+
+import { Component, OnInit } from "@angular/core";
+import { CaptchaService } from "../../services/captcha.service";
+
+@Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit
+{
+    public code:string = '';
+    constructor(private captcha: CaptchaService){
+
+    }
+    ngOnInit(): void {
+        this.code = this.captcha.GenerateCode();
+    }
+    public NewCode():void {
+        this.code = this.captcha.GenerateCode();
+    }
+}
+
+5.
+login.component.html
+
+<div class="container-fluid">
+    <div class="login-form">
+        <form>
+            <h2> <span class="bi bi-person-fill"></span> User Login</h2>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" class="form-control"></dd>
+                <dt>Password</dt>
+                <dd><input type="password" class="form-control"></dd>
+                <dt>Verify Code <button class="btn" (click)="NewCode()"> <span class="bi bi-arrow-clockwise"></span> </button> </dt>
+                <dd>{{code}}</dd>
+            </dl>
+            <button class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>

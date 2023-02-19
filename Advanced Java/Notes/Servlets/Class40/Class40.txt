@@ -1,0 +1,83 @@
+
+Forwarding vs Redirecting:
+==========================
+
+	ServletForwarding				ServletRedirecting
+	=================				==================
+1)Forwarding request and response of 		1)Passing Control from one servlet to 
+  one servlet to another servlet is		  another servlet is called as Servlet 
+  called ServletForwarding.			  Redirecting.
+
+2)In forwarding,server implicitly 		2)In redirecting,server instructs the browser	 
+  forwards the request & response from		  to execute next url.
+  one servlet to another servlet.
+
+3)In forwarding both data & control 		3)In redirecting only control passed to next 
+  passed to next servlet.			  servlet.
+
+4)In forwarding only one pair of request	4)in Redirecting seperate pair of request and
+  & response created by web container.		  response created by web container for every 
+						  servlet.
+
+5)Figure in folder.				5)Figure in folder.
+
+6)Forwarding supports to forward servlet	6)Redirectin supports to redirect servlet to
+  to servlet html & jsp.			  servlet,html,jsp,asp,coldfusion,asp.net,php,..etc
+
+7)Forwarding works within the server only.	7)Redirecting works within the server & 
+						  between two different servers also.
+
+Session tracking:
+=================
+A session tracking is a mechanism that servlets use to maintain client state information about a series of 
+requests from the same user across some time period.
+
+A session is a time period between login & logout.
+
+A client state information can be username,password,examination id,account number,shopping items,..etc.,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

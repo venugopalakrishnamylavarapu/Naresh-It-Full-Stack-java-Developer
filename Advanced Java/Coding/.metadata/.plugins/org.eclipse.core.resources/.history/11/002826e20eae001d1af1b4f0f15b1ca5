@@ -16,7 +16,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
+/**
+ * Servlet implementation class LoginServlet
+ */
 public class LoginServlet extends HttpServlet {
 	Connection conn;
 	public void init(ServletConfig config) {
@@ -29,6 +31,7 @@ public class LoginServlet extends HttpServlet {
 					Class.forName(s1);
 					conn=DriverManager.getConnection(s2,s3,s4);
 			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}

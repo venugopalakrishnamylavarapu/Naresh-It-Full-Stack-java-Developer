@@ -1,0 +1,79 @@
+Servlet Forwarding Vs ServletIncluding
+======================================
+
+		Servlet Forwarding					Servlet Including
+		------------------					-----------------
+1)Forwarding request & response of one servlet to		1)Including request & response of one servlet 
+  another servlet is called as servlet forwarding.		  into another servlet is called as servlet including.
+
+2)the main advantage of servlet forwarding is modularity.	2)The main advantage of servlet including is reusability.
+
+3)in forwarding url pattern is not changed.			3)In including also,url pattern is not changed.
+
+4)in forwarding only one pair of request & response 		4)in including also only one pair of request & response
+  created by web container.					  created by web container.
+
+5)figure in the folder.						5)figure in the folder.
+
+6)Forwarding supports to forward servlet to servlet,		6)including supports to include servlet in a servlet,JSP
+  servlet to JSP & servlet to HTML.				  in a servlet & HTML in a servlet.
+
+7)Forwarding statement must be last statement in a task		7)Include statement can be anywhere in a task code.
+  code.
+
+8)Forwarding works within the server only.			8)Including also works within the server only.
+
+
+
+Servlet Redirecting:
+====================
+Passing control from one servlet to another servlet is called as servlet redirecting.
+
+In servlet redirecting,server instructs the browser to execute next url.
+
+jakarta.servlet.http.HttpServletResponse
+
+Method:
+======
+public abstract void sendRedirect(String) throws IOException;
+
+->String param is <url-pattern> of a servlet. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

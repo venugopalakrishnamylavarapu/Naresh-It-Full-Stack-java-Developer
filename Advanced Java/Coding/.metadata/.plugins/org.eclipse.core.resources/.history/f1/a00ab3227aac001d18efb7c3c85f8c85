@@ -20,10 +20,10 @@ public class RegServlet extends HttpServlet {
    	public void init(ServletConfig config) throws ServletException {
    		try {
    			ServletContext sc=config.getServletContext();
-   			String s1=sc.getInitParameter("driver");
-   			String s2=sc.getInitParameter("url");
-   			String s3=sc.getInitParameter("username");
-   			String s4=sc.getInitParameter("password");
+   			String s1=config.getInitParameter("driver");
+   			String s2=config.getInitParameter("url");
+   			String s3=config.getInitParameter("username");
+   			String s4=config.getInitParameter("password");
 		Class.forName(s1);
 		conn=DriverManager.getConnection(s2,s3,s4);
    		}catch(Exception e)

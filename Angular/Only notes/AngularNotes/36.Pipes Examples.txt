@@ -1,0 +1,234 @@
+1. uppercase
+2. lowercase
+3. titlecase
+4. number
+5. currency
+6. date
+                                       percent
+                                      -----------
+- It converts a number in precent
+- It is an impure pipe.
+- Impure pipe can change the value.
+- Pure pipe will not change the value, it just changes the format of value.
+
+Syntax:
+            public  Rate:number = 0.245;
+           
+            {{ Rate | precent: '2.2' }}
+
+                                       json
+                                       -------
+- It converts the data into JSON format.
+- JavaScript uses a method
+            JSON.stringfy(data)
+
+Syntax:
+            public Product:{Name:string, Price:number} = {
+                Name : "TV",
+                Price: 45000
+            };
+
+            {{ Product | json }}
+
+                                     slice
+                                    -------
+- It is an array method that reads and returns the values between specified index.
+
+Syntax:
+        public  Msg:string = "Welcome to JavaScript"
+       
+        {{ Msg | slice:0:7 }}
+
+                                  KeyValue
+                                  -------------
+- Angular have iterator "ngFor"
+- ngFor uses "of" operator.
+- "of" operator can't read properties, it can read only values.
+
+Syntax:
+         <li  *ngFor="let item of  categories | keyvalue">
+
+                {{ item.key }}  -  {{ item.value }}
+
+          </li>
+
+                                i18nSelect
+                                ---------------
+- It uses an object to verify the matching keys and selects a suitable value to display.
+
+Syntax:
+           public  Products:[] = { }
+           public  object:{}  = { }
+
+           {{ item | i18nSelect:object }}
+
+Ex:
+  pipe-demo.component.ts
+ 
+  import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-pipe-demo',
+  templateUrl: './pipe-demo.component.html',
+  styleUrls: ['./pipe-demo.component.css']
+})
+export class PipeDemoComponent implements OnInit {
+
+    public Products:{Name:string, ShippedTo:string}[] = [
+       {Name:"Samsung TV", ShippedTo: "Delhi"},
+       {Name:"Mobile", ShippedTo: "Hyd"},
+       {Name:"Watch", ShippedTo: "Goa"},
+       {Name:"Shirt", ShippedTo: "Mumbai"}
+    ];
+
+    public Status:any = {
+         'Delhi' : 'Delivery in 2 Days',
+         'Hyd'   : 'Same day Delivery',
+         'Mumbai': 'One Day Delivery',
+         'other' : 'Usually dispatched in 3-4 working days'
+    };
+
+    ngOnInit(): void {
+       
+    }
+}
+
+
+pipe-demo.component.html
+
+<div class="container-fluid">
+   <h2>Your Cart</h2>
+   <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Delivery Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of Products">
+                <td>{{product.Name}}</td>
+                <td>{{product.ShippedTo}}</td>
+                <td>
+                    {{product.ShippedTo | i18nSelect:Status}}
+                </td>
+            </tr>
+        </tbody>
+   </table>
+</div>
+
+                                i18nPlural
+- In programming traditions developers use "plural" name for a collection of values. [more than one].
+- Plural pipe can get the length and count of elements in a collection and display suitable messages.
+
+Syntax:
+             public  Map = {
+                    '=0' :  "No Value",
+                    '=1' :  "One value",
+                    'other' : "#  values"
+              }
+            public  Collection:string[] = [];
+
+            {{  Collection.length | i18nPlural:Map }}
+
+Ex:
+ pipe-demo.component.ts
+ 
+ import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-pipe-demo',
+  templateUrl: './pipe-demo.component.html',
+  styleUrls: ['./pipe-demo.component.css']
+})
+export class PipeDemoComponent implements OnInit {
+    public Messages:string[] = [];
+    public Count:number = 0;
+    public Message:string = '';
+    public ShowMessages:boolean = false;
+
+    public NotificationMap = {
+       '=0' : 'No New Messages',
+       '=1' : 'One New Message',
+       'other': '# Messages'
+    }
+
+    ngOnInit(): void {
+        this.Count = this.Messages.length;
+    }
+    public SendClick(){
+        var now = new Date();
+        this.Messages.push(this.Message + "-" + now.toLocaleTimeString());
+        this.Count = this.Messages.length;
+        alert("Message Sent");
+        this.Message = "";
+    }
+    public ShowClick(){
+       this.ShowMessages = (this.ShowMessages==true)?false:true;
+    }
+}
+
+pipe-demo.component.html
+
+<div class="container-fluid">
+   <h2>Plural Demo</h2>
+   <div class="mb-3 input-group w-25">
+      <input type="text" [(ngModel)]="Message" class="form-control"> <button (click)="SendClick()" class="btn btn-primary"> <span class="bi bi-send"></span> </button>
+   </div>
+   <button (click)="ShowClick()" class="btn btn-primary position-relative w-25">
+      <span class="bi bi-bell"></span> {{Messages.length | i18nPlural:NotificationMap}}
+      <span class="badge bg-dark position-absolute end-0 top-0 rounded rounded-circle"> {{Count}} </span>
+   </button>
+   <div class="mt-4" *ngIf="ShowMessages">
+       <ul class="list-unstyled">
+           <h3>Your Messages</h3>
+           <li *ngFor="let item of Messages">
+                {{item}}
+           </li>
+       </ul>
+   </div>
+</div>
+
+                              Custom Pipes
+- Pipe is a class.
+- Pipe class implements  "PipeTransform" base
+- Pipe uses a directive "@Pipe()"
+- Pipe comprises of "transform()" which is used to transform and return the data.
+- Pipe can be parameter less or parameterized.
+
+ > ng  g   pipe   sentence  --skip-tests
+
+
+1. Add a folder "pipes"
+
+2. Add a new file
+        "sentence.pipe.ts"
+
+
+import { PipeTransform, Pipe } from '@angular/core';
+
+@Pipe({
+    name: 'sentence'
+})
+export class SentencePipe implements PipeTransform
+{
+     transform(sentence:string) {
+         var firstChar = sentence.charAt(0);
+         var restChars = sentence.substring(1);
+         var sentence = firstChar.toUpperCase() + restChars.toLocaleLowerCase();
+         return sentence;
+     }
+}
+
+3. Register in app.module.ts
+
+ declarations : [
+        SentencePipe
+  ]
+
+ 4.  Apply
+
+        public  title:string = "weLCOMe to AngULAr";
+
+        {{ title | sentence }}

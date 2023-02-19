@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,11 +18,10 @@ public class RegServlet extends HttpServlet {
 	Connection conn;
    	public void init(ServletConfig config) throws ServletException {
    		try {
-   			ServletContext sc=config.getServletContext();
-   			String s1=sc.getInitParameter("driver");
-   			String s2=sc.getInitParameter("url");
-   			String s3=sc.getInitParameter("username");
-   			String s4=sc.getInitParameter("password");
+   			String s1=config.getInitParameter("driver");
+   			String s2=config.getInitParameter("url");
+   			String s3=config.getInitParameter("username");
+   			String s4=config.getInitParameter("password");
 		Class.forName(s1);
 		conn=DriverManager.getConnection(s2,s3,s4);
    		}catch(Exception e)
@@ -43,10 +41,11 @@ public class RegServlet extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	try {
-		String s1=request.getParameter("fname");
-		String s2=request.getParameter("lname");
-		String s3=request.getParameter("uname");
-		String s4=request.getParameter("pword");
+		ServletContext sc=request.getServletContext();
+		String s1=sc.getParameter("fname");
+		String s2=sc.getParameter("lname");
+		String s3=sc.getParameter("uname");
+		String s4=sc.getParameter("pword");
 		PreparedStatement pstmt=conn.prepareStatement("insert into loginfo values(?,?,?,?)");
 		pstmt.setString(1, s1);
 		pstmt.setString(2, s2);

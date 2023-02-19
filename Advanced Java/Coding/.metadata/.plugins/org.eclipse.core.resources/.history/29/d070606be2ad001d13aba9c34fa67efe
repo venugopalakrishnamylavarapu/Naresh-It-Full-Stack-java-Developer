@@ -16,7 +16,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
+/**
+ * Servlet implementation class LoginServlet
+ */
 public class LoginServlet extends HttpServlet {
 	Connection conn;
 	public void init(ServletConfig config) {
@@ -29,6 +31,7 @@ public class LoginServlet extends HttpServlet {
 					Class.forName(s1);
 					conn=DriverManager.getConnection(s2,s3,s4);
 			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
@@ -49,19 +52,21 @@ public class LoginServlet extends HttpServlet {
 			pstmt.setString(2, s2);
 			ResultSet rs=pstmt.executeQuery();
 			PrintWriter pw=response.getWriter();
+			pw.println("<html><body>");
 			if(rs.next())
-			{//for Servlet Forwarding use the below 2 lines of code
-//				RequestDispatcher rd=request.getRequestDispatcher("/welcome");
-//				rd.forward(request, response);
-				response.sendRedirect("welcome");
+			{
+				RequestDispatcher rd=request.getRequestDispatcher("/welcome");
+				rd.forward(request, response);
 			}
 			else
 			{
 				pw.println("<font color=yellow>");
-				pw.println("Invalid Username/Password</font>");
+				pw.println("Invalid Username/Password");
 				RequestDispatcher rd=request.getRequestDispatcher("/login.html");
 				rd.include(request, response);
+				pw.println("</font>");
 			}
+			pw.println("</body></html>");
 		} catch (SQLException | IOException | ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

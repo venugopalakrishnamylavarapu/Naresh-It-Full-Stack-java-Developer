@@ -1,0 +1,119 @@
+We Require SessionTracking mechanism in application developement because http protocol is
+a stateless protocol and it does not maintain state information.
+
+SessionTracking methods:
+========================
+1)Cookies
+2)URL Rewriting
+3)HTTP Sessions
+4)Hidden form Fields
+
+1)Cookies:
+=========
+->A cookie is a piece of information stored at client side to maintain client state information.
+
+jakarta.servlet.http.Cookie
+---------------------------
+
+Constructor:
+============
+public Cookie(String,String);
+
+Methods:
+
+public void setMaxAge(int);
+=>it is used to set the time interval in seconds.
+
+public int getMaxAge();
+=>it is used to get the time interval.
+
+public String getName();
+=>it is used to get the name.
+
+public void setValue(String);
+=>it is used to change the value.
+
+public String getValue();
+=>it is used to get the value.
+
+By default cookies are vanished when the browser window is closed.
+
+it is possible to set the time interval using the setMaxAge() method in jakarta.servlet.http.Cookie class.
+
+
+jakarta.servlet.http.HttpServletResponse
+----------------------------------------
+
+Methods:
+
+public abstract void addCookie(Cookie);
+=>it is used to add a cookie to a client system.
+
+jakarta.servlet.http.ServletRequest
+-----------------------------------
+
+Methods:
+
+public abstract Cookie[] getCookies();
+=>it is used to retrive all the cookies from a client system.
+
+books.html
+==========
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body bgcolor=yellow text=blue>
+<h1><u>Java Books</u></h1>
+<form action=set>
+<input type=checkbox name=book1 value=Java2CompleteREferences>Java 2 Complete References<br>
+<input type=checkbox name=book2 value=HeadFirstJava>Head First Java<br>
+<input type=checkbox name=book3 value=SCJPByKathySierra>SCJP By Kathy Sierra<br><br>
+<input type=submit>&nbsp;&nbsp;<input type=reset>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
