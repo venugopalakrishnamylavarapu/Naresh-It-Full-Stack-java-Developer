@@ -1,0 +1,196 @@
+
+URL Rewriting:
+=============
+In this session tracking method client state information appended to url.
+
+url dynamic project:
+====================
+
+books.html:
+===========
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body bgcolor=yellow text=blue>
+<h1><u>Java Books</u></h1>
+<form action=set>
+<input type=checkbox name=book1 value=Java2CompleteReferences>Java 2 Complete References<br>
+<input type=checkbox name=book2 value=HeadFirstJava>Head First Java<br>
+<input type=checkbox name=book3 value=SCJPByKathySierra>SCJP By Kathy Sierra<br><br>
+<input type=submit>&nbsp;&nbsp;<input type=reset>
+</form>
+</body>
+</html>
+
+SetUrl.java:
+============
+package url;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class SetUrl extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s1=request.getParameter("book1");
+		String s2=request.getParameter("book2");
+		String s3=request.getParameter("book3");
+		PrintWriter pw=response.getWriter();
+		pw.println("<html><body bgcolor=red text=yellow><center>");
+		pw.println("<h1>Your Books Are Added To Cart</h1>");
+		pw.println("<a href=get?book1="+s1+"&book2="+s2+"&book3="+s3+">Next</a>");
+		pw.println("</center></body></html>");
+	}
+
+}
+
+
+GetUrl.java:
+============
+package url;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class GetUrl extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s1=request.getParameter("book1");
+		String s2=request.getParameter("book2");
+		String s3=request.getParameter("book3");
+		PrintWriter pw=response.getWriter();
+		pw.println("<html><body bgcolor=red text=yellow>");
+		pw.println("<h1><u>Selected Books</u></h1>");
+		if(!s1.equals("null"))	pw.println(s1+"<br>");
+		if(!s2.equals("null"))	pw.println(s2+"<br>");
+		if(!s3.equals("null"))	pw.println(s3+"<br>");
+		pw.println("</body></html>");
+	}
+
+}
+
+
+Cookies  VS URL Rewriting:
+==========================
+
+		Cookies					URL Rewriting
+		=======					=============
+1)in this session tracking method,		1)In this session tracking method,
+  client state informatin stored at		  client state information appended
+  client side in browser memory.		  url.
+
+2)It supports String type data only.		2)It supports String type data only.
+
+3)By default cookies are vanished 		3)Here client state information is
+  whenever browser window is closed.		  vanished whenever control passed to 
+						  next servlet.
+
+4)Here it is possible to set the time 		4)Here it is not possible to set the 
+  interval by using setMaxAge() method		  time interval.
+  of Cookie class.
+
+5)Here client state information not 		5)Here client state information is 
+  displayed in browser window.			  displayed in address bar in 
+						  a browser window.
+
+6)This session tracking method is not 		6)This session tracking method also not 
+  secure because client state information	  secure because here client state information
+  can be viewed by users through browser 	  displayed in address bar in a browser window.
+  settings option.		
+
+7)Here size of data is limited.			7)Here also size of the data is limited.
+
+8)This session tracking method fails if		8)This session tracking method always works.
+  the cookies are disabled.		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

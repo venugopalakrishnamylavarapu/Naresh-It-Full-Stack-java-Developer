@@ -1,0 +1,107 @@
+Http Sessions:
+=============
+In this session tracking method,client state information stored in server memory.
+
+in this session tracking session id created by web container to recognize the client.
+
+Here session id created & passed to client system by web container with login response.
+
+Here sesssion id destroyed whenever logout request comes to server.
+
+To implement this sesison tracking method we need one more session tracking method wither cookies
+or rewriting.
+
+There are two ways to implement this session tracking method.
+1)Http Sessions with Cookies
+2)Http Sessions with URL Rewriting
+
+in this session tracking,to maintain session id either cookies or URL Rewriting required.
+
+1)Http Sessions with Cookies:
+=============================
+in this session tracking method client state information stored in server memory in session variables.
+
+in this session tracking method session id stored in client system in cookie variable.
+
+
+figure in the folder
+
+in the above example,session id created by web container whenever login request comes to a server,
+stored in a server memory,passed to client system with login response & stored in client system in 
+cookie varible.
+
+Here server will send session id to client system only one time with login response.
+
+Here client will send session id to server system many times(second request onwards upto logout request).
+
+by default sessions are vanished after 30 minutes in tomcat server.
+
+Here it is possible to set the time interval by using setMaxInactiveInterval() method of HttpSession interface.
+
+jakarta.servlet.http.HttpServlet
+--------------------------------
+
+Methods:
+
+public abstract long getCreationTime();
+public abstract String getId();
+public abstract long getLastAccessedTime();
+public abstract void setMaxInactiveInterval(int);
+public abstract int getMaxInactiveInterval();
+public abstract Object getAttribute(String);
+public abstract void setAttribute(String,Object);
+public abstract void removeAttribute(String);
+public abstract void invalidate();
+=>it is used to vanish a session id.
+
+jakarta.servlet.http.HttpServlet
+--------------------------------
+
+method:
+public abstract HttpSession getSession();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

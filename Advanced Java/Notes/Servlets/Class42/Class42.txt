@@ -1,0 +1,4 @@
+Note:equals() method of String class compares the contents of String 
+objects where as == operator compares hash code.
+
+figures in folder
