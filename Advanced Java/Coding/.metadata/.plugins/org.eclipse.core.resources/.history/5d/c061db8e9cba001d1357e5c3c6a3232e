@@ -1,0 +1,43 @@
+package filter;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpFilter;
+
+public class LoginFilter extends HttpFilter {
+	Connection con;
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		try {
+			String s1=request.getParameter("uname");
+			String s2=request.getParameter("pword");
+			PreparedStatement pw=con.prepareStatement("select * from loginfo where uname=? and pword=?");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		chain.doFilter(request, response);
+	}
+	public void init(FilterConfig fConfig) throws ServletException {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYSTEM","login","login");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

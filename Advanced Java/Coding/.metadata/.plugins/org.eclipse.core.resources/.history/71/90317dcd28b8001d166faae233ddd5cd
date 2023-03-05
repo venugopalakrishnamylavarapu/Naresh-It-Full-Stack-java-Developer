@@ -1,0 +1,9 @@
+package com.TcsProbs;
+
+public class Institute {
+	private int institutionId;
+	private String institutionName;
+	private String noOfStudentsPlaced;
+	private int noOfStudentsCleared;
+	private String location;
+}

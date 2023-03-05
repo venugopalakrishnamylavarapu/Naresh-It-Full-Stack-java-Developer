@@ -1,0 +1,260 @@
+Note: You have to access any nested control from a "Form" by using accessors.
+
+Syntax: Angular upto 14 from 11
+
+            get  VendorName()
+            {
+             return  this.frmRegister.get("VendorName") as FormControl;
+            }
+
+Syntax: Angular 15
+            get  VendorName()
+            {
+             return  this.frmRegister.get("VendorName");
+            }
+
+* Angular 15 introduced strongly typed Reactive Froms.
+
+Ex:
+reactive-form.component.ts
+
+import { Component } from '@angular/core';
+import  { FormGroup, FormControl, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-form',
+  templateUrl: './reactive-form.component.html',
+  styleUrls: ['./reactive-form.component.css']
+})
+export class ReactiveFormComponent {
+     public frmRegister = new FormGroup({
+          Name: new FormControl(''),
+          Price: new FormControl(0),
+          frmVendor: new FormGroup({
+              VendorName: new FormControl(''),
+              VendorRating: new FormControl(0)
+          })
+     })
+
+     get VendorName(){
+        return this.frmRegister.get("VendorName");
+     }
+
+     get VendorRating(){
+        return this.frmRegister.get("VendorRating");
+     }
+
+     public RegisterClick(data:any) {
+         alert(JSON.stringify(data));
+     }
+     public UpdateClick(){
+         this.frmRegister.patchValue({
+             Price : 70000.40,
+             frmVendor: {
+                VendorRating: 4.1
+             }
+         })
+     }
+}
+
+reactive-form.component.html
+
+<div class="container-fluid">
+    <h2>Product Register</h2>
+    <form [formGroup]="frmRegister" (submit)="RegisterClick(frmRegister.value)">
+        <dl>
+            <h3>Product Details</h3>
+            <dt>Name</dt>
+            <dd><input type="text" formControlName="Name"></dd>
+            <dt>Price</dt>
+            <dd><input type="text" formControlName="Price"></dd>
+        </dl>
+        <div formGroupName="frmVendor">
+            <h3>Vendor Details</h3>
+            <dl>
+                <dt>Vendor Name</dt>
+                <dd><input type="text" formControlName="VendorName" ></dd>
+                <dt>Vendor Rating</dt>
+                <dd><input type="number" formControlName="VendorRating"></dd>
+            </dl>
+        </div>
+        <button>Register</button>
+        <button type="button" (click)="UpdateClick()">Update</button>
+    </form>
+</div>
+
+FAQ: What is the issue with FormGroup and FormControl?
+Ans : They use dynamic memory, which refers to "Single Call".
+        Better to use "FormBuilder".
+
+                                FormBuilder
+                                -----------------
+- It is a service.
+- It uses "Single Ton" pattern
+- It is good for forms that have to use contineous memory.
+- You have to inject FormBuilder into component
+
+          constructor(private  fb : FormBuilder) {  }
+
+- FormBuilder service provides various methods
+   
+         group()            It is used to configure a form or child form
+         control()            It is used to configure a control
+         array()            It is used to configure a form array with set of
+                            controls.
+Ex:
+reactive-form.component.ts
+
+import { Component } from '@angular/core';
+import  { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-form',
+  templateUrl: './reactive-form.component.html',
+  styleUrls: ['./reactive-form.component.css']
+})
+export class ReactiveFormComponent {
+
+    constructor(private fb: FormBuilder){
+
+    }
+
+    public frmRegister = this.fb.group({
+        Name : this.fb.control(''),
+        Price : this.fb.control(0),
+        frmVendor: this.fb.group({
+            VendorName: this.fb.control(''),
+            VendorRating: this.fb.control(0)
+        })
+    })
+
+     get VendorName(){
+        return this.frmRegister.get("VendorName");
+     }
+
+     get VendorRating(){
+        return this.frmRegister.get("VendorRating");
+     }
+
+     public RegisterClick(data:any) {
+         alert(JSON.stringify(data));
+     }
+     public UpdateClick(){
+         this.frmRegister.patchValue({
+             Price : 70000.40,
+             frmVendor: {
+                VendorRating: 4.1
+             }
+         })
+     }
+}
+
+a) group()            It configures <form> element
+b) control()            It configures <input> <select> <textarea> etc..
+c) array()                It allows to add, remove elements dynamically.
+
+Syntax:
+        FormArray.push()
+        FormArray.removeAt(index)
+
+Note: Accessor for Form Array from Angular 15 requires the type to define
+
+        get  Photos(): FormArray {
+            return this.frmRegister.get("Photos") as FormArray;
+        }
+
+Ex:
+reactive-form.component.ts
+
+import { Component } from '@angular/core';
+import  { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-form',
+  templateUrl: './reactive-form.component.html',
+  styleUrls: ['./reactive-form.component.css']
+})
+export class ReactiveFormComponent {
+
+    constructor(private fb: FormBuilder){
+
+    }
+
+    public frmRegister = this.fb.group({
+        Name : this.fb.control(''),
+        Price : this.fb.control(0),
+        frmVendor: this.fb.group({
+            VendorName: this.fb.control(''),
+            VendorRating: this.fb.control(0)
+        }),
+        Photos: this.fb.array([this.fb.control('')])
+    })
+
+     get VendorName(){
+        return this.frmRegister.get("VendorName");
+     }
+
+     get VendorRating(){
+        return this.frmRegister.get("VendorRating");
+     }
+
+     get Photos():FormArray{
+        return this.frmRegister.get("Photos") as FormArray;
+     }
+
+     public RegisterClick(data:any) {
+         alert(JSON.stringify(data));
+     }
+     public UpdateClick(){
+         this.frmRegister.patchValue({
+             Price : 70000.40,
+             frmVendor: {
+                VendorRating: 4.1
+             }
+         })
+     }
+     public AddMoreClick(){
+        this.Photos.push(this.fb.control(''));
+     }
+     public RemoveClick(index:number) {
+        this.Photos.removeAt(index);
+     }
+}
+
+
+reactive-form.component.html
+
+<div class="container-fluid">
+    <h2>Product Register</h2>
+    <form [formGroup]="frmRegister" (submit)="RegisterClick(frmRegister.value)">
+        <dl>
+            <h3>Product Details</h3>
+            <dt>Name</dt>
+            <dd><input type="text" formControlName="Name"></dd>
+            <dt>Price</dt>
+            <dd><input type="text" formControlName="Price"></dd>
+        </dl>
+        <div class="mb-3 mt-2">
+            <h3>Upload Photos <button type="button" (click)="AddMoreClick()" class="btn btn-link">Add More</button></h3>
+            <div class="mt-2 mb-2" *ngFor="let item of Photos.controls; let i=index">
+                <input type="file" formControlName="i"> <button (click)="RemoveClick(i)" class="btn btn-danger"> <span class="bi bi-trash"></span> </button>
+            </div>
+        </div>
+        <div formGroupName="frmVendor">
+            <h3>Vendor Details</h3>
+            <dl>
+                <dt>Vendor Name</dt>
+                <dd><input type="text" formControlName="VendorName" ></dd>
+                <dt>Vendor Rating</dt>
+                <dd><input type="number" formControlName="VendorRating"></dd>
+            </dl>
+        </div>
+       
+        <button>Register</button>
+        <button type="button" (click)="UpdateClick()">Update</button>
+    </form>
+</div>
+
+
+                            Reactive Form Validations
+                            Angular Routing [SPA]

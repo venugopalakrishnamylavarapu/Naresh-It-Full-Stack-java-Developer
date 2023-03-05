@@ -1,0 +1,9 @@
+package com.TcsProbs;
+
+public class MovieGMG {
+	String movie;
+	String company;
+	String genre;
+	int budget;
+
+}

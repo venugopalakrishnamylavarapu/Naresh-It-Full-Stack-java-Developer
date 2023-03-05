@@ -1,0 +1,19 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class PerfectSquare {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		boolean flag=false;
+		int value=sc.nextInt();
+		int mid=Math.round(value/2);
+		for(int i=1;i<mid;i++)
+		{
+			if(i*i==value)	flag=true;
+		}
+		System.out.println(flag);
+	}
+
+}

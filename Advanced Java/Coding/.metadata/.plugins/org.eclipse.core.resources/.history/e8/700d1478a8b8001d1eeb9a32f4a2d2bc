@@ -1,0 +1,10 @@
+package com.TcsProbs;
+
+public class MovieGMGSol {
+	public static MovieGMG[] getMovieByGenre(MovieGMG[] mgmg,String searchGenre)
+	{
+		MovieGMG[] mgobj=new MovieGMG[0];
+		for(int i=0;i<mgmg.length;i++)
+			if()
+	}
+}

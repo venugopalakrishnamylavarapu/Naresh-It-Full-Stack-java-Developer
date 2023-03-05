@@ -1,0 +1,16 @@
+package com.TcsProbs;
+
+public class MovieGMG {
+	String movie;
+	String company;
+	String genre;
+	int budget;
+	MovieGMG(String mv,String com,String gen,int bud)
+	{
+		this.movie=mv;
+		this.company=com;
+		this.genre=gen;
+		this.budget=bud;
+	}
+
+}

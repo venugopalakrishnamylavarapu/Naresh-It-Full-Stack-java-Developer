@@ -1,0 +1,28 @@
+package com.TcsProbs;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class UniqueCharacters {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		char[] n=str.toCharArray();
+		for(int i=0;i<n.length;i++)
+		{
+			int count=0;
+			for (int j = 0; j < n.length; j++) {
+				if(n[i]==n[j])
+				{
+					count++;
+				}
+			}
+			if(count!=0)
+			{
+				System.out.print(n[i]);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.prac;
+
+public class Assosiate {
+	private int id;
+	private String name;
+	private String technology;
+	private int expInYears;
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setTechnology(String technology) {
+		this.technology = technology;
+	}
+	public void setExpInYears(int expInYears) {
+		this.expInYears = expInYears;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getTechnology() {
+		return technology;
+	}
+	public int getExpInYears() {
+		return expInYears;
+	}
+	Assosiate(int id,String name,String technology,int expInYears)
+	{
+		this.id=id;
+		this.name=name;
+		this.technology=technology;
+		this.expInYears=expInYears;
+	}
+	
+}

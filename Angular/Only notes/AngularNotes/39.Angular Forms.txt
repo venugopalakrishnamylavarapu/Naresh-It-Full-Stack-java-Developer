@@ -1,0 +1,195 @@
+Angular Forms
+- Angular Forms are classified into 2 types
+        a) Template Driven Forms
+        b) Model Driven Forms or Reactive Forms
+
+Template Driven Form
+- Forms are configured and handled at View level. [ in UI ]
+- It uses MVVM [Model-View  View-Model].
+- The library required for template driven form is defined in "FormsModule" of "@angular/forms".
+- The <form> element is defined by using "ngForm".
+- The other input and form elements are defined by using "ngModel".
+
+Syntax:
+        <form  #frmRegister="ngForm">
+            <input type="text" ngModel #userName="ngModel">
+            <select ngModel  #City="ngModel"> </select>
+        </form>
+
+        frmRegister.value            object { key : value }
+                                        Element Name is Key
+                                        Element Value is its value
+- It reduces the number of requests.
+- It improves the load time.
+- Separation, Reusability and Extensibility issues.
+- UI is heavy and slow in rendering.
+
+Note: Always use tempalte forms when you want a form with stable functionality and doesn't require regular extentions.
+
+Ex:
+ template-form.component.ts
+
+ import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-template-form',
+  templateUrl: './template-form.component.html',
+  styleUrls: ['./template-form.component.css']
+})
+export class TemplateFormComponent {
+    public SubmitClick(data:any){
+        alert(JSON.stringify(data));
+    }
+}
+ 
+template-form.component.html
+
+<div class="container-fluid">
+  <form #frmRegister="ngForm" (submit)="SubmitClick(frmRegister.value)">
+    <h2>Register User</h2>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" name="UserName" ngModel #UserName="ngModel"></dd>
+        <dt>Age</dt>
+        <dd><input type="number" name="Age" ngModel #Age="ngModel"></dd>
+        <dt>City</dt>
+        <dd>
+         <select name="City" ngModel #City="ngModel">
+            <option>Delhi</option>
+            <option>Hyd</option>
+        </select>
+        </dd>
+    </dl>
+    <button>Register</button>
+  </form>
+</div>
+
+        frmRegister.value                             { }
+        frmRegister.value.UserName            only user name " "
+       
+- You can directly access any specific element value
+
+         UserName.value
+         Age.value
+
+                    Validating Template Driven Form
+- Validation is the process of verifying user input.
+- Validation is required to ensure that contradicationary and unauthorized data is not get stored into database.
+- Validations can be handled
+        a) Client Side
+        b) Server Side
+- Client Side validations in JavaScript and jQuery are handled by using lot of functions. [string functions, math functions, array function etc..]
+- Angular is provided with "Validation Services".
+- These validation service can use HTML validations and verify values without writing much logic.
+- HTML validations are
+        required
+        minlength
+        maxlength
+        pattern
+        min
+        max
+        number
+        email
+        url
+- Validation service is buit-in with validation functions.
+- The validation properties of Angular validation service are classified into 2 groups
+                a) Form State Validation
+                b) Input State Validation
+
+- Form State validation services are used to verify all fields in a form.
+- You can access from "ngForm" reference
+
+ServiceName        Property            Type         Description
+-------------------------------------------------------------------------------------
+NgPristine            pristine               boolean     It returns true if no field
+                                                         in the form is modified.
+
+NgDirty                dirty                boolean     It returns true if any one
+                                                         field in the form is                                                                  modified.
+
+NgValid                valid                boolean    It returns true when all                                                            fields in the form are valid.
+
+NgInvalid            invalid            boolean    It returns true when any
+                                                        one field in invalid.
+
+NgSubmitted        submitted        boolean    It returns true on form
+                                                        submit.
+
+Syntax:
+            <form  #frmRegister="ngForm">
+             frmRegister.valid
+             frmRegister.pristine
+             frmRegister.invalid etc...
+
+Ex:
+ template-form.component.html
+
+<div class="container-fluid">
+  <form #frmRegister="ngForm" class="p-2" [ngClass]="{'valid-style':frmRegister.valid, 'invalid-style':frmRegister.invalid}" (submit)="SubmitClick(frmRegister.value)">
+    <h2>Register User</h2>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text"  required minlength="4" maxlength="10" name="UserName" ngModel #UserName="ngModel"></dd>
+        <dt>Age</dt>
+        <dd><input type="number" required name="Age" ngModel #Age="ngModel"></dd>
+    </dl>
+    <button [disabled]="frmRegister.invalid">Register</button>
+    <button *ngIf="frmRegister.dirty">Save Draft</button>
+  </form>
+  <hr>
+    Pristine : {{frmRegister.pristine}} <br>
+    Dirty    : {{frmRegister.dirty}} <br>
+    Valid    : {{frmRegister.valid}} <br>
+    invalid  : {{frmRegister.invalid}} <br>
+    Submitted : {{frmRegister.submitted}}
+</div>
+
+template-form.component.css
+
+.invalid-style {
+     background-color: rgb(247, 194, 194);
+}
+.valid-style {
+    background-color: rgb(196, 247, 196);
+}
+
+Input State Validation Services
+- It verifies every field in the form inidividually and reports the error.
+- The input state validation servies are
+
+NgPristing            pristine
+NgDirty                dirty
+NgValid                valid
+NgInvalid            invalid
+NgTouched            touched
+NgUnTouched        untouched
+NgErrors                errors
+
+Syntax:
+        <input type="text" required  #UserName="ngModel" ngModel>
+
+         UserName.invalid
+         UserName.touched etc..
+
+Ex:
+template-form.component.html
+
+<div class="container-fluid">
+  <form #frmRegister="ngForm" class="p-2">
+    <h2>Register User</h2>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text"  required minlength="4" name="UserName" ngModel #UserName="ngModel"></dd>
+        <dd class="text-danger" *ngIf="(frmRegister.submitted && UserName.invalid)||(UserName.touched && UserName.invalid)">
+             User Name Required
+        </dd>
+        <dt>Age</dt>
+        <dd><input type="number" required name="Age" ngModel #Age="ngModel"></dd>
+        <dd class="text-danger" *ngIf="(frmRegister.submitted && Age.invalid)||(Age.touched && Age.invalid)">
+            Age Requried
+        </dd>
+    </dl>
+    <button>Register</button>
+  </form>
+
+</div>

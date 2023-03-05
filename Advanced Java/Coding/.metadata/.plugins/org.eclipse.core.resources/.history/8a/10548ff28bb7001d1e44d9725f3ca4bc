@@ -1,0 +1,29 @@
+package com.prac;
+
+import java.util.Scanner;
+
+public class AutonomousCarSol {
+	public static int findTestPassedByEnv(AutonomousCar[] acar,String environment)
+	{
+		
+		return 0;
+	}
+	public static AutonomousCar updateCarGrade(String brand,AutonomousCar[] acar1)
+	{
+		return null;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		AutonomousCar[] arr1=new AutonomousCar[4];
+		for(int i=0;i<arr1.length;i++)
+		{
+			arr1[i] =new AutonomousCar(sc.nextInt(),sc.next(),sc.nextInt(),sc.nextInt(),sc.next());
+		}
+		String environment=sc.next();
+		sc.nextLine();
+		String brand=sc.next();
+		
+		int totalTestsPassed=findTestPassedByEnv(arr1,)
+		
+	}
+}

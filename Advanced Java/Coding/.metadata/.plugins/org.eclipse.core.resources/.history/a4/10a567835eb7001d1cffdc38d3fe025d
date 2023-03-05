@@ -1,0 +1,19 @@
+package com.prac;
+
+public class NavalVessel {
+	private int vesselId;
+	private String vesselName;
+	private int noOfVoyagesPlanned;
+	private int noOfVoyagesCompleted;
+	private String purpose;
+	private String classification;
+	
+	public NavalVessel(int vi,String vn,int novp,int novc,String prp)
+	{
+		this.vesselId=vi;
+		this.vesselName=vn;
+		this.noOfVoyagesCompleted=novc;
+		this.noOfVoyagesPlanned=novp;
+		this.purpose=prp;
+	}
+}

@@ -1,0 +1,16 @@
+package com.TcsProbs;
+
+public class PhoneDeviceManagerSol {
+	public static int findPriceForGivenBrand(PhoneDeviceManager[] pdm,String brand)
+	{
+		return 0;
+	}
+	public static PhoneDeviceManager getPhoneIdBasedOnOs(String os,PhoneDeviceManager[] pdmarr)
+	{
+		return null;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	}
+	
+}

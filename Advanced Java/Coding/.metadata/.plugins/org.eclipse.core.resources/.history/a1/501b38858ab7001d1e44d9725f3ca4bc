@@ -1,0 +1,14 @@
+package com.prac;
+
+public class AutonomousCar {
+	private int carId;
+	private String brand;
+	private int noOfTestsConducted;
+	private int noOfTestsPassed;
+	private String environment;
+	private String grade;
+	AutonomousCar(int carId,String brand,int noOfTestsConducted,int noOfTestsPassed,String environment)
+	{
+		
+	}
+}

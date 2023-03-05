@@ -1,0 +1,177 @@
+FAQ: What are the various provider locations for service?
+Ans:
+        a) root
+        b) platform
+        c) any
+
+        root            : refers to current application level.
+        platform        : refers to current module level
+        any            : refers to workspace level
+
+FAQ: Where to configure the provider?
+Ans :
+        a) At service level
+        b) At application module level
+
+Syntax: Service Level
+
+        @Injectable({
+             providedIn : "root" | "any" | "platform"
+        })
+
+Syntax:  app.module.ts
+
+        providers: [ ServiceName ]
+
+
+FAQ:  What is difference between provider configured at service level and at module level?
+Ans :  Module Level is "Eager Loading"
+        Service Level is "Lazy Loading"
+
+
+FAQ: What is difference between a Factory and Service?
+Ans  : Factory uses "Single Call" where an object is created every time when function is requested.
+        Service  uses "Single Ton" pattern where object is created for first request and the same object is used accross requests.
+
+FAQ: Why to inject a service reference in constructor and not to create an object for service class?
+Ans : To Implement "single ton".
+
+        constructor(private ref : ServiceName) {  }
+
+FAQ: Why to define an access modifier for parameter in constructor method?
+Ans : To configure the parameter at class level, so that it is accessible to all methods in class.
+
+
+                              HttpClient Service
+                              -------------------------
+
+- It provides a set of functions that are responsibile for handling interactions with API.
+
+FAQ: What is difference between fetch and HttpClient?
+Ans:
+          Fetch                                HttpClient
+         -------------------------------------------------------------------------
+         Returns data in Binary            Returns in JSON
+
+         Parsing of data is required        No parsing required
+
+         Fetch is not safe                    HttpClient is secured
+
+         Poor in errors                        Good error handling features
+
+         It is in Sync                         It uses Async [RxJS]
+
+Step-1: Import the service from library
+
+import  { HttpClient }  from  "@angular/common/http"; [component]
+import  { HttpClientModule}  from "@angular/common/http";                                                                                 [appModule]
+
+
+Step-2: Inject the library into any component [service library]
+
+           constructor(private http : HttpClient) {  }
+
+Step-3:  Access by using "http" methods
+
+            this.http.get()
+            this.http.post()
+
+                                    RxJS
+- Reactive Extentions Library for JavaScript.
+- It is used to create "asynchronous" events using "Observables".
+- "Asyncrhonous" uses  "un-blocking" technique, which executes the events without blocking other requests.
+- RxJS provides various components
+        a) Observable
+        b) Subscriber
+
+- Observable configures asynchronous event.
+- Subscriber executes the asynchronous event.
+
+Ex:
+1. Go to "app.module.ts"
+
+import { HttpClientModule } from '@angular/common/http';
+
+imports : [
+             HttpClientModule
+            ]
+
+2. Go to services folder and add a new service
+
+          "fakestore.service.ts"
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FakestoreProductContract } from '../contracts/FakestoreProductContract';
+
+@Injectable({
+    providedIn: "root"
+})
+export class FakestoreService
+{
+    constructor(private http: HttpClient){
+
+    }
+    public GetProducts():Observable<FakestoreProductContract[]>{
+        return this.http.get<FakestoreProductContract[]>("http://fakestoreapi.com/products&quot;);
+    }
+
+    public GetCategories():Observable<string[]>{
+        return this.http.get<string[]>("http://fakestoreapi.com/products/categories&quot;);
+    }
+}
+
+3. Add a new component
+       
+"service-demo.component.ts"
+
+import { Component, OnInit } from '@angular/core';
+import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+import { FakestoreService } from '../../services/fakestore.service';
+
+@Component({
+  selector: 'app-service-demo',
+  templateUrl: './service-demo.component.html',
+  styleUrls: ['./service-demo.component.css']
+})
+export class ServiceDemoComponent implements OnInit {
+    public Categories:string[] = [];
+    public Products:FakestoreProductContract[] = [];
+
+    constructor(private fakestore: FakestoreService){
+
+    }
+    ngOnInit(): void {
+      this.fakestore.GetCategories().subscribe(data => this.Categories = data );
+      this.fakestore.GetProducts().subscribe(data=> this.Products = data);
+    }
+}
+
+Service-demo.component.html
+
+<div class="container-fluid">
+    <h2 class="text-center">Fakestore API</h2>
+    <select>
+        <option *ngFor="let category of Categories">{{category}}</option>
+    </select>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Preview</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Products">
+                <td>{{item.title}}</td>
+                <td>
+                    <img [src]="item.image" width="100" height="100">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+                        Angular Forms and Validation Services

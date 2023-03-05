@@ -1,0 +1,28 @@
+package sListner;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+
+/**
+ * Application Lifecycle Listener implementation class MyListener
+ *
+ */
+public class MyListener implements ServletContextListener {
+	Connection conn;
+    public MyListener() {
+        // TODO Auto-generated constructor stub
+    }
+    public void contextInitialized(ServletContextEvent sce)  { 
+    	try {
+    		Class.forName("oracle.jdbc.driver.OracleDriver");
+    		conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYSTEM","system","tiger");
+    	}
+    }
+    public void contextDestroyed(ServletContextEvent sce)  { 
+         // TODO Auto-generated method stub
+    }
+	
+}

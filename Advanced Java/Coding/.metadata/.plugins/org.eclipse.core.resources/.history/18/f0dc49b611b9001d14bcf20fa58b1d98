@@ -1,0 +1,32 @@
+package com.TcsProbs;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class UniqueCharacters {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		char[] n=str.toCharArray();
+		int index=n.length-1;
+		for(int i=0;i<n.length;i++)
+		{
+			for (int j = 0; j < n.length; j++) {
+				if(n[i]==n[j])
+				{
+					swap(n[j],n[index]);
+					index--;
+				}
+			}
+		}
+		
+	}
+	public static void swap(char a,char b)
+	{
+		char temp=a;
+		a=b;
+		b=temp;
+	}
+
+}

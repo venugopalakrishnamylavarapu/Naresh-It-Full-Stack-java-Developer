@@ -1,0 +1,160 @@
+Angular Testing
+                                ---------------------
+- Testing is the process of verifying
+
+        "AS-IS  and TO-BE"
+
+- AS-IS refers to what developer have designed.
+- TO-BE refers to what client wants.
+
+        AS-IS        ===    TO-BE                Test Pass
+        AS-IS        !==    TO-BE                Test Fail
+
+- Angular Inbuilt Provides "Jasmine-Karma" framework.
+
+Step-1
+- You create your component and add methods.
+
+Syntax:      home.component.ts
+
+Step-2
+- You have to add a test file for component.
+
+Syntax:    home.component.spec.ts
+
+    >ng   g   c   home    --skip-tests [Don't use this flag if you want a test file]
+
+
+Step-3
+- You have to write the test methods in "spec.ts"
+- Jasmine Framework methods that match various testing phases
+
+        Test Phases                
+        a) Arrange            Configure
+        b) Act                    Define the functionality to test
+        c) Assert                Report the result
+
+        Arrange                describe()
+        Act                    it()
+        Assert                expect()
+
+Ex:
+1. Generate a new component
+
+> ng g c  amazon-cart
+
+2. Add methods
+
+amazon.cart.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-amazon-cart',
+  templateUrl: './amazon-cart.component.html',
+  styleUrls: ['./amazon-cart.component.css']
+})
+export class AmazonCartComponent {
+    public Title():string {
+        return "Amazon Cart";
+    }
+    public Total(qty:number, price:number):number {
+        return qty * price;
+    }
+}
+
+3. Go to "amazon-cart.component.spec.ts"
+
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { AmazonCartComponent } from './amazon-cart.component';
+
+describe('AmazonCartComponent', () => {
+  let component: AmazonCartComponent;
+  let fixture: ComponentFixture<AmazonCartComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ AmazonCartComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(AmazonCartComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  // Write a test for Title() - It must return  "Amazon Shopping Cart"
+
+  describe("Cart Title Test",()=> {
+      it("Expecting Amazon Shopping Cart as Title",()=>{
+          expect(component.Title()).toBe("Amazon Shopping Cart");
+      })
+  });
+
+  // Write a test for Total() - It must return 40000
+
+  describe("Total Test", ()=>{
+      it("Total must be 40000",()=> {
+          expect(component.Total(2,20000)).toBe(40000);
+      })
+  });
+
+});
+
+4. Run test
+
+    >ng  test   --project=amazon
+
+
+                                      Deployment
+- Build and Deploy
+- Building is the process of checking
+        Syntax Errors
+        Code Snippets
+        Dependencies
+        Providers
+        Injectors
+
+    >ng build  
+
+- All components logic is bundlend into "dist" folder
+- You can deploy of servers
+        a) Local Servers
+        b) Cloud Servers
+- FireBase  [Google]
+- Azure
+- AWS
+- GIT Hub Pages
+- NPM
+
+1. You have to build project
+
+        >ng build --project=amazon
+
+2. Install Firebase tools on your PC
+
+        > npm install -g  firebase-tools
+
+3. Add Firebase library to Angular Application
+   
+        > ng   add  @angular/fire --project=amazon
+
+4. Go to the Firebase website and create a new project
+
+        https://firebase.google.com/  => console
+
+          > ng   add  @angular/fire --project=amazon
+
+        (*) ng deploy -- hosting
+
+
+        https://angular-smart-shop.web.app
+
+
+5. Run the command
+        >ng  deploy

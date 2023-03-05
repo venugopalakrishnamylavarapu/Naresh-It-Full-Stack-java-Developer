@@ -1,0 +1,8 @@
+package com.TcsProbs;
+
+public class InstituteSol {
+	public static Institute findNumClearancedByLoc(Institute[] iobj,String location)
+	{
+		return 0;
+	}
+}

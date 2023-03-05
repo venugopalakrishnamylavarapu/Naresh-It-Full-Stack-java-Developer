@@ -1,0 +1,17 @@
+package com.TcsProbs;
+
+public class PlayerGAOR {
+	int id;
+	String name;
+	int iccRank;
+	int matchesPlayed;
+	int runsScored;
+	PlayerGAOR(int id,String n,int icc,int mp,int rs)
+	{
+		this.id=id;
+		this.name=n;
+		this.iccRank=icc;
+		this.matchesPlayed=mp;
+		this.runsScored=rs;
+	}
+}

@@ -1,0 +1,30 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class ReverseOfInteger {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int digit=sc.nextInt();
+		//the below logic is written by me
+//		int reverse=0;
+//		while(n!=0)
+//		{	
+//			int last=n%10;
+//			reverse=(reverse*10)+last;
+//			n/=10;
+//		}
+//		System.out.println(reverse);
+		 
+		
+	//the below logic is just so good i loved it it also reverse the integer
+//		 if(digit == 0)
+//	            System.out.print(0);
+//	        else {
+//	            while(digit!=0){
+//	                System.out.print(digit%10);
+//	                digit /= 10;
+//	            }
+//	        }
+	}
+}

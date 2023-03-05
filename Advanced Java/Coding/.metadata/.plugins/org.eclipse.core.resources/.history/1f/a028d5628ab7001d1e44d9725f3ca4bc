@@ -1,0 +1,8 @@
+package com.prac;
+
+public class AutonomousCar {
+	private int carId;
+	private String brand;
+	private int noOfTestsConducted;
+	private int noOfTestsPassed;
+}

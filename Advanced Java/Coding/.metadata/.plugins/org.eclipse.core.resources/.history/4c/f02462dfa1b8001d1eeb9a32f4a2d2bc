@@ -1,0 +1,9 @@
+package com.TcsProbs;
+
+public class MedicineGPDSol {
+	public static int[] getPriceByDisease(MedicineGPD[] mgpd,String disease)
+	{
+		int[] a=new int[0];
+		return a;
+	}
+}

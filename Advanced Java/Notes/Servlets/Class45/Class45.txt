@@ -1,0 +1,161 @@
+session dynamic project:
+========================
+books.html:
+----------
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body bgcolor=yellow text=blue>
+<h1><u>Java Books</u></h1>
+<form action=set>
+<input type=checkbox name=book1 value=Java2CompleteReferences>Java 2 Complete References<br>
+<input type=checkbox name=book2 value=HeadFirstJava>Head First Java<br>
+<input type=checkbox name=book3 value=SCJPByKathySierra>SCJP By Kathy Sierra<br><br>
+<input type=submit>&nbsp;&nbsp;<input type=reset>
+</form>
+</body>
+</html>
+
+SetSession.java:
+----------------
+package session;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+public class SetSession extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s1=request.getParameter("book1");
+		String s2=request.getParameter("book2");
+		String s3=request.getParameter("book3");
+		HttpSession hs=request.getSession();
+		hs.setAttribute("book1",s1);
+		hs.setAttribute("book2",s2);
+		hs.setAttribute("book3",s3);
+		PrintWriter pw=response.getWriter();
+		pw.println("<html><body bgcolor=red text=yellow><center>");
+		pw.println("<h1>Your Books are Added to Cart</h1>");
+		pw.println("<a href=get>Next</a>");
+		pw.println("</center></body></html>");		
+	}
+}
+
+
+GetSession.java:
+----------------
+package session;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+
+public class GetSession extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter pw=response.getWriter();
+		HttpSession hs=request.getSession();
+		String s1=(String) hs.getAttribute("book1");
+		String s2=(String) hs.getAttribute("book2");
+		String s3=(String) hs.getAttribute("book3"); 
+		pw.println("<html><body bgcolor=red text=yellow><h1>");
+		pw.println("<u>Selected Books</u></h1>");
+		if(s1!=null)	pw.println(s1+"<br>");
+		if(s2!=null)	pw.println(s2+"<br>");
+		if(s3!=null)	pw.println(s3+"<br>");
+		pw.println("</body></html>");		
+	}
+}
+
+
+in the above example,session id created and passed to system whenever getSession() method of 
+HttpSession is called.
+
+
+
+Http Sessions with URL Rewriting:
+=================================
+in this session tracking method client state information stored at server side in session varibles.
+
+in this session tracking method session id created by web container and appended to url to recognise the client.
+
+
+jakarta.servlet.http.HttpServletResponse
+----------------------------------------
+
+Method:
+public abstract String encodeURL(String);
+=> it is used to append a session id with url.
+->here String parameter is <url-pattern> of Servlet.
+->here return type String is <url-pattern> of Servlet and session id. 
+
+
+same like HttpSession with Cookie we follow the same procedure but we change a single line that is 
+
+SetSession.java:
+----------------
+package session;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+public class SetSession extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s1=request.getParameter("book1");
+		String s2=request.getParameter("book2");
+		String s3=request.getParameter("book3");
+		HttpSession hs=request.getSession();
+		hs.setAttribute("book1",s1);
+		hs.setAttribute("book2",s2);
+		hs.setAttribute("book3",s3);
+		PrintWriter pw=response.getWriter();
+		pw.println("<html><body bgcolor=red text=yellow><center>");
+		pw.println("<h1>Your Books are Added to Cart</h1>");
+		//the below two lines are the changed in HttpSession with UrlRewriting
+		String s=response.encodeUrl("get");
+		pw.println("<a href="+s+">Next</a>");
+		pw.println("</center></body></html>");		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

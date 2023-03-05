@@ -1,0 +1,15 @@
+package com.TcsProbs;
+
+public class InventoryReplenish {
+	String inventoryId;
+	int maximumQuality;
+	int currentQuantity;
+	int threshold;
+	InventoryReplenish(String iId,int maxQ,int currentQ,int tHold)
+	{
+		this.inventoryId=iId;
+		this.maximumQuality=maxQ;
+		this.currentQuantity=currentQ;
+		this.threshold=tHold;
+	}
+}

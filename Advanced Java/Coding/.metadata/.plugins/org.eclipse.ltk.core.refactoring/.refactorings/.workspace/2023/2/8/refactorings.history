@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Books&apos; to &apos;cookie&apos;" description="Rename resource &apos;Books&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Books" name="cookie" stamp="1676989624402" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;session&apos; to &apos;HttpSession&apos;" description="Rename resource &apos;session&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/session" name="HttpSession" stamp="1677251888950" updateReferences="true"/>
+</session>

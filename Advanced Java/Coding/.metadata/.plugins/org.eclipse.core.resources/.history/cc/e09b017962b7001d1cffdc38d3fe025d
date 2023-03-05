@@ -1,0 +1,41 @@
+package com.prac;
+
+import java.util.Scanner;
+
+public class NavalVesselSol {
+	public static int findAvgVoyagesByPct(NavalVessel[] nvarr,int parameterPercentage) {
+		for(int i=0;i<nvarr.length;i++)
+		{
+			int condperc=(nvarr[i].getNoOfVoyagesCompleted()*100)/nvarr[i].getNoOfVoyagesPlanned();
+			if(condperc>=parameterPercentage)
+				return condperc;			
+		}
+		return 0;
+	}
+	public static NavalVessel findVesselByGrade(String purpose,NavalVessel[] nvarr)
+	{
+		String classification;
+		for(int i=0;i<nvarr.length;i++)
+		{
+			int condperc=(nvarr[i].getNoOfVoyagesCompleted()*100)/nvarr[i].getNoOfVoyagesPlanned();
+			if(condperc==100)	nvarr[i].setClassification("Star");
+			if(condperc==100)	nvarr[i].setClassification("Star");
+			if(condperc==100)	nvarr[i].setClassification("Star");
+			if(condperc==100)	nvarr[i].setClassification("Star");
+		}
+		return null;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		NavalVessel[] nv=new NavalVessel[4];
+		for(int i=0;i<4;i++)
+		{
+			nv[i]=new NavalVessel(sc.nextInt(),sc.next(),sc.nextInt(),sc.nextInt(),sc.next());
+		}
+		int Percentage=sc.nextInt();
+		String purpose=sc.next();
+		int avgPct=findAvgVoyagesByPct(nv,Percentage);
+		NavalVessel grade=findVesselByGrade(purpose,nv);
+	}
+	
+}

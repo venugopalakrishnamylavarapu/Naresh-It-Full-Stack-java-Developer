@@ -1,0 +1,20 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class UniqueCharacters {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		char[] n=str.toCharArray();
+		
+	}
+	public static void swap(char a,char b)
+	{
+		char temp=a;
+		a=b;
+		b=temp;
+	}
+
+}

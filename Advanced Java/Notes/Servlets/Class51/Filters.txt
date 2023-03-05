@@ -1,0 +1,82 @@
+Filter:
+=======
+Filter same as Servlet.
+Filters do not have main() method because filter runs in server.
+Filter has life cycle methods to run in server.
+
+Life cycle methods of a Filter:
+===============================
+1st-init()(only called once)
+
+2nd-doFilter()(cycle repeats)
+
+3rd-destroy()(when application undeployed or server shutsdown)
+
+init() method is called by web container whenever first request comes to a filter.
+
+doFilter() method is called by web container for every request.
+
+destroy() method is called by web container whenever filter instance is removed from web container.
+
+filter instance is removed from web container whenever web application is undeployed from server 
+or server shuts down.
+
+Al life cycle methods are the part of jakarta.servlet.Filter interface.
+
+jakarta.servlet.Filter
+======================
+Methods:
+public default void init(FilterConfig) throws ServletException;
+public abstract void doFilter(ServletRequest,ServletResponse,FilterChain) throws ServletException;
+public default void destroy;
+
+Every filter must implements jakarta.servlet.Filter interface to derive life cycle methods.
+
+jakarta.servlet.http.HttpFilter
+==============================
+Methods:
+public void doFilter(ServletRequest,ServletResponse,FilterChain) throws IOException,ServletException;
+=>it is a life cycle method
+
+protected void doFilter(HttpServletRequest,HttpServletResponse,FilterChain) throws IOException,ServletException;
+=>it is a non life cycle method.
+
+Here web container calls life cycle method,life cycle method calls non life cycle method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

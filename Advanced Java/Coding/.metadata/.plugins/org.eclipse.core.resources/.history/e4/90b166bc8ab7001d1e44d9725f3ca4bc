@@ -1,0 +1,8 @@
+package com.prac;
+
+public class AutonomousCarSol {
+	public static int findTestPassedByEnv(AutonomousCar[] acar,String environment)
+	{
+		return 0;
+	}
+}

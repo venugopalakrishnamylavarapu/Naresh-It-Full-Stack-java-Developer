@@ -1,0 +1,125 @@
+FormGroup
+FormControl
+FormBuilder
+    group()
+    control()    
+    array()
+
+
+
+                         Reactive Form Validation
+- Validations are defined for controls in "controller".
+- UI elements will just use the validations, no need to configure validation at UI level.
+- Reactive Form uses "Validators" class that provides a set of validators like
+                required
+                minlength
+                maxlength
+                pattern etc...
+
+Syntax:
+Name : fb.control(' ', Validators[])
+
+Ex:
+Name : fb.control(' ', [Validators.required, Validators.minlength(4)]
+
+Ex:
+reactive-validation.component.ts
+
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-validation',
+  templateUrl: './reactive-validation.component.html',
+  styleUrls: ['./reactive-validation.component.css']
+})
+export class ReactiveValidationComponent {
+    constructor(private fb: FormBuilder){
+
+    }
+    public frmRegister = this.fb.group({
+         Name : this.fb.control('',[Validators.required, Validators.minLength(4)]),
+         Mobile: this.fb.control('', [Validators.required, Validators.pattern(/\+91\d{10}/)])
+    })
+    get Name():FormControl{
+      return this.frmRegister.get("Name") as FormControl;
+    }
+    get Mobile():FormControl{
+      return this.frmRegister.get("Mobile") as FormControl;
+    }
+}
+
+
+reactive-validation.component.html
+
+<div class="container-fluid">
+    <form [formGroup]="frmRegister">
+        <h2>Register</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" formControlName="Name"></dd>
+            <dd class="text-danger" *ngIf="Name.touched && Name.invalid">
+                <div *ngIf="Name.errors?.['required']">Name Required</div>
+                <div *ngIf="Name.errors?.['minlength']">Name too short</div>
+            </dd>
+            <dt>Mobile</dt>
+            <dd>
+                <input type="text" formControlName="Mobile">
+            </dd>
+            <dd class="text-danger" *ngIf="Mobile.touched && Mobile.invalid">
+                <div *ngIf="Mobile.errors?.['required']">Mobile Required</div>
+                <div *ngIf="Mobile.errors?.['pattern']">Invalid Mobile +91 and 10 digits</div>
+            </dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</div>
+
+
+                               Angular Routing
+- It is a technique used in web applications to handle navigation.
+- A hyper link also configures navigation, but it navigates the user from one page to another or to any named location in page.
+
+                        <a href="page.html>
+
+- Routing uses "Ajax" calls.
+- User can stay on one page and can get access to everything from the page.
+- User will not navigate from one page to another. Eveything comes on to single page.
+- It is often reffered as "SPA" [Single Page Application]
+- Routing can load new details into page, without reloading page.
+- Routing also enables "User Friendly" and "SEO friendly URL's".
+
+Ex: Without Routing
+
+ http://www.amazon.in/electronics.jsp?category=mobiles&brand=realme
+
+Ex: With routing
+
+ http://www.amazon.in/electronics/mobiles/realme
+
+
+- Routing is configured
+        a) Server Side  [.NET, NodeJS, JSP, PHP] - API
+        b) Client Side   [Angular, React, Vue..]
+
+- Angular Routing is handled by "@angular/router" library
+
+- Angular Routing requires following library
+
+        RouterModule
+        ActivatedRoute
+        Route
+        Router
+        Routes
+        RouterOutlet
+        RouterLink
+
+Ex:
+1. Create a new project in workspace
+
+        > ng generate  application  amazon
+           would you like to use routing? yes
+
+2. A file is added into "app" folder
+
+          app-routing.module.ts

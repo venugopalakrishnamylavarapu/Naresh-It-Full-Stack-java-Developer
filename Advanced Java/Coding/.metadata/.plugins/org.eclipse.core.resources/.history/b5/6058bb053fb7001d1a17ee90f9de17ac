@@ -1,0 +1,16 @@
+package com.prac;
+
+public class Assosiate {
+
+	public static void main(String[] args) {
+			private int id;
+			private String name;
+			private String technology;
+			private int expInYears;
+			public Assosiate(int id,String name,String technology,int expInYears)
+			{
+				this.
+			}
+	}
+
+}

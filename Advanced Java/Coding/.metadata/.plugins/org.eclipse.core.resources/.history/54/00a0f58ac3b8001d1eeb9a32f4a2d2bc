@@ -1,0 +1,8 @@
+package com.TcsProbs;
+
+public class PlayerGAORSol {
+	public static double[] findAverageOfRuns(PlayerGAOR[] pgaor,int target)
+	{
+		double[] a=new double[0];
+	}
+}

@@ -1,0 +1,23 @@
+package com.TcsProbs;
+
+public class MedicineGPD {
+	 String MedicineName;
+	 String batch;
+	 String disease;
+	 int price;
+	 MedicineGPD(String MN,String b,String d,int p)
+	 {
+		 this.MedicineName=MN;
+		 this.batch=b;
+		 this.disease=d;
+		 this.price=p;
+	 }
+	 public void setMedicineName(String MN)
+	 {
+		 this.MedicineName=MN;
+	 }
+	 public String getMedicineName()
+	 {
+		 return this.MedicineName;
+	 }
+}

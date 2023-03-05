@@ -1,0 +1,7 @@
+package com.TcsProbs;
+
+public class SimMNS {
+	int id;
+	String company;
+
+}

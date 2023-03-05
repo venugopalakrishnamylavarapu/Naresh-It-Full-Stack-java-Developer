@@ -1,0 +1,8 @@
+package com.TcsProbs;
+
+public class InventoryReplenish {
+	String inventoryId;
+	int maximumQuality;
+	int currentQuantity;
+	int threshold;
+}

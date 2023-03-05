@@ -1,0 +1,8 @@
+package com.TcsProbs;
+
+public class MovieFABDSol {
+	public static int findAvgBudgetByDirector(MovieFABD[] mfabd,String director)
+	{
+		
+	}
+}

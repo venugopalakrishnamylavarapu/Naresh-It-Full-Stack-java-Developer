@@ -1,0 +1,34 @@
+package com.prac;
+
+import java.util.Scanner;
+
+public class AssosiateSol {
+	static Scanner sc=new Scanner(System.in);
+	 public static Assosiate[] associatesForGivenTechnology(Assosiate[] ass,String searchTechnology) { 
+		 Assosiate[] result=new Assosiate[ass.length];
+		 int resultcount=0;
+		 for (int i = 0; i <ass.length; i++) 
+		 {
+			 if(ass[i].getTechnology()==searchTechnology && ass[i].getId()%5==0)
+			 {
+				result[resultcount]=ass[i]; 
+				resultcount++;
+			 }
+		 } 
+		 return result;
+	}
+	public static void main(String[] args) {
+		Assosiate[] arr=new Assosiate[5];
+		System.out.println("Enter the details");
+		for(int i=0;i<arr.length;i++)
+			arr[i]=new Assosiate(sc.nextInt(),sc.next(),sc.next(),sc.nextInt());
+		sc.nextLine();
+		System.out.println("Enter the searchTechnology value");
+		String str=sc.nextLine();
+		Assosiate[] result=associatesForGivenTechnology(arr, str);
+		for(int i=0;i<result.length;i++)
+			System.out.println(result[i].getId());
+	}
+	
+	
+ }

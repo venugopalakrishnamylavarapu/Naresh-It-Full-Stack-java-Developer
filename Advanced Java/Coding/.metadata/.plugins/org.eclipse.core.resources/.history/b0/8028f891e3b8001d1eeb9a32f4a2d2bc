@@ -1,0 +1,12 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class UniqueCharacters {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+	}
+
+}

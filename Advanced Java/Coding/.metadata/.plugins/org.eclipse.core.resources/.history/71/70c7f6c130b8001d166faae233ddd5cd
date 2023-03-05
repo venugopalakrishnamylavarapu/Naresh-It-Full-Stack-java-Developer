@@ -1,0 +1,15 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class InstituteSol {
+	public static int findNumClearancedByLoc(Institute[] iobj,String location)
+	{
+		return 0;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Institute[] iarr=new Institute[5];
+		for()
+	}
+}

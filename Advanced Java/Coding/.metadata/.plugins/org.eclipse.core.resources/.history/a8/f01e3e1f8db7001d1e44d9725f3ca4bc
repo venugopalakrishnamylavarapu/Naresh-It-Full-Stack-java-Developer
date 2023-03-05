@@ -1,0 +1,41 @@
+package com.prac;
+
+import java.util.Scanner;
+
+public class AutonomousCarSol {
+	public static int findTestPassedByEnv(AutonomousCar[] acar,String environment)
+	{
+		int sum=0;
+		for(int i=0;i<acar.length;i++)
+		{
+			if(acar[i].getEnvironment().equals(environment))
+			{
+				sum+=acar[i].getNoOfTestsPassed();
+			}
+		}
+		if(sum==0)	return 0;
+		else	return sum;
+	}
+	public static AutonomousCar updateCarGrade(String brand,AutonomousCar[] acar1)
+	{
+		return null;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		AutonomousCar[] arr1=new AutonomousCar[4];
+		for(int i=0;i<arr1.length;i++)
+		{
+			arr1[i] =new AutonomousCar(sc.nextInt(),sc.next(),sc.nextInt(),sc.nextInt(),sc.next());
+		}
+		String environment=sc.next();
+		sc.nextLine();
+		String brand=sc.next();		
+		int totalTestsPassed=findTestPassedByEnv(arr1,environment);
+		if(totalTestsPassed>0)	System.out.println(totalTestsPassed);
+		else	System.out.println("There are no tests passed in this particular environment");
+		
+		AutonomousCar obj1=updateCarGrade(brand,arr1);
+		if(obj1.equals(null))	System.out.println("No Car is available with the specified brand");	
+		else	System.out.println(obj1.getBrand()+"::"+obj1.getGrade());
+	}
+}

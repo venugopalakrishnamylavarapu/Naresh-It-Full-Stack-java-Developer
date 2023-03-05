@@ -1,0 +1,15 @@
+package com.TcsProbs;
+
+public class MovieFABD {
+	int movieId;
+	String director;
+	int rating;
+	int budget;
+	MovieFABD(int mId,String dir,int r,int bud)
+	{
+		this.movieId=mId;
+		this.director=dir;
+		this.rating=r;
+		this.budget=bud;
+	}
+}

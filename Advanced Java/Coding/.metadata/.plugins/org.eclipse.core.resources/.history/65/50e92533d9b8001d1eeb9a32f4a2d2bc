@@ -1,0 +1,11 @@
+package com.TcsProbs;
+
+public class SimMNS {
+	int id;
+	String company;
+	int balance;
+	double ratePerSecond;
+	String circle;
+	SimMNS(int id,String com,int bal,double rps)
+
+}

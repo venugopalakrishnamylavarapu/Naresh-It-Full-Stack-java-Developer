@@ -1,0 +1,40 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class InstituteSol {
+	public static int findNumClearancedByLoc(Institute[] iobj,String location)
+	{
+		int sum=0;
+		for(int i=0;i<iobj.length;i++)
+			if(iobj[i].getLocation().equals(location))	sum+=iobj[i].getNoOfStudentsCleared();
+		return sum;
+	}
+	public static Institute updateInstitutionGrade(Institute[] iobj,String institutionName)
+	{
+		for(int i=0;i<iobj.length;i++)
+		{
+			if(iobj[i].getInstitutionName().equals(institutionName))	
+			{
+				int rating=(iobj[i].getNoOfStudentsPlaced()*100)/iobj[i].getNoOfStudentsCleared();
+				if(rating>=80)	iobj[i].setGrade("A");
+				else	iobj[i].setGrade("B");
+				return iobj[i];
+			}
+		}
+		return null;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Institute[] iarr=new Institute[5];
+		for(int i=0;i<iarr.length;i++)	iarr[i]=new Institute(sc.nextInt(),sc.next(),sc.nextInt(),sc.nextInt(),sc.next());
+		String location=sc.next();
+		int noOfClearance=findNumClearancedByLoc(iarr,location);
+		if(noOfClearance>0)	System.out.println(noOfClearance);
+		else	System.out.println("There are no cleared students in this particular location");
+		
+		String institutionName=sc.next();
+		Institute inobj1=updateInstitutionGrade(iarr,institutionName);
+		
+	}
+}

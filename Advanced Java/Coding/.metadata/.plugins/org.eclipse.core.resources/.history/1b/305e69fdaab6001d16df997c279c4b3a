@@ -1,0 +1,19 @@
+package hidden;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class GetFields extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s1=request.getParameter("book1");
+		String s2=request.getParameter("book2");
+		String s3=request.getParameter("book3");
+		
+	}
+
+}

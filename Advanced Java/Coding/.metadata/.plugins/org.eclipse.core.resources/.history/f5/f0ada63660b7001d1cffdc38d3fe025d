@@ -1,0 +1,25 @@
+package com.prac;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class NavalVesselSol {
+	public static int findAvgVoyagesByPct(NavalVessel[] nvarr,int parameterPercentage) {
+		
+	}
+	public static NavalVessel findVesselByGrade(String purpose,NavalVessel[] nvarr)
+	{
+		
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		NavalVessel[] nv=new NavalVessel[4];
+		for(int i=0;i<4;i++)
+		{
+			nv[i]=new NavalVessel(sc.nextInt(),sc.next(),sc.nextInt(),sc.nextInt(),sc.next());
+		}
+		int Percentage=sc.nextInt();
+		int avgPct=findAvgVoyagesbyPct(nv,Percentage);
+	}
+	
+}

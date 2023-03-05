@@ -1,0 +1,22 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class InstituteSol {
+	public static int findNumClearancedByLoc(Institute[] iobj,String location)
+	{
+		return 0;
+	}
+	public static Institute updateInstitutionGrade(Institute[] iobj,String institutionName) {
+		
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Institute[] iarr=new Institute[5];
+		for(int i=0;i<iarr.length;i++)	iarr[i]=new Institute(sc.nextInt(),sc.next(),sc.next(),sc.nextInt(),sc.next(),sc.next());
+		String location=sc.next();
+		int noOfClearance=findNumClearancedByLoc(iarr,location);
+		Intitute inobj1=
+		
+	}
+}

@@ -1,0 +1,34 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+import java.lang.StringBuilder;
+
+/*
+ * Write a Java program to print the characters at the odd position of a given string
+Input
+
+Hey there!
+
+Output
+
+e hr!
+
+Explanation
+
+    All the characters (including whitespace) at the odd position of the string Hey there! are printed.
+
+ */
+public class CharsAtOddPosition {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		StringBuilder sb=new StringBuilder();
+		System.out.println("Enter the String:");
+		String input=sc.nextLine();
+		for(int i=0;i<input.length();i=+1)
+		{
+			sb.
+		}
+	}
+
+}

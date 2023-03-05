@@ -1,0 +1,145 @@
+Filters Dynamic project folder:
+===============================
+
+login.html
+==========
+<html>
+<body bgcolor=yellow text=blue>
+<center>
+<h1><u>Login Form</u></h1>
+<form method=POST action=welcome>
+Username <input type=text name=uname><br>
+Password <input type=password name=pword><br><br>
+<input type=submit>&nbsp;<input type=reset>
+</form>
+</center>
+
+</body>
+</html>
+
+WelcomeServlet.java
+===================
+package filter;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class WelcomeServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s=request.getParameter("uname");
+		PrintWriter pw=response.getWriter();
+		pw.println("<html><body bgcolor=black text=yellow><center>");
+		pw.println("<h1>Welcome "+s+"</h1>");
+		pw.println("</center></body></html>");
+	}
+
+}
+
+
+LoginFilter.java
+================
+package filter;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpFilter;
+
+public class LoginFilter extends HttpFilter {
+	Connection con;
+	public void destroy() {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		try {
+			String s1=request.getParameter("uname");
+			String s2=request.getParameter("pword");
+			PreparedStatement ps=con.prepareStatement("select * from loginfo where uname=? and pword=?");
+			ps.setString(1, s1);
+			ps.setString(2, s2);
+			ResultSet rs=ps.executeQuery();
+			if(rs.next())
+			{
+				chain.doFilter(request, response);
+				//the above line indicates web container to check web.cml to-
+				//-execute any other filter or servlet whichever is configured.
+			}
+			else
+			{
+				PrintWriter pw=response.getWriter();
+				pw.println("<html><body text=red><center>");
+				pw.println("<h1>Invalid Username/Password</h1>");
+				pw.println("</center></body></html>");
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+	}
+	public void init(FilterConfig fConfig) throws ServletException {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYSTEM","login","login");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}
+
+
+web.xml
+=======
+<web-app> 
+  <servlet>
+    <description></description>
+    <display-name>WelcomeServlet</display-name>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <servlet-class>filter.WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>LoginFilter</display-name>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/welcome</url-pattern>
+  </filter-mapping>
+</web-app>
+
+
+=> Here in this 
+<filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/welcome</url-pattern>
+  </filter-mapping>
+
+it indicates web container execute LoginFilter whenever request comes to WelcomeServlet

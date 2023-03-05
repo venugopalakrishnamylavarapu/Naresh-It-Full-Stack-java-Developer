@@ -1,0 +1,18 @@
+package com.TcsProbs;
+
+public class Institute {
+	private int institutionId;
+	private String institutionName;
+	private String noOfStudentsPlaced;
+	private int noOfStudentsCleared;
+	private String location;
+	private String grade;
+	Institute(int intution,String institution,String noOfStudentsPlaced,int noOfStudentsCleared,String location,String grade){
+		this.institutionId=institutionId;
+		this.institutionName=institutionName;
+		this.noOfStudentsPlaced=noOfStudentsPlaced;
+		this.noOfStudentsCleared=noOfStudentsCleared;
+		this.location=location;
+		this.grade=grade;
+	}
+}

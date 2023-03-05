@@ -1,0 +1,8 @@
+package com.TcsProbs;
+
+public class CharsAtOddPosition {
+
+	public static void main(String[] args) {
+	}
+
+}

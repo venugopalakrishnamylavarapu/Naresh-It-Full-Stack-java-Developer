@@ -1,0 +1,19 @@
+package com.TcsProbs;
+
+import java.util.Arrays;
+
+public class SimMNSSol {
+	public static SimMNS[] matchAndSort(SimMNS[] smns,String searchCircle,double searchRate)
+	{
+		SimMNS[] smarr=new SimMNS[0];
+		for(int i=0;i<smns.length;i++)
+		{
+			if(smns[i].getCircle().equals(searchCircle) && smns[i].getRatePerSecond()<searchRate)
+			{
+				smarr=Arrays.copyOf(smarr, smarr.length+1);
+				smarr[smarr.length-1]=smns[i];
+			}
+		}
+		return smarr;
+	}
+}

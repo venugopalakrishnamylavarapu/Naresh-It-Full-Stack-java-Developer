@@ -1,0 +1,8 @@
+package com.TcsProbs;
+
+public class SimMNSSol {
+	public static SimMNS[] matchAndSort(SimMNS[] smns,String searchCircle,double searchRate)
+	{
+		SimMNS[] smarr=new SimMNS[0];
+	}
+}

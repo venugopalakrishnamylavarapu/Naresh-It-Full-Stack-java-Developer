@@ -1,0 +1,158 @@
+web.xml:
+========
+it is called as configuration file and it is used to configure servlets,listners,filters,JSP's
+initialization parameters,context parameters,welcome files,..etc.,
+
+There are three ways to map servlets:
+1)Exact match
+2)Directory match
+3)Extension match
+
+
+1)Exact match:
+==============
+web.xml:
+--------
+<url-pattern>/time<url-pattern>
+
+Browser Window:
+--------------
+https://localhost:8082/basics/time
+
+the url pattern in web.xml and Browserwindow matches "Exactly" as same so its called as Exact match servlet.
+
+2)Directory match:
+==================
+Example:
+=======
+web.xml:
+========
+<url-pattern>/demo/*</url-pattern>
+here in the place of start u can write any thing but /demo/ must be same.
+
+Browser window:
+==============
+http://localhost:8082/basics/demo/test
+	(or)
+http://localhost:8082/basics/demo/sample
+	(or)
+http://localhost:8082/basics/demo/abc
+
+
+3)Extension match:
+==================
+Example:
+========
+web.xml:
+--------
+<url-pattern>*.cpp</url-pattern>
+we can write anything in the * but the extension must match in this case its(.cpp)
+
+Browser window:
+===============
+http://localhost:8082/basics/demo.cpp
+		(or)
+http://localhost:8082/basics/test.cpp
+		(or)
+http://localhost:8082/basics/sample.cpp
+
+
+Welcome file configuration:
+===========================
+Welcome file is also called as default file.
+
+To configure welcome file,we use <welcome-file-list>&<welcome-file> tags in web.xml.
+
+Example:
+========
+<web-app>
+<welcome-file-list>
+<welcome-file>homepage.html</welcome-file>
+</welcome-file-list>
+-------------
+-------------
+-------------
+</web-app>
+
+Default welcome files are index.html,index.htm,index.jsp,default.html,default.html & default.jsp.
+if we use these default welcome files as file name we dont even have to configure also it will 
+automatically load as default page.
+
+<load-on-startup> tag:
+=====================
+it indicates web container to load a servlet,instantiate servlet & call init() method whenever web 
+application is deployed on server.
+
+Example:
+=======
+<web-app>
+<servlet>
+<servlet-name>time</servlet-name>
+<servlet-class>TimeServlet</servlet-class>
+<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>time</servlet-name>
+<url-pattern>/time</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>table</servlet-name>
+<servlet-class>TableServlet</servlet-class>
+<load-on-startup>2</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>table</servlet-name>
+<url-pattern>/tab</url-pattern>
+</servlet-mapping>
+</web-app>
+
+here servlets are loaded in ascending order.
+
+Here 0 or less than 0(-ve numbers) are not considered.
+
+Here 1st time servlet will load and then 2nd servlet wil load automatically.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

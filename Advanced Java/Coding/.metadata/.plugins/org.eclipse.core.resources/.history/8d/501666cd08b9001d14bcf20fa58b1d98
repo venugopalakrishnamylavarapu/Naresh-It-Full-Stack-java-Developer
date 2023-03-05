@@ -1,0 +1,17 @@
+package com.prac;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Prac {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();sc.nextLine();
+		int b=sc.nextInt();
+		System.out.println("the values of a and b before swaping");
+		System.out.println("a ="+a+" and b ="+b);
+		a=(a*b)/a;
+		b=(a*b)/b;
+		System.out.println("the values of a and b");
+	}
+}

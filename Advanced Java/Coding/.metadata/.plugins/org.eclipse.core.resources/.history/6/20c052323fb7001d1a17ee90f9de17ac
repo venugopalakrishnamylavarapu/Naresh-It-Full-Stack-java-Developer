@@ -1,0 +1,19 @@
+package com.prac;
+
+public class Assosiate {
+
+	public static void main(String[] args) {
+			private int id;
+			private String name;
+			private String technology;
+			private int expInYears;
+			Assosiate(int id,String name,String technology,int expInYears)
+			{
+				this.id=id;
+				this.name=name;
+				this.technology=technology;
+				this.expInYears=expInYears;
+			}
+	}
+
+}

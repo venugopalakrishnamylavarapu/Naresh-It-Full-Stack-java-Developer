@@ -1,0 +1,233 @@
+Form State Validation Services
+- Pristine
+- Dirty
+- Valid
+- Invalid
+- Submitted
+
+Input State Validation Services
+- Touched
+- UnTouched
+- Pristine
+- Dirty
+- Valid
+- Invalid
+- Errors
+
+                               Angular Errors Object
+- It can identify specific validation error in input element and report the relative error message.
+- Upto Angular 13 , it is just a JavaScript with validation properities
+                errors.required
+                errors.minlength
+                errors.pattern ...
+- From Angular 14 and in Angular 15, errors object changed into an array of error validations, which is nullable type.
+                errors?.['required']
+                errors?.['pattern']
+                errors?.['minlength'] ...
+
+- Several HTML elements can't use HTML5 validations, then you have to configure validations using custom functions. [Custom Validations]
+
+- Custom Validations require  EventBinding and JavaScript functions
+
+          <select (change)="VerifyCity($event)">
+              <option value="-1"> Choose </option>
+              <option value="Delhi"> Delhi </option>
+          </select>
+
+           public  VerifyCity(e:any) {
+                 if(e.target.value=="-1") {
+                      // set error
+                 } else {
+                    // remove error
+                 }
+            }
+
+- Angular also provides pre-defined validation CSS classes.
+            .ng-invalid
+            .ng-valid
+            .ng-pristine
+            .ng-dirty
+
+        form.ng-invalid {  }
+        input.ng-invalid { }
+
+Ex:
+template-form.component.css
+
+input.ng-invalid {
+    border:1px solid red;
+}
+input.ng-valid {
+    border:1px solid green;
+    box-shadow: 2px 2px 2px green;
+}
+form.ng-invalid {
+    background-color: rgb(253, 200, 200);
+}
+
+template-form.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-template-form',
+  templateUrl: './template-form.component.html',
+  styleUrls: ['./template-form.component.css']
+})
+export class TemplateFormComponent {
+     public CityError:string = '';
+
+     public CityChanged(e:any){
+           if(e.target.value=="-1") {
+              this.CityError = "Pleas select your city";
+           } else {
+               this.CityError = "";
+           }
+     }
+}
+
+
+template-form.component.html
+
+<div class="container-fluid">
+   <form class="mt-2 p-4" #frmRegister="ngForm" >
+       <h2>Register User</h2>
+       <dl>
+          <dt>User Name</dt>
+          <dd><input type="text"  required  minlength="4" maxlength="10" name="UserName" ngModel #UserName="ngModel"></dd>
+          <dd class="text-danger" *ngIf="frmRegister.submitted && UserName.invalid">
+              <div *ngIf="UserName.errors?.['required']">User Name Required</div>
+              <div *ngIf="UserName.errors?.['minlength']">User Name too short min 4 chars required</div>
+              <div *ngIf="UserName.errors?.['maxlength']">User Name too long max 10 chars only</div>
+          </dd>
+          <dt>Password</dt>
+          <dd><input type="password" name="Password" ngModel #Password="ngModel" required pattern="(?=.*[A-Z])\w{4,10}"></dd>
+          <dd class="text-danger" *ngIf="(frmRegister.submitted && Password.invalid)||(Password.touched && Password.invalid)">
+              <div *ngIf="Password.errors?.['required']">Password Required</div>
+              <div *ngIf="Password.errors?.['pattern']" >Password 4 to 15 chars with atleast 1 uppercase letter.</div>
+          </dd>
+          <dt>Mobile</dt>
+          <dd><input type="text" required pattern="\+91\d{10}" ngModel #Mobile="ngModel" name="Mobile"></dd>
+          <dd class="text-danger" *ngIf="frmRegister.submitted && Mobile.invalid">
+              <div *ngIf="Mobile.errors?.['required']">Mobile Required</div>
+              <div *ngIf="Mobile.errors?.['pattern']">Invalid Mobile +91 and 10 digits</div>
+          </dd>
+          <dt>City</dt>
+          <dd>
+             <select (change)="CityChanged($event)" ngModel #City="ngModel" name="City">
+                <option value="-1">Select Your City</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Hyd">Hyd</option>
+             </select>
+          </dd>
+          <dd class="text-danger">
+             {{CityError}}
+          </dd>
+       </dl>
+       <button class="btn btn-primary">Register</button>
+   </form>
+</div>
+
+                        Model Driven or Reactive Forms
+                        ---------------------------------------------
+- Model Driven specifies that configurating and manipulations are handled at "Controller" level.
+- It have clean separation between code and UI.
+- UI is light weight and faster in rendering.
+- It is good for extensibility and testability.
+- It is good for dynamic form, which can change according to situation.
+- It increases the number of requests and also page initial load time.
+- It is not good for inline documentation.
+- They are Asynchronous, faster in interactions.
+- They internally uses Ajax.
+- They enable "Patial PostBack".
+- They enable "Async Validations".
+- Reactive forms require  "ReactiveFormModule"  from @angular/forms
+- To create a form and its element it provides various classes
+
+            ClassName                Purpose
+            ---------------------------------------------------------------------
+            FormGroup                To create <form> element
+            FormControl            To create <input> <select> <textarea>
+                                        form elements.
+            FormBuilder                It is a form service.
+
+Syntax:
+            public  frmRegister = new FormGroup({
+                    FieldName : new FormControl("value", Validations[]),
+                    FieldName : new FormControl("value", Validations[])
+            })
+
+- You have to bind the form group and controls to UI.
+
+            <form   [formGroup]="frmRegister">
+                <input type="text"  formControlName="FieldName">
+                <select formControlName="FieldName"> </select>
+            </form>
+
+Ex: Basic Reactive Form with simple group and controls
+
+reactive-form.component.ts
+
+import { Component } from '@angular/core';
+import  { FormGroup, FormControl, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-form',
+  templateUrl: './reactive-form.component.html',
+  styleUrls: ['./reactive-form.component.css']
+})
+export class ReactiveFormComponent {
+    public frmRegister = new FormGroup({
+        UserName: new FormControl('Your Name'),
+        Age: new FormControl(0),
+        Mobile: new FormControl('')
+    })
+    public SubmitClick(data:any){
+        alert(JSON.stringify(data));
+    }
+}
+
+reactive-form.component.html
+
+<div class="container-fluid">
+    <h2>Register User</h2>
+    <form [formGroup]="frmRegister" (submit)="SubmitClick(frmRegister.value)">
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" formControlName="UserName" ></dd>
+            <dt>Age</dt>
+            <dd><input type="number" formControlName="Age"></dd>
+            <dt>Mobile</dt>
+            <dd><input type="text" formControlName="Mobile"></dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</div>
+
+- You can configure nested forms with Async approach
+
+Syntax:
+         frmRegister = new FormGroup({
+                Name : new FormControl(" "),
+                Price  : new FormControl(0),
+                frmVendor: new FormGroup({
+                      VendorName: new FormControl("");
+                      VendorRating: new FormControl(0);
+                })
+        })
+
+        <form  [formGroup] = "frmRegister">
+
+             <input type="text"  formControlName="Name">
+             <input type="text"  formControlName="Price">
+       
+              <div formGroupName="frmVendor">
+                <input type="text" formControlName="VendorName">
+                <input type="range" formControlName="VendorRating">
+                 <button> Save</button>
+              </div>
+             <button>Submit</button>
+        </form>
+
+        this.frmVendor.patchValue( { VendorRating : 4.3} );
+        this.frmVendor.update({})

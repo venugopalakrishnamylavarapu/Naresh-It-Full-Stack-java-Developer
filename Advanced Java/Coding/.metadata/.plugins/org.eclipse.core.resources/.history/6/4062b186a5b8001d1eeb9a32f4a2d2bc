@@ -1,0 +1,23 @@
+package com.TcsProbs;
+
+public class MovieFABDSol {
+	public static int findAvgBudgetByDirector(MovieFABD[] mfabd,String director)
+	{
+		int sum=0,count=0,avg;
+		for(int i=0;i<mfabd.length;i++)
+		{
+			if(mfabd[i].getDirector().equals(director))	
+			{
+				sum+=mfabd[i].getBudget();
+				count++;
+			}
+		}
+		if(sum==0 && count==0)	return 0;
+		else	return sum/count;
+	}
+	public static MovieFABD getMovieByRatingBudget(int rating,int budget,MovieFABD[] mfabd)
+	{
+			for (int i = 0; i < mfabd.length; i++)	if((mfabd[i].getRating()==rating && mfabd[i].getBudget()==budget) && mfabd[i].getRating()%mfabd[i].getBudget()==0)	return mfabd[i];	
+			return null;
+	}
+}

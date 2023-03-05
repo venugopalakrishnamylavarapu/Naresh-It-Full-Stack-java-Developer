@@ -1,0 +1,23 @@
+package com.TcsProbs;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SmallestVowel {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		char[] c=str.toCharArray();
+		char[] d=new char[0];
+		for(int i=0;i<c.length;i++)
+		{
+			if(c[i]=='a' && c[i]=='e' && c[i]=='i' && c[i]=='o' && c[i]=='u')
+			{
+				d=Arrays.copyOf(d, d.length+1);
+				d[d.length-1]=c[i];
+			}
+		}
+		Arrays.sort(d);
+		System.out.println(d[0]);
+	}
+}

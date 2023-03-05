@@ -1,0 +1,18 @@
+package com.TcsProbs;
+
+import java.util.Arrays;
+
+public class PlayerGAORSol {
+	public static double[] findAverageOfRuns(PlayerGAOR[] pgaor,int target)
+	{
+		double[] a=new double[0];
+		for(int i=0;i<pgaor.length;i++) {
+			if(pgaor[i].getMatchesPlayed()>=target)
+			{
+				a=Arrays.copyOf(a, a.length+1);
+				a[a.length-1]=pgaor[i].getRunsScored();
+			}
+		}
+		return a;
+	}
+}

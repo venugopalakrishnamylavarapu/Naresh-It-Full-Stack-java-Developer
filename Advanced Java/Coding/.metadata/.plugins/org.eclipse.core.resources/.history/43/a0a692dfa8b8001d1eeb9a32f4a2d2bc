@@ -1,0 +1,26 @@
+package com.TcsProbs;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MovieGMGSol {
+	public static MovieGMG[] getMovieByGenre(MovieGMG[] mgmg,String searchGenre)
+	{
+		MovieGMG[] mgobj=new MovieGMG[0];
+		for(int i=0;i<mgmg.length;i++)
+		{
+			if(mgmg[i].getGenre().equalsIgnoreCase(searchGenre))
+			{
+				mgobj=Arrays.copyOf(mgobj, mgobj.length+1);
+				mgobj[mgobj.length-1]=mgmg[i];
+			}
+		}
+		return mgobj;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		MovieGMG[] mgobj=new MovieGMG[4];
+		for(int i=0;i<mgobj.length;i++)
+			mgobj[i]=new MovieGMG(sc.next(),sc.next(),sc.next(),sc.nextInt());
+	}
+}

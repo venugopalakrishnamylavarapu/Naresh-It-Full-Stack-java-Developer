@@ -1,0 +1,16 @@
+127.0.0.1 - - [27/Feb/2023:19:59:40 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [27/Feb/2023:19:59:42 +0530] "GET /hiddenForms/ HTTP/1.1" 404 768
+127.0.0.1 - - [27/Feb/2023:19:59:42 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+127.0.0.1 - - [27/Feb/2023:19:59:48 +0530] "GET /hiddenForms/books.html HTTP/1.1" 200 468
+127.0.0.1 - - [27/Feb/2023:19:59:51 +0530] "GET /hiddenForms/set?book1=Java2CompleteReferences HTTP/1.1" 200 316
+127.0.0.1 - - [27/Feb/2023:20:01:44 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [27/Feb/2023:20:01:45 +0530] "GET /hiddenForms/ HTTP/1.1" 404 768
+127.0.0.1 - - [27/Feb/2023:20:01:46 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+127.0.0.1 - - [27/Feb/2023:20:01:50 +0530] "GET /hiddenForms/books.html HTTP/1.1" 200 468
+127.0.0.1 - - [27/Feb/2023:20:01:53 +0530] "GET /hiddenForms/set?book1=Java2CompleteReferences HTTP/1.1" 200 316
+127.0.0.1 - - [27/Feb/2023:20:15:50 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [27/Feb/2023:20:15:52 +0530] "GET /hiddenForms/ HTTP/1.1" 404 768
+127.0.0.1 - - [27/Feb/2023:20:15:52 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+127.0.0.1 - - [27/Feb/2023:20:15:55 +0530] "GET /hiddenForms/books.html HTTP/1.1" 200 468
+127.0.0.1 - - [27/Feb/2023:20:16:01 +0530] "GET /hiddenForms/set?book3=SCJPByKathySierra HTTP/1.1" 200 311
+127.0.0.1 - - [27/Feb/2023:20:16:03 +0530] "GET /hiddenForms/get?book1=null&book2=null&book3=SCJPByKathySierra HTTP/1.1" 200 107

@@ -1,0 +1,47 @@
+Types of Paths:
+---------------------
+- Route Paths are configure in 2 ways
+        a) Relative Path
+                <a routerLink="details"> Details </a>
+        b) Absolute Path
+                <a routerLink="/details"> Details </a>
+
+- Absolute path removes the existing and adds the current.
+- Relative path adds to exsiting path.
+
+Route Parameters:
+- Every route can use parameters.
+- Route parameters are used to transport data from one component to another.
+- Parameters are defined in path
+
+  { path: "details/:id/:name/:price", component : DetailsComponent}
+
+- Pameters are passed in URL
+   
+            http://localhost:4200/details/1/tv/5000
+            [Every parameter is mandatory]
+
+                map { id:1, name:"tv", price:5000 }
+
+- Route parameters can be accessed and used in any component by using "ActivatedRoute" service.
+
+            constructor(private route: ActivatedRoute){
+
+            }
+            this.route.snapShot.paramMap.get("id");
+
+- Child Routes
+
+        { path: "parent" ,  component : ParentComponent,
+             children : [
+                { path: "child", component: ChildComponent }
+            ]
+        }
+
+- Route Guards will not allows every user to access the route.
+  You can set authentication for routes.
+
+        >ng g guard  amazon-admin   --skip-tests
+
+       
+Deployment, Testing

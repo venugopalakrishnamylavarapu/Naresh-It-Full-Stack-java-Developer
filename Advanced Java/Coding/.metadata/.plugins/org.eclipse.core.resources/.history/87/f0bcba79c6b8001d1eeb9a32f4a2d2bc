@@ -1,0 +1,10 @@
+package com.TcsProbs;
+
+public class PlayerGBOLSol {
+	public static int findPointsForGivenSkill(PlayerGBOL[] pgbol,String skill)
+	{
+		int sum=0;
+		for(int i=0;i<pgbol.length;i++)	if(pgbol[i].getSkill().equals(skill))	sum+=pgbol[i].getPoints();
+		return sum;
+	}
+}

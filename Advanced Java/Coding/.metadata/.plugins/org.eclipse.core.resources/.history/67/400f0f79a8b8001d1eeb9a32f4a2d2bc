@@ -1,0 +1,18 @@
+package com.TcsProbs;
+
+import java.util.Arrays;
+
+public class MovieGMGSol {
+	public static MovieGMG[] getMovieByGenre(MovieGMG[] mgmg,String searchGenre)
+	{
+		MovieGMG[] mgobj=new MovieGMG[0];
+		for(int i=0;i<mgmg.length;i++)
+		{
+			if(mgmg[i].getGenre().equals(searchGenre))
+			{
+				mgobj=Arrays.copyOf(mgobj, mgobj.length+1);
+				mgobj[mgobj.length-1]=mgmg[i]i;
+			}
+		}
+	}
+}

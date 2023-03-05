@@ -1,0 +1,11 @@
+package com.TcsProbs;
+
+import java.util.Scanner;
+
+public class SmallestVowel {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		
+	}
+}
