@@ -1,0 +1,6 @@
+<html>
+<body>
+<%=request.getParameter("uname") %>
+<%=request.getParameter("pword") %>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<html>
+<body>
+<center>
+<h1><u>Employees Information</u></h1>
+<form action="empBean.jsp">
+Employee Number:<input type=text name=empNo><br>
+Employee Name:<input type=text name=name><br>
+Employee salary<input type=text name=salary><br><br>
+<input type=submit>&nbsp;<input type=reset>
+</form>
+</center>
+</body>
+</html>

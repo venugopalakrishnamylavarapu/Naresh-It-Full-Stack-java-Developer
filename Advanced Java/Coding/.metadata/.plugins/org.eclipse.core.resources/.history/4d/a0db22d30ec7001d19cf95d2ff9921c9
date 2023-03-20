@@ -1,0 +1,8 @@
+<html>
+<body bgcolor=green text=yellow>
+<h1>
+<% pageContext.setAttribute("platform1","JavaSE",PageContext.PAGE_SCOPE) %>
+</h1>
+
+</body>
+</html>

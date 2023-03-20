@@ -1,0 +1,193 @@
+1)<c:out>
+=========
+it is used to display output messages.
+Example:
+--------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=red text=yellow>
+<h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="C" %>
+<C:out value="Welcome to JSTL"/>
+</h1>
+</body>
+</html>
+
+
+2)<c:set>:
+==========
+it is used to set the value in a variable.
+
+
+3)<c:remove>:
+=============
+it is used to remove the value from variable.
+Example:
+--------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=red text=green>
+<h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="a" value="10"/>
+<c:out value="${a}"/>
+<c:remove var="a"/>
+<c:out value="${a}"/>
+</h1>
+</body>
+</html>
+
+4)<c:if>:
+=========
+it is used to express the condition.
+Example:
+--------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=red text=green>
+<h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="a" value="10"/>
+<c:if test="${ a>0 }">
+<c:out value="Positive Number"/>
+</c:if>
+</h1>
+</body>
+</html>
+
+5)<c:choose>:
+=============
+6)<c:when>:
+===========
+7)<c:otherwise>:
+================
+The above 3 tags are equivalent to if,else if,...else statement & switch statement.
+Example:
+=======
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=green text=white>
+<h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="a" value="-10"/>
+<c:choose>
+<c:when test="${a>0 }">
+<c:out value="Positive Number"/>
+</c:when>
+<c:when test="${a<0}">
+<c:out value="Negative Number"/>
+</c:when>
+<c:otherwise>
+<c:out value="zero"/>
+</c:otherwise>
+</c:choose>
+</h1>
+</body>
+</html>
+
+8)<c:forEach>:
+==============
+it is equivalent to for loop
+Example:
+========
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=green text=white>
+<h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:forEach var="i" begin="1" end="10" step="1">
+<c:out value="${i }"/><br>
+</c:forEach>
+</h1>
+</body>
+</html>
+
+9)<c:forTokens>:
+=================
+it is used to iterate token by token in a given String.
+Example:
+========
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=green text=white>
+<h1>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:forTokens items="Welcome to Java" var="s" delims=" ">
+<c:out value="${s }"/><br>
+</c:forTokens>
+</h1>
+</body>
+</html>
+
+10)<c:redirect>:
+================
+it is used to redirect the control from one jsp to another jsp.
+it is equivalent to servlet redirecting.
+
+	<c:redirecting url="out.jsp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+JSP:
+===
+JSP stands for Java Server Pages.it is renamed as Jakarta Server Pages.
+
+JSP is a specification for developing web application with java programming 
+language.(Same as Servlet Definition)
+
+JSP Engine is a piece of software and it converts JSP into a Servlet.it is a part 
+of web server & application server
+
+	      input		      output	
+	JSP==============>JSP Engine===========>Servlet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

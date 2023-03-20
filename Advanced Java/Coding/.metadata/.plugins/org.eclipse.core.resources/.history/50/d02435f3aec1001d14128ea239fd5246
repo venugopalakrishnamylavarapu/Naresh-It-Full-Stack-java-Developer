@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=red text=yellow>
+<center>
+<h1>Arithmetic JSP</h1>
+<form action=arithmetic.jsp>
+FirstNumber <input type=text name="fnumber"><br><br>
+SecondNumber <input type=text name="snumber"><br><br>
+<input type=submit name=operation value=Addition>&nbsp;
+<input type=submit name=operation value=Subtraction>&nbsp;
+<input type=submit name=operation value=Multiplication>&nbsp;
+<input type=submit name=operation value=Division>&nbsp;
+</form>
+</center>
+</body>
+</html>

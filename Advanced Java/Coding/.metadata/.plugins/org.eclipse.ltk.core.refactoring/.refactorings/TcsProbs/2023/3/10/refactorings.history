@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.TcsProbs.SImTC.java&apos; to &apos;SimTC.java&apos;&#x0D;&#x0A;- Original project: &apos;TcsProbs&apos;&#x0D;&#x0A;- Original element: &apos;com.TcsProbs.SImTC.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.TcsProbs.SimTC.java&apos;" description="Rename compilation unit &apos;SImTC.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.TcsProbs{SImTC.java" name="SimTC.java" references="false" stamp="1678018773791" version="1.0"/>
+</session>

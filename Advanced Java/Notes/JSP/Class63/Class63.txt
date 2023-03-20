@@ -1,0 +1,165 @@
+scope.jsp
+=========
+<html>
+<body bgcolor=green text=yellow>
+<h1>
+<% 
+pageContext.setAttribute("platform1","JavaSE",PageContext.PAGE_SCOPE);
+pageContext.setAttribute("platform2","JavaEE",PageContext.REQUEST_SCOPE);
+pageContext.setAttribute("platform3","JavaME",PageContext.SESSION_SCOPE);
+pageContext.setAttribute("platform4","JavaFX",PageContext.APPLICATION_SCOPE);
+%>
+${ pageScope.platform1 }<br>
+${ requestScope.platform2 }<br>
+${ sessionScope.platform3 }<br>
+${ applicationScope.platform4 }<br>
+</h1>
+</body>
+</html>
+
+figure in the folder(the redirecting pic)
+
+>in the above example,platform1 can be accessed in page1.jsp only because its scope is PAGE_SCOPE,
+>platform2 can be accessed in page1.jsp & page2.jsp because its scope is REQUEST_SCOPE,
+>platform3 can be accessed in page1.jsp,page2.jsp & page3.jsp because its scope is SESSION_SCOPE 
+>and platform4 can be accessed in all jsps in a war file because its scope is APPLICATION_SCOPE.
+
+5)param:
+========
+it is used to get the request parameters from HTML.
+Example:
+--------
+login.html:
+==========
+<html>
+<body>
+<form action="login1.jsp">
+USERNAME:<input type=text name="uname"><br>
+PASSWORD:<input type=password name="pword"><br>
+<input type=submit> <input type=reset>
+</form>
+</body>
+</html>
+
+login.jsp:
+=========
+<html>
+<body>
+<%=request.getParameter("uname") %>
+<%=request.getParameter("pword") %>
+${parameter.uname }<br>
+${parameter.pword }<br>
+</body>
+</html>
+
+6)initParam:
+============
+>it is used to retrieve intialization paramaeters from web.xml
+Example:
+=======
+web.xml:
+--------
+<init-param>
+<param-name>message</param-name>
+<param-value>Welcome</param-value>
+</init-param>
+
+demo.jsp:
+========
+<%= config.getInitParameter("message")%>
+		(or)
+${initParam.message}
+
+7)cookie:
+=========
+>it is used get the value of cookie variable.
+example:
+-------
+set.jsp:
+=======
+<%Cookie c=new Cookie("book","Java 2 Complete reference");
+response.addCookie(c);
+%>
+
+get.jsp:
+========
+<%
+ Cookie[] e=request.getCookies();
+ out.println(c[0].getValue());
+%>
+	(or)
+${Cookie["books"].value}
+	(or)
+${Cookie.book.value}
+
+JSTL:
+====
+>JSTL stands for JSP Standard Tag Library.
+>it is introduced in JSP 2.0 versino to simplify the JSP.
+>JSTL tags are divided into the following categories:
+  1)Core Tags
+  2)SQL Tags
+  3)Formatting Tags
+  4)Function Tags
+  5)XML Tags
+In order to use the above tags we must use the following JAR Files.
+1)standard.jar
+2)jstl.jar
+To work with JSTL,copy the above jar files into the tomcat lib folder.
+
+Core Tags:
+==========
+1)<c:out>
+2)<c:set>
+3)<c:remove>
+4)<c:if>
+5)<c:choose>
+6)<c:when>
+7)<c:otherwise>
+8)<c:forEach>
+9)<c:forTokens>
+10)<c:redirect>
+
+>In order to use the above tags we must include the following taglib directive in JSP.
+<%@ taglib uri="http:java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

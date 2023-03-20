@@ -1,0 +1,162 @@
+Differences between include directive and include action:
+========================================================
+		
+		Include Directive				Include Action
+		=================				==============
+1)it includes the file at page traslation 		1)it include the file at page request
+  time.							  time.
+
+2)it supports to include jsp and html only.		2)it supports to include servlet,jsp and html.
+
+3)it is not equal to servlet including.			3)it is equal to servlet including.
+
+4)it includes the content.				4)it includes the request and response.
+
+5)Example:						5)Example:
+  =======						  =======
+  in first.jsp						in first.jsp
+  ------------						------------
+  <%@ include file="second.jsp"%>			<jsp:include page="second.jsp"/>
+  second.jsp is another jsp file			(Check the folder for the picture for easy understanding.)
+  (Check the folder for the picture)
+
+JSP using Java Beans:
+=====================
+A java bean is a reusable software component.
+
+A java class is said to be java bean if it is follows the following rules:
+==========================================================================
+1)Class must be public 
+2)Class must implements java.io.Serializable interface.
+3)Class must be in a package.
+4)Class must contain public default constructor.
+5)All instance variables must be private.
+Here instance variable are called properties.
+6)Each and every property must contain setter & getter methods.
+7)All setters and getter methods must be public.
+
+Example:
+========
+package demo;
+
+import java.io.Serializable;
+
+public class MessageBean implements Serializable
+{
+	private String message;
+	public void setMessage(String message)
+	{
+		this.message=message;
+	}
+	public void getMessage()
+	{
+		return this.message;
+	}
+}
+
+Now this class is called as Java Bean.
+
+The following actions are used to access a java bean in a JSP.
+1)<jsp:useBean>
+2)<jsp:setProperty>
+3)<jsp:getProperty>
+
+1)<jsp:useBean>:
+===============
+it is used to create an object to a Java bean class.
+
+Syntax:
+======
+	<jsp:useBean .........>
+	</jsp:userBean>
+		(or)
+	<jsp:useBean ........./>
+Here ....... is Attributes.
+Attributes:
+===========
+1)id="........." -->Here .......... is object reference
+2)class="........." -->Here ............. is class name
+3)scope=".........." -->Here ................ is page/request/session/application
+
+Example:
+========
+<jsp:useBean id="mb" class="demo.MessageBean"/>
+The above statement is equivalent to the following code
+
+<% demo.MessageBean mb=new demo.MessageBean();%>
+
+2)<jsp:setProperty>:
+====================
+it is used to call setters methods of a Java bean.
+
+Syntax:
+=======
+	<jsp:setProperty .........>
+	</jsp:setPropert>
+		(or)
+	<jsp:setProperty ........./>
+Here ...... is Attributes.
+
+Attributes:
+==========
+1)name="..........." -->Here ...... is object reference.
+2)property="..........." -->Here ......... is value of the property.
+3)value="..........." -->Here .......... is value of the property.
+
+Example:
+========
+<jsp:setProperty name="mb" property="message' value="Welcome"/>
+The above statement is equivalent to the following code.
+
+<%mb.setMessage("Welcome");%>
+
+3)<jsp:getProperty>:
+====================
+it is used to getters method of a Java bean.
+
+Syntax:
+-------
+	<jsp:getProperty .........>
+	</jsp:getProperty>
+		(or)
+	<jsp:getProperty...../>
+Attributes:
+==========
+1)name="........" -->Here .......... is object reference
+2)property="........" -->Here .............. is value of the property
+
+Example:
+========
+<jsp:getProperty name="mb" property="message"/>
+
+The above statement is equivalent to the following code
+
+<%= mb.getMessage() %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

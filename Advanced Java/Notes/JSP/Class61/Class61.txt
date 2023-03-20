@@ -1,0 +1,82 @@
+JSP using Applets:
+==================
+Applets can be accessed in a JSP by using the following action:
+1)<jsp:plugin>
+2)<jsp:fallback>
+3)<jsp:params>
+4)<jsp:param>
+
+
+1.<jsp:plugin>:
+  =============
+it is used to include an applet in a JSP.
+Syntax:
+------
+	<jsp:plugin.......>
+	</jsp:plugin>
+		(or)
+	<jsp:plugin..../>
+Here ........ is attributes
+
+Attributes:
+==========
+1)type="......." -->...is applet
+2)code="......." -->....is Applet class name
+3)width="......" -->....is no of pixels
+4)height="......" -->.....is no of pixels
+
+2)<jsp:fallback>:
+  ==============
+it is used to specify user friendly error message.
+Syntax:
+-------
+	<jsp:fallback>
+	..........;  ------>User friendly Error message(This message is displayed when browser is unable to load an applet.
+	..........;
+	</jsp:fallback>
+->This action must be used in <jsp:plugin> action only.
+Example:
+========
+	<jsp:plugin........>
+	<jsp:fallback>	
+	............;
+	............;
+	</jsp:fallback>
+	</jsp:plugin>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

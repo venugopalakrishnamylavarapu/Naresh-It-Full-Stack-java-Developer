@@ -477,3 +477,540 @@ Mar 04, 2023 19:53:18.552 *** You are running in headless mode.
 Mar 04, 2023 19:53:18.652 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-04-14-23-18.purge.bg_rm" 10 ".purge.bg_rm"
 Mar 04, 2023 19:53:18.654 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-04-14-23-18.purge.bg_rm"
 Mar 04, 2023 19:53:18.657 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-04-14-23-18.purge.bg_rm"
+
+Mar 06, 2023 20:20:44.330 NEW SESSION
+Mar 06, 2023 20:20:44.330 *** You are running in background task mode. ***
+Mar 06, 2023 20:20:44.330 *** You are running in headless mode.
+Mar 06, 2023 20:20:44.456 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 06, 2023 20:21:41.166 [2023-03-06T14:51:41Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 06, 2023 20:21:41.167 [2023-03-06T14:51:41Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 06, 2023 20:21:41.278 *** You are running in background task mode. ***
+Mar 06, 2023 20:21:41.279 *** You are running in headless mode.
+Mar 06, 2023 20:21:41.404 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-06-14-51-41.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 06, 2023 20:21:41.405 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-06-14-51-41.purge.bg_rm"
+Mar 06, 2023 20:21:41.411 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-06-14-51-41.purge.bg_rm"
+Mar 06, 2023 20:29:28.852 *** You are running in background task mode. ***
+Mar 06, 2023 20:29:28.853 *** You are running in headless mode.
+Mar 06, 2023 20:29:28.967 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 06, 2023 20:49:09.417 [Parent 3796, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 06, 2023 20:49:09.424 [2023-03-06T15:19:09Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 06, 2023 20:49:09.425 [2023-03-06T15:19:09Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 06, 2023 20:49:09.523 *** You are running in background task mode. ***
+Mar 06, 2023 20:49:09.524 *** You are running in headless mode.
+Mar 06, 2023 20:49:09.626 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-06-15-19-09.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 06, 2023 20:49:09.627 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-06-15-19-09.purge.bg_rm"
+Mar 06, 2023 20:49:09.630 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-06-15-19-09.purge.bg_rm"
+
+Mar 06, 2023 21:05:55.341 NEW SESSION
+Mar 06, 2023 21:05:55.341 *** You are running in background task mode. ***
+Mar 06, 2023 21:05:55.342 *** You are running in headless mode.
+Mar 06, 2023 21:05:55.458 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 06, 2023 21:06:34.412 [Parent 10416, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 06, 2023 21:06:34.422 [2023-03-06T15:36:34Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 06, 2023 21:06:34.423 [2023-03-06T15:36:34Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 06, 2023 21:06:34.553 *** You are running in background task mode. ***
+Mar 06, 2023 21:06:34.554 *** You are running in headless mode.
+Mar 06, 2023 21:06:34.694 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-06-15-36-34.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 06, 2023 21:06:34.696 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-06-15-36-34.purge.bg_rm"
+Mar 06, 2023 21:06:34.704 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-06-15-36-34.purge.bg_rm"
+
+Mar 07, 2023 10:15:00.212 NEW SESSION
+Mar 07, 2023 10:15:00.212 *** You are running in background task mode. ***
+Mar 07, 2023 10:15:00.212 *** You are running in headless mode.
+Mar 07, 2023 10:15:00.316 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 07, 2023 10:15:46.448 [2023-03-07T04:45:46Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 07, 2023 10:15:46.451 [2023-03-07T04:45:46Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 07, 2023 10:15:46.549 *** You are running in background task mode. ***
+Mar 07, 2023 10:15:46.549 *** You are running in headless mode.
+Mar 07, 2023 10:15:46.648 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-07-04-45-46.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 07, 2023 10:15:46.652 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-07-04-45-46.purge.bg_rm"
+Mar 07, 2023 10:15:46.660 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-07-04-45-46.purge.bg_rm"
+Mar 07, 2023 10:15:58.375 *** You are running in background task mode. ***
+Mar 07, 2023 10:15:58.376 *** You are running in headless mode.
+Mar 07, 2023 10:15:58.476 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 07, 2023 10:16:21.846 [2023-03-07T04:46:21Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 07, 2023 10:16:21.847 [2023-03-07T04:46:21Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 07, 2023 10:16:21.930 *** You are running in background task mode. ***
+Mar 07, 2023 10:16:21.931 *** You are running in headless mode.
+Mar 07, 2023 10:16:22.17 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-07-04-46-21.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 07, 2023 10:16:22.21 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-07-04-46-21.purge.bg_rm"
+Mar 07, 2023 10:16:22.27 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-07-04-46-21.purge.bg_rm"
+
+Mar 08, 2023 20:51:21.214 NEW SESSION
+Mar 08, 2023 20:51:21.215 *** You are running in background task mode. ***
+Mar 08, 2023 20:51:21.216 *** You are running in headless mode.
+Mar 08, 2023 20:51:21.323 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 08, 2023 20:57:55.03 [2023-03-08T15:27:55Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 08, 2023 20:57:55.04 [2023-03-08T15:27:55Z ERROR viaduct::backend::ffi] Missing HTTP status
+
+Mar 09, 2023 20:06:35.387 NEW SESSION
+Mar 09, 2023 20:06:35.387 *** You are running in background task mode. ***
+Mar 09, 2023 20:06:35.388 *** You are running in headless mode.
+Mar 09, 2023 20:06:35.508 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:06:45.698 [2023-03-09T14:36:45Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:06:45.699 [2023-03-09T14:36:45Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:06:45.794 *** You are running in background task mode. ***
+Mar 09, 2023 20:06:45.795 *** You are running in headless mode.
+Mar 09, 2023 20:06:45.898 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-36-45.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:06:45.901 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-36-45.purge.bg_rm"
+Mar 09, 2023 20:06:45.906 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-36-45.purge.bg_rm"
+Mar 09, 2023 20:07:15.754 *** You are running in background task mode. ***
+Mar 09, 2023 20:07:15.754 *** You are running in headless mode.
+Mar 09, 2023 20:07:15.856 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:07:21.656 [2023-03-09T14:37:21Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:07:21.657 [2023-03-09T14:37:21Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:07:21.750 *** You are running in background task mode. ***
+Mar 09, 2023 20:07:21.750 *** You are running in headless mode.
+Mar 09, 2023 20:07:21.861 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-37-21.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:07:21.864 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-37-21.purge.bg_rm"
+Mar 09, 2023 20:07:21.868 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-37-21.purge.bg_rm"
+Mar 09, 2023 20:07:35.797 *** You are running in background task mode. ***
+Mar 09, 2023 20:07:35.798 *** You are running in headless mode.
+Mar 09, 2023 20:07:35.908 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:08:29.457 [2023-03-09T14:38:29Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:08:29.459 [2023-03-09T14:38:29Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:08:29.552 *** You are running in background task mode. ***
+Mar 09, 2023 20:08:29.553 *** You are running in headless mode.
+Mar 09, 2023 20:08:29.665 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-38-29.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:08:29.667 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-38-29.purge.bg_rm"
+Mar 09, 2023 20:08:29.677 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-38-29.purge.bg_rm"
+Mar 09, 2023 20:08:47.681 *** You are running in background task mode. ***
+Mar 09, 2023 20:08:47.686 *** You are running in headless mode.
+Mar 09, 2023 20:08:47.783 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:08:49.800 [2023-03-09T14:38:49Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:08:49.802 [2023-03-09T14:38:49Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:08:49.905 *** You are running in background task mode. ***
+Mar 09, 2023 20:08:49.906 *** You are running in headless mode.
+Mar 09, 2023 20:08:49.942 IPDL protocol error: Handler returned error code!
+Mar 09, 2023 20:08:49.942 
+Mar 09, 2023 20:08:49.943 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 09, 2023 20:08:49.943 
+Mar 09, 2023 20:08:49.950 IPDL protocol error: Handler returned error code!
+Mar 09, 2023 20:08:49.950 
+Mar 09, 2023 20:08:49.950 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 09, 2023 20:08:49.950 
+Mar 09, 2023 20:08:50.02 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-38-49.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:08:50.03 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-38-49.purge.bg_rm"
+Mar 09, 2023 20:08:50.05 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-38-49.purge.bg_rm"
+Mar 09, 2023 20:09:25.470 *** You are running in background task mode. ***
+Mar 09, 2023 20:09:25.471 *** You are running in headless mode.
+Mar 09, 2023 20:09:25.607 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:11:02.913 [2023-03-09T14:41:02Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:11:02.913 [2023-03-09T14:41:02Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:11:03.91 *** You are running in background task mode. ***
+Mar 09, 2023 20:11:03.92 *** You are running in headless mode.
+Mar 09, 2023 20:11:03.192 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-41-02.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:11:03.193 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-41-02.purge.bg_rm"
+Mar 09, 2023 20:11:03.196 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-41-02.purge.bg_rm"
+Mar 09, 2023 20:23:26.944 *** You are running in background task mode. ***
+Mar 09, 2023 20:23:26.944 *** You are running in headless mode.
+Mar 09, 2023 20:23:27.46 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:23:35.188 [Parent 5856, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 09, 2023 20:23:35.196 [2023-03-09T14:53:35Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:23:35.197 [2023-03-09T14:53:35Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:23:35.286 *** You are running in background task mode. ***
+Mar 09, 2023 20:23:35.287 *** You are running in headless mode.
+Mar 09, 2023 20:23:35.385 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-53-35.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:23:35.387 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-53-35.purge.bg_rm"
+Mar 09, 2023 20:23:35.393 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-53-35.purge.bg_rm"
+Mar 09, 2023 20:24:07.877 *** You are running in background task mode. ***
+Mar 09, 2023 20:24:07.878 *** You are running in headless mode.
+Mar 09, 2023 20:24:08.14 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:24:13.419 [2023-03-09T14:54:13Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:24:13.420 [2023-03-09T14:54:13Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:24:13.505 *** You are running in background task mode. ***
+Mar 09, 2023 20:24:13.506 *** You are running in headless mode.
+Mar 09, 2023 20:24:13.605 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-54-13.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:24:13.607 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-54-13.purge.bg_rm"
+Mar 09, 2023 20:24:13.610 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-54-13.purge.bg_rm"
+Mar 09, 2023 20:24:39.354 *** You are running in background task mode. ***
+Mar 09, 2023 20:24:39.354 *** You are running in headless mode.
+Mar 09, 2023 20:24:39.483 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 09, 2023 20:24:42.316 [2023-03-09T14:54:42Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:24:42.318 [2023-03-09T14:54:42Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 09, 2023 20:24:42.381 [Parent 17428, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 09, 2023 20:24:42.428 *** You are running in background task mode. ***
+Mar 09, 2023 20:24:42.428 *** You are running in headless mode.
+Mar 09, 2023 20:24:42.530 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-09-14-54-42.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 09, 2023 20:24:42.531 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-54-42.purge.bg_rm"
+Mar 09, 2023 20:24:42.534 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-09-14-54-42.purge.bg_rm"
+Mar 09, 2023 20:24:42.862 IPDL protocol error: Handler returned error code!
+Mar 09, 2023 20:24:42.862 
+Mar 09, 2023 20:24:42.863 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 09, 2023 20:24:42.863 
+Mar 09, 2023 20:24:42.865 IPDL protocol error: Handler returned error code!
+Mar 09, 2023 20:24:42.866 
+Mar 09, 2023 20:24:42.866 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 09, 2023 20:24:42.866 
+
+Mar 10, 2023 20:03:16.303 NEW SESSION
+Mar 10, 2023 20:03:16.303 *** You are running in background task mode. ***
+Mar 10, 2023 20:03:16.304 *** You are running in headless mode.
+Mar 10, 2023 20:03:16.439 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 10, 2023 20:03:43.480 [2023-03-10T14:33:43Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 10, 2023 20:03:43.482 [2023-03-10T14:33:43Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 10, 2023 20:03:43.606 *** You are running in background task mode. ***
+Mar 10, 2023 20:03:43.606 *** You are running in headless mode.
+Mar 10, 2023 20:03:43.704 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-10-14-33-43.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 10, 2023 20:03:43.707 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-10-14-33-43.purge.bg_rm"
+Mar 10, 2023 20:03:43.713 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-10-14-33-43.purge.bg_rm"
+Mar 10, 2023 20:29:25.533 *** You are running in background task mode. ***
+Mar 10, 2023 20:29:25.534 *** You are running in headless mode.
+Mar 10, 2023 20:29:25.638 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 10, 2023 20:30:08.14 [2023-03-10T15:00:08Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 10, 2023 20:30:08.14 [2023-03-10T15:00:08Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 10, 2023 20:30:08.122 *** You are running in background task mode. ***
+Mar 10, 2023 20:30:08.123 *** You are running in headless mode.
+Mar 10, 2023 20:30:08.220 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-10-15-00-08.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 10, 2023 20:30:08.222 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-10-15-00-08.purge.bg_rm"
+Mar 10, 2023 20:30:08.229 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-10-15-00-08.purge.bg_rm"
+
+Mar 11, 2023 20:08:04.610 NEW SESSION
+Mar 11, 2023 20:08:04.610 *** You are running in background task mode. ***
+Mar 11, 2023 20:08:04.611 *** You are running in headless mode.
+Mar 11, 2023 20:08:04.717 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 11, 2023 20:12:04.885 [2023-03-11T14:42:04Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 11, 2023 20:12:04.886 [2023-03-11T14:42:04Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 11, 2023 20:12:04.947 [Parent 3700, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 11, 2023 20:12:05.86 *** You are running in background task mode. ***
+Mar 11, 2023 20:12:05.86 *** You are running in headless mode.
+Mar 11, 2023 20:12:05.190 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-11-14-42-04.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 11, 2023 20:12:05.192 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-14-42-04.purge.bg_rm"
+Mar 11, 2023 20:12:05.195 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-14-42-04.purge.bg_rm"
+Mar 11, 2023 20:12:41.659 *** You are running in background task mode. ***
+Mar 11, 2023 20:12:41.659 *** You are running in headless mode.
+Mar 11, 2023 20:12:41.767 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 11, 2023 20:13:05.130 [2023-03-11T14:43:05Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 11, 2023 20:13:05.130 [2023-03-11T14:43:05Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 11, 2023 20:13:05.222 *** You are running in background task mode. ***
+Mar 11, 2023 20:13:05.222 *** You are running in headless mode.
+Mar 11, 2023 20:13:05.318 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-11-14-43-05.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 11, 2023 20:13:05.320 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-14-43-05.purge.bg_rm"
+Mar 11, 2023 20:13:05.326 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-14-43-05.purge.bg_rm"
+Mar 11, 2023 20:22:06.846 *** You are running in background task mode. ***
+Mar 11, 2023 20:22:06.846 *** You are running in headless mode.
+Mar 11, 2023 20:22:06.968 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 11, 2023 20:22:23.450 [2023-03-11T14:52:23Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 11, 2023 20:22:23.544 *** You are running in background task mode. ***
+Mar 11, 2023 20:22:23.545 *** You are running in headless mode.
+Mar 11, 2023 20:22:23.671 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-11-14-52-23.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 11, 2023 20:22:23.674 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-14-52-23.purge.bg_rm"
+Mar 11, 2023 20:22:23.686 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-14-52-23.purge.bg_rm"
+Mar 11, 2023 20:23:20.117 [6400:12360:0311/202320.117:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+Mar 11, 2023 20:23:20.118 ERROR: Failed parsing Certificate SEQUENCE
+Mar 11, 2023 20:23:20.118 ERROR: Failed parsing Certificate
+Mar 11, 2023 20:23:20.118 
+Mar 11, 2023 20:23:20.119 [6400:8340:0311/202320.117:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+Mar 11, 2023 20:23:20.119 ERROR: Failed parsing Certificate SEQUENCE
+Mar 11, 2023 20:23:20.119 ERROR: Failed parsing Certificate
+Mar 11, 2023 20:23:20.119 
+Mar 11, 2023 20:23:20.119 [6400:8340:0311/202320.117:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for dns64.dns.google failed:
+Mar 11, 2023 20:23:20.119 ----- Certificate i=3 (CN=Cisco Umbrella Root CA,O=Cisco) -----
+Mar 11, 2023 20:23:20.119 ERROR: No matching issuer found
+Mar 11, 2023 20:23:20.120 
+Mar 11, 2023 20:23:20.120 
+Mar 11, 2023 20:23:20.120 [6400:12360:0311/202320.117:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for dns64.dns.google failed:
+Mar 11, 2023 20:23:20.120 ----- Certificate i=3 (CN=Cisco Umbrella Root CA,O=Cisco) -----
+Mar 11, 2023 20:23:20.121 ERROR: No matching issuer found
+Mar 11, 2023 20:23:20.121 
+Mar 11, 2023 20:23:20.121 
+Mar 11, 2023 20:23:24.566 [6400:11196:0311/202324.565:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+Mar 11, 2023 20:23:24.566 ERROR: Failed parsing Certificate SEQUENCE
+Mar 11, 2023 20:23:24.566 ERROR: Failed parsing Certificate
+Mar 11, 2023 20:23:24.566 
+Mar 11, 2023 20:23:24.567 [6400:18184:0311/202324.565:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+Mar 11, 2023 20:23:24.567 ERROR: Failed parsing Certificate SEQUENCE
+Mar 11, 2023 20:23:24.567 ERROR: Failed parsing Certificate
+Mar 11, 2023 20:23:24.567 
+Mar 11, 2023 20:23:24.567 [6400:11196:0311/202324.566:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for dns64.dns.google failed:
+Mar 11, 2023 20:23:24.568 ----- Certificate i=3 (CN=Cisco Umbrella Root CA,O=Cisco) -----
+Mar 11, 2023 20:23:24.568 ERROR: No matching issuer found
+Mar 11, 2023 20:23:24.568 
+Mar 11, 2023 20:23:24.568 
+Mar 11, 2023 20:23:24.568 [6400:18184:0311/202324.566:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for dns64.dns.google failed:
+Mar 11, 2023 20:23:24.569 ----- Certificate i=3 (CN=Cisco Umbrella Root CA,O=Cisco) -----
+Mar 11, 2023 20:23:24.569 ERROR: No matching issuer found
+Mar 11, 2023 20:23:24.569 
+Mar 11, 2023 20:23:24.569 
+Mar 11, 2023 20:23:28.549 [6400:20416:0311/202328.548:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+Mar 11, 2023 20:23:28.549 ERROR: Failed parsing Certificate SEQUENCE
+Mar 11, 2023 20:23:28.549 ERROR: Failed parsing Certificate
+Mar 11, 2023 20:23:28.549 
+Mar 11, 2023 20:23:28.550 [6400:14212:0311/202328.548:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+Mar 11, 2023 20:23:28.550 ERROR: Failed parsing Certificate SEQUENCE
+Mar 11, 2023 20:23:28.550 ERROR: Failed parsing Certificate
+Mar 11, 2023 20:23:28.550 
+Mar 11, 2023 20:23:28.550 [6400:20416:0311/202328.548:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for dns64.dns.google failed:
+Mar 11, 2023 20:23:28.550 ----- Certificate i=3 (CN=Cisco Umbrella Root CA,O=Cisco) -----
+Mar 11, 2023 20:23:28.551 ERROR: No matching issuer found
+Mar 11, 2023 20:23:28.551 
+Mar 11, 2023 20:23:28.551 
+Mar 11, 2023 20:23:28.551 [6400:14212:0311/202328.548:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for dns64.dns.google failed:
+Mar 11, 2023 20:23:28.551 ----- Certificate i=3 (CN=Cisco Umbrella Root CA,O=Cisco) -----
+Mar 11, 2023 20:23:28.552 ERROR: No matching issuer found
+Mar 11, 2023 20:23:28.552 
+Mar 11, 2023 20:23:28.552 
+Mar 11, 2023 20:42:49.714 *** You are running in background task mode. ***
+Mar 11, 2023 20:42:49.715 *** You are running in headless mode.
+Mar 11, 2023 20:42:49.825 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 11, 2023 20:43:19.11 [Parent 14836, IPC I/O Parent] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:583
+Mar 11, 2023 20:43:19.170 *** You are running in background task mode. ***
+Mar 11, 2023 20:43:19.170 *** You are running in headless mode.
+Mar 11, 2023 20:43:19.271 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-11-15-13-19.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 11, 2023 20:43:19.273 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-15-13-19.purge.bg_rm"
+Mar 11, 2023 20:43:19.299 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-11-15-13-19.purge.bg_rm"
+
+Mar 13, 2023 19:50:37.543 NEW SESSION
+Mar 13, 2023 19:50:37.543 *** You are running in background task mode. ***
+Mar 13, 2023 19:50:37.544 *** You are running in headless mode.
+Mar 13, 2023 19:50:37.730 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 13, 2023 19:51:48.498 [2023-03-13T14:21:48Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 13, 2023 19:51:48.499 [2023-03-13T14:21:48Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 13, 2023 19:51:48.668 *** You are running in background task mode. ***
+Mar 13, 2023 19:51:48.669 *** You are running in headless mode.
+Mar 13, 2023 19:51:48.806 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-13-14-21-48.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 13, 2023 19:51:48.808 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-13-14-21-48.purge.bg_rm"
+Mar 13, 2023 19:51:48.811 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-13-14-21-48.purge.bg_rm"
+Mar 13, 2023 23:32:26.172 *** You are running in background task mode. ***
+Mar 13, 2023 23:32:26.175 *** You are running in headless mode.
+Mar 13, 2023 23:32:26.285 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 13, 2023 23:35:10.986 [Parent 16888, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 13, 2023 23:35:10.997 [2023-03-13T18:05:10Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 13, 2023 23:35:10.998 [2023-03-13T18:05:10Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 13, 2023 23:35:11.102 *** You are running in background task mode. ***
+Mar 13, 2023 23:35:11.102 *** You are running in headless mode.
+Mar 13, 2023 23:35:11.225 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-13-18-05-11.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 13, 2023 23:35:11.226 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-13-18-05-11.purge.bg_rm"
+Mar 13, 2023 23:35:11.230 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-13-18-05-11.purge.bg_rm"
+Mar 13, 2023 23:35:21.528 *** You are running in background task mode. ***
+Mar 13, 2023 23:35:21.529 *** You are running in headless mode.
+Mar 13, 2023 23:35:21.638 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 13, 2023 23:38:00.290 [2023-03-13T18:08:00Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 13, 2023 23:38:00.291 [2023-03-13T18:08:00Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 13, 2023 23:38:00.337 [Parent 22388, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 13, 2023 23:38:00.387 *** You are running in background task mode. ***
+Mar 13, 2023 23:38:00.389 *** You are running in headless mode.
+Mar 13, 2023 23:38:00.484 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-13-18-08-00.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 13, 2023 23:38:00.486 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-13-18-08-00.purge.bg_rm"
+Mar 13, 2023 23:38:00.491 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-13-18-08-00.purge.bg_rm"
+
+Mar 14, 2023 20:08:09.437 NEW SESSION
+Mar 14, 2023 20:08:09.437 *** You are running in background task mode. ***
+Mar 14, 2023 20:08:09.438 *** You are running in headless mode.
+Mar 14, 2023 20:08:09.588 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 14, 2023 20:08:22.423 [2023-03-14T14:38:22Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 14, 2023 20:08:22.425 [2023-03-14T14:38:22Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 14, 2023 20:08:22.531 *** You are running in background task mode. ***
+Mar 14, 2023 20:08:22.532 *** You are running in headless mode.
+Mar 14, 2023 20:08:22.639 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-14-14-38-22.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 14, 2023 20:08:22.641 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-14-14-38-22.purge.bg_rm"
+Mar 14, 2023 20:08:22.646 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-14-14-38-22.purge.bg_rm"
+Mar 14, 2023 20:08:32.756 *** You are running in background task mode. ***
+Mar 14, 2023 20:08:32.756 *** You are running in headless mode.
+Mar 14, 2023 20:08:32.883 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 14, 2023 20:08:42.686 [2023-03-14T14:38:42Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 14, 2023 20:08:42.687 [2023-03-14T14:38:42Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 14, 2023 20:08:42.737 [Parent 21192, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 14, 2023 20:08:42.791 *** You are running in background task mode. ***
+Mar 14, 2023 20:08:42.792 *** You are running in headless mode.
+Mar 14, 2023 20:08:42.895 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-14-14-38-42.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 14, 2023 20:08:42.897 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-14-14-38-42.purge.bg_rm"
+Mar 14, 2023 20:08:42.902 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-14-14-38-42.purge.bg_rm"
+Mar 14, 2023 20:09:50.834 *** You are running in background task mode. ***
+Mar 14, 2023 20:09:50.834 *** You are running in headless mode.
+Mar 14, 2023 20:09:50.985 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 14, 2023 20:09:54.43 [2023-03-14T14:39:54Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 14, 2023 20:09:54.44 [2023-03-14T14:39:54Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 14, 2023 20:09:54.149 *** You are running in background task mode. ***
+Mar 14, 2023 20:09:54.150 *** You are running in headless mode.
+Mar 14, 2023 20:09:54.261 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-14-14-39-54.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 14, 2023 20:09:54.264 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-14-14-39-54.purge.bg_rm"
+Mar 14, 2023 20:09:54.265 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-14-14-39-54.purge.bg_rm"
+Mar 14, 2023 20:09:54.352 IPDL protocol error: Handler returned error code!
+Mar 14, 2023 20:09:54.352 
+Mar 14, 2023 20:09:54.352 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 14, 2023 20:09:54.352 
+Mar 14, 2023 20:09:54.356 IPDL protocol error: Handler returned error code!
+Mar 14, 2023 20:09:54.357 
+Mar 14, 2023 20:09:54.357 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 14, 2023 20:09:54.357 
+
+Mar 16, 2023 18:23:26.929 NEW SESSION
+Mar 16, 2023 18:23:26.930 *** You are running in background task mode. ***
+Mar 16, 2023 18:23:26.932 *** You are running in headless mode.
+Mar 16, 2023 18:23:27.61 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 16, 2023 18:23:29.882 [2023-03-16T12:53:29Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 18:23:29.884 [2023-03-16T12:53:29Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 18:23:29.982 *** You are running in background task mode. ***
+Mar 16, 2023 18:23:29.982 *** You are running in headless mode.
+Mar 16, 2023 18:23:30.86 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-16-12-53-29.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 16, 2023 18:23:30.88 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-12-53-29.purge.bg_rm"
+Mar 16, 2023 18:23:30.90 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-12-53-29.purge.bg_rm"
+Mar 16, 2023 18:23:30.656 IPDL protocol error: Handler returned error code!
+Mar 16, 2023 18:23:30.658 
+Mar 16, 2023 18:23:30.658 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 16, 2023 18:23:30.659 
+Mar 16, 2023 18:23:30.667 IPDL protocol error: Handler returned error code!
+Mar 16, 2023 18:23:30.668 
+Mar 16, 2023 18:23:30.668 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 16, 2023 18:23:30.668 
+Mar 16, 2023 18:28:11.930 *** You are running in background task mode. ***
+Mar 16, 2023 18:28:11.931 *** You are running in headless mode.
+Mar 16, 2023 18:28:12.25 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 16, 2023 18:29:23.543 [2023-03-16T12:59:23Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 18:29:23.545 [2023-03-16T12:59:23Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 18:29:23.638 *** You are running in background task mode. ***
+Mar 16, 2023 18:29:23.639 *** You are running in headless mode.
+Mar 16, 2023 18:29:23.760 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-16-12-59-23.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 16, 2023 18:29:23.763 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-12-59-23.purge.bg_rm"
+Mar 16, 2023 18:29:23.766 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-12-59-23.purge.bg_rm"
+
+Mar 16, 2023 20:27:16.399 NEW SESSION
+Mar 16, 2023 20:27:16.400 *** You are running in background task mode. ***
+Mar 16, 2023 20:27:16.402 *** You are running in headless mode.
+Mar 16, 2023 20:27:16.528 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 16, 2023 20:31:41.146 [2023-03-16T15:01:41Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 20:31:41.147 [2023-03-16T15:01:41Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 20:31:41.257 *** You are running in background task mode. ***
+Mar 16, 2023 20:31:41.257 *** You are running in headless mode.
+Mar 16, 2023 20:31:41.386 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-16-15-01-41.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 16, 2023 20:31:41.388 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-15-01-41.purge.bg_rm"
+Mar 16, 2023 20:31:41.394 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-15-01-41.purge.bg_rm"
+Mar 16, 2023 20:31:58.277 *** You are running in background task mode. ***
+Mar 16, 2023 20:31:58.278 *** You are running in headless mode.
+Mar 16, 2023 20:31:58.381 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 16, 2023 20:32:02.413 [2023-03-16T15:02:02Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 20:32:02.414 [2023-03-16T15:02:02Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 20:32:02.512 *** You are running in background task mode. ***
+Mar 16, 2023 20:32:02.512 *** You are running in headless mode.
+Mar 16, 2023 20:32:02.626 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-16-15-02-02.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 16, 2023 20:32:02.627 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-15-02-02.purge.bg_rm"
+Mar 16, 2023 20:32:02.629 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-15-02-02.purge.bg_rm"
+Mar 16, 2023 20:32:14.472 *** You are running in background task mode. ***
+Mar 16, 2023 20:32:14.473 *** You are running in headless mode.
+Mar 16, 2023 20:32:14.617 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm"
+Mar 16, 2023 20:33:34.182 [2023-03-16T15:03:34Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 20:33:34.184 [2023-03-16T15:03:34Z ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 16, 2023 20:33:34.301 *** You are running in background task mode. ***
+Mar 16, 2023 20:33:34.302 *** You are running in headless mode.
+Mar 16, 2023 20:33:34.405 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-16-15-03-34.purge.bg_rm" 10 ".purge.bg_rm"
+Mar 16, 2023 20:33:34.406 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-15-03-34.purge.bg_rm"
+Mar 16, 2023 20:33:34.411 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-16-15-03-34.purge.bg_rm"
+
+Mar 20, 2023 16:38:40.401 NEW SESSION
+Mar 20, 2023 16:38:40.401 *** You are running in background task mode. ***
+Mar 20, 2023 16:38:40.402 *** You are running in headless mode.
+Mar 20, 2023 16:38:40.561 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 16:38:40.563 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 16:39:03.465 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 16:39:03.465 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 16:39:03.570 *** You are running in background task mode. ***
+Mar 20, 2023 16:39:03.571 *** You are running in headless mode.
+Mar 20, 2023 16:39:03.678 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-09-03.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 16:39:03.681 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-09-03.purge.bg_rm"
+Mar 20, 2023 16:39:03.688 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-09-03.purge.bg_rm. removed 31 entries."
+Mar 20, 2023 16:39:03.692 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 16:39:17.419 *** You are running in background task mode. ***
+Mar 20, 2023 16:39:17.420 *** You are running in headless mode.
+Mar 20, 2023 16:39:17.520 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 16:39:17.521 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 16:39:31.633 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 16:39:31.635 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 16:39:31.770 *** You are running in background task mode. ***
+Mar 20, 2023 16:39:31.771 *** You are running in headless mode.
+Mar 20, 2023 16:39:31.862 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-09-31.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 16:39:31.864 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-09-31.purge.bg_rm"
+Mar 20, 2023 16:39:31.875 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-09-31.purge.bg_rm. removed 47 entries."
+Mar 20, 2023 16:39:31.875 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 16:50:55.767 *** You are running in background task mode. ***
+Mar 20, 2023 16:50:55.768 *** You are running in headless mode.
+Mar 20, 2023 16:50:55.863 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 16:50:55.865 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 16:52:20.644 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 16:52:20.646 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 16:52:20.751 *** You are running in background task mode. ***
+Mar 20, 2023 16:52:20.752 *** You are running in headless mode.
+Mar 20, 2023 16:52:20.849 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-22-20.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 16:52:20.850 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-22-20.purge.bg_rm"
+Mar 20, 2023 16:52:20.853 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-22-20.purge.bg_rm. removed 24 entries."
+Mar 20, 2023 16:52:20.854 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:15:29.35 *** You are running in background task mode. ***
+Mar 20, 2023 17:15:29.36 *** You are running in headless mode.
+Mar 20, 2023 17:15:29.154 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:15:29.157 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:15:55.36 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:15:55.38 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:15:55.122 *** You are running in background task mode. ***
+Mar 20, 2023 17:15:55.122 *** You are running in headless mode.
+Mar 20, 2023 17:15:55.215 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-45-55.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:15:55.217 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-45-55.purge.bg_rm"
+Mar 20, 2023 17:15:55.222 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-45-55.purge.bg_rm. removed 23 entries."
+Mar 20, 2023 17:15:55.224 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:16:11.133 *** You are running in background task mode. ***
+Mar 20, 2023 17:16:11.134 *** You are running in headless mode.
+Mar 20, 2023 17:16:11.235 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:16:11.238 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:16:14.16 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:16:14.18 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:16:14.105 *** You are running in background task mode. ***
+Mar 20, 2023 17:16:14.105 *** You are running in headless mode.
+Mar 20, 2023 17:16:14.197 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-46-14.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:16:14.199 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-46-14.purge.bg_rm"
+Mar 20, 2023 17:16:14.202 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-46-14.purge.bg_rm. removed 8 entries."
+Mar 20, 2023 17:16:14.204 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:16:14.742 IPDL protocol error: Handler returned error code!
+Mar 20, 2023 17:16:14.742 
+Mar 20, 2023 17:16:14.743 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 20, 2023 17:16:14.743 
+Mar 20, 2023 17:16:14.753 IPDL protocol error: Handler returned error code!
+Mar 20, 2023 17:16:14.753 
+Mar 20, 2023 17:16:14.753 ###!!! [Parent][DispatchAsyncMessage] Error: PBackground::Msg_PVerifySSLServerCertConstructor Processing error: message was deserialized, but the handler returned false (indicating failure)
+Mar 20, 2023 17:16:14.753 
+Mar 20, 2023 17:20:36.477 *** You are running in background task mode. ***
+Mar 20, 2023 17:20:36.478 *** You are running in headless mode.
+Mar 20, 2023 17:20:36.606 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:20:36.609 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:20:50.992 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:20:50.995 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:20:51.122 *** You are running in background task mode. ***
+Mar 20, 2023 17:20:51.122 *** You are running in headless mode.
+Mar 20, 2023 17:20:51.247 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-50-51.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:20:51.250 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-50-51.purge.bg_rm"
+Mar 20, 2023 17:20:51.255 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-50-51.purge.bg_rm. removed 26 entries."
+Mar 20, 2023 17:20:51.257 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:24:23.759 *** You are running in background task mode. ***
+Mar 20, 2023 17:24:23.759 *** You are running in headless mode.
+Mar 20, 2023 17:24:23.920 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:24:23.921 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:24:31.726 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:24:31.727 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:24:31.888 *** You are running in background task mode. ***
+Mar 20, 2023 17:24:31.889 *** You are running in headless mode.
+Mar 20, 2023 17:24:32.22 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-54-31.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:24:32.25 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-54-31.purge.bg_rm"
+Mar 20, 2023 17:24:32.30 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-54-31.purge.bg_rm. removed 20 entries."
+Mar 20, 2023 17:24:32.33 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:25:21.693 *** You are running in background task mode. ***
+Mar 20, 2023 17:25:21.693 *** You are running in headless mode.
+Mar 20, 2023 17:25:21.841 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:25:21.845 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:25:23.439 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:25:23.440 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:25:23.559 *** You are running in background task mode. ***
+Mar 20, 2023 17:25:23.560 *** You are running in headless mode.
+Mar 20, 2023 17:25:23.687 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-11-55-23.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:25:23.689 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-55-23.purge.bg_rm"
+Mar 20, 2023 17:25:23.691 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-11-55-23.purge.bg_rm. removed 8 entries."
+Mar 20, 2023 17:25:23.692 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:32:11.599 *** You are running in background task mode. ***
+Mar 20, 2023 17:32:11.601 *** You are running in headless mode.
+Mar 20, 2023 17:32:11.719 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:32:11.721 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 17:32:16.29 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:32:16.31 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 17:32:16.227 *** You are running in background task mode. ***
+Mar 20, 2023 17:32:16.228 *** You are running in headless mode.
+Mar 20, 2023 17:32:16.360 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-12-02-16.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 17:32:16.362 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-12-02-16.purge.bg_rm"
+Mar 20, 2023 17:32:16.365 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-12-02-16.purge.bg_rm. removed 8 entries."
+Mar 20, 2023 17:32:16.366 console.error: "Pinged glean, waiting for submission."

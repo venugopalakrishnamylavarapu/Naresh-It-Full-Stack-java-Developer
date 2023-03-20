@@ -1,0 +1,142 @@
+8)<jsp:params>:
+================
+it allows to write <jsp:param> actions.
+Syntax:
+-------
+	<jsp:params>
+	 ==========  --><jsp:param> actions
+	</jsp:params>
+
+This action must be used in <jsp:plugin> action only.
+
+9)<jsp:param>:
+==============
+it is used to specify the parameter with name and value.
+Syntax:
+------
+	<jsp:param ......>
+	</jsp:param>
+		(or)
+	<jsp:param ....../>
+Here ...... is Attributes.
+
+Attributes:
+==========
+1)name="........" --->..... is name of the parameter.
+2)value="........" --->..... is value of the parameter.
+
+Example:
+=======
+<jsp:param name="message" value="Welcome"/>
+This parameter can be retrieved in applet by using the following method of java.applet.Applet class.
+
+public String getParameter(String);
+
+This action must be used in <jsp:params> action only.
+
+Example:
+=======
+<jsp:param type="applet" code="demo.MyApplet" width=""400" height="400">
+<jsp:params>
+<jsp:param name="message" value="Welcome"/>
+</jsp:params>
+<jsp:fallback>
+Unable to load an applet
+</jsp:fallback>
+</jsp:plugin>
+
+JSP EL:
+=======
+JSP EL stands for Jakarta Server Pages Expression Language.
+
+JSP EL introduced with JSTL in JSP 2.0 version to simplify the JSP.
+
+JSTL stands for JSP Standard Tag Library.
+
+JSP EL can be used independently and it can also be used with JSTL.
+
+By using JSP EL & JSTL in a JSP,JSP becomes 100% tag based application.
+
+JSP EL is an alternative to Expressions.
+JSTL is an alternative to Declarations & Scriplets.
+
+The pattern that identifies JSP Expression Language is ${..........}.
+
+By default JSP Expression Language enabled in JSP.
+
+To disable,JSP Expression Language,use the following:
+<%@page isELIgnored="true"%>
+
+	Operator 			Meaning
+	========			=======
+	   +				Addition
+	   -				Subtraction
+	   *				Multiplication
+	/(or)div			Division
+	%(or)mod			Modulo Division
+	<(or)lt				Less than
+	>(or)gt				Greater than
+	<=(or)le			Less than or equals to
+	>=(or)ge			Greater than or equals to
+	==(or)eq			Equals to
+	!=(or)ne			Not equals to
+	&&(or)and			Logical AND
+	||(or)or			Logical OR
+	!(or)not			Logical NOT
+
+
+JSP EL Implicit Object References:
+==================================
+1)pageScope
+2)requestScope
+3)sessionScope
+4)applicationScope
+5)param
+6)initParam
+7)cookie
+
+1)pageScope:
+============
+it is used to retrieve pageScope attributes.
+
+2)requestScope:
+==============
+it is used to retrieve request scope attributes.
+
+3)sessionScope:
+===============
+it is used to retrieve session scope attributes.
+
+4)applicationScope:
+===================
+it is used to retrieve application scope attributes.
+
+jakarta.servlet.jsp.JspContext
+
+Method:
+	public abstract void setAttribute(String,Object,int);
+
+=> it is used to set attribute with value & scope.
+String -->name of the attribute
+Object -->value of the attribute
+int -->scope of the attribute
+
+jakarta.servlet.jsp.PageContext
+
+Variables(Fields):
+ public static final int PAGE_SCOPE;
+ public static final int REQUEST_SCOPE;
+ public static final int SESSION_SCOPE;
+ public static final int APPLICATION_SCOPE;
+
+
+here there is a pic(that will be in the folder.)
+
+
+
+
+
+
+
+
+

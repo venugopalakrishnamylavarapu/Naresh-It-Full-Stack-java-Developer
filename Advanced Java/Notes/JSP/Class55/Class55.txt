@@ -1,0 +1,108 @@
+example of JSP:
+==============
+<html>
+<body bgcolor=green text=yellow>
+<h1>
+<% out.println("Welcome to Naresh i Technologies"); %>
+</h1>
+</body>
+</html>
+
+declaration element --->instance(outside the methods inside the class
+scriplet element    --->inside the service method
+expressions element --->inside out.print(------); (inside the paranthesis)
+Html code is automatically converted.
+
+Declarations:(instance)
+=============
+1)<%! int a=10; %>  		=>Valid
+2)<%!static int b=20;%> 	=>Valid
+3)<%! void show(){} %>  	=>Valid
+4)<%! static void display(){} %>=>Valid
+5)<%! class A{} %>  		=>Valid
+6)<%! static class B{} %>  	=>Valid
+7)<%! for(int i=1;i<=10;i++){} %>=>InValid
+8)<%! if(a>b){} %>  		=>InValid
+9)<%! Demo d=new Demo() %>  	=>Valid
+10)<%! static Test t=new Test(); %>  =>Valid
+
+Scriplets:(inside service method)
+==========
+1)<% int a=10; %>  		=>Valid
+2)<%static int b=20;%> 		=>Invalid
+3)<% void show(){} %>  		=>Invalid
+4)<% static void display(){} %>=>Invalid
+5)<% class A{} %>  		=>Valid
+6)<% static class B{} %>  	=>Invalid
+7)<% for(int i=1;i<=10;i++){} %>=>Valid
+8)<% if(a>b){} %>  		=>Valid
+9)<% Demo d=new Demo() %>  	=>Valid
+10)<% static Test t=new Test(); %>=>Invalid
+
+Expressions:
+===========
+1)<%= a+b; %>		==>Invalid
+2)<%= a+b %>		==>Valid
+3)<%= new Demo(); %>	==>Invalid
+4)<%= new Demo() %>	==>Valid
+5)<%= d %>		==>Valid
+6)<%= x*y+c %>		==>Valid
+
+
+count.jsp program (to count how many times the page is being accessed)
+---------
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Count JSP</title>
+</head>
+<body>
+<h1>
+<%! int count=0; %>
+This page has been accessed <%= ++count %> times
+</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

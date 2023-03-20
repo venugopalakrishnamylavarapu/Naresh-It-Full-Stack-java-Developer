@@ -1,0 +1,58 @@
+Differences between HttpSession with cookies & HttpSessions with URL Rewriting:
+-------------------------------------------------------------------------------
+
+	HttpSessions with Cookies			HttpSessions with URL Rewriting
+	=========================			===============================
+1)In this session tracking method,session 		1)In this session tracking method,session
+  id created by web container passed to client		  id created by web container & appended
+  system& stored in cookie variable.			  to url.
+
+2)Here Session id stored in cookie variable 		2)Here session id appended to url by using
+  implicitly.it is by default.				  encodeURL() method of HttpServletResponse
+							  interface.Here explicitly we have to call 
+							  encodeURL() method.
+
+3)This session tracking method fails if the 		3)This session tracking method always works.
+  cookies are disabled.				
+
+
+Differences between Cookies & HttpSessions:
+-------------------------------------------
+
+		Cookies						Sessions
+		=======						========
+1)A cookie is a piece of information			1)A session is a piece of information 
+  stored at client side to maintain client		  stored at server side to maintain client
+  state information.					  side information.
+
+2)It supports String type data.				2)It supports all types of data.
+
+3)Here no of cookies are limited.(Size of the 		3)Here no of sessions are no limited.
+  data)					
+
+4)By default cookies are vanished whenever browser	4)By default session are vanished after 30 
+  window is closed.					  minuted in a tomcat server.
+
+5)Here it is possible to set the time interval		5)Here also it is possible to set the time 
+  by using setMaxAge() method of Cookie class.		  interval by using the setMaxInactiveInterval()
+							  method of HttpSession interface.
+
+6)Cookies are not secure because cookies can be 	6)Session are secure because data is stored at
+  viewed by usered throigh browser settings option.	  server side.
+
+7)This session tracking method can be implemented 	7)This session tracking method always depends on
+  independently.					  either Cookies or URL Rewriting to maintain sessionid.
+
+8)Here session id not created.				8)Here sessino id created.
+
+
+Hidden Form field:
+=================
+>In this session tracking method client state information is stored in hidden fields.
+>It is very easily implement becase it requires HTML code.
+>It supports text only.
+>Here size of the data is limited.
+>Here it is not possinle to set the time interval.
+>Hidden form fields also are not secured bevause hidden fields can be viewed by user through
+ view page source option.
+>Here always form submission required.

@@ -1,0 +1,17 @@
+<html>
+<body>
+<%
+String first=request.getParameter("fnumber");
+String second=request.getParameter("snumber");
+String submit=request.getParameter("operation");
+	if(submit.equals("Addition"))
+		{
+		out.println(Integer.parseInt(first)+Integer.parseInt(second));
+		}
+	else if(submit.equals("Subtraction"))
+			{
+		out.println(Integer.parseInt(first)-Integer.parseInt(second));
+			}
+%>
+</body>
+</html>

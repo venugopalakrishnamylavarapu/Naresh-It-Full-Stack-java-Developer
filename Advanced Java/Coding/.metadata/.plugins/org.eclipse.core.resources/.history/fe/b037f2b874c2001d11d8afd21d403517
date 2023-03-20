@@ -1,0 +1,7 @@
+<html>
+<body>
+<jsp:include page="header.jsp"/>
+<h2><u>JSP:</u></h2>
+<%="JSP stands for Jakarta Server Pages (or) Java Server Pages.Jsp is a specification for developing web application using Java Programming Language." %>
+</body>
+</html>

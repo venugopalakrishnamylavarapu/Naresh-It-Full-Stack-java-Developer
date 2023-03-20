@@ -1,0 +1,109 @@
+jspInit() method:
+=================
+this method is called by web container when the first request comes
+
+Method Declaration:
+-------------------
+public abstract void jspInit();
+
+This method can be overridden because it is not overridden by JSP Engine.
+
+
+_jspService() method:
+=====================
+it is in 
+This method cannot be overrideed n by programmer because it is already overridden by JSP engine.
+
+Method Declaration:
+-------------------
+public abstract void _jspServer(HttpServletRequest,HttpServletResponse) throws ServletException,IOException;
+
+
+
+jspDestroy() method:
+====================
+it is called by web container whenever converted servlet instance is removed from web container.
+Converted servlet instance is removed whenever web application is undeployed from server or server shuts down.
+it is in jakarta.servlet.jsp.JspPage interface.
+
+Method declaration:
+-------------------
+public abstract void jspDestroy();
+
+This method can be overridden by programmer in JSP because it is not overridden by JSP Engine.
+
+Directives:
+==========
+There are 3 directives in JSP.
+1)page directive
+2)include directive
+3)taglib directive
+
+1)page directive:
+=================
+Syntax:
+------
+<%@page ..........%>
+ here ....... is the place we write Attributes.
+
+Attributes:
+===========
+1)language="......"
+here ....... is java (java is the default value for language.) 
+
+
+2)import="........"
+	here ....... is packages or interfaces
+
+	The following packages are implicitly imported in JSP:
+	1)java.lang package
+	2)jakarta.servlet package
+	3)jakarta.servlet.http package
+	4)jakarta.servlet.jsp package
+
+	Examples:
+	=========
+	1)<%@page import="java.sql.*"%>
+	2)<%@page import="java.sql.*,java.time.*"%>(for multiple import u dont have to write two imports u can write like this)
+	3)<%@page import="java.time.LocalTime"%>
+	4)<%@page import="java.sql.Connection,java.sql.DriverManager"%>
+
+3)buffer="........"
+=> it is used to specify the buffer memory size.
+
+4)autoFlush="......."
+here ...... is true/false (true is default)
+
+The above two attributes are used to manage buffer memory efficiently.
+Example:
+=======
+<%@page buffer="8Kb" autoFlush="false"%>
+
+5)errorPage="........"
+=> it is used to specify url of an error page.
+
+6)isErrorPage=".........."
+here .......... is true/false(false is default)
+(figure in the folder)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

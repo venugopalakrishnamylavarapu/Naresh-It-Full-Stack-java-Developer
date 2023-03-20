@@ -1,0 +1,8 @@
+<html>
+<body>
+<%
+String first=request.getParameter("fnumber");
+String second=request.getParameter("snumber");
+%>
+</body>
+</html>

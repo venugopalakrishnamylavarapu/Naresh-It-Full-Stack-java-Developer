@@ -1,0 +1,80 @@
+Attibutes of page directives:
+=============================
+7)contentType=".........."
+here ......... is MIME type
+=>it is used to specify MIME Type
+=>MIME stands for Multipurpose Internet Mail Extensions.
+=>it it used by browser and server to identify the content.
+=>default MIME type is "text/html"
+
+8)isELIgnored=".........."
+here ........... is true/false(false is default)
+=> it is used to ignore Expression Language from JSP.
+To ignore Expression Language,use the following code in 
+JSP:
+<%@ page isELIgnored="true"%>
+(it indicates web container to disable Expression Language from JSP)
+Note:
+=====
+By default Expression Language enabled in JSP.
+
+9)session="..........."
+here ......... is true/false(true is default)
+=>by default session is created in every JSP program.
+=>if the application does not require session then use the following code in JSP.
+
+<%@ page session="false"%>
+
+By writing above statement in JSP,Implicit session object cannot be used in JSP program.
+
+10)isThreadSafe="..........."
+here ........ is true/false(false is default)
+=>it indicates web container to implement jakarta.servlet.SingleThreadModel interface in a 
+converted servlet.
+
+By implementing SingleThreadModel interface in a converted servlet web container allows one thread
+at a time.
+
+it is equivalent to synchronization.
+
+jakarta.servlet.SingleThreadModel interface is called as marker interface,tag interface or empty interface
+because no members in this interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

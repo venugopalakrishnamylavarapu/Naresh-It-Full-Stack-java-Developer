@@ -1,0 +1,11 @@
+<html>
+<body bgcolor=red text=yellow>
+<h1>
+<jsp:useBean id="eb" class="bean2.empBean"/>
+<jsp:setProperty name="eb" property="*"/>
+Employee Number: <jsp:getProperty name="eb" property="empNo"/><br>
+
+</h1>
+
+</body>
+</html>

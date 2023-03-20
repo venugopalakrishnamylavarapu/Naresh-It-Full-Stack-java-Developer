@@ -1,0 +1,117 @@
+Include Directive:
+==================
+Syntax:
+-------
+<%@include ...........%>
+here ...... is attributes
+
+
+Attributes:
+===========
+1)file="......."
+here  .......... is html file/jsp file
+=>it is used to include html file or jsp file.
+
+
+TagLib Directive:
+=================
+Syntax:
+-------
+<%@taglib ................%>
+here ...... is attributes
+
+Attributes:
+===========
+1)uri="........."
+2)prefix=".........."
+=>Taglib directive used to include tag libraries in JSP.
+=>it is required while using JSTL tags in JSP.
+
+
+JSP actions:
+============
+1)<jsp:forward>
+2)<jsp:include>
+3)<jsp:useBean>
+4)<jsp:setProperty>
+5)<jsp:getProperty>
+6)<jsp:plugin>
+7)<jsp:fallback>
+8)<jsp:params>
+9)<jsp:param>
+
+
+1)<jsp:forward>:
+===============
+it is used to forward the request & response of one jsp to another jsp.
+
+it is equalant to servlet forwarding.
+
+Syntax:
+------
+<jsp:forward .........>
+</jsp:forward>
+	(or)
+<jsp:forward ........../>
+
+here ....... is attributes.and jsp is prefix,forward is tagname.
+
+Attributes:
+===========
+1)page="........."
+here ......... is <url-pattern> of a servlet (or) HTML filename (or) JSP file name.
+
+
+2)<jsp:include>:
+================
+it is used to include the request & response of one jsp into another jsp.
+
+it equivalent to servlet including.
+
+Syntax:
+------
+
+	<jsp:include ........>
+	</jsp:include>
+		(or)
+	<jsp:include ......../>
+
+here .......... is attributes.
+
+Attributes:
+==========
+1)page=".........."
+<url-pattern> of a servlet (or) HTML filename (or) JSP file name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

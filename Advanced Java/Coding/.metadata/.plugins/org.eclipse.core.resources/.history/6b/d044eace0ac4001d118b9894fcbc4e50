@@ -1,0 +1,15 @@
+<html>
+<body>
+<h1>
+<%@ page ELIgnored="false" %>
+${ 10+2 }
+${ 10-2 }
+${ 10*2 }
+${ 10 div 2 }
+${ 10 mod 2 }
+${ 10 gt 2 }
+${ 10 eq 2 }
+${ 10 lt 2 }
+</h1>
+</body>
+</html>

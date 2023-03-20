@@ -1,0 +1,25 @@
+<html>
+<body>
+<%
+String first=request.getParameter("fnumber");
+String second=request.getParameter("snumber");
+String submit=request.getParameter("operation");
+	if(submit.equals("Addition"))
+		{
+		%><jsp:forward page="add.jsp"><%
+		}
+	else if(submit.equals("Subtraction"))
+			{
+		
+			}
+		else if(submit.equals("Multiplication"))
+		{
+	
+		}
+		else if(submit.equals("Subtraction"))
+		{
+	
+		}
+%>
+</body>
+</html>

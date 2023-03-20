@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor=red text=yellow>
+<center>
+<h1>Arithmetic JSP</h1>
+<form action=arithmetic.jsp>
+FirstNumber <input type=text name="fnumber"><br><br>
+SecondNumber <input type=text name="snumber"><br><br>
+<input type=submit>&nbsp;<input type=reset>
+</form>
+</center>
+</body>
+</html>
+<!-- in the above example error.jsp program executed whenever excpetion occurs 
+in arithmetic.jsp. -->

@@ -1,0 +1,8 @@
+<html>
+<body>
+<h1>
+<jsp:useBean id="mb" class="bean.MessageBean"/>
+<jsp:setProperty name="mb" property="message" value="Welcome to beans"/>
+</h1>
+</body>
+</html>

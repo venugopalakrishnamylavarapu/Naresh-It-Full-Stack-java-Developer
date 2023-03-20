@@ -5,4 +5,5 @@
   <module moduleId="org.eclipse.jst.jee.server:HttpSessionListener" serverId="Tomcat v10.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:first" serverId="Tomcat v10.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:cookie" serverId="Tomcat v10.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:JSTL" serverId="Tomcat v10.0 Server at localhost"/>
 </modules>

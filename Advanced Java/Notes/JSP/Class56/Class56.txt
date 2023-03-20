@@ -1,0 +1,76 @@
+The above program can also be written as follows:
+
+count.jsp:
+=========
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Count JSP</title>
+</head>
+<body>
+<h1>
+<jsp:declaration>
+int count=0;
+</jsp:declaration>
+This page has been accessed <jsp:expression> ++count </jsp:expression> times
+</h1>
+</body>
+</html>
+
+second.jsp:
+===========
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Count JSP</title>
+</head>
+<body>
+<h1>
+<jsp:scriplet>
+out.println("Welcome to Naresh It");
+</jsp:scriplet>
+</body>
+</html>
+
+Converted Servlet (or) JSP "Servlet" Life Cycle Methods:
+=======================================================
+follows the same order
+
+1)jspInit()	->for first request
+
+2)_jspService()	->repeats for every request
+
+3)jspDestroy()	->When application deployed or server destroyed.
+
+jspInit() method & jspDestroy() method are the part of jakarta.servlet.jsp.JspPage interface.
+
+_jspService() method is a part of jakarta.servlet.jsp.HttpJspPage interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

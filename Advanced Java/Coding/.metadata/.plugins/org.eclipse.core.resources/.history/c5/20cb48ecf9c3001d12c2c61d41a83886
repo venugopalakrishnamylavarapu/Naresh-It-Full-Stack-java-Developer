@@ -1,0 +1,9 @@
+<html>
+<body bgcolor=red text=yellow>
+<h1>
+<jsp:useBean id="eb" class="bean2.empBean"/>
+
+</h1>
+
+</body>
+</html>

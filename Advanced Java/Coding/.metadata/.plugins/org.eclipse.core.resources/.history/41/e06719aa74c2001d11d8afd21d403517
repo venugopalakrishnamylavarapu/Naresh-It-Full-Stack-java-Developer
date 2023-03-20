@@ -1,0 +1,6 @@
+<html>
+<body>
+<jsp:include page="header.jsp"/>
+<h2><u>JSP:</u></h2>
+</body>
+</html>
