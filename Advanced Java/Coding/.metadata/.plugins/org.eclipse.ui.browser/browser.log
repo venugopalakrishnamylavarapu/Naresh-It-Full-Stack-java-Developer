@@ -1014,3 +1014,94 @@ Mar 20, 2023 17:32:16.360 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozil
 Mar 20, 2023 17:32:16.362 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-12-02-16.purge.bg_rm"
 Mar 20, 2023 17:32:16.365 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-12-02-16.purge.bg_rm. removed 8 entries."
 Mar 20, 2023 17:32:16.366 console.error: "Pinged glean, waiting for submission."
+
+Mar 20, 2023 20:29:25.103 NEW SESSION
+Mar 20, 2023 20:29:25.103 *** You are running in background task mode. ***
+Mar 20, 2023 20:29:25.104 *** You are running in headless mode.
+Mar 20, 2023 20:29:25.305 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 20:29:25.308 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 20:34:19.818 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 20:34:19.819 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 20:34:19.954 *** You are running in background task mode. ***
+Mar 20, 2023 20:34:19.955 *** You are running in headless mode.
+Mar 20, 2023 20:34:20.73 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-15-04-19.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 20:34:20.77 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-04-19.purge.bg_rm"
+Mar 20, 2023 20:34:20.82 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-04-19.purge.bg_rm. removed 22 entries."
+Mar 20, 2023 20:34:20.83 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 20:58:57.101 *** You are running in background task mode. ***
+Mar 20, 2023 20:58:57.102 *** You are running in headless mode.
+Mar 20, 2023 20:58:57.235 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 20:58:57.237 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 21:01:01.831 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 21:01:01.832 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 21:01:02.87 *** You are running in background task mode. ***
+Mar 20, 2023 21:01:02.87 *** You are running in headless mode.
+Mar 20, 2023 21:01:02.200 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-15-31-01.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 21:01:02.203 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-31-01.purge.bg_rm"
+Mar 20, 2023 21:01:02.206 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-31-01.purge.bg_rm. removed 21 entries."
+Mar 20, 2023 21:01:02.207 console.error: "Pinged glean, waiting for submission."
+
+Mar 20, 2023 21:11:09.15 NEW SESSION
+Mar 20, 2023 21:11:09.15 *** You are running in background task mode. ***
+Mar 20, 2023 21:11:09.16 *** You are running in headless mode.
+Mar 20, 2023 21:11:09.181 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 21:11:09.190 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 21:11:19.492 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 21:11:19.493 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 21:11:19.605 *** You are running in background task mode. ***
+Mar 20, 2023 21:11:19.606 *** You are running in headless mode.
+Mar 20, 2023 21:11:19.708 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-15-41-19.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 21:11:19.710 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-41-19.purge.bg_rm"
+Mar 20, 2023 21:11:19.715 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-41-19.purge.bg_rm. removed 23 entries."
+Mar 20, 2023 21:11:19.717 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 21:12:08.430 *** You are running in background task mode. ***
+Mar 20, 2023 21:12:08.431 *** You are running in headless mode.
+Mar 20, 2023 21:12:08.538 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 21:12:08.540 console.error: "Pinged glean, waiting for submission."
+Mar 20, 2023 21:12:34.633 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 21:12:34.634 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 20, 2023 21:12:34.725 *** You are running in background task mode. ***
+Mar 20, 2023 21:12:34.726 *** You are running in headless mode.
+Mar 20, 2023 21:12:34.820 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-20-15-42-34.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 20, 2023 21:12:34.823 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-42-34.purge.bg_rm"
+Mar 20, 2023 21:12:34.828 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-20-15-42-34.purge.bg_rm. removed 22 entries."
+Mar 20, 2023 21:12:34.828 console.error: "Pinged glean, waiting for submission."
+
+Mar 24, 2023 20:23:24.376 NEW SESSION
+Mar 24, 2023 20:23:24.376 *** You are running in background task mode. ***
+Mar 24, 2023 20:23:24.376 *** You are running in headless mode.
+Mar 24, 2023 20:23:24.527 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 24, 2023 20:23:24.529 console.error: "Pinged glean, waiting for submission."
+Mar 24, 2023 20:25:14.562 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 24, 2023 20:25:14.562 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 24, 2023 20:25:14.718 *** You are running in background task mode. ***
+Mar 24, 2023 20:25:14.720 *** You are running in headless mode.
+Mar 24, 2023 20:25:14.916 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-24-14-55-14.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 24, 2023 20:25:14.918 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-24-14-55-14.purge.bg_rm"
+Mar 24, 2023 20:25:14.923 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-24-14-55-14.purge.bg_rm. removed 23 entries."
+Mar 24, 2023 20:25:14.923 console.error: "Pinged glean, waiting for submission."
+Mar 24, 2023 20:25:51.579 *** You are running in background task mode. ***
+Mar 24, 2023 20:25:51.581 *** You are running in headless mode.
+Mar 24, 2023 20:25:51.709 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 24, 2023 20:25:51.711 console.error: "Pinged glean, waiting for submission."
+Mar 24, 2023 20:30:51.356 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 24, 2023 20:30:51.357 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 24, 2023 20:30:51.489 *** You are running in background task mode. ***
+Mar 24, 2023 20:30:51.491 *** You are running in headless mode.
+Mar 24, 2023 20:30:51.633 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-24-15-00-51.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 24, 2023 20:30:51.636 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-24-15-00-51.purge.bg_rm"
+Mar 24, 2023 20:30:51.641 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-24-15-00-51.purge.bg_rm. removed 21 entries."
+Mar 24, 2023 20:30:51.644 console.error: "Pinged glean, waiting for submission."
+Mar 24, 2023 20:34:02.499 *** You are running in background task mode. ***
+Mar 24, 2023 20:34:02.502 *** You are running in headless mode.
+Mar 24, 2023 20:34:02.633 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "" 0 ".purge.bg_rm" "HttpCache"
+Mar 24, 2023 20:34:02.636 console.error: "Pinged glean, waiting for submission."
+Mar 24, 2023 20:40:29.444 [Parent 15076, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:777
+Mar 24, 2023 20:40:29.452 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 24, 2023 20:40:29.453 [ERROR viaduct::backend::ffi] Missing HTTP status
+Mar 24, 2023 20:40:29.621 *** You are running in background task mode. ***
+Mar 24, 2023 20:40:29.623 *** You are running in headless mode.
+Mar 24, 2023 20:40:29.748 console.error: "C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default" "cache2.2023-03-24-15-10-29.purge.bg_rm" 10 ".purge.bg_rm" "HttpCache"
+Mar 24, 2023 20:40:29.749 console.error: "started removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-24-15-10-29.purge.bg_rm"
+Mar 24, 2023 20:40:29.753 console.error: "done removing C:\\Users\\Dell\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\hfjmb10g.default\\cache2.2023-03-24-15-10-29.purge.bg_rm. removed 20 entries."
+Mar 24, 2023 20:40:29.753 console.error: "Pinged glean, waiting for submission."

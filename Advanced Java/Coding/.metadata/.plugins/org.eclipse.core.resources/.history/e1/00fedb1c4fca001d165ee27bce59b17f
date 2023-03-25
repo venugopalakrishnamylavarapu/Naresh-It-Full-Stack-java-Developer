@@ -1,0 +1,11 @@
+package result;
+
+import java.sql.DriverManager;
+
+public class ResultDAO {
+	public ResultBean getResult(int hno)
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver")
+		Connection conn=DriverManager.getConnection(""")
+	}
+}

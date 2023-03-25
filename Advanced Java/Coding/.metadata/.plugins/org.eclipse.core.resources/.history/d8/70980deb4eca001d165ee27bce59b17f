@@ -1,0 +1,8 @@
+package result;
+
+public class ResultDAO {
+	public ResultBean getResult(int hno)
+	{
+		
+	}
+}

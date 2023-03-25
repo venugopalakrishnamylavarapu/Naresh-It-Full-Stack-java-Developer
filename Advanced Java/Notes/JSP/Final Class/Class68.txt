@@ -1,0 +1,181 @@
+MVC:
+====
+MVC stands for Model View Controller.
+
+in MVC Model is JavaBean,View is JSP and Controller is Servlet.
+
+continuation of the result application:
+--------------------------------------
+ResultDAO.java
+===============
+package result;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ResultDAO {
+	public ResultBean getResult(int hno)
+	{
+		ResultBean rb=null;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:SYSTEM","results","results;");
+			PreparedStatement pstmt=conn.prepareStatement("select * from results where hno=?");
+			pstmt.setInt(1, hno);
+			ResultSet rs=pstmt.executeQuery();
+			rb=new ResultBean();
+			if(rs.next())
+			{
+				rb.setHno(rs.getInt(1));
+				rb.setName(rs.getString(2));
+				rb.setC(rs.getInt(3));
+				rb.setCpp(rs.getInt(4));
+				rb.setJava(rs.getInt(5));
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return rb;
+	}
+}
+
+ResultBean.java
+===============
+package result;
+import java.io.Serializable;
+
+public class ResultBean implements Serializable {
+	private int hno;
+	private String name;
+	private int c;
+	private int cpp;
+	private int java;
+	public int getHno() {
+		return hno;
+	}
+	public void setHno(int hno) {
+		this.hno = hno;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getC() {
+		return c;
+	}
+	public void setC(int c) {
+		this.c = c;
+	}
+	public int getCpp() {
+		return cpp;
+	}
+	public void setCpp(int cpp) {
+		this.cpp = cpp;
+	}
+	public int getJava() {
+		return java;
+	}
+	public void setJava(int java) {
+		this.java = java;
+	}
+}
+
+results.jsp:
+===========
+<%@page import="java.sql.ResultSet"%>
+<html>
+<body bgcolor=yellow text=red>
+<h1>
+<% result.ResultBean rb=(result.ResultBean)request.getAttribute("result"); %>
+HallTicet Number: <%= rb.getHno() %><br>
+Name: <%= rb.getName() %><br>
+C: <%= rb.getC() %><br>
+C++: <%= rb.getCpp() %><br>
+Java: <%= rb.getJava() %><br>
+</h1>
+</body>
+</html>
+
+
+
+Reflection API:
+===============
+it is used to analyze the structure of a class or interface.
+
+it also supports to get the variables,methods and constructors of a class.
+
+it also supports to analyze the variable,method and constructor.
+
+it is used to develope integrated developement environments.
+
+java.lang.reflect package:
+==========================
+Classes:
+========
+the below are the names of the Classes.
+1)Method
+2)Constructor
+3)Field
+
+java.lang.Class:
+=================
+Methods:
+-------
+public static Class forName(String) throws ClassNotFoundException;
+
+public Field[] getFields() throws SecurityException;
+
+public Method[] getMethods() throws SecurityException;
+
+public Constructor[] getConstructors() throws SecurityException;
+
+Example:
+========
+Reflection.java:
+---------------
+import java.lang.reflect.*;
+import java.util.Scanner;
+public class Reflection {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		try {
+			Class c=Class.forName(sc.nextLine());
+			Method[] m=c.getMethods();
+			for(Method m2:m)
+			{
+				System.out.println(m2);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
+For More Advanced Java Information(for More Knowledge) approach the following:
+1)Notes
+2)Core Servlets (Book Name)
+3)Oracle Java EE Tutorials
+4)SCWCD/OCWCD Books
+5)SCJP By Kathy Sierra(for Core Java)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+MVC:
+====
+MVC stands for Model View Controller
+
+By using MVC,we can seperate presentation logic,data access logic,bussiness logic,controlling
+logic and data.
+
+Here Model is a Java Bean,View is a JSP and controller is a Servlet.
+
+MVC Architecture:
+=================
+Figure in the folder
+
+Advantages:
+==========
+1)Easy to maintain the code & application.
+2)Easy to update presentation logic,business logic & data access logic.
+
+Results application:
+====================
+result.html
+------------
+<html>
+<body bgcolor=yellow text=red>
+<center>
+<h1><u>Results Application</u></h1>
+<form action=results>
+Hall Ticket Number<input type=text name=hno><br>
+<input type=submit>&nbsp;<input type=reset>
+</form>
+</center>
+</body>
+</html>
+
+ResultServlet.java
+------------------
+package result;
+
+import java.io.IOException;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class ResultServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s1=request.getParameter("hno");
+		int hno=Integer.parseInt(s1);
+		ResultDAO rdao=new ResultDAO();
+		ResultBean rb=rdao.getResult(hno);
+		request.setAttribute("result", rb);
+		RequestDispatcher rd=request.getRequestDispatcher("/results.jsp");
+		rd.forward(request, response);	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

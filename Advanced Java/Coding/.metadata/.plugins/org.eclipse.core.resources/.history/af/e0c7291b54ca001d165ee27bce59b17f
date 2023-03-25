@@ -1,0 +1,13 @@
+<%@page import="java.sql.ResultSet"%>
+<html>
+<body bgcolor=yellow text=red>
+<h1>
+<% result.ResultBean rb=new result.ResultBean(); %>
+<%= rb.getHno() %><br>
+<%= rb.getName() %><br>
+<%= rb.getC() %><br>
+<%= rb.getCpp() %><br>
+<%= rb.getJava() %><br>
+</h1>
+</body>
+</html>

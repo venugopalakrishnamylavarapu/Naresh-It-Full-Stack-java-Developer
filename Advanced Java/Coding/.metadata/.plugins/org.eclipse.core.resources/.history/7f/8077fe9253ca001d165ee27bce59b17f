@@ -1,0 +1,11 @@
+<html>
+<body bgcolor=yellow text=red>
+<center>
+<h1><u>Results Application</u></h1>
+<form action=results>
+Hall Ticket Number<input type=text name=hno><br>
+<input type=submit>&nbsp;<input type=reset>
+</form>
+</center>
+</body>
+</html>

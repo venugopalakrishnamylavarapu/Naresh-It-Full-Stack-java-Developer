@@ -1,0 +1,8 @@
+import java.lang.reflect.*;
+public class Reflection {
+	public static void main(String[] args) {
+		try {
+			Class c=Class.forName(sc.nextLine())
+		}
+	}
+}

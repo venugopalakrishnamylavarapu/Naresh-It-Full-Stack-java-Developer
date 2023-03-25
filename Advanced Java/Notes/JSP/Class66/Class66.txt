@@ -1,0 +1,115 @@
+Formatting tags:
+================
+1)<fmt:formatDate>
+2)<fmt:formatNumber>
+
+2)<fmt:formatNumber>:
+=====================
+it is used to format the specified number.
+Example:
+========
+<html>
+<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+<c:set var="d" value="<%=new java.util.Date() %>"/>
+<fmt:formatDate value="${d }"/><br>
+<fmt:formatDate type="date" dateStyle="short" value="${d }"/><br>
+<fmt:formatDate type="date" dateStyle="medium" value="${d }"/><br>
+<fmt:formatDate type="date" dateStyle="long" value="${d }"/><br>
+<fmt:formatDate type="time" timeStyle="short" value="${d }"/><br>
+<fmt:formatDate type="time" timeStyle="medium" value="${d }"/><br>
+<fmt:formatDate type="time" timeStyle="long" value="${d }"/><br>
+<fmt:formatDate type="both" dateStyle="short" value="${d }"/><br>
+<fmt:formatDate type="both" dateStyle="medium" value="${d }"/><br>
+<fmt:formatDate type="both" dateStyle="long" value="${d }"/><br>
+<c:set var="a" value="23424.32543"/>
+<fmt:formatNumber value="${a}" maxIntegerDigits="5" maxFractionDigits="2"/><br>
+<fmt:formatNumber value="${a}" maxIntegerDigits="5" maxFractionDigits="3" type="cureency" currencySymbol="$"/><br>
+</body>
+</html>
+
+
+Function Tags:
+=============
+1)fn:contains()
+2)fn:containsIgnoreCase()
+3)fn:length()
+4)fn:toUpperCase()
+5)fn:toLowerCase()
+6)fn:trim()
+7)fn:startsWith()
+8)fn:endsWith()
+9)fn:substring()
+10)fn:substringAfter()
+11)fn:substringBefore()
+12)fn:split()
+13)fn:join()
+14)fn:replace()
+15)fn:indexOf()
+16)fn:escapeXml()
+
+in order to use the above tags we must include the following taglib directive in JSP.
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
+Example:
+========
+<html>
+<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="s" value="Welcome to JSTL"/>
+Given String:<c:out value="${s}"></c:out>
+<c:if test="${fn:contains(s,'JSTL')}">
+<c:out value="Yes given string contains JSTL"/>
+</c:if><br>
+<c:choose>
+<c:when test="${fn:contains(s,'jstl'}">
+<c:out value="Yes the given string contains JSTL"/>
+</c:when>
+<c:otherwise>
+<c:out value="No the Given string does not contain jstl"/>
+</c:otherwise>
+</c:choose>
+
+<c:out value="${fn:toLowerCase(s)}"/>
+<c:out value="${fn:toUpperCase(s)}"/>
+<c:out value="${fn:substring(s,11,4)}"/>
+<c:out value="${fn:length(s)}"/>
+
+</body>
+</html>
+(remaining example regarding this functions tags are shared in google class room in my case i will provide in the folder)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

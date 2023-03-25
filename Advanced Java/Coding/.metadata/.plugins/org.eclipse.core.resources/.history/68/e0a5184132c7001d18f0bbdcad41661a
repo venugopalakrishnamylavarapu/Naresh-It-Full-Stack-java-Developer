@@ -1,0 +1,6 @@
+<html>
+<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="d" value="<%=new java.util.Date() %>"/>
+</body>
+</html>

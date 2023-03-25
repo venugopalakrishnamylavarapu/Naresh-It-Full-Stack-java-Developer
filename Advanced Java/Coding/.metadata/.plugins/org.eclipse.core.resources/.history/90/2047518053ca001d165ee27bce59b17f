@@ -1,0 +1,10 @@
+<%@page import="java.sql.ResultSet"%>
+<html>
+<body bgcolor=yellow text=red>
+<h1>
+<% result.ResultBean rb=new result.ResultBean(); %>
+<%= rb.getHno() %><br>
+</h1>
+
+</body>
+</html>

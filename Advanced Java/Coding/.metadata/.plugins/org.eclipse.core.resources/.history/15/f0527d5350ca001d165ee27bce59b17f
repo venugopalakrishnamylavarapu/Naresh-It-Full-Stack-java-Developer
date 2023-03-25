@@ -1,0 +1,6 @@
+package result;
+import java.io.Serializable;
+
+public class ResultBean implements Serializable {
+
+}
