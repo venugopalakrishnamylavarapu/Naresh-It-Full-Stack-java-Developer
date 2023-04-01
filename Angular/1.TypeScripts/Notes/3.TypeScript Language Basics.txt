@@ -1,0 +1,180 @@
+1. Node JS
+2. Editor VS Code
+3. TypeScript
+4. Create Project
+
+Project File System
+- package.json                : Comprises of project meta data.
+- tsconfig.json                : Comprises of typescript configuration settings.
+- public                        : Comprises of static resources: images, html, text..
+- src                            : Comprises of dynamic resource: js, ts, css, scss..
+- index.html                    : It is the startup page for project.
+
+
+                            TypeScript Language Basics
+1. Variables
+2. DataTypes
+3. Operators
+4. Statements
+5. Functions
+
+Note:
+- Every TypeScript file will have extention  ".ts"
+- Transcompile the TypeScript file into JavaScript
+
+                        index.ts
+     >tsc  index.ts
+
+- It generates  "index.js"
+- If your code comprises of presentation related to DOM then link "index.js" to any HTML page.
+
+    <script  src="index.js"> </script>
+
+- If your code comprises of console methods without any DOM then you can directly run JavaScript program using node compiler.
+
+    >node  index.js
+
+
+EX:
+1. Go to "Src" folder
+2. Add a new file
+
+        "index.ts"
+   var username:string = "John";
+   document.write("Hello ! " + username);
+
+3. Right click on "index.ts" and select "Open in Intergrated Terminal"
+
+4. Transcompile
+
+                > tsc   index.ts       [generates index.js]
+
+5. Go to "index.html"
+
+        <head>
+            <script src="src/index.js"> </script>
+        </head>
+
+                                    Test from Console
+1. Go to index.ts
+
+        var username:string  = "John";
+        console.log("Hello ! " + username);
+
+2. Transcompile
+
+        > tsc  index.ts
+
+3. Run using Node Compiler
+
+        > node   index.js
+
+
+
+
+
+
+
+
+
+
+
+
+                                        Variables
+- Variables are storage locations in memory, where you can store a value and use it as a part of any expression.
+
+- Variable configuration comprises of 3 phases
+
+        a) Declaration
+        b) Assignment
+        c) Initialization
+
+        var x;                => Declaring
+        x = 10;            => Assignment
+        var y = 20;        => Initialization
+
+- TypeScript variables are declared by using the following keywords
+
+        a) var
+        b) let
+        c) const
+
+Var
+- It defines a function scope variable.
+- You can declare in any block of a function and access from any another block.
+- It allows declaring, assignment and initialization.
+
+Ex:
+function Demo()
+{
+    var x;
+    x = 10;
+    if(x==10)
+    {
+        var y = 20;
+    }
+    console.log("x=" + x + "\n" + "y=" + y);
+}
+Demo();
+
+- It allows shadowing.
+- Shadowing is the process of re-declaring or re-initialization of any variable with in the scope.
+
+Ex:
+function Demo()
+{
+    var x;
+    x = 10;
+    if(x==10)
+    {
+        var y = 20;
+        var y = 30;     //shadowing
+    }
+    console.log("x=" + x + "\n" + "y=" + y);
+}
+Demo();
+
+- It allows hoisting.
+- Hoisting allows the compiler to access variable declaration from any location.
+  There is no order for declaring and using.
+
+Ex:
+     x = 10;
+     console.log("x=" + x);
+     var x;                            // hoisting
+
+Let
+- It configure block scope variable.
+- It is accessible in the block where it is defined and also to its inner blocks.
+- It allows declaring, assignment, initialization
+- It will not allow shadowing and hoisting.
+
+
+Ex:
+function Demo()
+{
+    let x;
+    x = 10;
+    if(x==10)
+    {
+        let y = 20;
+        console.log("x=" + x + " y=" + y);
+    }
+   
+}
+Demo();
+
+const
+- It is also block scoped.
+- It allows only initialization. [no declaring and assigning]
+- It will not allow shadowing and hoisting.
+
+Syntax:
+      const x;            // invalid
+      x = 10;            // invalid
+
+      const x = 10;    // valid
+      x = 20;            // invalid
+
+
+                                    Data Type

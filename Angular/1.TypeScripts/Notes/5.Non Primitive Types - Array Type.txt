@@ -1,0 +1,194 @@
+TypeScript Primitive Types
+- Number
+- String | String Functions  ` `  ${ }
+- Boolean
+
+Union of Types
+
+
+                                Null and Undefined
+- Null specifies that there is no value provided into reference at run time.
+
+Syntax:
+        var  username:string | null = prompt("Enter Name");
+
+- Undefined specifies that there is no value provided into reference during compile time.
+
+Syntax:
+          var  username:string;            // invalid
+          console.log(username);
+
+          var username:string|undefined = undefined;
+       
+Note: You can verify the value defined or undefined by using following techniques.
+            a) Check with undefined
+
+                 if(Price==undefined)
+                 {
+                 }
+
+            b) Check with defined
+
+                if(Price)
+                {
+                }
+Ex:
+var Name:string = "Samsung TV";
+var Price:number|undefined;
+Price = 35000.44;
+if(Price)
+{
+    console.log(`Name=${Name}\nPrice=${Price}`);
+} else {
+    console.log(`Name=${Name}`);
+}
+
+
+Summary
+1. Number
+2. String
+3. Boolean
+4. Null
+5. Undefined
+6. Symbol
+
+                                Non-Primitive Types
+- They are mutable type.
+- Their structure can change dynamically.
+- No fixed range for value.
+- Value range varies according to memory available.
+- TypeScript Non Primitive types
+
+        1. Array
+        2. Object
+        3. Map
+
+
+                                    Array Type
+- Arrays are used to reduce overhead and complexity.
+- Arrays were introduces into computer programming to reduce overhead by storing values in sequential order.
+- Arrays can reduce complexity by storing multiple values under one name.
+- Array can handle various types of values.
+- Array can change its size dynamically.
+
+Declaring Array:
+    var  name:string[];                // string type
+    var  name:number[];            // number type
+    var  name:any[];                // any type
+    var  name:string[] | number[] ;
+
+Initialize or Assign memory for Array:
+    - You can initialize or assign memory for array by using 2 techniques
+
+            a) Array meta character  "[ ]"
+
+            b) Array Contructor        "Array()"
+
+Syntax: Meta Character
+        var  collection:string[] = [];        // declaring and initialization of memory
+
+                                    (or)
+
+        var collection:string[];
+        collection = [ ];                    // declaring and assigning of memory
+
+Syntax: Array Constructor
+
+        var  collection:string[] = new Array();
+
+                            (or)
+   
+        var collection:string[];
+        collection = new Array();
+
+FAQ: What is difference between array [ ] and Array() ?
+Ans:  Array() constructor will not allow to initialize different types of values even
+        when the type is "any".
+        Array() constructor is only for initialization of similar type of values.
+        The data type is defined based on the first value initialized into memory.
+
+Note: Array() will allow assignment of values for various types, not initialization.
+       
+        Array meta character "[]" will allow to initialize or assign various types
+        if type is "any".
+
+FAQ: What is a Tuple?
+Ans : It is a collection that can initialize or assign various types of values.
+
+        Syntax:
+                var  collection:any[] = [];            => Tuple
+
+
+FAQ: What is array de-structuring?
+Ans : It is the process of extracting elments from array and storing in individual
+        references.
+
+Syntax:
+            var  collection:any[] = [1, "TV", true];
+
+            var [Id, Name, Stock] = collection;
+
+Ex:
+var collection:any[] = [1, "TV", true];
+
+var [Id, Name, Stock] = collection;
+
+console.log(`Id=${Id}\nName=${Name}\nStock=${Stock}`);
+
+
+FAQ: What type of values we can store Array?
+Ans : Array can handle any type of value
+        a) Primitive
+        b) Non Primitive
+        c) Function
+
+Ex:
+var collection:any[] = [1, "TV", true, ["Delhi", "Hyd"], function(){console.log("Function in Array")}];
+
+console.log(collection[3][1]);
+collection[4]();
+
+                                Array Methods
+Reading Values:
+toString()
+join()
+slice()
+find()
+filter()
+map()
+for loops
+for interators [in, of]
+
+Ex:
+var categories:string[] = ["Electronics", "Footwear", "Fashion"];
+
+for(var property in categories)
+{
+    console.log(`[${property}]-${categories[property]}`);
+}
+
+Adding Elements into Array:
+push()
+unshift()
+splice()
+
+Removing Elements from Array:
+pop()
+shift()
+splice()
+
+Sorting Elements
+sort()
+reverse()
+
+
+Note: Array supports union of types. But you can't initialized union types, you
+        have to assign.
+
+Syntax:
+var collection:string[]|number[] = [];
+collection[0] = 10;
+collection[1] = "A";
+
+
+                                object and Map

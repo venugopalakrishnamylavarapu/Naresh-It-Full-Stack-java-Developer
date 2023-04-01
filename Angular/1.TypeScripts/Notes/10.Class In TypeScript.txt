@@ -1,0 +1,133 @@
+Class in OOP
+- Class is a program template.
+- It comprises data and logic, which you can implement and customize according to requirements.
+- Class have the behaviour of Entity or Model.
+- If a class is mapping to business requirements then it is reffered as
+  "Entity".
+- If a class is mapping to data requirements then it is reffered as "Model".
+- Class is used as a blue-print for creating of objects.
+- Every class comprises of 2 types of configuration techniques
+
+    a) Class Declaration
+    b) Class Expression
+
+- Class Declaration comprisess of a constant set of members
+
+Syntax:
+    class  Product
+    {
+        // members
+    }
+
+- Class Expression comprises of members, which can change according to state and situation.
+
+Syntax:
+     let  demo = class {
+        // members;
+      }
+
+
+Ex:
+var CategoryName:string = "Electronics";
+
+var Demo = class {};
+
+if(CategoryName=="Electronics"){
+    Demo = class {
+        ProductName = "TV";
+        Price = 34000;
+    }
+} else {
+    Demo = class {
+        EmpName = "John";
+        Salary = 35000;
+    }
+}
+
+                             Class Members
+- Every class can contain only 4 types of members [Class Members]
+
+    a) Property
+    b) Method
+    c) Accessor
+    d) Constructor
+
+FAQ: Can we declare a variable as class member?
+Ans:  No.
+
+FAQ: Why variable is not allowed as class member?
+Ans : Variables are immutable. Class can't have immutable members.
+
+FAQ: Can we have a variable in class?
+Ans: Yes. As a member of any method.
+
+FAQ: Can we declare a function as class member?
+Ans: No. Functions are immutable.
+
+FAQ: Can we have a function in class?
+Ans: Yes. As a member of any method.
+
+                        Static Members in Class
+- A class can have static and non-static members.
+- TypeScript class can have
+        a) Static Property
+        b) Static Method
+
+Static
+- It refers to contineous memory.
+- The memory allocated for first object will continue to next.
+- Static is used to manage contineous operations.
+- Static members are declared by using "static" keyword
+
+        static Property = "value;
+        static method() {
+
+        }
+
+-Static members are accessed in side or outside class by using class name.
+-Static uses more memory and leads to memory leaks.
+
+Non-Static | Dynamic
+- It refers to discreet memory.
+- It is disconnected memory.
+- Memory allcoated for an object will be destroyed after object finished using class.
+- It is safe but is not good for contineous operations.
+- Non Static members are accessed with in the class by using "this" keyword and outside class by using instance of class.
+
+Ex:
+class Demo
+{
+    static s = 0;
+    n = 0;
+    constructor(){
+        Demo.s = Demo.s + 1;
+        this.n = this.n + 1;
+    }
+    Print(){
+        console.log(`s=${Demo.s} n=${this.n}`);
+    }
+}
+let obj1 = new Demo();
+obj1.Print();
+
+let obj2 = new Demo();
+obj2.Print();
+
+let obj3 = new Demo();
+obj3.Print();
+
+
+                              Access Modifiers
+
+- They define the accessiblity of any member in a class.
+- TypeScript supports following access modifiers
+
+        a) public
+        b) private
+        c) protected
+
+- public is accessible from any  location.
+- private is accessible only with in the specified class.
+- protected is accessible in derived class only by using derived class object.
+
+Note: All members are accessible within the specfied class.

@@ -1,0 +1,19 @@
+<div class="container d-flex flex-column row">
+    <div class="col-5">
+        <dl>
+            <dt>UserName</dt>
+            <span><input type="text" name="" ngModel #Name="ngModel" id=""></span>
+            <dt>Price</dt>
+            <span><input type="text" name="" ngModel #Price="ngModel" id=""></span>
+            <dt>Stock</dt>
+            <span><input type="text" name="" ngModel #Stock="ngModel" id=""></span>
+        </dl>
+    </div>
+    <div class="col-3">
+        <dl>
+            <dt>Hello {{Name.value}}</dt>
+            <dt>Price is {{Price.value}}</dt>
+            <dt>Stock is {{Stock.value}} </dt>
+        </dl>
+    </div>
+</div>

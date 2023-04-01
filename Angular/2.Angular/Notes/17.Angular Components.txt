@@ -1,0 +1,188 @@
+Angular Components
+- Components are building blocks for Angular Applications.
+- Every component comprises
+       
+        a) Presentation
+        b) Styles
+        c) Logic
+
+- Presentation is designed by using HTML.
+- Styles are defined by using CSS
+- Logic is defined by using TypeScript, which its transcompiled into JavaScript.
+- There are various techniques of designing a component
+
+    1. You can create a component manually
+    2. You can create a component using CLI commands [Scaffolding]
+
+- Component structure can be designed in 2 ways
+
+    1. Inline Documentation
+    2. Code Behind Documentation
+
+   
+- Inline Documentation Technique allows you to configure component design, styles and logic all in one file.
+- Inline technique reduces the number of requests and improves the page load time.
+- Inline technique is not good for reusability, extensibility and testability.
+
+           Manually adding a component using Inline Technique
+           -------------------------------------------------------------------------
+- Technically component is TypeScript class
+
+        class  NetflixRegister
+        {
+        }
+
+- Component class is defined by using a directive or marker  "@Component()"
+
+
+        @Component()
+        class  NetflixRegister
+        {
+
+        }
+
+FAQ: What is @Component()?
+Ans : It is a directive [marker].
+ 
+FAQ: What is a directive?
+Ans : Directive comprises of meta data about your component, which
+        is given to compiler.
+
+
+- @Component directive is present in "@angular/core" library.
+
+Syntax:
+        import  { Component }  from  "@angular/core";
+
+        @Component()
+        class  NetflixRegister
+        {
+
+        }
+
+
+- Every component must return markup.
+- Every component must have a selector, which is required to import and use component in any page.
+
+Syntax:
+   import  { Component } from  "@angular/core";
+
+   @Component({
+        selector: "app-register",
+        template: "<h2>....</h2>",
+        styles: ["h2{'color':'red'}"]
+    })
+    export class  NetflixRegister
+    {
+
+    }
+
+- Every component must be registered in the "declarations[]" of "app.module.ts".
+
+    declarations: [
+        NetflixRegister
+    ]
+
+- Every application starts with multiple components, you have to define your component in "bootstrap[]" of app.module.ts
+
+
+    bootstrap: [
+        NetflixRegister
+     ]
+
+- Go to  "Index.html"
+
+    <body>
+        <app-register> </app-register>
+    </body>
+
+Note: Index.html must have exactly the same components defined in bootstrap of "app.module.ts".
+
+
+
+Ex:
+1. Go to "app" folder and add "components" folder
+
+2. Add a new file into components
+
+              netflix-register.component.ts
+
+import { Component } from "@angular/core";
+
+@Component({
+    selector: 'app-register',
+    template: `
+      <div class="register-container">
+       <div>
+       <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <div>
+            <input type="email" placeholder="Email address">
+            <button>
+                Get Started >
+            </button>
+        </div>
+       </div>
+      </div>
+    `,
+    styles: [".register-container{display:flex; justify-content:center; align-items:center; height: 400px}"]
+})
+export class NetflixRegister
+{
+
+}
+
+3. Go to app.module.ts
+
+     declarations: [
+            NetflixRegister
+        ]
+    bootstrap : [
+            NetflixRegister
+        ]
+
+4. Go to Index.html        
+
+        <body>
+            <app-register> </app-register>
+        </body>
+
+Setup Bootstrap for Angular Project
+------------------------------------------------
+1. Open Your workspace location in terminal
+
+        D:\Angular-Workspace>
+
+2. Run the following commands
+
+        > npm  install bootstrap --save
+        > npm  install bootstrap-icons  --save
+
+3. Go to "styles.css"
+
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+EX:
+import { Component } from "@angular/core";
+
+@Component({
+    selector: 'app-register',
+    template: `
+      <div class="register-container bg-dark text-white">
+       <div>
+       <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <div class="input-group input-group-lg">
+            <input type="email" class="form-control" placeholder="Email address">
+            <button class="btn btn-danger">
+                Get Started <span class="bi bi-chevron-right"></span>
+            </button>
+        </div>
+       </div>
+      </div>
+    `,
+    styles: [".register-container{display:flex; justify-content:center; align-items:center; height: 600px}"]
+})
+export class NetflixRegister
+{
+
+}

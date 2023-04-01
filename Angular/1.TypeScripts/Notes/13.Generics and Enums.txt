@@ -1,0 +1,152 @@
+Generics
+- Generic refers to type safe content with strongly typed nature.
+- A generic type is open to handle any type until the value is provided.
+- A generic type and make the component as strongly typed after the value is assigned.
+- TypeScript can have various Generic members
+    a) Method can be generic
+    b) Property can be generic
+    c) Parameter can be generic
+    d) Class can be generic
+
+Syntax:
+     public Print<T>(a:T, b:T)
+    {
+        console.log(`a=${a}\nb=${b}`);
+    }
+   
+    Print<number>(10, 20);
+    Print<string>("A", "B");
+
+
+Ex:
+interface IProduct
+{
+    Name:string;
+    Price:number;
+}
+interface IEmployee
+{
+    FirstName:string;
+    Designation:string;
+    Salary:number;
+}
+class Service
+{
+    public GetData<T>(data:T){
+        for(var property in data){
+            console.log(`${property} : ${data[property]}`);
+        }
+    }
+}
+let obj = new Service();
+console.log(`----Employee Details----`);
+obj.GetData<IEmployee>({FirstName:"John", Designation:"Manager", Salary: 50000});
+console.log(`----Product Details-----`);
+obj.GetData<IProduct>({Name: "TV", Price: 45000});
+
+Ex:
+interface IOracle
+{
+    UserName:string;
+    Password:string;
+    Database:string;
+}
+interface IMySql
+{
+    Host:string;
+    User:string;
+    Pwd:string;
+    Db:string;
+}
+interface IMongoDB
+{
+    Url:string;
+}
+
+class Database<T>
+{
+    public ConnectionString:T|null = null;
+    public Connect():void{
+        for(var property in this.ConnectionString) {
+            console.log(`${property} : ${this.ConnectionString[property]}`);
+        }
+    }
+}
+console.log(`------Oracle Connection---------`);
+let oracle = new Database<IOracle>();
+oracle.ConnectionString = {
+    UserName: "scott",
+    Password: "tiger",
+    Database: "studentsDb"
+}
+oracle.Connect();
+
+console.log(`------MySql Connection---------`);
+let mysql = new Database<IMySql>();
+mysql.ConnectionString = {
+    Host: "localhost",
+    User: "root",
+    Pwd: "12345",
+    Db: "EmpDb"
+}
+mysql.Connect();
+
+console.log(`------MongoDB Connection--------`);
+let mongo = new Database<IMongoDB>();
+mongo.ConnectionString = {
+    Url: "mongodb://127.0.0.1:27017"
+}
+mongo.Connect();
+
+
+                                    Enum
+
+- Enum refers to Enumeration, which is a set of constants.
+- Every constant must be initialized.
+- Enum in TypeScript can have following constants
+    a) string
+    b) number
+    c) expression
+- Enum number constants can have auto implementation.
+- Auto implementation is not supported for string and expression.
+
+Syntax:
+    enum  Name
+    {
+       ref = value
+    }
+    Name.ref
+
+
+Ex:
+enum ErrorCodes
+{
+    OK,
+    Success=201,
+    NotFound = 404,
+    InternalError
+}
+console.log(`Status Code for Success : ${ErrorCodes.Success}`);
+
+- Enum expression must be a numeric return value or string.
+- Boolean expressions are not allowed.
+
+Ex:
+enum ErrorCodes
+{
+   A = 10,
+   B = 20,
+   C = A + B
+}
+console.log(`Addition=${ErrorCodes.C}`);
+
+- Enum supports reverse mapping. It allows to access a key with reference of value.
+
+Ex:
+enum ErrorCodes
+{
+   NotFound = 404
+}
+console.log(`${ErrorCodes.NotFound}: ${ErrorCodes[404]}`);
+
+                            Modules

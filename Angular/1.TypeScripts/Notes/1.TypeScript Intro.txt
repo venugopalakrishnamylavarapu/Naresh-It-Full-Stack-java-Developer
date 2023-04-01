@@ -1,0 +1,77 @@
+What are the issues with JavaScript?
+- Not Strongly Typed Language
+       
+            var x = 10;
+            x = "John";
+
+- Not Strictly Typed, It is explicitly strict.
+
+            x = 10;            // valid
+
+            "use strict";
+
+- It is not an OOP language
+
+- It supports only few features of OOP.
+
+- It is hard to extend
+
+- It will not support code level security.
+
+- Google started a language called "AtScript" for Angular
+
+- Microsoft have TypeScript
+
+- Microsoft .NET  language  "C#"   Anders Hejlberg
+
+- TypeScript  Anders Hejlberg
+
+
+                                TypeScript
+- It is strongly typed.
+- It is strictly typed.
+- It is an OOP language.
+- It is built in TypeScript.
+- It can directly interact with hardware.
+- Less memory
+- Faster
+- Light Weight
+- It is used in building large scale applications.
+
+Note: Browsers can't understand TypeScript
+        TypeScript is translated into JavaScript
+
+
+                            TypeScript Architecture
+1. Core Compiler
+    - Core compiler translates the typescript code into mechine code.
+    - core.ts          : It verifies the keywords
+    - program.ts        : It verifies the program structure
+    - parser.ts        : It is responsible for converting one type to another
+    - checker.ts        : It is responsible for data type checking.
+    - scanner.ts        : It is responsible for handling input.
+    - emitter.ts        : It is responsible fo handling output.
+
+2. Standalone Compiler [tsc.ts]
+    - It transcompiles Typescript program into JavaScript.
+
+3. Language Service [services.ts]
+    - It provides pre-defined functions and values required for typescript.
+    - Service is a pre-defined business logic.
+
+4. TsServer [server.ts]
+    - Hosting
+    - Request and Response
+    - TypeScript programs are hosted, compile and managed on server.
+
+5. VS Shim [shims.ts]
+    - It makes the typescript program cross platform.
+   
+    TypeScript Program => Compiler => IL Code => Shim => Managed Code
+
+    - Managed code is suitable for all OS services.
+
+6. Manage Language Service
+    - It is the service suitable for all OS.
+    - It is cross platform.
+    - Platform neutral.

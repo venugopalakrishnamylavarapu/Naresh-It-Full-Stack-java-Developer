@@ -1,0 +1,11 @@
+.brand {
+    color: red;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}

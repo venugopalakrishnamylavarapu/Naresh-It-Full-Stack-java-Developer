@@ -1,0 +1,9 @@
+.background {
+    background-image: url("/assets/netflixbanner.jpg");
+    height: 600px;
+    background-size: cover;
+}
+.shade {
+    background-color: rgba(0,0,0,0.5);
+    height: 600px;
+}
