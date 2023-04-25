@@ -1,0 +1,39 @@
+1st tool in our course:
+Junit: unit testing library for java programs
+
+unit testing:
+testing a piece of code or program
+
+we develop a project and we should test that this project is working fine or not
+then only we can move this project to production environment(go-live)
+
+java project --- multiple java files, properties
+
+
+functional testing --- end to end  the application or project is tested if working fine or not
+This is done by QA or testing team
+
+application or project contains the below functionalities
+1.login
+2. home page
+3. account details
+4. product or service details
+
+functional testing -- testing is done for each of the above mentioned functionalities in this example
+in functional testing, mainly functionality of each component is tested
+
+regression testing-- this testing will be done if some new functionalities are added to application
+the application should not get impacted
+
+load testing or performance testing -- we check the performance of the application
+example:
+my application is giving result in 1 second if 100 users are logging at a time to my application
+
+now my application is giving result in 1 minute if 10000 users are logging at a time to my application
+
+
+unit testing --this is done by developer
+developer writes the code and also do the unit testing
+
+unit testing:
+testing a piece of code or program
